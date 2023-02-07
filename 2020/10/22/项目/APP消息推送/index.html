@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="真正的 Push 应该是只要一个 Client 设备连接到互联网中，什么也不做等在那里，Server 端随时都可以将数据（消息是数据的一种）发送到这个 Client 上，就好像 Server 等在那里，Client 随时可以访问 Server 一样。 用Server端做个类比，当一个Web Server在互联网上部署好以后，任何一台电脑都可以通过互联网去访问Server：从Server获取数据、向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APP消息推送">
+<meta property="og:url" content="http://example.com/2020/10/22/%E9%A1%B9%E7%9B%AE/APP%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="真正的 Push 应该是只要一个 Client 设备连接到互联网中，什么也不做等在那里，Server 端随时都可以将数据（消息是数据的一种）发送到这个 Client 上，就好像 Server 等在那里，Client 随时可以访问 Server 一样。 用Server端做个类比，当一个Web Server在互联网上部署好以后，任何一台电脑都可以通过互联网去访问Server：从Server获取数据、向">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-22T06:46:42.000Z">
+<meta property="article:modified_time" content="2023-02-07T16:45:24.505Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/10/22/%E9%A1%B9%E7%9B%AE/APP%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>APP消息推送 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/22/%E9%A1%B9%E7%9B%AE/APP%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          APP消息推送
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-22 14:46:42" itemprop="dateCreated datePublished" datetime="2020-10-22T14:46:42+08:00">2020-10-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>真正的 Push 应该是只要一个 Client 设备连接到互联网中，什么也不做等在那里，Server 端随时都可以将数据（消息是数据的一种）发送到这个 Client 上，就好像 Server 等在那里，Client 随时可以访问 Server 一样。</p>
+<pre><code>用Server端做个类比，当一个Web Server在互联网上部署好以后，任何一台电脑都可以通过互联网去访问Server：从Server获取数据、向Server提交数据。向Server提交数据实际就是Client Push数据到Server。在这个模式中，Server所做的事情就是等待，等待任意的Client主动来访问它，并且不需要和Client端保持连接。Server是如何做到这点的呢，实际上是通过listen的方式，具体来说是socket的listen，Server端不需要做额外的事情，只要告诉socket，你去listen吧，有Client请求过来就交给对应的程序去完成吧，就这么简单。
+
+Client端的Push是否能做到这点呢，我们这里只考虑Client的设备是智能机的情况，主要就是Android、iOS，还有winPhone？大概吧。Android和iOS都是基于linux系统的，有完整的网络协议架构，所以使用socket完全没有问题，winPhone作为一个智能机来说，我想也是没有问题的。所以对于这些智能机来说，让一个socket去listen，等待互联网上的任意一台其他设备来访问是可行的，Server Push数据给Client只需要去连接Client的socket就可以了。
+
+事情是这么简单吗？显然不是，不然就不会有各个大小公司跳出来做平台了。
+
+ps：首先我们要了解socket是什么，socket是基于tcp/ip协议的一个实现，而tcp/ip是整个互联网的协议基础。关于tcp/ip，socket具体内容不在这里赘述，不了解的可以去查相关资料。
+
+Server端和Client端有一个很重要的区别，Server端是有固定的公网ip的，而Client端的ip不是固定的，甚至不一定具有公网ip。Client访问Server时，实际是通过ip找到Server进行访问的（域名？域名最终也是被解析成ip），有固定的公网ip才方便互联网上的其他设备来访问。而反过来Server想找某个Client时，由于Client的ip不固定，Server端是无法找到Client的。所以即使Client这里放了一个socket在listen，Server找不到Client，还是连接不上Client。
+
+所以Client是无法使用Server的这种模式去被动接受Push的。是否有办法让Server端知道Client的ip呢，比如每次Client更换ip以后将ip发给Server？这种方法显然是成本高且不可靠的。
+
+所以，目前的Push技术实现基本都是Client主动连接Server，钻牛角尖来讲，现在的Push其实都是伪Push。下面简单讲两种方式：
+</code></pre>
+<p>一、轮询法：</p>
+<pre><code>这种方法最简单，Client每过一段时间向Server请求一次数据。优缺点很明显，优点是实现简单；缺点是间隔时间不好控制，并且消耗大（电量、流量）。
+</code></pre>
+<p>二、长连接法：</p>
+<pre><code>还是从socket入手（又是这货？），Client使用socket连接Server，并且保持socket连接，Server随时可以通过这个socket发送数据给Client。优点：最有效，客户端设备消耗比第一种小（设备应该从系统层对socket的长连接做优化，socket链接维护成本从客户端来讲应该是小于频繁的http请求的）；缺点：服务端压力大，每一个设备都需要一个socket连接。
+
+还有一些其他协议比如xmpp，其实也逃不过上面两种方式，只是做了一些封装。或者还有一种非互联网方式的做法，比如监听短信法，要push的时候，先发一条手机到目的手机，Client监听到了标的短信，然后向Server请求数据，不过像这类剑走偏锋的方法，限制条件也很多，不是很实用。
+
+总结一下，目前各个推送平台的实现都是基于长连接法的，如果App要自己实现推送，也是建议使用这种方式。但是如果每个App都用一个长连接，那么手机也吃不消了，所以又有一些其他技术来实现。
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/14/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/maven/Maven/" rel="prev" title="Maven">
+      <i class="fa fa-chevron-left"></i> Maven
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/29/java%E5%9F%BA%E7%A1%80/UID/" rel="next" title="UID">
+      UID <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

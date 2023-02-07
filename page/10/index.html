@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/21/yuque/Git/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/16/java%E5%9F%BA%E7%A1%80/Java8%E6%96%B0%E7%89%B9%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,539 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/21/yuque/Git/" class="post-title-link" itemprop="url">Git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-21 17:58:56" itemprop="dateCreated datePublished" datetime="2020-09-21T17:58:56+08:00">2020-09-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:04" itemprop="dateModified" datetime="2023-02-07T21:32:04+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-指令"><a href="#1-指令" class="headerlink" title="1 指令"></a>1 指令</h1><p>–创建分支<br>git branch <name><br>–将 master 分支强制指向 HEAD 的第 3 级父提交。<br>git branch -f master HEAD<del>3<br>–切换到新的分支上<br>git checkout &lt;name/hash 值&gt;;<br>–在<name>分支上提交修改<br>git checkout <name>; –切换到 name 分支上<br>git commit;<br>–合并 name 分支至当前分支<br>git merge <name>;<br>–把当前分支 rebase 至 name 分支<br>git rebase <name>  <br>HEAD-指向你正在其基础上进行工作的提交记录<br>–查看提交记录的哈希值（基于 SHA-1）。<br>git log<br>–相对引用<br>使用 ^ 向上移动 1 个提交记录<br>使用 ~<num> 向上移动多个提交记录，如 ~3<br>ps: git checkout HEAD^^ == git checkout HEAD</del>4<br>–撤销变更<br>git reset C1 –撤回至 C1，在 reset 后， C2 所做的变更还在，但是处于未加入暂存区状态<br>git revert HEAD –提交新的记录，与 HEAD 的前一次记录相同</p>
-<h1 id="2-版本管理实践"><a href="#2-版本管理实践" class="headerlink" title="2 版本管理实践"></a>2 版本管理实践</h1><ul>
-<li><strong>FeatureXXX：</strong><ul>
-<li>具体功能开发分支，从 develop 分支拉，功能开发自测完后合并到 develop 分支。来不及上线的 feature 分支不要合并到 develop。</li>
-</ul>
-</li>
-<li><strong>develop 开发分支：</strong><ul>
-<li>上面代码都是已经开发完的代码（包括已上线和正在测试的）。</li>
-</ul>
-</li>
-<li><strong>Release 分支：</strong><ul>
-<li>测试分支，从 develop 上 fork 进行测试，测试发现问题就在 release 分支上修改，测试通过 release 代码合并到 master 分支发布和 develop 分支（如果有修改）。</li>
-</ul>
-</li>
-<li><strong>master 分支：</strong><ul>
-<li>发布分支，任何时候 master 上代码都是能上线的，可以打 tag。</li>
-</ul>
-</li>
-<li><strong>fix 分支：</strong><ul>
-<li>当上线后发现 bug，在 master 上开一个 fix 分支进行修正，修正完后合并到 master 进行发布，同时 fix 也要合并到 develop，（看情况决定是否合并到当前正在测试的 release 分支）。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/19/yuque/JWT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/19/yuque/JWT/" class="post-title-link" itemprop="url">JWT</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-19 02:02:00" itemprop="dateCreated datePublished" datetime="2020-09-19T02:02:00+08:00">2020-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:06" itemprop="dateModified" datetime="2023-02-07T21:32:06+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案</p>
-<ul>
-<li>认证：用户认证就是判断一个用户的身份是否合法的过程</li>
-<li>授权：控制用户访问资源</li>
-</ul>
-<h1 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1 数据结构"></a>1 数据结构</h1><ul>
-<li>Base64UrlEncode[<strong>header</strong>]**.<strong>Base64UrlEncode[<strong>payload</strong>]</strong>.**Base64UrlEncode[<strong>signature</strong>]</li>
-<li>decode 后结构：</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fud2pnBR6oIos9Mr54YHZgk_Zgg-.png"></p>
-<h2 id="1-1-头部（header"><a href="#1-1-头部（header" class="headerlink" title="1.1 头部（header)"></a>1.1 头部（header)</h2><p>是一个 JSON 对象</p>
-<ul>
-<li>声明类型，这里是 jwt</li>
-<li>声明加密的算法：<ul>
-<li>RS256。非对称算法，易于使用方获取和使用公钥</li>
-<li>HS256。对称算法，必须注意确保密钥不被泄密</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="1-2-载荷（payload"><a href="#1-2-载荷（payload" class="headerlink" title="1.2 载荷（payload)"></a>1.2 载荷（payload)</h2><p>Payload 部分也是一个 JSON 对象，用来存放实际需要传递的数据</p>
-<ul>
-<li>JWT 规定了 7 个官方字段，供选用。<ul>
-<li>iss (issuer)：签发人</li>
-<li>exp (expiration time)：过期时间</li>
-<li>sub (subject)：主题</li>
-<li>aud (audience)：受众</li>
-<li>nbf (Not Before)：生效时间</li>
-<li>iat (Issued At)：签发时间</li>
-<li>jti (JWT ID)：编号</li>
-</ul>
-</li>
-<li>自定义信息<ul>
-<li>通过 TokenEnhance 实现</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>首先实现TokenEnhancer接口</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IatTokenEnhancer</span> <span class="keyword">implements</span> <span class="title class_">TokenEnhancer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> OAuth2AccessToken <span class="title function_">enhance</span><span class="params">(OAuth2AccessToken accessToken, OAuth2Authentication authentication)</span> &#123;</span><br><span class="line">        addClaims((DefaultOAuth2AccessToken) accessToken);</span><br><span class="line">        <span class="keyword">return</span> accessToken;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">addClaims</span><span class="params">(DefaultOAuth2AccessToken accessToken)</span> &#123;</span><br><span class="line">        <span class="type">DefaultOAuth2AccessToken</span> <span class="variable">token</span> <span class="operator">=</span> accessToken;</span><br><span class="line">        Map&lt;String, Object&gt; additionalInformation = token.getAdditionalInformation();</span><br><span class="line">        <span class="keyword">if</span> (additionalInformation.isEmpty()) &#123;</span><br><span class="line">            additionalInformation = <span class="keyword">new</span> <span class="title class_">LinkedHashMap</span>&lt;String, Object&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//添加自定义信息-------------------------</span></span><br><span class="line">        additionalInformation.put(<span class="string">&quot;iat&quot;</span>, <span class="keyword">new</span> <span class="title class_">Integer</span>((<span class="type">int</span>)(System.currentTimeMillis()/<span class="number">1000L</span>)));</span><br><span class="line">        additionalInformation.put(<span class="string">&quot;test&quot;</span>,<span class="string">&quot;myTest&quot;</span>);</span><br><span class="line">        token.setAdditionalInformation(additionalInformation);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>配置Enhancer至令牌增强器</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthorizationServerEndpointsConfigurer endpoints)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//pick up all  TokenEnhancers incl. those defined in the application</span></span><br><span class="line">        <span class="comment">//this avoids changes to this class if an application wants to add its own to the chain</span></span><br><span class="line">        Collection&lt;TokenEnhancer&gt; tokenEnhancers =</span><br><span class="line">            applicationContext.getBeansOfType(TokenEnhancer.class).values();</span><br><span class="line">        <span class="type">TokenEnhancerChain</span> <span class="variable">tokenEnhancerChain</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TokenEnhancerChain</span>();</span><br><span class="line">        tokenEnhancerChain.setTokenEnhancers(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tokenEnhancers));</span><br><span class="line">        endpoints</span><br><span class="line">            .authenticationManager(authenticationManager)</span><br><span class="line">            .tokenStore(tokenStore())</span><br><span class="line">            .tokenEnhancer(tokenEnhancerChain)</span><br><span class="line">            .reuseRefreshTokens(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><hr>
-<h2 id="1-3-签名（signature"><a href="#1-3-签名（signature" class="headerlink" title="1.3 签名（signature)"></a>1.3 签名（signature)</h2><p>Signature 部分是对前两部分的签名，防止数据篡改。<br>使用 secret，对编码后的 header 和 payload 通过 header 中指定签名算法做数字签名，公式如下：<br><code>header中指定签名算法( ``**base64UrlEncode(header)+&quot;.&quot;+base64UrlEncode(payload)**</code> <code>,``**secret**``)</code></p>
-<ul>
-<li>算法<ul>
-<li>HS256<ul>
-<li>先做摘要 再用 MAC 对称加密算法加密</li>
-</ul>
-</li>
-<li>RS256<ul>
-<li>先做摘要 再用 RSA 非对称加密算法加密</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/18/yuque/Kafka/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/18/yuque/Kafka/" class="post-title-link" itemprop="url">Kafka</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-18 16:22:46" itemprop="dateCreated datePublished" datetime="2020-09-18T16:22:46+08:00">2020-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:17" itemprop="dateModified" datetime="2023-02-07T21:32:17+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-构成"><a href="#1-构成" class="headerlink" title="1 构成"></a>1 构成</h1><ul>
-<li>Broker：一台 Kafka 服务器</li>
-<li>topic：即队列</li>
-<li>Partition：topic 的分区，一个 topic 会分为多个 Partition，每个 Partition 负责存储这个 Topic 一部分的数据。<ul>
-<li>主分区：若某个 Broker 挂了，会选举出其他 Broker 的备份分区做主分区。实现<strong>高可用</strong></li>
-<li>备份分区：只做备份，不做读写。</li>
-</ul>
-</li>
-<li>集群的 metadata（kafka 集群的每一台 broker 都缓存了整个集群的 metadata, 当 broker 或某一个 topic 的 metadata 信息发生变化时, 集群的<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a9f559ee6035">Controller</a>                              都会感知到作相应的状态转换, 同时把发生变化的新的 metadata 信息广播到所有的 broker;）<ul>
-<li>所有 broker 信息（包括 ip，port）</li>
-<li>所有 topic 的信息: topic name, partition 数量, 每个 partition 的 leader, isr, replica 集合等</li>
-</ul>
-</li>
-</ul>
-<h1 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Foc4FYlkhlLJH6kqQDn8lQj0inP0.png"></h1><hr>
-<ul>
-<li>offset<ul>
-<li>0.9 版本之前保存在 zookeeper<ul>
-<li>消费者需频繁从 zookeeper 拉取 offset</li>
-</ul>
-</li>
-<li>0.9 版本之后保存在 kafka 本地的某一个 topic</li>
-</ul>
-</li>
-</ul>
-<h1 id="2-特点"><a href="#2-特点" class="headerlink" title="2 特点"></a>2 特点</h1><h2 id="2-1-At-least-once"><a href="#2-1-At-least-once" class="headerlink" title="2.1 At least once"></a>2.1 At least once</h2><p>Kafka 采用的是至少一次（At least once）</p>
-<ul>
-<li><strong>消息不会丢</strong></li>
-<li><strong>但是可能会重复消费</strong><ul>
-<li>生产者角度：<ul>
-<li>消息发到 broker，broker 写入消息，broker 返回响应。若返回的响应（可能因为网络原因）生产者没有收到，然后生产者又重发了一次</li>
-</ul>
-</li>
-<li>消费者角度：<ul>
-<li>消费者拿到消息消费完成，更新 consumer offset。若更新 offset 前消费者额挂了，其他消费者又消费了这条消息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>幂等处理重复消费</li>
-</ul>
-<h2 id="2-2-acks-机制：确保消息写入成功"><a href="#2-2-acks-机制：确保消息写入成功" class="headerlink" title="2.2 acks 机制：确保消息写入成功"></a>2.2 acks 机制：确保消息写入成功</h2><p>生产者中设置：</p>
-<ul>
-<li>**acks=0   **<ul>
-<li>消息发出后就不管了</li>
-</ul>
-</li>
-<li>**acks=1（默认） **<ul>
-<li>只要 Partition Leader 接收到消息而且写入本地磁盘了，就认为成功了</li>
-</ul>
-</li>
-<li>**acks=all  **<ul>
-<li>Partition Leader 接收到消息之后，还必须要求 ISR 列表里跟 Leader 保持同步的那些 Follower 都要把消息同步过去，才能认为这条消息是写入成功了</li>
-<li>当 partition 中只有一个 leader 时，acks=all 也会丢失消息</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-3-多副本冗余的机制"><a href="#2-3-多副本冗余的机制" class="headerlink" title="2.3 多副本冗余的机制"></a>2.3 多副本冗余的机制</h2><pre><code>我们数据存在不同的partition上，那kafka就把这些partition做备份。比如，现在我们有三个partition，分别存在三台broker上。每个partition都会备份，这些备份散落在不同的broker上。
-</code></pre>
-<h2 id="2-4-多副本数据同步"><a href="#2-4-多副本数据同步" class="headerlink" title="2.4 多副本数据同步"></a>2.4 多副本数据同步</h2><p>只有 Partition Leader 是对外提供读写服务的,也就是说，如果有一个客户端往一个 Partition 写入数据，此时一般就是写入这个 Partition 的 Leader 副本。<br>然后 Leader 副本接收到数据之后，Follower 副本会不停的给他发送请求尝试去拉取最新的数据，拉取到自己本地后，写入磁盘中。</p>
-<h2 id="2-5-快"><a href="#2-5-快" class="headerlink" title="2.5 快"></a>2.5 快</h2><ul>
-<li><strong>顺序读写：</strong>Kafka 采取顺序写入磁盘的方式，避免了随机磁盘寻址的浪费</li>
-<li><strong>零拷贝：</strong>减少内核之间的切换<ul>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqVtxs0MQ6Ax9ChbsghT3fsto2te.png"></li>
-</ul>
-</li>
-<li><strong>消息压缩</strong></li>
-<li><strong>分批发送：</strong>Kafka 可以将数据记录分批发送，从生产者到文件系统（Kafka 主题日志）到消费者，可以端到端的查看这些批次的数据。</li>
-</ul>
-<h2 id="2-6-持久化"><a href="#2-6-持久化" class="headerlink" title="2.6 持久化"></a>2.6 持久化</h2><ul>
-<li>Kafka 是将 partition 的数据写在<strong>磁盘的消息日志</strong>，不是 partition 一有数据就立马将数据写到磁盘上，它会先缓存一部分，等到足够多数据量或等待一定的时间再批量写入(<strong>flush</strong>)</li>
-<li>Kafka 只允许<strong>追加写入</strong>(顺序访问)，避免缓慢的随机 I/O 操作。</li>
-</ul>
-<h2 id="2-7-全局有序（特定条件）-分区有序"><a href="#2-7-全局有序（特定条件）-分区有序" class="headerlink" title="2.7 全局有序（特定条件）/分区有序"></a>2.7 全局有序（特定条件）/分区有序</h2><ul>
-<li>全局有序(需特定条件)<ul>
-<li>特定条件：topic 中只有一个 partition（队列）</li>
-</ul>
-</li>
-<li>分区有序<ul>
-<li>在 topic 中有多个 partition 的时候，只能保证 partition 有序</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="3-消息堆积问题"><a href="#3-消息堆积问题" class="headerlink" title="3 消息堆积问题"></a>3 消息堆积问题</h1><ul>
-<li>原因<ul>
-<li><strong>生产者的生产速度与消费者的消费速度不匹配</strong></li>
-</ul>
-</li>
-<li>解决方案<ul>
-<li>优化代码逻辑<ul>
-<li>一条一条消费改为批量消费（如：数据库插入操作）</li>
-</ul>
-</li>
-<li>水平扩容<ul>
-<li>同时增加 Topic 的 partitions 和 consumer</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="4-场景"><a href="#4-场景" class="headerlink" title="4 场景"></a>4 场景</h1><ul>
-<li>追求<strong>高吞吐量</strong></li>
-<li>对消息的重复没有严格要求</li>
-<li>适合产生<strong>大量数据</strong>的互联网服务的数据收集业务（如日志采集）</li>
-</ul>
-<hr>
-<h1 id="5-配置"><a href="#5-配置" class="headerlink" title="5 配置"></a>5 配置</h1><h2 id="5-1-kafka-服务端配置"><a href="#5-1-kafka-服务端配置" class="headerlink" title="5.1 kafka 服务端配置"></a>5.1 kafka 服务端配置</h2><ul>
-<li>server.properties：</li>
-</ul>
-<p>#The id of the broker. This must be set to a unique integer for each broker.</p>
-<ul>
-<li>broker.id=0</li>
-</ul>
-<h1 id="A-comma-separated-list-of-directories-under-which-to-store-log-files（运行数据-日志存放路径）"><a href="#A-comma-separated-list-of-directories-under-which-to-store-log-files（运行数据-日志存放路径）" class="headerlink" title="A comma separated list of directories under which to store log files（运行数据/日志存放路径）"></a>A comma separated list of directories under which to store log files（运行数据/日志存放路径）</h1><ul>
-<li>log.dirs=/usr/local/var/lib/kafka-logs</li>
-</ul>
-<h1 id="The-minimum-age-of-a-log-file-to-be-eligible-for-deletion-due-to-age"><a href="#The-minimum-age-of-a-log-file-to-be-eligible-for-deletion-due-to-age" class="headerlink" title="The minimum age of a log file to be eligible for deletion due to age"></a>The minimum age of a log file to be eligible for deletion due to age</h1><ul>
-<li>log.retention.hours=168</li>
-</ul>
-<h2 id="5-2-kafka-客户端配置"><a href="#5-2-kafka-客户端配置" class="headerlink" title="5.2 kafka 客户端配置"></a>5.2 kafka 客户端配置</h2><ul>
-<li>拉取时设置的 timeout<ul>
-<li><strong>_@param _</strong><em>timeout The maximum time to block</em></li>
-<li><em>拉取消息时等待的最长时间，若到最长时间还没有消息，就直接返回 空</em></li>
-<li>public ConsumerRecords&lt;K, V&gt; poll(final Duration timeout)</li>
-</ul>
-</li>
-<li>max.poll.interval.ms: 600000<ul>
-<li>最大拉取间隔时间，若超过，则客户端会主动离开 group</li>
-<li>避免“活锁”的情况：客户端持续的发送心跳，但是没有拉取消息处理。为了预防消费者在这种情况下一直持有分 区，我们使用 max.poll.interval.ms 活跃检测机制。</li>
-</ul>
-</li>
-<li>heartbeat.interval.ms<ul>
-<li>间隔多久发送一次心跳</li>
-<li>默认 3s</li>
-</ul>
-</li>
-<li>session.timeout.ms<ul>
-<li>group coordinator 多久没收到心跳 就 rebalance</li>
-<li>默认 10s</li>
-</ul>
-</li>
-</ul>
-<p> </p>
-<hr>
-<h1 id="6-Java-API"><a href="#6-Java-API" class="headerlink" title="6 Java API"></a>6 Java API</h1><h2 id="6-1-Producer-端消息发送的基本流程"><a href="#6-1-Producer-端消息发送的基本流程" class="headerlink" title="6.1 Producer 端消息发送的基本流程"></a>6.1 Producer 端消息发送的基本流程</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjfc3k3xel-XF-jcQ0yChvS2n9mg.png"></p>
-<h3 id="6-1-1-序列化器"><a href="#6-1-1-序列化器" class="headerlink" title="6.1.1 序列化器"></a>6.1.1 序列化器</h3><h3 id="6-1-2-分区器"><a href="#6-1-2-分区器" class="headerlink" title="6.1.2 分区器"></a>6.1.2 分区器</h3><hr>
-<h2 id="6-2-kafkaConsumer–assign-与-subscribe"><a href="#6-2-kafkaConsumer–assign-与-subscribe" class="headerlink" title="6.2 kafkaConsumer–assign 与 subscribe"></a>6.2 kafkaConsumer–assign 与 subscribe</h2><blockquote>
-<p>一般场景建议使用 subscribe（） 函数来实现 partition 的分配。</p>
-</blockquote>
-<ul>
-<li>assign(Collection partitions)<ul>
-<li>为 consumer 手动、显示的指定需要消费的 topic-partitions，不受 group.id 限制，相当与指定的 group 无效（this method does not use the consumer’s group management）</li>
-</ul>
-</li>
-<li>subscribe(Collection<String> topics)<ul>
-<li>为 consumer 自动分配 partition，有内部算法保证 topic-partition 以最优的方式均匀分配给同 group 下的不同 consumer。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="6-3-Kafka-Producer-send-阻塞"><a href="#6-3-Kafka-Producer-send-阻塞" class="headerlink" title="6.3 Kafka Producer send 阻塞"></a>6.3 Kafka Producer send 阻塞</h2><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/objcoding/articles/13662337.html">https://www.cnblogs.com/objcoding/articles/13662337.html</a></p>
-<h3 id="6-3-1-场景-1–Producer-获取不到-metadata-信息："><a href="#6-3-1-场景-1–Producer-获取不到-metadata-信息：" class="headerlink" title="6.3.1 场景 1–Producer 获取不到 metadata 信息："></a>6.3.1 场景 1–Producer 获取不到 metadata 信息：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2021-06-15 00:00:01,141 WARN  [kafka-producer-network-thread | producer-1] NetworkClient: [Producer clientId=producer-1] Error while fetching metadata with correlation id 48587 : &#123;mainfab_offline_indicator_config_topic=UNKNOWN_TOPIC_OR_PARTITION&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Flt0YB2XiXWqud9exw0mxrljs3Tj.png"></p>
-<h3 id="6-3-2-场景-2–缓冲池内存用完"><a href="#6-3-2-场景-2–缓冲池内存用完" class="headerlink" title="6.3.2 场景 2–缓冲池内存用完"></a>6.3.2 场景 2–缓冲池内存用完</h3><blockquote>
-<p>RecordAccumulator（Kafka Producer 缓冲池核心类）中注释：<br>The accumulator uses a bounded amount of memory and append calls will block when that memory is exhausted, unless this behavior is explicitly disabled.<br>当缓冲池的内存块用完后，消息追加调用将会被阻塞，直到有空闲的内存块。</p>
-</blockquote>
-<ul>
-<li>在新版的 Kafka Producer 中，设计了一个消息缓冲池，客户端发送的消息都会被存储到缓冲池中，同时 Producer 启动后还会开启一个 Sender 线程，不断地从缓冲池获取消息并将其发送到 Broker</li>
-<li>缓冲池大小设置：buffer.memory</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiKrXCEUWgm1s5ZNS8W_PtFVqgKj.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/16/yuque/JPA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/16/yuque/JPA/" class="post-title-link" itemprop="url">JPA</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-16 17:27:49" itemprop="dateCreated datePublished" datetime="2020-09-16T17:27:49+08:00">2020-09-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:19" itemprop="dateModified" datetime="2023-02-07T21:32:19+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><h2 id="1-1-Hibernate，JPA，Spring-Data-JPA-关系"><a href="#1-1-Hibernate，JPA，Spring-Data-JPA-关系" class="headerlink" title="1.1 Hibernate，JPA，Spring Data JPA 关系"></a>1.1 <strong>Hibernate，JPA，Spring Data JPA 关系</strong></h2><ul>
-<li>JPA 是一套<strong>规范</strong>，内部是由接口和抽象类组成的。</li>
-<li>hibernate 是一套 ORM 框架，而且 Hibernate<strong>实现了 JPA 规范</strong>，所以也可以称 hibernate 为 JPA 的一种实现方式</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fsb2t9Ku5ZqMhqWkD7prfpvWcXUW.png"></p>
-<ul>
-<li>Spring Data JPA 是 Spring 提供的一套对 JPA 操作更加高级的封装（编写规范）。Spring Data JPA 和 JPA 一样，虽然定义了持久层的编写规范，但是持久层的具体操作需要由第三方框架来做，它自己并不能做相应的 CRUD 操作。</li>
-</ul>
-<h1 id="2-使用"><a href="#2-使用" class="headerlink" title="2 使用"></a>2 使用</h1><h2 id="2-1-引入依赖"><a href="#2-1-引入依赖" class="headerlink" title="2.1 引入依赖"></a>2.1 引入依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">project.hibernate.version</span>&gt;</span>5.0.7.Final<span class="tag">&lt;/<span class="name">project.hibernate.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- junit --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- hibernate对jpa的支持包 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-entitymanager<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;project.hibernate.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- c3p0数据库连接池 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;project.hibernate.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- log日志 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Mysql and MariaDB --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="3-JPA-实现-Hibenate"><a href="#3-JPA-实现-Hibenate" class="headerlink" title="3 JPA 实现-Hibenate"></a>3 JPA 实现-Hibenate</h1><h2 id="3-1-Hibernate-缓存机制"><a href="#3-1-Hibernate-缓存机制" class="headerlink" title="3.1 Hibernate 缓存机制"></a>3.1 Hibernate 缓存机制</h2><h3 id="3-1-1-一级缓存"><a href="#3-1-1-一级缓存" class="headerlink" title="3.1.1 一级缓存"></a>3.1.1 一级缓存</h3><h3 id="3-1-2-二级缓存"><a href="#3-1-2-二级缓存" class="headerlink" title="3.1.2 二级缓存"></a>3.1.2 二级缓存</h3><hr>
-<h1 id="主键生成策略"><a href="#主键生成策略" class="headerlink" title="主键生成策略"></a>主键生成策略</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span></span><br><span class="line"><span class="keyword">private</span> Long id;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>strategy</strong><ul>
-<li>**IDENTITY: **主键由数据库自动生成（主要是自动增长型）（Mysql 支持）</li>
-<li><strong>SEQUENCE：</strong>根据底层数据库的序列来生成主键，条件是数据库支持序列。（oracle 支持）</li>
-<li>AUTO<strong>：</strong>主键由程序控制</li>
-<li>TABLE<strong>：</strong>使用一个特定的数据库表格来保存主键</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/16/yuque/Java8%E6%96%B0%E7%89%B9%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/16/yuque/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">Java8新特性</a>
+            <a href="/2020/09/16/java%E5%9F%BA%E7%A1%80/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">Java8新特性</a>
         </h2>
 
         <div class="post-meta">
@@ -708,8 +176,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:29" itemprop="dateModified" datetime="2023-02-07T21:32:29+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -787,7 +264,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/15/yuque/JHipster/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/15/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/%E8%84%9A%E6%89%8B%E6%9E%B6/JHipster/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -801,7 +278,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/15/yuque/JHipster/" class="post-title-link" itemprop="url">JHipster</a>
+            <a href="/2020/09/15/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/%E8%84%9A%E6%89%8B%E6%9E%B6/JHipster/" class="post-title-link" itemprop="url">JHipster</a>
         </h2>
 
         <div class="post-meta">
@@ -818,8 +295,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:30" itemprop="dateModified" datetime="2023-02-07T21:32:30+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/%E8%84%9A%E6%89%8B%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">脚手架</span></a>
+                </span>
+            </span>
 
           
 
@@ -893,7 +383,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/11/yuque/linux/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -907,7 +397,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/11/yuque/linux/" class="post-title-link" itemprop="url">Linux</a>
+            <a href="/2020/09/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/" class="post-title-link" itemprop="url">Linux</a>
         </h2>
 
         <div class="post-meta">
@@ -924,8 +414,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:30" itemprop="dateModified" datetime="2023-02-07T21:32:30+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
 
           
 
@@ -966,7 +465,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/08/yuque/MapStruct/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/08/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/MapStruct/MapStruct/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -980,7 +479,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/08/yuque/MapStruct/" class="post-title-link" itemprop="url">MapStruct</a>
+            <a href="/2020/09/08/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/MapStruct/MapStruct/" class="post-title-link" itemprop="url">MapStruct</a>
         </h2>
 
         <div class="post-meta">
@@ -997,8 +496,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:32" itemprop="dateModified" datetime="2023-02-07T21:32:32+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/MapStruct/" itemprop="url" rel="index"><span itemprop="name">MapStruct</span></a>
+                </span>
+            </span>
 
           
 
@@ -1068,7 +580,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/03/yuque/Log/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/03/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/log/Log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1082,7 +594,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/03/yuque/Log/" class="post-title-link" itemprop="url">Log</a>
+            <a href="/2020/09/03/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/log/Log/" class="post-title-link" itemprop="url">Log</a>
         </h2>
 
         <div class="post-meta">
@@ -1099,8 +611,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:33" itemprop="dateModified" datetime="2023-02-07T21:32:33+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/log/" itemprop="url" rel="index"><span itemprop="name">log</span></a>
+                </span>
+            </span>
 
           
 
@@ -1136,7 +661,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/02/yuque/HTTP/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1150,7 +675,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/02/yuque/HTTP/" class="post-title-link" itemprop="url">HTTP</a>
+            <a href="/2020/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/HTTP/" class="post-title-link" itemprop="url">HTTP</a>
         </h2>
 
         <div class="post-meta">
@@ -1167,8 +692,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:32:48" itemprop="dateModified" datetime="2023-02-07T21:32:48+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:20:31" itemprop="dateModified" datetime="2023-02-08T00:20:31+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">计算机网络与安全</span></a>
+                </span>
+            </span>
 
           
 
@@ -1347,10 +881,610 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/02/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/GraphQL/GraphQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/02/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/GraphQL/GraphQL/" class="post-title-link" itemprop="url">GraphQL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-02 12:37:45" itemprop="dateCreated datePublished" datetime="2020-09-02T12:37:45+08:00">2020-09-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/GraphQL/" itemprop="url" rel="index"><span itemprop="name">GraphQL</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><p>与 RESTful 不同，每一个的 GraphQL 服务其实对外只提供了一个用于调用内部接口的端点，所有的请求都访问这个暴露出来的唯一端点。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsGCbdjuHnVSaW7XdtRGhCwm1zfK.png"></p>
+<h2 id="1-1-标量"><a href="#1-1-标量" class="headerlink" title="1.1 标量"></a>1.1 标量</h2><p>标量(ScalarTypeDefinition)是 GraphQL 中不可分割的原子数据类型，在服务中充当叶子节点。对于客户端而言，合法的查询集(Select Set)必须到达叶子节点，也就是到达标量类型节点。</p>
+<ul>
+<li><strong>GraphQL 规范提供了五种标量：</strong></li>
+</ul>
+<ol>
+<li>Int: 32 位有符号整型，超出精度范围后，引擎会抛出异常</li>
+<li>Float: 有符号双精度浮点数，超出精度范围后，引擎会抛出异常</li>
+<li>String: 字符串，用于表示 UTF-8 字符序列</li>
+<li>Boolean: bool 值</li>
+<li>ID: 资源唯一标志符</li>
+</ol>
+<ul>
+<li><strong>自定义标量：</strong></li>
+</ul>
+<ol>
+<li>在.graphql 文件中定义标量</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scalar Datetime</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>定义序列化、反序列化函数</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DateTimeScalarType</span> <span class="keyword">extends</span> <span class="title class_">GraphQLScalarType</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">DATE_FORMAT</span> <span class="operator">=</span> <span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">DateTimeScalarType</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="string">&quot;DateTime&quot;</span>, <span class="string">&quot;A valid date time value.&quot;</span>, <span class="keyword">new</span> <span class="title class_">Coercing</span>&lt;Date, String&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> String <span class="title function_">serialize</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">                <span class="type">Date</span> <span class="variable">date</span> <span class="operator">=</span> (Date) o;</span><br><span class="line">                <span class="keyword">return</span> sdf.format(date);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> Date <span class="title function_">parseValue</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> String.valueOf(o);</span><br><span class="line">                <span class="keyword">if</span> (<span class="string">&quot;null&quot;</span>.equalsIgnoreCase(value) || <span class="string">&quot;&quot;</span>.equalsIgnoreCase(value)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> DateUtils.parseDate(value, DATE_FORMAT);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> Date <span class="title function_">parseLiteral</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> String.valueOf(o);</span><br><span class="line">                <span class="keyword">if</span> (<span class="string">&quot;null&quot;</span>.equalsIgnoreCase(value) || <span class="string">&quot;&quot;</span>.equalsIgnoreCase(value)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> DateUtils.parseDate(value, DATE_FORMAT);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="2-应用"><a href="#2-应用" class="headerlink" title="2 应用"></a>2 应用</h1><h2 id="2-1-依赖"><a href="#2-1-依赖" class="headerlink" title="2.1 依赖"></a>2.1 依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.graphql-java<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>graphql-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.graphql-java<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>graphql-java-tools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.graphql-java<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>graphiql-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-使用"><a href="#2-2-使用" class="headerlink" title="2.2 使用"></a>2.2 使用</h2><ul>
+<li>定义 root.graphqls（应与 resolver 类中方法同名）：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#查询入口</span><br><span class="line">type Query &#123;</span><br><span class="line">    selectById(id:ID!): City</span><br><span class="line">    selectAgrTemplateStyleById(id:ID!): AgrTemplateStyle</span><br><span class="line">    queryq: AgrScene</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#修改入口</span><br><span class="line">type Mutation &#123;</span><br><span class="line">    updateCityById(input: CityInput!): Int</span><br><span class="line">    releaseTemplate(agrSceneGroupTempRel:AgrSceneGroupTempRel!): Int</span><br><span class="line">    offlineTemplate(id:ID!): Int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//定义输入类型</span><br><span class="line">input AgrSceneGroupTempRel &#123;</span><br><span class="line">    id:Int</span><br><span class="line">    templateId: Int</span><br><span class="line">    parentTemplateId: Int</span><br><span class="line">    groupId: Int</span><br><span class="line">    tenantId: Int</span><br><span class="line">    isDelete: Int</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>实现类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TemplateMutation</span> <span class="keyword">implements</span> <span class="title class_">GraphQLMutationResolver</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> ITemplateService iTemplateService;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">releaseTemplate</span><span class="params">(AgrSceneGroupTempRelDTO dto)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> iTemplateService.releaseTemplate(dto);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="http://localhost:8089/graphiql">http://localhost:8089/graphiql</a>，前端参数：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--参数为AgrSceneGroupTempRel</span><br><span class="line">mutation&#123;</span><br><span class="line">  releaseTemplate(</span><br><span class="line">    agrSceneGroupTempRel:&#123;templateId:1&#125;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">--参数为List&lt;AgrSceneGroupTempRel&gt;</span><br><span class="line">mutation&#123;</span><br><span class="line">  releaseTemplate(</span><br><span class="line">    agrSceneGroupTempRel:</span><br><span class="line">    [&#123;templateId:1&#125;,&#123;templateId:2&#125;]</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/31/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E6%9F%A5%E8%AF%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/31/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E6%9F%A5%E8%AF%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-title-link" itemprop="url">MySQL-查询性能优化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-31 11:59:36" itemprop="dateCreated datePublished" datetime="2020-08-31T11:59:36+08:00">2020-08-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:34:25" itemprop="dateModified" datetime="2023-02-08T00:34:25+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>衡量查询开销的三个指标</strong></p>
+<ul>
+<li>响应时间（= 服务时间 + 排队时间）<ul>
+<li>服务时间：数据库处理查询真正花费的时间</li>
+<li>排队时间：服务器因为等待某些资源而没有真正执行查询的时间</li>
+</ul>
+</li>
+<li>扫描的行数</li>
+<li>返回的行数</li>
+</ul>
+<hr>
+<h1 id="0-优化顺序"><a href="#0-优化顺序" class="headerlink" title="0 优化顺序"></a>0 优化顺序</h1><blockquote>
+<p>以下成本由低到高</p>
+</blockquote>
+<h2 id="0-1-优化-sql-和-index"><a href="#0-1-优化-sql-和-index" class="headerlink" title="0.1 优化 sql 和 index"></a>0.1 优化 sql 和 index</h2><h2 id="0-2-加缓存（redis-等）"><a href="#0-2-加缓存（redis-等）" class="headerlink" title="0.2 加缓存（redis 等）"></a>0.2 加缓存（redis 等）</h2><h2 id="0-3-分区"><a href="#0-3-分区" class="headerlink" title="0.3 分区"></a>0.3 分区</h2><h2 id="0-4-分表"><a href="#0-4-分表" class="headerlink" title="0.4 分表"></a>0.4 分表</h2><h3 id="0-4-1-垂直切分"><a href="#0-4-1-垂直切分" class="headerlink" title="0.4.1 垂直切分"></a>0.4.1 垂直切分</h3><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmwCa_HhBBXSX_jf_UX9NaxUQHvR.png"></p>
+<h3 id="0-4-2-水平切分"><a href="#0-4-2-水平切分" class="headerlink" title="0.4.2 水平切分"></a>0.4.2 水平切分</h3><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhAd3jNgZCpZSqc_Sa-6CEFjIaoD.png"></p>
+<h2 id="0-5-分库"><a href="#0-5-分库" class="headerlink" title="0.5 分库"></a>0.5 分库</h2><p>主从复制，读写分离<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FlRQkiEU_uHr5nv85_2qxYRR9Go1.png"></p>
+<hr>
+<h1 id="1-优化数据访问"><a href="#1-优化数据访问" class="headerlink" title="1.优化数据访问"></a>1.优化数据访问</h1><h2 id="1-1-是否向服务器请求了不需要的数据"><a href="#1-1-是否向服务器请求了不需要的数据" class="headerlink" title="1.1 是否向服务器请求了不需要的数据"></a>1.1 是否向服务器请求了不需要的数据</h2><ul>
+<li>查询不需要的记录</li>
+<li>总是去查询全部列</li>
+<li>重复查询相同数据（相同数据可缓存起来）</li>
+</ul>
+<h2 id="1-2MySQL-是否扫描了额外记录"><a href="#1-2MySQL-是否扫描了额外记录" class="headerlink" title="1.2MySQL 是否扫描了额外记录"></a>1.2MySQL 是否扫描了额外记录</h2><p>通过执行计划，若发现了查询需要扫描大量的数据，但值返回少数的行，通常可以尝试以下方式优化：</p>
+<ul>
+<li><strong>覆盖索引。</strong>把所有需要用到的列都放到索引中，这样存储引擎无需回表。</li>
+<li><strong>改变库表结</strong>构。（例如使用单独的汇总表）</li>
+<li><strong>重写查询。</strong>让 MySQL 优化器能够以更优化的方式执行这个查询。<ul>
+<li><strong>切分查询</strong></li>
+</ul>
+</li>
+</ul>
+<p>有时候可以对一个大查询“分而治之”(若一个查询可以胜任，还切分为多个独立查询是不明智的)，将大查询切分为小查询，每个查询功能完全一样，只完成一小部分。<br>例如删除旧数据，清理大量数据时，如果一次完成，则可能需要一次锁住很多数据，耗尽系统资源，阻塞很多小而重要的查询。在每次删除部分数据后，可以暂停一会儿再做下一次删除操作，可以将压力分散到一个很长的时间段，降低对服务器的影响。</p>
+<ul>
+<li><strong>分解关联查询</strong></li>
+</ul>
+<p>很多高性能的应用都会对关联查询进行分解。对每一个表进行一次单表查询，然后在应用中对结果进行关联</p>
+<pre><code>  - 缓存效率更高
+  - 应用层做关联，可以更容易对数据库进行拆分。
+</code></pre>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/28/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/28/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" class="post-title-link" itemprop="url">MySQL-存储引擎</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-28 14:15:40" itemprop="dateCreated datePublished" datetime="2020-08-28T14:15:40+08:00">2020-08-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:34:28" itemprop="dateModified" datetime="2023-02-08T00:34:28+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhzzJGcZ1bYvjnXYV3C0Aud7QlGz.jpeg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--查看mysql现在已提供什么存储引擎</span><br><span class="line">show engines;</span><br><span class="line">--查看table使用的是什么引擎</span><br><span class="line">show table status like &#x27;table_name&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoksqPjIY3skJ3Uz-9GO6KBTrtab.png"></p>
+<hr>
+<ul>
+<li>除非需要用到某些 InnoDB 不具备的特性，并且没有其他方法可以替代，否则应优先选择 InnoDB。</li>
+<li>除非万不得已，否则建议不要混合使用多种存储引擎。</li>
+</ul>
+<h1 id="1-InnoDB"><a href="#1-InnoDB" class="headerlink" title="1.InnoDB"></a>1.InnoDB</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E7%B4%A2%E5%BC%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E7%B4%A2%E5%BC%95/" class="post-title-link" itemprop="url">MySQL-索引</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-27 17:34:41" itemprop="dateCreated datePublished" datetime="2020-08-27T17:34:41+08:00">2020-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:34:35" itemprop="dateModified" datetime="2023-02-08T00:34:35+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FisYeEfWKeHAVtpasfiBRu2sekhi.jpeg">- 由存储引擎负责实现索引，不同存储引擎的索引工作方式并不一样。</p>
+<h1 id="1-操作"><a href="#1-操作" class="headerlink" title="1.操作"></a>1.操作</h1><h2 id="1-1-创建"><a href="#1-1-创建" class="headerlink" title="1.1 创建"></a>1.1 创建</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">--index_name可选</span><br><span class="line">ALTER TABLE table_name ADD INDEX index_name (column_names);</span><br><span class="line">ALTER TABLE table_name ADD UNIQUE (column_names);</span><br><span class="line">ALTER TABLE table_name ADD PRIMARY KEY (column_names);</span><br><span class="line"></span><br><span class="line">--不能用CREATE INDEX语句创建PRIMARY KEY索引</span><br><span class="line">CREATE INDEX index_name ON table_name (column_list);</span><br><span class="line">CREATE UNIQUE INDEX index_name ON table_name (column_list);</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-删除"><a href="#1-2-删除" class="headerlink" title="1.2 删除"></a>1.2 删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name DROP INDEX index_name;</span><br><span class="line">ALTER TABLE table_name DROP PRIMARY KEY;</span><br><span class="line"></span><br><span class="line">--只在删除PRIMARY KEY索引时使用</span><br><span class="line">DROP INDEX index_name ON talbe_name;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有创建 PRIMARY KEY 索引，但表具有一个或多个 UNIQUE 索引，则 MySQL 将删除第一个 UNIQUE 索引。<br>对于多列组合的索引，如果删除其中的某列，则该列也会从索引中删除。如果删除组成索引的所有列，则整个索引将被删除。</p>
+<h2 id="1-3-查看"><a href="#1-3-查看" class="headerlink" title="1.3 查看"></a>1.3 查看</h2><h3 id="1-3-1-查看索引"><a href="#1-3-1-查看索引" class="headerlink" title="1.3.1 查看索引"></a>1.3.1 查看索引</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SHOW INDEX FROM table_name;</span><br><span class="line">SHOW KEYS FROM table_name;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Table                  表的名称</li>
+<li>Non_unique      如果索引不能包括重复词，则为 0。如果可以，则为 1。</li>
+<li>Key_name         索引的名称。</li>
+<li>Seq_in_index     索引中的列序列号，从 1 开始。</li>
+<li>Column_name    列名称。</li>
+<li>Collation             列以什么方式存储在索引中。在 MySQL 中，有值‘A’（升序）或 NULL（无分类）。</li>
+<li>Cardinality         索引中唯一值的数目的估计值。通过运行 ANALYZE TABLE 或 myisamchk -a 可以更新。基数根                              据被存储为整数的统计数据来计数，所以即使对于小型表，该值也没有必要是精确的。基数                              越大，当进行联合时，MySQL 使用该索引的机会就越大。</li>
+<li>Sub_part 　　      如果列只是被部分地编入索引，则为被编入索引的字符的数目。如果整列被编入索引，则为                             NULL。</li>
+<li>Packed                 指示关键字如何被压缩。如果没有被压缩，则为 NULL。</li>
+<li>Null     　　          如果列含有 NULL，则含有 YES。如果没有，则该列含有 NO。</li>
+<li>Index_type     　用过的索引方法（BTREE, FULLTEXT, HASH, RTREE）。</li>
+</ul>
+<h3 id="1-3-2-查看执行计划"><a href="#1-3-2-查看执行计划" class="headerlink" title="1.3.2 查看执行计划"></a>1.3.2 查看执行计划</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">explain select column_names from table_name;</span><br><span class="line"></span><br><span class="line">explain select * from book where author_name_id = (select id from author where author_name = &#x27;District panel&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkB1WS-bxkgpnhG9KggQVrCwthUU.png"></p>
+<ul>
+<li><p><strong>id</strong></p>
+<blockquote>
+<p>表示查询中执行 SELECT 子句或操作表的顺序,SQL 按 id 从大到小执行。</p>
+</blockquote>
+</li>
+<li><p><strong>select_type</strong></p>
+<blockquote>
+<p>表示 select 查询的类型</p>
+</blockquote>
+<ul>
+<li><strong>SIMPLLE</strong>：简单查询，该查询不包含 UNION 或子查询</li>
+<li><strong>PRIMARY</strong>：如果查询包含 UNION 或子查询，则最外层的查询被标识为 PRIMARY</li>
+<li>UNION：表示此查询是 UNION 中的第二个或者随后的查询</li>
+<li>DEPENDENT：UNION 满足 UNION 中的第二个或者随后的查询，其次取决于外面的查询</li>
+<li>UNION RESULT：UNION 的结果 SUBQUERY：子查询中的第一个 select 语句(该子查询不在 from 子句中)</li>
+<li><strong>SUBQUERY</strong>：子查询中的第一个 select 语句(该子查询不在 from 子句中)</li>
+<li>DEPENDENT SUBQUERY：子查询中的 第一个 select，同时取决于外面的查询</li>
+<li><strong>DERIVED</strong>：包含在 from 子句中子查询(也称为派生表)</li>
+<li>UNCACHEABLE SUBQUERY：满足是子查询中的第一个 select 语句，同时意味着 select 中的某些特性阻止结果被缓存于一个 Item_cache 中</li>
+<li>UNCACHEABLE UNION：满足此查询是 UNION 中的第二个或者随后的查询，同时意味着 select 中的某些特性阻止结果被缓存于一个 Item_cache 中</li>
+</ul>
+</li>
+<li><p><strong>table</strong></p>
+<blockquote>
+<p>该列显示了对应行正在访问哪个表(有别名就显示别名)。当 from 子句中有子查询时，table 列是 <derivenN>格式，表示当前查询依赖 id=N 的查询，于是先执行 id=N 的查询）</p>
+</blockquote>
+</li>
+<li><p><strong>partitions</strong></p>
+</li>
+<li><p>**type</p>
+<blockquote>
+<p>称为<strong>关联类型</strong>或者<strong>访问类型</strong>，它指明了 MySQL 决定如何查找表中符合条件的行，同时<strong>是我们判断查询是否高效的重要依据</strong>。</p>
+</blockquote>
+<ul>
+<li>ALL：全表扫描</li>
+<li>index：全索引扫描。index 与 ALL 区别为 index 类型只遍历索引树</li>
+<li>range：范围扫描</li>
+<li>ref：一种索引访问，也称索引查找，它返回所有匹配某个单个值的行。针对于非唯一或非主键索引</li>
+<li>eq_ref：唯一性索引或主键查找时会出现该值，非常高效。</li>
+<li>const、system：该表至多有一个匹配行，在查询开始时读取，或者该表是系统表，只有一行匹配。其中 const 用于在和 primary key 或 unique 索引中有固定值比较的情形。</li>
+<li>NULL：在执行阶段不需要访问表。</li>
+</ul>
+</li>
+</ul>
+<p><em>从上至下，性能越来越好。</em></p>
+<ul>
+<li><p><strong>possible_keys</strong><br>这一列显示查询可能使用哪些索引来查找</p>
+</li>
+<li><p><strong>key</strong></p>
+<blockquote>
+<p>显示 MySQL 在查询中实际使用的索引，若没有使用索引，显示为 NULL</p>
+</blockquote>
+</li>
+<li><p><strong>key_len</strong></p>
+</li>
+<li><p><strong>ref</strong></p>
+</li>
+<li><p><strong>rows</strong></p>
+<blockquote>
+<p>这一列显示了<strong>估计</strong>要找到所需的行而要读取的行数，这个值是个估计值，原则上值越小越好。</p>
+</blockquote>
+</li>
+<li><p><strong>filtered</strong></p>
+<blockquote>
+<p>表示返回结果的行数占需要读取行数的百分比，值越大越好，filtered 列的值依赖统计信息，并不十分准确</p>
+</blockquote>
+</li>
+<li><p><strong>Extra</strong></p>
+<blockquote>
+<p>包含不适合在其他列中显示但十分重要的额外信息</p>
+</blockquote>
+<ul>
+<li>Using index：使用覆盖索引，表示查询索引就可查到所需数据，不用扫描表数据文件，往往说明性能不错。</li>
+<li>Using Where：在存储引擎检索行后再进行过滤，使用了 where 从句来限制哪些行将与下一张表匹配或者是返回给用户。</li>
+<li>Using temporary：在查询结果排序时会使用一个临时表，一般出现于排序、分组和多表 join 的情况，查询效率不高，建议优化。</li>
+<li>Using filesort：对结果使用一个外部索引排序，而不是按索引次序从表里读取行，一般有出现该值，都建议优化去掉，因为这样的查询 CPU 资源消耗大。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="2-索引数据结构"><a href="#2-索引数据结构" class="headerlink" title="2.索引数据结构"></a>2.索引数据结构</h1><h2 id="2-1B-Tree"><a href="#2-1B-Tree" class="headerlink" title="2.1B+ Tree"></a>2.1B+ Tree</h2><h2 id="2-2Hash"><a href="#2-2Hash" class="headerlink" title="2.2Hash"></a>2.2Hash</h2><ul>
+<li>优势<ul>
+<li>hash 索引只包含<strong>hash 值</strong>和<strong>行指针</strong>，使索引结构紧凑，查询快。</li>
+</ul>
+</li>
+<li>劣势<ul>
+<li>hash 索引数据未按索引值顺序存储，无法用于排序</li>
+<li>不支持部分索引列匹配查找，{A,B}上建索引，查询 A 时无法使用该索引</li>
+<li>只支持等值查找，不支持范围查找</li>
+<li>hash 冲突导致查询慢，维护代价高</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="3-索引的存储方式"><a href="#3-索引的存储方式" class="headerlink" title="3.索引的存储方式"></a>3.索引的存储方式</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fo0kfhSBLR45fVcXdA9xU_CDAIvD.png"></p>
+<ul>
+<li>InnoDB<ul>
+<li>二级索引<ul>
+<li>非叶子节点<ul>
+<li>保存<strong>索引</strong>信息</li>
+</ul>
+</li>
+<li>叶子节点<ul>
+<li>保存数据的<strong>主键值</strong>（若非聚集索引，需要回表查询）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>聚集索引（实际数据存储在此）<ul>
+<li>非叶子节点<ul>
+<li>保存<strong>索引</strong>信息</li>
+</ul>
+</li>
+<li>叶子节点<ul>
+<li>保存<strong>实际数据</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MyISAM<ul>
+<li>二级索引<ul>
+<li>非叶子节点<ul>
+<li>保存<strong>索引</strong>信息</li>
+</ul>
+</li>
+<li>叶子节点<ul>
+<li>保存数据的<strong>物理地址</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实际数据按插入顺序存储在磁盘上（非树形结构）</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-1-聚簇索引"><a href="#3-1-聚簇索引" class="headerlink" title="3.1 聚簇索引"></a>3.1 聚簇索引</h2><blockquote>
+<p>索引的叶子节点就是对应的数据节点（MySQL 的 MyISAM 除外）</p>
+</blockquote>
+<p>InnoDB 将通过<strong>主键</strong>聚集数据，若未定义主键，InnoDB 会选择一个<strong>唯一的非空索引</strong>代替，若无唯一的非空索引，InnoDB 会<strong>隐式定义一个主键</strong>来作为聚簇索引。</p>
+<ul>
+<li>优势<ul>
+<li>可以把相关数据保存在一起，只需要从磁盘读取少量的数据页就能获取全部信息，减少磁盘 I/O。</li>
+<li>数据访问更快。聚簇索引把索引和数据保存在同一个树中，因此从聚簇索引中获取数据通常比非聚簇索引要快</li>
+</ul>
+</li>
+<li>劣势<ul>
+<li>更新索引代价高。<ul>
+<li>InnoDB 会将每个被更新的行移动到新的位置</li>
+<li>页分裂。当行的主键值要求必须将这一行数据插入到某个已满的页中时，存储引擎会将该页分裂成两个页面来容纳改行，这就是一次页分裂操作。页分裂会导致表占用更多的磁盘空间。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-2-二级索引（非聚集索引）"><a href="#3-2-二级索引（非聚集索引）" class="headerlink" title="3.2 二级索引（非聚集索引）"></a>3.2 二级索引（非聚集索引）</h2><blockquote>
+<p>InnoDB 中二级索引的叶子节点包含了引用行的主键值（不是行指针，没有指向行的物理地址）。<br>若保存的是行指针，那么更新聚集索引后，会更新数据到新的位置，那么也要维护二级索引的叶子节点。若保存的是主键，则可以减少对二级索引的影响</p>
+</blockquote>
+<ul>
+<li>优势<ul>
+<li>当聚簇索引中出现行移动或页分列时，减少二级索引的维护工作</li>
+</ul>
+</li>
+<li>劣势<ul>
+<li>二级索引（非聚集索引）可能比想象的要大，因为在叶子节点包含了引用行的主键值。</li>
+<li>若非覆盖索引，需进行回表查询。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-3-覆盖索引"><a href="#3-3-覆盖索引" class="headerlink" title="3.3 覆盖索引"></a>3.3 覆盖索引</h2><blockquote>
+<p>一个索引覆盖所有需要查询的字段值,我们称之为“覆盖索引”。</p>
+</blockquote>
+<p>可以直接使用索引来获取列数据，而无需回表查询。</p>
+<p>当发起一个索引覆盖查询时，在 Extra 列可以看到“Using index”。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvzncHHxHD3gxljXyR26CXpXx25P.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1416,19 +1550,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>

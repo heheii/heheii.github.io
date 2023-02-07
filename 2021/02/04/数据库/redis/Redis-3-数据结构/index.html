@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="0 概述 键对象都是字符串 value 对象更复杂些， 主要包含 5 种基本数据类型： 字符串 列表 哈希 集合 有序集合 其他数据类型都是建立在这 5 种数据结构之上实现的， 如： Bitmaps 和 HyperLogLog 使用字符串实现 GEO 使用有序集合实现等       1 五种基本数据结构 1.1 String1.1.1 SDS 数据结构 类似 java 的ArrayList   R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis-数据结构">
+<meta property="og:url" content="http://example.com/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="0 概述 键对象都是字符串 value 对象更复杂些， 主要包含 5 种基本数据类型： 字符串 列表 哈希 集合 有序集合 其他数据类型都是建立在这 5 种数据结构之上实现的， 如： Bitmaps 和 HyperLogLog 使用字符串实现 GEO 使用有序集合实现等       1 五种基本数据结构 1.1 String1.1.1 SDS 数据结构 类似 java 的ArrayList   R">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhtAfmZnk8SAHaZmtateCZJYu-Vz.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fqb7VIsI1QxCLiH0I5Odq5BiLjta.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoJBk_azdL1YX1ra1kcyxArjDfX9.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsK9C0daGl6AiK5xefHL39KZG9YD.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkP1gb9ASQpEvNACPBeOpenIAW9v.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgFIp9z1o0dbyry_XX_GzPUR9dC5.svg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqJu6UdfE4e1BOBtlhK2qpqptEYS.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmcsD9Knkev4SkTVgRlQbWnZt4Dh.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fq1lfZdZCnUQBDGNnBbToLRwghib.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fj7N3RTAhHdBTngN2KCVeHGFQ893.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtQyGD5Wt1y7_GP7gF6k5llRjVHO.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvDNDM0nhjvvMPr4DK_KZXxMo3Zi.jpeg">
+<meta property="article:published_time" content="2021-02-04T08:23:55.000Z">
+<meta property="article:modified_time" content="2023-02-07T16:37:36.086Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhtAfmZnk8SAHaZmtateCZJYu-Vz.png">
+
+<link rel="canonical" href="http://example.com/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Redis-数据结构 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Redis-数据结构
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-04 16:23:55" itemprop="dateCreated datePublished" datetime="2021-02-04T16:23:55+08:00">2021-02-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:37:36" itemprop="dateModified" datetime="2023-02-08T00:37:36+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="0-概述"><a href="#0-概述" class="headerlink" title="0 概述"></a>0 概述</h1><ul>
+<li>键对象都是字符串</li>
+<li>value 对象更复杂些， 主要包含 5 种基本数据类型：<ul>
+<li>字符串</li>
+<li>列表</li>
+<li>哈希</li>
+<li>集合</li>
+<li>有序集合</li>
+<li>其他数据类型都是建立在这 5 种数据结构之上实现的， 如：<ul>
+<li>Bitmaps 和 HyperLogLog 使用字符串实现</li>
+<li>GEO 使用有序集合实现等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="1-五种基本数据结构"><a href="#1-五种基本数据结构" class="headerlink" title="1 五种基本数据结构"></a>1 五种基本数据结构</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhtAfmZnk8SAHaZmtateCZJYu-Vz.png"></p>
+<h2 id="1-1-String"><a href="#1-1-String" class="headerlink" title="1.1 String"></a>1.1 String</h2><h3 id="1-1-1-SDS-数据结构"><a href="#1-1-1-SDS-数据结构" class="headerlink" title="1.1.1 SDS 数据结构"></a>1.1.1 SDS 数据结构</h3><blockquote>
+<p>类似 java 的<strong>ArrayList</strong></p>
+</blockquote>
+<ul>
+<li>Redis 没有直接使用 C 中的 String，自己定义了 SDS （_Simple Dynamic String_）数据结构存储字符串</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">char</span> *sds;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr5</span> &#123;</span>     <span class="comment">// 对应的字符串长度小于 1&lt;&lt;5</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 3 lsb of type, and 5 msb of string length */</span></span><br><span class="line">    <span class="type">char</span> buf[];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr8</span> &#123;</span>     <span class="comment">// 对应的字符串长度小于 1&lt;&lt;8</span></span><br><span class="line">    <span class="type">uint8_t</span> len; <span class="comment">/* used */</span>                       <span class="comment">//目前字符串的长度</span></span><br><span class="line">    <span class="type">uint8_t</span> alloc;                                <span class="comment">//已分配大小</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags;                          <span class="comment">//flag用3bit来标明类型，其余5bit目前没有使用</span></span><br><span class="line">    <span class="type">char</span> buf[];                                   <span class="comment">//柔性数组，以&#x27;\0&#x27;结尾</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr16</span> &#123;</span>    <span class="comment">// 对应的字符串长度小于 1&lt;&lt;16</span></span><br><span class="line">    <span class="type">uint16_t</span> len; <span class="comment">/* used */</span></span><br><span class="line">    <span class="type">uint16_t</span> alloc; <span class="comment">/* excluding the header and null terminator */</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 3 lsb of type, 5 unused bits */</span></span><br><span class="line">    <span class="type">char</span> buf[];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr32</span> &#123;</span>    <span class="comment">// 对应的字符串长度小于 1&lt;&lt;32</span></span><br><span class="line">    <span class="type">uint32_t</span> len; <span class="comment">/* used */</span></span><br><span class="line">    <span class="type">uint32_t</span> alloc; <span class="comment">/* excluding the header and null terminator */</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 3 lsb of type, 5 unused bits */</span></span><br><span class="line">    <span class="type">char</span> buf[];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr64</span> &#123;</span>    <span class="comment">// 对应的字符串长度小于 1&lt;&lt;64</span></span><br><span class="line">    <span class="type">uint64_t</span> len; <span class="comment">/* used */</span></span><br><span class="line">    <span class="type">uint64_t</span> alloc; <span class="comment">/* excluding the header and null terminator */</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 3 lsb of type, 5 unused bits */</span></span><br><span class="line">    <span class="type">char</span> buf[];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-1-2-对比"><a href="#1-1-2-对比" class="headerlink" title="1.1.2 对比"></a>1.1.2 对比</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>C 语言的 String</th>
+<th>SDS <strong>（</strong><em>Simple Dynamic String</em><strong>）</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>效率</td>
+<td>获取字符串长度时间复杂度</td>
+<td>** O(N)**</td>
+<td>O(1）</td>
+<td>因为 C 不保存数组的长度，每次都需要遍历一遍整个数组；</td>
+</tr>
+<tr>
+<td></td>
+<td>空间预分配</td>
+<td>-</td>
+<td>✔</td>
+<td>修改 SDS 扩充长度时，会预分配额外的空间</td>
+</tr>
+<tr>
+<td></td>
+<td>惰性空间释放</td>
+<td>-</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>安全性</td>
+<td><strong>杜绝缓冲区溢出/内存泄漏</strong></td>
+<td>-</td>
+<td>✔</td>
+<td>String 执行拼接/截断操作，如果操作不当（忘记重新分配内存）就很容易造成问题，SDS 则会自动扩容/释放空间；</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>二进制安全</td>
+<td>-</td>
+<td>✔</td>
+<td>C 语言中的字符串中间出现的 <code>&#39;\\0&#39;</code>就认为到了末尾，所以不能保存图片，视频等二进制文件</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="1-2-Hash"><a href="#1-2-Hash" class="headerlink" title="1.2 Hash"></a>1.2 Hash</h2><blockquote>
+<ul>
+<li>与 java 的 HashMap 类似<ul>
+<li>数组+链表</li>
+<li>链地址法解决 hash 冲突</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 哈希表节点 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dictEntry</span> &#123;</span></span><br><span class="line">    <span class="comment">// 键</span></span><br><span class="line">    <span class="type">void</span> *key;</span><br><span class="line">    <span class="comment">// 值</span></span><br><span class="line">    <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">        <span class="type">void</span> *val;</span><br><span class="line">        <span class="type">uint64_t</span> u64;</span><br><span class="line">        <span class="type">int64_t</span> s64;</span><br><span class="line">    &#125; v;</span><br><span class="line">    <span class="comment">// 指向下个哈希表节点，形成链表</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dictEntry</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; dictEntry;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* This is our hash table structure. Every dictionary has two of this as we implement incremental rehashing, for the old to the new table.</span></span><br><span class="line"><span class="comment"> * 哈希表</span></span><br><span class="line"><span class="comment"> * 每个字典都使用两个哈希表，以实现渐进式 rehash 。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dictht</span> &#123;</span></span><br><span class="line">    <span class="comment">// 哈希表数组(一个哈希表数组，数组的每个项是entry链表的头结点)</span></span><br><span class="line">    dictEntry **table;</span><br><span class="line">    <span class="comment">// 哈希表大小</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> size;</span><br><span class="line">    <span class="comment">// 哈希表大小掩码，用于计算索引值</span></span><br><span class="line">    <span class="comment">// 总是等于 size - 1</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> sizemask;</span><br><span class="line">    <span class="comment">// 该哈希表已有节点的数量</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> used;</span><br><span class="line">&#125; dictht;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 字典 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dict</span> &#123;</span></span><br><span class="line">    <span class="comment">// 类型特定函数</span></span><br><span class="line">    dictType *type;</span><br><span class="line">    <span class="comment">// 私有数据</span></span><br><span class="line">    <span class="type">void</span> *privdata;</span><br><span class="line">    <span class="comment">// 哈希表</span></span><br><span class="line">    dictht ht[<span class="number">2</span>];</span><br><span class="line">    <span class="comment">// rehash 索引(当 rehash 不在进行时，值为 -1)</span></span><br><span class="line">    <span class="type">int</span> rehashidx; <span class="comment">/* rehashing not in progress if rehashidx == -1 */</span></span><br><span class="line">    <span class="comment">// 目前正在运行的安全迭代器的数量</span></span><br><span class="line">    <span class="type">int</span> iterators; <span class="comment">/* number of iterators currently running */</span></span><br><span class="line">&#125; dict;</span><br></pre></td></tr></table></figure>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fqb7VIsI1QxCLiH0I5Odq5BiLjta.png"></h3><h3 id="1-2-1-渐进式-Rehash"><a href="#1-2-1-渐进式-Rehash" class="headerlink" title="1.2.1 渐进式 Rehash"></a>1.2.1 渐进式 Rehash</h3><ul>
+<li><strong>目的：</strong><ul>
+<li>保证数据量大时<strong>不会阻塞其他操作</strong></li>
+<li>rehash 是以<strong>bucket</strong>(桶,哈希表数组中的一条 entry 链表)为基本单位进行渐进式的数据迁移的，从 ht[0]中迁移至 ht[1]，每步完成一个 bucket 的迁移，直至所有数据迁移完毕</li>
+</ul>
+</li>
+<li><strong>步骤</strong><ol>
+<li> 在执行添加，删除，查找操作时，执行一次 dictRehash(dict,1)，迁移一个 bucket 数据</li>
+<li> 为 ht[1] 分配空间，让字典同时拥有 ht[0] 和 ht[1] 两个哈希表。</li>
+<li> 字典中维护一个 rehashidx，并将它置为 0，表示 Rehash 开始。</li>
+<li> 在 Rehash 期间，每次对字典操作时，程序还顺便将 ht[0] 在 rehashidx 索引上 bucket rehash 到 ht[1] 中（_ Move all the keys in this _<strong>_bucket _</strong>_from the old to the new hash HT_）</li>
+<li> rehashidx++</li>
+</ol>
+</li>
+<li><strong>在 rehash 期间其他操作</strong><ul>
+<li>查询：会先查 ht[0] ，若无，再查 ht[1]</li>
+<li>插入：直接插入 ht[1]，保证 ht[0] 中数据只减不增</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="1-3-List"><a href="#1-3-List" class="headerlink" title="1.3 List"></a>1.3 List</h2><blockquote>
+<ul>
+<li>类似 java 的<strong>LinkedList</strong><ul>
+<li><strong>双向链表</strong></li>
+<li><strong>插入删除快</strong></li>
+<li><strong>查询慢</strong></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">listNode</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">listNode</span> *<span class="title">prev</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">listNode</span> *<span class="title">next</span>;</span></span><br><span class="line">    <span class="type">void</span> *value;</span><br><span class="line">&#125; listNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">listIter</span> &#123;</span></span><br><span class="line">    listNode *next;</span><br><span class="line">    <span class="type">int</span> direction;</span><br><span class="line">&#125; listIter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">list</span> &#123;</span></span><br><span class="line">    listNode *head;</span><br><span class="line">    listNode *tail;</span><br><span class="line">    <span class="type">void</span> *(*dup)(<span class="type">void</span> *ptr);</span><br><span class="line">    <span class="type">void</span> (*<span class="built_in">free</span>)(<span class="type">void</span> *ptr);</span><br><span class="line">    <span class="type">int</span> (*match)(<span class="type">void</span> *ptr, <span class="type">void</span> *key);</span><br><span class="line">    unsignedlong len;</span><br><span class="line">&#125; <span class="built_in">list</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoJBk_azdL1YX1ra1kcyxArjDfX9.png"></p>
+<hr>
+<h2 id="1-4-Set"><a href="#1-4-Set" class="headerlink" title="1.4 Set"></a>1.4 Set</h2><blockquote>
+<p>类似 java 的 HashSet</p>
+</blockquote>
+<ul>
+<li>特点<ul>
+<li>无序</li>
+<li>不重复</li>
+</ul>
+</li>
+<li>应用场景<ul>
+<li>随机事件<ul>
+<li>抽奖</li>
+<li>验证码</li>
+<li>好友推荐（取集合交集）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-1-intset"><a href="#1-4-1-intset" class="headerlink" title="1.4.1 intset"></a>1.4.1 intset</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 集合对象保存的所有元素都是整数值 &amp;&amp; 集合对象保存的元素数量不超过512个</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">intset</span> &#123;</span></span><br><span class="line">    <span class="comment">// 编码方式</span></span><br><span class="line">    <span class="type">uint32_t</span> encoding;</span><br><span class="line">    <span class="comment">// 集合包含的元素数量</span></span><br><span class="line">    <span class="type">uint32_t</span> length;</span><br><span class="line">    <span class="comment">// 保存元素的数组</span></span><br><span class="line">    <span class="type">int8_t</span> contents[];</span><br><span class="line">&#125; intset;</span><br><span class="line"><span class="comment">//------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">// 不符合以上情况，则使用hashtable, 字典中所有的 value 都是NULL。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsK9C0daGl6AiK5xefHL39KZG9YD.png"></p>
+<h3 id="1-4-2-hashtable"><a href="#1-4-2-hashtable" class="headerlink" title="1.4.2 hashtable"></a>1.4.2 hashtable</h3><p>集合对象保存的所有元素都是整数值 &amp;&amp; 集合对象保存的元素数量不超过 512 个，这时候使用 intset，<br>不然就使用 hashtable, 字典中所有的 value 都是 NULL。这时候 set 就是 value 为 NULL 的特使字典。</p>
+<hr>
+<h2 id="1-5-zset"><a href="#1-5-zset" class="headerlink" title="1.5 zset"></a>1.5 zset</h2><ul>
+<li>底层数据结构（超过阈值（可自己设置），数据结构变成 ziplist）</li>
+</ul>
+<h3 id="1-5-1-跳表-skiplist"><a href="#1-5-1-跳表-skiplist" class="headerlink" title="1.5.1 跳表 skiplist"></a>1.5.1 跳表 skiplist</h3><ul>
+<li>（近似折半查找）有序链表改造成支持折半查找的数据结构（方便查找及插入删除）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkP1gb9ASQpEvNACPBeOpenIAW9v.png"></p>
+<h3 id="1-5-2-压缩列表-ziplist"><a href="#1-5-2-压缩列表-ziplist" class="headerlink" title="1.5.2 压缩列表 ziplist"></a>1.5.2 压缩列表 ziplist</h3><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgFIp9z1o0dbyry_XX_GzPUR9dC5.svg"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqJu6UdfE4e1BOBtlhK2qpqptEYS.png"></p>
+<ul>
+<li>zlbytes 为 0x50(十进制 80),表示压缩列表的总长度为 80 字节。</li>
+<li>zltail 为 0x3c(十进制 60),尾节点偏移量 60</li>
+<li>zlen 为 0x3(十进制 3),表示压缩列表包含三个节点</li>
+<li>entry：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmcsD9Knkev4SkTVgRlQbWnZt4Dh.png"></p>
+<ul>
+<li>previous_entry_length 属性以字节为单位,记录了压缩列表中前一个节点的长度。</li>
+<li>encoding 属性记录了节点的 content 属性所保存数据的类型以及长度。</li>
+<li>content 属性负责保存节点的值，节点值可以是一个字节数组或者整数，值的类型和长度由节点的 encoding 属性决定</li>
+</ul>
+<hr>
+<h1 id="2-其他数据类型"><a href="#2-其他数据类型" class="headerlink" title="2 其他数据类型"></a>2 其他数据类型</h1><h2 id="2-1-HyperLogLog"><a href="#2-1-HyperLogLog" class="headerlink" title="2.1 HyperLogLog"></a>2.1 HyperLogLog</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://content.research.neustar.biz/blog/hll.html">http://content.research.neustar.biz/blog/hll.html</a></p>
+</blockquote>
+<ul>
+<li>特点<ul>
+<li>无法保证高精度</li>
+<li>节省空间（初始状态的稀疏存储 HyperLogLog 只需 2 字节，密集存储结构为 12KB）</li>
+</ul>
+</li>
+<li>适合场景<ul>
+<li>适合对精度要求不高的大量统计需求</li>
+</ul>
+</li>
+<li>做法<ul>
+<li>HyperLogLog 的基本思想是利用集合中数字的比特串第一个 1 出现位置的最大值来预估整体基数，但是这种预估方法存在较大误差，为了改善误差情况，HyperLogLog 中引入分桶平均的概念，计算 16384 个桶的调和平均数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-1-1-存储过程"><a href="#2-1-1-存储过程" class="headerlink" title="2.1.1 存储过程"></a>2.1.1 存储过程</h3><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fq1lfZdZCnUQBDGNnBbToLRwghib.png"></p>
+<h3 id="2-1-2-存储结构"><a href="#2-1-2-存储结构" class="headerlink" title="2.1.2 存储结构"></a>2.1.2 存储结构</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?type=content&q=redis%20HyperLogLog">https://www.zhihu.com/search?type=content&amp;q=redis%20HyperLogLog</a></p>
+</blockquote>
+<ul>
+<li>数据结构</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">hllhdr</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> magic[<span class="number">4</span>]; <span class="comment">/* 魔法值 &quot;HYLL&quot; */</span></span><br><span class="line">    <span class="type">uint8_t</span> encoding; <span class="comment">/* 密集结构或者稀疏结构 HLL_DENSE or HLL_SPARSE. */</span></span><br><span class="line">    <span class="type">uint8_t</span> notused[<span class="number">3</span>]; <span class="comment">/* 保留位, 全为0. */</span></span><br><span class="line">    <span class="type">uint8_t</span> card[<span class="number">8</span>]; <span class="comment">/* 基数大小的缓存 */</span></span><br><span class="line">    <span class="type">uint8_t</span> registers[]; <span class="comment">/* 数据字节数组 */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>HLL_DENSE 密集存储结构<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fj7N3RTAhHdBTngN2KCVeHGFQ893.png"></li>
+</ul>
+</li>
+<li>HLL_SPARSE 稀疏存储结构<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtQyGD5Wt1y7_GP7gF6k5llRjVHO.png"></li>
+<li>ZERO : 一字节，表示连续多少个桶计数为 0，前两位为标志 00，后 6 位表示有多少个桶，最大为 64。</li>
+<li>XZERO : 两个字节，表示连续多少个桶计数为 0，前两位为标志 01，后 14 位表示有多少个桶，最大为 16384。</li>
+<li>VAL : 一字节，表示连续多少个桶的计数为多少，前一位为标志 1，四位表示连桶内计数，所以最大表示桶的计数为 32。后两位表示连续多少个桶。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-2-BitMap"><a href="#2-2-BitMap" class="headerlink" title="2.2 BitMap"></a>2.2 BitMap</h2><ul>
+<li>bitmap 并不是一种真实的数据结构，它本质上是<strong>String 数据结构</strong>，只不过操作的<strong>粒度</strong>变成了<strong>位（bit）</strong></li>
+<li>bitmap 就是通过最小的单位 bit 来进行 0 或者 1 的设置，表示某个元素对应的值或者状态。</li>
+<li>bitmap 最多可以存储 2^32 个 bit（String 类型最大长度为 512MB）</li>
+</ul>
+<h3 id="2-2-1-应用场景-BloomFilter"><a href="#2-2-1-应用场景-BloomFilter" class="headerlink" title="2.2.1 应用场景-BloomFilter"></a>2.2.1 应用场景-BloomFilter</h3><p>这个就是 Redis 实现的 BloomFilter，BloomFilter 非常简单，如下图所示，假设已经有 3 个元素 a、b 和 c，分别通过 3 个 hash 算法 h1()、h2()和 h2()计算然后对一个 bit 进行赋值，接下来假设需要判断 d 是否已经存在，那么也需要使用 3 个 hash 算法 h1()、h2()和 h2()对 d 进行计算，然后得到 3 个 bit 的值，恰好这 3 个 bit 的值为 1，这就能够说明：<strong>d 可能存在集合中</strong>。再判断 e，由于 h1(e)算出来的 bit 之前的值是 0，那么说明：<strong>e 一定不存在集合中</strong>：<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvDNDM0nhjvvMPr4DK_KZXxMo3Zi.jpeg"></p>
+<hr>
+<h2 id="2-3-GEO"><a href="#2-3-GEO" class="headerlink" title="2.3 GEO"></a>2.3 GEO</h2><hr>
+<h2 id="2-4-Streams"><a href="#2-4-Streams" class="headerlink" title="2.4 Streams"></a>2.4 Streams</h2><p>Redis5.0 引入的全新数据结构<br>用一句话概括 Streams 就是 Redis 实现的<strong>内存版 kafka</strong>。<br>Stream 的消费模型借鉴了 kafka 的**Consumer Groups(<strong>消费分组</strong>)**的概念，它弥补了 Redis Pub/Sub 不能持久化消息的缺陷。<br>但是它又不同于 kafka，kafka 的消息可以分 partition，而 Stream 不行。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" rel="prev" title="Spring事务管理">
+      <i class="fa fa-chevron-left"></i> Spring事务管理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="next" title="Redis-常见问题">
+      Redis-常见问题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">0 概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%BA%94%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">1 五种基本数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-String"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-SDS-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.1.1 SDS 数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-%E5%AF%B9%E6%AF%94"><span class="nav-number">2.1.2.</span> <span class="nav-text">1.1.2 对比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Hash"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 Hash</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.2.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E6%B8%90%E8%BF%9B%E5%BC%8F-Rehash"><span class="nav-number">2.2.2.</span> <span class="nav-text">1.2.1 渐进式 Rehash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-List"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Set"><span class="nav-number">2.4.</span> <span class="nav-text">1.4 Set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-intset"><span class="nav-number">2.4.1.</span> <span class="nav-text">1.4.1 intset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-hashtable"><span class="nav-number">2.4.2.</span> <span class="nav-text">1.4.2 hashtable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-zset"><span class="nav-number">2.5.</span> <span class="nav-text">1.5 zset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-%E8%B7%B3%E8%A1%A8-skiplist"><span class="nav-number">2.5.1.</span> <span class="nav-text">1.5.1 跳表 skiplist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-2-%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8-ziplist"><span class="nav-number">2.5.2.</span> <span class="nav-text">1.5.2 压缩列表 ziplist</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">2 其他数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-HyperLogLog"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 HyperLogLog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">3.1.1.</span> <span class="nav-text">2.1.1 存储过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.1.2 存储结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-BitMap"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 BitMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-BloomFilter"><span class="nav-number">3.2.1.</span> <span class="nav-text">2.2.1 应用场景-BloomFilter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-GEO"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 GEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Streams"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 Streams</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

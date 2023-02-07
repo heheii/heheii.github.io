@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="MySQL 基本架构： 1.连接器负责跟客户端建立链接、获取权限、维持和管理连接。链接的时候会经过 TCP 握手，然后身份验证，然后我们输入用户名密码就好了。验证 ok 后，我们就连上了这个 MySQL 服务了，但是这个时候我们处于空闲状态。我们数据库的客户端太久没响应，连接器就会自动断开了，这个时间参数是 wait_timeout 控制住的，默认时长为 8 小时。  2.查询缓存查询的时候会拿着">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL-基本架构">
+<meta property="og:url" content="http://example.com/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MySQL 基本架构： 1.连接器负责跟客户端建立链接、获取权限、维持和管理连接。链接的时候会经过 TCP 握手，然后身份验证，然后我们输入用户名密码就好了。验证 ok 后，我们就连上了这个 MySQL 服务了，但是这个时候我们处于空闲状态。我们数据库的客户端太久没响应，连接器就会自动断开了，这个时间参数是 wait_timeout 控制住的，默认时长为 8 小时。  2.查询缓存查询的时候会拿着">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkyNUFlO8-sTmdMHSTKgFCaVEPqt.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmhURtJZd4vP8NqsP7uPi5bVfc28.png">
+<meta property="article:published_time" content="2020-08-27T08:56:26.000Z">
+<meta property="article:modified_time" content="2023-02-07T16:34:32.245Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkyNUFlO8-sTmdMHSTKgFCaVEPqt.webp">
+
+<link rel="canonical" href="http://example.com/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>MySQL-基本架构 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MySQL-基本架构
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-27 16:56:26" itemprop="dateCreated datePublished" datetime="2020-08-27T16:56:26+08:00">2020-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:34:32" itemprop="dateModified" datetime="2023-02-08T00:34:32+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>MySQL 基本架构：<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkyNUFlO8-sTmdMHSTKgFCaVEPqt.webp"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmhURtJZd4vP8NqsP7uPi5bVfc28.png"></p>
+<h1 id="1-连接器"><a href="#1-连接器" class="headerlink" title="1.连接器"></a>1.连接器</h1><p>负责跟客户端<strong>建立链接</strong>、<strong>获取权限</strong>、<strong>维持和管理连接</strong>。<br>链接的时候会经过 TCP 握手，然后身份验证，然后我们输入用户名密码就好了。验证 ok 后，我们就连上了这个 MySQL 服务了，但是这个时候我们处于空闲状态。<br>我们数据库的客户端太久没响应，连接器就会自动断开了，这个时间参数是 wait_timeout 控制住的，默认时长为 8 小时。</p>
+<hr>
+<h1 id="2-查询缓存"><a href="#2-查询缓存" class="headerlink" title="2.查询缓存"></a><del>2.查询缓存</del></h1><p>查询的时候会拿着语句先去缓存中查询（通过一个对大小写敏感的<strong>hash 查找</strong>实现），如果能够命中就返回缓存的 value，如果不命中就执行后面的阶段。同一条语句在 MySQL 执行两次，第一次和后面的时间是不一样的，后者明显快一些，这就是因为缓存的存在。<br>跟 Redis 一样，只要是之前执行过的语句，都会在内存里面用 key-value 形式存储。</p>
+<p><strong>缓存弊大于利：</strong><br>缓存的失效很容易，只要对表有任何的更新，这个表的所有查询缓存就会全部被清空，导致查询的命中率很低。<br>只有那种只查询不更新的表适用缓存，但是这样的表往往很少存在，一般都是什么配置表之类的。</p>
+<p><strong>缓存在 MySQL8.0 之后就取消了。</strong></p>
+<hr>
+<h1 id="3-分析器"><a href="#3-分析器" class="headerlink" title="3.分析器"></a>3.分析器</h1><ul>
+<li><strong>词法分析</strong></li>
+</ul>
+<p>识别每个字符串所代表的是什么，是关键字，表名，还是列名等等。</p>
+<ul>
+<li><strong>语法分析</strong></li>
+</ul>
+<p>根据词法分析的结果，语法分析会判断 sql 的对错，错了会提醒你，并且会提示哪里错了。</p>
+<hr>
+<h1 id="4-优化器"><a href="#4-优化器" class="headerlink" title="4.优化器"></a>4.优化器</h1><p>优化器在评估成本的时候并不考虑任何层面的缓存。</p>
+<h2 id="4-1-如何优化"><a href="#4-1-如何优化" class="headerlink" title="4.1 如何优化"></a>4.1 如何优化</h2><ul>
+<li><strong>确认使用哪个索引：</strong></li>
+</ul>
+<p>因为我们建立表可能会建立很多索引，优化有一步就是要确认使用哪个索引，比如使用你的主键索引，联合索引还是什么索引更好。<br><strong>优化过程</strong>大致如下：<br>1、根据搜索条件，找出所有可能使用的索引<br>2、计算全表扫描的代价<br>3、计算使用不同索引执行查询的代价<br>4、对比各种执行方案的代价，找出成本最低的那一个</p>
+<ul>
+<li><strong>对执行顺序进行优化</strong></li>
+</ul>
+<p>条件那么多，先查哪个表，还是先关联，会出现很多方案，最后由优化器决定选用哪种方案。</p>
+<h2 id="4-2-优化器错误选择执行计划原因"><a href="#4-2-优化器错误选择执行计划原因" class="headerlink" title="4.2 优化器错误选择执行计划原因"></a>4.2 优化器错误选择执行计划原因</h2><ul>
+<li>统计信息不准确。MySQL 依赖存储引擎提供的统计信息来评估成本，有的存储引擎提供的信息可能偏差较大。比如 InnoDB 因为 MVCC 不能维护一个数据表行数的精确统计信息。</li>
+<li>优化器在评估成本的时候并不考虑任何层面的缓存。</li>
+<li>MySQL 不考虑并发执行的查询</li>
+<li>优化器有时无法估算所有可能的执行计划。</li>
+</ul>
+<hr>
+<h1 id="5-执行器"><a href="#5-执行器" class="headerlink" title="5.执行器"></a>5.执行器</h1><p>MySQL 根据执行计划给出的指令逐步执行。<br><strong>explain</strong>可以看到执行计划</p>
+<hr>
+<h1 id="6-存储引擎"><a href="#6-存储引擎" class="headerlink" title="6.存储引擎"></a>6.存储引擎</h1><p>存储引擎负责 MySQL 中数据的存储和提取</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/String/" rel="prev" title="String">
+      <i class="fa fa-chevron-left"></i> String
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E7%B4%A2%E5%BC%95/" rel="next" title="MySQL-索引">
+      MySQL-索引 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%BF%9E%E6%8E%A5%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">1.连接器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%9F%A5%E8%AF%A2%E7%BC%93%E5%AD%98"><span class="nav-number">2.</span> <span class="nav-text">2.查询缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%88%86%E6%9E%90%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">3.分析器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E4%BC%98%E5%8C%96%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">4.优化器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 如何优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E4%BC%98%E5%8C%96%E5%99%A8%E9%94%99%E8%AF%AF%E9%80%89%E6%8B%A9%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92%E5%8E%9F%E5%9B%A0"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 优化器错误选择执行计划原因</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E6%89%A7%E8%A1%8C%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">5.执行器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-number">6.</span> <span class="nav-text">6.存储引擎</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

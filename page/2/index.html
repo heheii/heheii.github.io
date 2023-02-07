@@ -145,201 +145,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/yuque/%E7%AE%80%E4%BB%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/06/yuque/%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">简介</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-06-06 14:32:59" itemprop="dateCreated datePublished" datetime="2022-06-06T14:32:59+08:00">2022-06-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:27:57" itemprop="dateModified" datetime="2023-02-07T21:27:57+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="主要解决问题："><a href="#主要解决问题：" class="headerlink" title="主要解决问题："></a>主要解决问题：</h1><p>海量的数据存储 海量数据的分析计算</p>
-<h1 id="大数据技术的特点："><a href="#大数据技术的特点：" class="headerlink" title="大数据技术的特点："></a>大数据技术的特点：</h1><p>高可靠性：数据多副本，某个存储故障不会导致数据丢失。<br>高扩展性：随着数据量的增大，可以横向扩展数以千计的节点。<br>高效性：数据处理和计算是并行工作的，以加快数据处理速度。<br>高容错性: 因为外部原因（硬件、网络）处理出现错误，可以自动重新分配，继续提供服务。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/12/yuque/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/12/yuque/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">常用操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-03-12 16:03:08" itemprop="dateCreated datePublished" datetime="2022-03-12T16:03:08+08:00">2022-03-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:27:57" itemprop="dateModified" datetime="2023-02-07T21:27:57+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>抓取 image<ul>
-<li>docker image pull [组]/[image 文件名]</li>
-</ul>
-</li>
-<li>查看 image<ul>
-<li>docker image ls</li>
-<li>docker images</li>
-</ul>
-</li>
-<li>运行<ul>
-<li>根据 image 文件，每次都生成一个正在运行的容器实例，若本地没有该 image，则从仓库自动抓取<ul>
-<li>docker run -itd –name redis -p 6379:6379 redis</li>
-<li>docker run –name nginx -p 8080:80 -d nginx</li>
-</ul>
-</li>
-<li>启动已经生成并停止运行的 container<ul>
-<li>docker container start [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>终止<ul>
-<li>强行立即终止（SIGKILL）<ul>
-<li>docker container kill [containID]</li>
-</ul>
-</li>
-<li>应用程序可以进行一些收尾工作（SIGTERM）<ul>
-<li>docker container stop [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>查看 container<ul>
-<li>正在运行<ul>
-<li>docker container ls</li>
-</ul>
-</li>
-<li>所有：正在运行的+停止运行的<ul>
-<li>docker container ls -all</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>删除 container<ul>
-<li>docker container rm [containID]</li>
-</ul>
-</li>
-<li>创建 image 文件<ul>
-<li>docker image build -t [imageName] . (. 表示 Dockerfile 文件路径)</li>
-</ul>
-</li>
-<li>查看 log 输出<ul>
-<li>docker container logs [containerID]</li>
-</ul>
-</li>
-<li>进入容器<ul>
-<li>docker container exec -it [containerID] /bin/bash</li>
-</ul>
-</li>
-<li>拷贝文件至本机<ul>
-<li>docker container cp [containID]:[/path/to/file] .</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/21/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -366,6 +171,13 @@
 
               <time title="Created: 2022-02-21 17:40:25" itemprop="dateCreated datePublished" datetime="2022-02-21T17:40:25+08:00">2022-02-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:49:55" itemprop="dateModified" datetime="2023-02-08T00:49:55+08:00">2023-02-08</time>
+              </span>
 
           
 
@@ -378,19 +190,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">本地重新启动</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo clean</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)</span></span><br><span class="line">hexo g</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">启动服务器。默认情况下，访问网址为： http://localhost:4000/</span></span><br><span class="line">hexo server </span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<ul>
+<li>更换主题<ul>
+<li>cd /Users/will/blog</li>
+<li>git clone <a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next.git">https://github.com/iissnan/hexo-theme-next.git</a> themes/iissan</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -410,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/30/yuque/%E7%AE%97%E6%B3%95%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -424,7 +232,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/30/yuque/%E7%AE%97%E6%B3%95%E9%A2%98/" class="post-title-link" itemprop="url">算法题</a>
+            <a href="/2021/12/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E9%A2%98/" class="post-title-link" itemprop="url">算法题</a>
         </h2>
 
         <div class="post-meta">
@@ -441,8 +249,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:01" itemprop="dateModified" datetime="2023-02-07T21:28:01+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:26:44" itemprop="dateModified" datetime="2023-02-08T00:26:44+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
 
           
 
@@ -503,7 +320,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/21/yuque/Stream/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/21/java%E5%9F%BA%E7%A1%80/Stream/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -517,7 +334,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/21/yuque/Stream/" class="post-title-link" itemprop="url">Stream</a>
+            <a href="/2021/12/21/java%E5%9F%BA%E7%A1%80/Stream/" class="post-title-link" itemprop="url">Stream</a>
         </h2>
 
         <div class="post-meta">
@@ -534,8 +351,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:10" itemprop="dateModified" datetime="2023-02-07T21:28:10+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -584,7 +410,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/02/yuque/%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/02/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -598,7 +424,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/02/yuque/%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">基础</a>
+            <a href="/2021/11/02/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">Spring基础</a>
         </h2>
 
         <div class="post-meta">
@@ -615,8 +441,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:15" itemprop="dateModified" datetime="2023-02-07T21:28:15+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
+                </span>
+            </span>
 
           
 
@@ -663,7 +502,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/02/yuque/%E5%AE%9A%E4%BD%8D%E7%BA%BF%E7%A8%8B%E5%8D%A0%E7%94%A8%E8%B5%84%E6%BA%90%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E6%AD%A5%E9%AA%A4/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/02/%E5%91%BD%E4%BB%A4/%E5%AE%9A%E4%BD%8D%E7%BA%BF%E7%A8%8B%E5%8D%A0%E7%94%A8%E8%B5%84%E6%BA%90%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E6%AD%A5%E9%AA%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -677,7 +516,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/02/yuque/%E5%AE%9A%E4%BD%8D%E7%BA%BF%E7%A8%8B%E5%8D%A0%E7%94%A8%E8%B5%84%E6%BA%90%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">定位线程占用资源问题的方法与步骤</a>
+            <a href="/2021/11/02/%E5%91%BD%E4%BB%A4/%E5%AE%9A%E4%BD%8D%E7%BA%BF%E7%A8%8B%E5%8D%A0%E7%94%A8%E8%B5%84%E6%BA%90%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">定位线程占用资源问题的方法与步骤</a>
         </h2>
 
         <div class="post-meta">
@@ -694,8 +533,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:30" itemprop="dateModified" datetime="2023-02-07T21:28:30+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:25:19" itemprop="dateModified" datetime="2023-02-08T00:25:19+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
+                </span>
+            </span>
 
           
 
@@ -743,7 +591,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/29/yuque/Logback%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/log/Logback%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -757,7 +605,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/10/29/yuque/Logback%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">Logback配置</a>
+            <a href="/2021/10/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/log/Logback%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">Logback配置</a>
         </h2>
 
         <div class="post-meta">
@@ -774,8 +622,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:30" itemprop="dateModified" datetime="2023-02-07T21:28:30+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/log/" itemprop="url" rel="index"><span itemprop="name">log</span></a>
+                </span>
+            </span>
 
           
 
@@ -810,7 +671,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/10/yuque/%E5%AE%89%E8%A3%85oracle12.2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/10/%E6%95%B0%E6%8D%AE%E5%BA%93/oracle/%E5%AE%89%E8%A3%85oracle12.2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -824,7 +685,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/10/10/yuque/%E5%AE%89%E8%A3%85oracle12.2/" class="post-title-link" itemprop="url">安装oracle12.2</a>
+            <a href="/2021/10/10/%E6%95%B0%E6%8D%AE%E5%BA%93/oracle/%E5%AE%89%E8%A3%85oracle12.2/" class="post-title-link" itemprop="url">安装oracle12.2</a>
         </h2>
 
         <div class="post-meta">
@@ -841,8 +702,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:34" itemprop="dateModified" datetime="2023-02-07T21:28:34+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:35:05" itemprop="dateModified" datetime="2023-02-08T00:35:05+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/oracle/" itemprop="url" rel="index"><span itemprop="name">oracle</span></a>
+                </span>
+            </span>
 
           
 
@@ -922,7 +796,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/10/yuque/%E5%AE%89%E8%A3%85oracle11/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/10/%E6%95%B0%E6%8D%AE%E5%BA%93/oracle/%E5%AE%89%E8%A3%85oracle11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -936,7 +810,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/10/10/yuque/%E5%AE%89%E8%A3%85oracle11/" class="post-title-link" itemprop="url">安装oracle11</a>
+            <a href="/2021/10/10/%E6%95%B0%E6%8D%AE%E5%BA%93/oracle/%E5%AE%89%E8%A3%85oracle11/" class="post-title-link" itemprop="url">安装oracle11</a>
         </h2>
 
         <div class="post-meta">
@@ -953,8 +827,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:38" itemprop="dateModified" datetime="2023-02-07T21:28:38+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:34:59" itemprop="dateModified" datetime="2023-02-08T00:34:59+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/oracle/" itemprop="url" rel="index"><span itemprop="name">oracle</span></a>
+                </span>
+            </span>
 
           
 
@@ -1027,10 +914,235 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/17/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/17/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">大数据</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-17 01:10:12" itemprop="dateCreated datePublished" datetime="2021-09-17T01:10:12+08:00">2021-09-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">Hbase操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-13 20:53:52" itemprop="dateCreated datePublished" datetime="2021-09-13T20:53:52+08:00">2021-09-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:34:02" itemprop="dateModified" datetime="2023-02-08T00:34:02+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" itemprop="url" rel="index"><span itemprop="name">hbase</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="0-总体操作流程"><a href="#0-总体操作流程" class="headerlink" title="0 总体操作流程"></a>0 总体操作流程</h1><ol>
+<li>client 请求到 Zookeeper，然后 Zookeeper 返回 HRegionServer 地址给 client</li>
+<li>client 得到 Zookeeper 返回的地址去请求 HRegionServer，</li>
+<li>HRegionServer 从 HDFS 读写数据后返回给 client。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoxoGTzSQ73G88ye66ouxoIe69CM.png"></li>
+</ol>
+<h1 id="1-查询"><a href="#1-查询" class="headerlink" title="1 查询"></a>1 查询</h1><h2 id="1-1-流程"><a href="#1-1-流程" class="headerlink" title="1.1 流程"></a>1.1 流程</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fp5a4UvHtzl9sGQkzjsEdt_TzrxK.png"></p>
+<ol>
+<li>hbase client 要读数据了，先从 zookeeper 中拿到 meta 表信息，根据要查的 rowkey 找到对应的数据在哪些 RegionServer 上</li>
+<li>分别在这些 RegionServer 上根据列簇定位到 Region，</li>
+<li>先在<strong>MemStore</strong>中查找，命中则返回，否则在<strong>Storefile</strong>中扫描，为了能快速的判断要查询的数据在不在这个 StoreFile 中，应用了<strong>BloomFilter</strong></li>
+<li>根据数据的版本找到最新数据进行返回</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkAuJDQruDuEqGuIv9v5aHonYG-K.png"></p>
+<h2 id="1-2-查询方式"><a href="#1-2-查询方式" class="headerlink" title="1.2 查询方式"></a>1.2 查询方式</h2><ul>
+<li>无法直接用 sql 查询，只能通过 rowKey 查询<ul>
+<li>rowKey 底层也是 b+ Tree</li>
+<li>把查询的条件字段放在 rowKey 中</li>
+</ul>
+</li>
+</ul>
+<p>注：有些中间件把 sql 翻译成 hbase 的查询规则，从而支持了 sql 间接查 hbase</p>
+<ul>
+<li>第一种是 scan：设置  <strong>startRow</strong>  和  <strong>stopRow</strong>  参数进行范围匹配<ul>
+<li>[<strong>startRow, stopRow</strong>) 左闭右开</li>
+</ul>
+</li>
+<li>第二种是根据一个 rowkey 进行查询</li>
+<li>第三种是全表扫描，直接获取整张表中的所有行记录</li>
+<li>如果 rowkey 复杂且查询条件复杂，hbase 还针对 rowkey 提供了自定义 Filter</li>
+</ul>
+<h2 id="1-3-设置-rowKey-需要注意的点"><a href="#1-3-设置-rowKey-需要注意的点" class="headerlink" title="1.3 设置 rowKey 需要注意的点"></a>1.3 设置 rowKey 需要注意的点</h2><blockquote>
+<p>一条数据的唯一标识：rowKey<br>rowKey = 散列字段 + indicator 信息 + 时间戳</p>
+</blockquote>
+<ul>
+<li>必须唯一</li>
+<li>尽可能短<ul>
+<li>每个 key-value 都包含 rowKey，这样可以节省存储空间</li>
+</ul>
+</li>
+<li>数字需要补齐<ul>
+<li>rowkey 是按照字符串字典序来组织成 B+树的，所以数字的话需要补齐，不然的话会出现 123w 小于 20w 的情况，但是补齐的话，你就会发现 020w 小于 123w</li>
+</ul>
+</li>
+<li>rowKey 散列性<ul>
+<li>数据是根据 rowkey 和一定的哈希规则，分散到不同的 Region 上面，而 Region 又是属于某一个 HRegionServer</li>
+<li>rowKey 的前几个字符若一样，会分布在同一个 HRegionServer 上，导致 server 负载不均（堆积的热点现象）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="2-写入"><a href="#2-写入" class="headerlink" title="2 写入"></a>2 写入</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FrP7KKf4q6DMXIgBzZOTK443rzzH.png"></p>
+<h2 id="2-1-流程"><a href="#2-1-流程" class="headerlink" title="2.1 流程"></a>2.1 流程</h2><ol>
+<li>hbase client 要写入了，先从 zookeeper 中拿到**.META.**表信息，根据数据的 rowkey 找到应该往哪个 RegionServer 写</li>
+<li>然后记录操作日志<strong>WAL</strong>，再将数据写入对应<strong>MemStore</strong>中</li>
+<li>判断 MemStore 是否超过阈值，（当 MemStore 大小超过阈值时，就会创建一个新的 MemStore，并且将老的 MemStore 添加到 flush 队列，由单独的线程 flush 到磁盘上，成为一个 StoreFile）</li>
+<li>在触发了一定条件的时候，小的 StoreFile 会进行合并，变成大的 StoreFile，有利于 hdfs 存储</li>
+</ol>
+<hr>
+<h2 id="2-2-LSM-三层模型（数据-gt-内存-gt-小文件-gt-大文件）"><a href="#2-2-LSM-三层模型（数据-gt-内存-gt-小文件-gt-大文件）" class="headerlink" title="2.2 LSM 三层模型（数据-&gt;内存-&gt;小文件-&gt;大文件）"></a>2.2 LSM 三层模型（数据-&gt;内存-&gt;小文件-&gt;大文件）</h2><p>LSM 被设计来提供比传统的 B+树或者 ISAM 更好的写操作吞吐量，通过消去随机的本地更新操作来达到这个目标。这个问题的本质还是<strong>磁盘随机操作慢，顺序读写快</strong>的老问题。这二种操作存在巨大的差距，无论是磁盘还是 SSD</p>
+<ul>
+<li>小文件-&gt;大文件：分两种： - minor compact，这种方式只会将少数文件进行简单合并，不会进行数据的清理。一般在生产环境禁止大合并，不然可能资源被耗光，无法正常提供服务。 - major compact，这种方式会将大部分文件进行合并，并且清理数据，十分消耗性能，一般在业务低峰期手动进行或定时任务执行</li>
+</ul>
+<h2 id="2-3-WAL-机制保证宕机时内存中数据恢复"><a href="#2-3-WAL-机制保证宕机时内存中数据恢复" class="headerlink" title="2.3 WAL 机制保证宕机时内存中数据恢复"></a>2.3 WAL 机制保证宕机时内存中数据恢复</h2><p>WAL，即 Write ahead log。<br>类似 mysql 中的 binlog，用来做灾难恢复之用，Hlog 记录数据的所有变更</p>
+<ul>
+<li>数据在更新时首先写入 HLog(WAL Log)，再写入内存(MemStore)中，MemStore 中的数据是排序的，当 MemStore 累计到一定阈值时，就会创建一个新的 MemStore，并且将老的 MemStore 添加到 flush 队列，由单独的线程 flush 到磁盘上，成为一个 StoreFile。于此同时，系统会在 ZooKeeper 中记录一个 redo point，表示这个时刻之前的变更已经持久化了。当系统出现意外时，可能导致内存(MemStore)中的数据丢失，此时使用 HLog(WAL Log)来恢复 checkpoint 之后的数据。</li>
+<li>HLog 文件定期会滚动出新，并删除旧的文件(已持久化到 StoreFile 中的数据)。当 HRegionServer 意外终止 后，HMaster 会通过 ZooKeeper 感知，HMaster 首先处理遗留的 HLog 文件，将不同 Region 的 log 数据拆分，分别放到相应 Region 目录下，然后再将失效的 Region（带有刚刚拆分的 log） 重新分配，领取到这些 Region 的 HRegionServer 在 load Region 的过程中，会发现有历史 HLog 需要处理，因此会 Replay HLog 中的数据到 MemStore 中，然后 flush 到 StoreFiles，完成数据恢复。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FjmO7LjJAEEBfpsnnJE7HkJ6hnjx.png"></p>
+<hr>
+<h1 id="3-修改-删除"><a href="#3-修改-删除" class="headerlink" title="3 修改/删除"></a>3 修改/删除</h1><ul>
+<li>修改时原数据不变，只是追加一条版本号最新的数据</li>
+<li>删除时原数据不变，只是追加一条版本号最新的标识被删除的数据</li>
+<li>查询时只查版本最新的数据</li>
+</ul>
+<p>注：LSM 第三层 hbase 在<em>major compact</em>时会把用不到的数据删除</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1096,19 +1208,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>

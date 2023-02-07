@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/24/yuque/SSH/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,216 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/24/yuque/SSH/" class="post-title-link" itemprop="url">SSH</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-24 15:17:27" itemprop="dateCreated datePublished" datetime="2021-02-24T15:17:27+08:00">2021-02-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:30" itemprop="dateModified" datetime="2023-02-07T21:29:30+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h1><p>建互信，登陆服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">hostname是主机名，它可以是域名，也可能是 IP 地址或局域网内部的主机名。</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">username是用户名，不指定用户名的情况下，将使用客户端的当前用户名，作为远程服务器的登录用户名</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">-p参数可以指定其他端口，默认22</span></span><br><span class="line"><span class="meta">$ </span><span class="language-bash">ssh -p 22 username@hostname</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/23/yuque/JVM%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/23/yuque/JVM%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">JVM基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-23 10:30:16" itemprop="dateCreated datePublished" datetime="2021-02-23T10:30:16+08:00">2021-02-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:30" itemprop="dateModified" datetime="2023-02-07T21:29:30+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="JVM-编译执行-解释执行"><a href="#JVM-编译执行-解释执行" class="headerlink" title="JVM 编译执行/解释执行"></a>JVM 编译执行/解释执行</h1><ul>
-<li>解释执行：<ul>
-<li>字节码 -&gt; [ 解释器 解释执行 ] -&gt; 执行结果</li>
-</ul>
-</li>
-<li>编译执行：<ul>
-<li>字节码 -&gt; [ 编译器 编译 ] -&gt; 机器码 -&gt; [ 执行 ] -&gt; 执行结果</li>
-</ul>
-</li>
-</ul>
-<p>javac 生成的字节码与 32 位，64 位 JVM 无关。它可以在两个 JVM 上运行。记住古老的诺言“编译一次，随处运行”</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/19/yuque/%E9%81%8D%E5%8E%86%E5%88%A0%E9%99%A4List%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/19/yuque/%E9%81%8D%E5%8E%86%E5%88%A0%E9%99%A4List%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" class="post-title-link" itemprop="url">遍历删除List中的元素</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-19 16:31:39" itemprop="dateCreated datePublished" datetime="2021-02-19T16:31:39+08:00">2021-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:40" itemprop="dateModified" datetime="2023-02-07T21:29:40+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>ArrayList 中的 Iterator 实现:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">class</span> <span class="title class_">Itr</span> <span class="keyword">implements</span> <span class="title class_">Iterator</span>&lt;E&gt; &#123;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Index of element to be returned by subsequent call to next.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="type">int</span> <span class="variable">cursor</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Index of element returned by most recent call to next or</span></span><br><span class="line"><span class="comment">    * previous.  Reset to -1 if this element is deleted by a call</span></span><br><span class="line"><span class="comment">    * to remove.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="type">int</span> <span class="variable">lastRet</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * The modCount value that the iterator believes that the backing</span></span><br><span class="line"><span class="comment">    * List should have.  If this expectation is violated, the iterator</span></span><br><span class="line"><span class="comment">    * has detected concurrent modification.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="type">int</span> <span class="variable">expectedModCount</span> <span class="operator">=</span> modCount;</span><br><span class="line">   <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">hasNext</span><span class="params">()</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> cursor != size();</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> E <span class="title function_">next</span><span class="params">()</span> &#123;</span><br><span class="line">           checkForComodification();</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">       <span class="type">E</span> <span class="variable">next</span> <span class="operator">=</span> get(cursor);</span><br><span class="line">       lastRet = cursor++;</span><br><span class="line">       <span class="keyword">return</span> next;</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">       checkForComodification();</span><br><span class="line">       <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">NoSuchElementException</span>();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">remove</span><span class="params">()</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (lastRet == -<span class="number">1</span>)</span><br><span class="line">       <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>();</span><br><span class="line">           checkForComodification();</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">       AbstractList.<span class="built_in">this</span>.remove(lastRet);</span><br><span class="line">       <span class="keyword">if</span> (lastRet &lt; cursor)</span><br><span class="line">           cursor--;</span><br><span class="line">       lastRet = -<span class="number">1</span>;</span><br><span class="line">       expectedModCount = modCount;</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">       <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ConcurrentModificationException</span>();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">checkForComodification</span><span class="params">()</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (modCount != expectedModCount)</span><br><span class="line">       <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ConcurrentModificationException</span>();</span><br><span class="line">   &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>基本上 ArrayList 采用 size 属性来维护自已的状态，而 Iterator 采用 cursor 来来维护自已的状态。<br>当 size 出现变化时，cursor 并不一定能够得到同步，_除非这种变化是 Iterator 主动导致的_。</strong><br><strong>从上面的代码可以看到当 Iterator.remove 方法导致 ArrayList 列表发生变化时，他会更新 cursor 来同步这一变化。但其他方式导致的 ArrayList 变化，Iterator 是无法感知的。ArrayList 自然也不会主动通知 Iterator 们，那将是一个繁重的工作。Iterator 到底还是做了努力：为了防止状态不一致可能引发的无法设想的后果，Iterator 会经常做 checkForComodification 检查，以防有变。如果有变，则以异常抛出，所以就出现了上面的异常。</strong><br>如果对正在被迭代的集合进行结构上的改变（即对该集合使用 add、remove 或 clear 方法），那么迭代器就不再合法（并且在其后使用该迭代器将会有 ConcurrentModificationException 异常被抛出）.<br>如果使用迭代器自己的 remove 方法，那么这个迭代器就仍然是合法的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/18/yuque/%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/18/yuque/%E6%A0%91/" class="post-title-link" itemprop="url">树</a>
+            <a href="/2021/02/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%A0%91/" class="post-title-link" itemprop="url">树</a>
         </h2>
 
         <div class="post-meta">
@@ -385,8 +176,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:42" itemprop="dateModified" datetime="2023-02-07T21:29:42+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:26:41" itemprop="dateModified" datetime="2023-02-08T00:26:41+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
 
           
 
@@ -420,7 +220,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/17/yuque/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/17/java%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -434,7 +234,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/17/yuque/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" class="post-title-link" itemprop="url">动态代理</a>
+            <a href="/2021/02/17/java%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" class="post-title-link" itemprop="url">动态代理</a>
         </h2>
 
         <div class="post-meta">
@@ -451,8 +251,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:42" itemprop="dateModified" datetime="2023-02-07T21:29:42+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -485,7 +294,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/16/yuque/%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/16/java%E5%9F%BA%E7%A1%80/%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -499,7 +308,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/16/yuque/%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">开发常用笔记</a>
+            <a href="/2021/02/16/java%E5%9F%BA%E7%A1%80/%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">开发常用笔记</a>
         </h2>
 
         <div class="post-meta">
@@ -516,8 +325,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:45" itemprop="dateModified" datetime="2023-02-07T21:29:45+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -556,7 +374,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/11/yuque/CAP%E5%AE%9A%E7%90%86%E4%B8%8EBASE%E7%90%86%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/11/%E5%88%86%E5%B8%83%E5%BC%8F/CAP%E5%AE%9A%E7%90%86%E4%B8%8EBASE%E7%90%86%E8%AE%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -570,7 +388,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/11/yuque/CAP%E5%AE%9A%E7%90%86%E4%B8%8EBASE%E7%90%86%E8%AE%BA/" class="post-title-link" itemprop="url">CAP定理与BASE理论</a>
+            <a href="/2021/02/11/%E5%88%86%E5%B8%83%E5%BC%8F/CAP%E5%AE%9A%E7%90%86%E4%B8%8EBASE%E7%90%86%E8%AE%BA/" class="post-title-link" itemprop="url">CAP定理与BASE理论</a>
         </h2>
 
         <div class="post-meta">
@@ -587,8 +405,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:50" itemprop="dateModified" datetime="2023-02-07T21:29:50+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:20:03" itemprop="dateModified" datetime="2023-02-08T00:20:03+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
+                </span>
+            </span>
 
           
 
@@ -644,7 +471,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/09/yuque/Oauth2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/Oauth2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -658,7 +485,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/09/yuque/Oauth2/" class="post-title-link" itemprop="url">Oauth2</a>
+            <a href="/2021/02/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/Oauth2/" class="post-title-link" itemprop="url">Oauth2</a>
         </h2>
 
         <div class="post-meta">
@@ -675,8 +502,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:04" itemprop="dateModified" datetime="2023-02-07T21:30:04+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:20:43" itemprop="dateModified" datetime="2023-02-08T00:20:43+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">计算机网络与安全</span></a>
+                </span>
+            </span>
 
           
 
@@ -756,7 +592,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/09/yuque/UAA-%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/UAA-%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -770,7 +606,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/09/yuque/UAA-%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1/" class="post-title-link" itemprop="url">UAA-认证服务</a>
+            <a href="/2021/02/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/UAA-%E8%AE%A4%E8%AF%81%E6%9C%8D%E5%8A%A1/" class="post-title-link" itemprop="url">UAA-认证服务</a>
         </h2>
 
         <div class="post-meta">
@@ -787,8 +623,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:10" itemprop="dateModified" datetime="2023-02-07T21:30:10+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:20:49" itemprop="dateModified" datetime="2023-02-08T00:20:49+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">计算机网络与安全</span></a>
+                </span>
+            </span>
 
           
 
@@ -844,7 +689,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/yuque/Redis-%E5%8D%95%E7%BA%BF%E7%A8%8B!%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-6-%E5%8D%95%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -858,7 +703,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/07/yuque/Redis-%E5%8D%95%E7%BA%BF%E7%A8%8B!%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">Redis-单线程/多线程</a>
+            <a href="/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-6-%E5%8D%95%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">Redis-单线程与多线程</a>
         </h2>
 
         <div class="post-meta">
@@ -875,8 +720,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:15" itemprop="dateModified" datetime="2023-02-07T21:30:15+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:38:07" itemprop="dateModified" datetime="2023-02-08T00:38:07+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
 
           
 
@@ -952,10 +810,321 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/Mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/Mysql/" class="post-title-link" itemprop="url">Mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-07 17:19:38" itemprop="dateCreated datePublished" datetime="2021-02-07T17:19:38+08:00">2021-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:34:39" itemprop="dateModified" datetime="2023-02-08T00:34:39+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h1><h2 id="原子性（Atomicity）"><a href="#原子性（Atomicity）" class="headerlink" title="原子性（Atomicity）"></a>原子性（Atomicity）</h2><ul>
+<li>基于日志的<code>Redo/Undo</code>机制<ul>
+<li>Redo Log：Redo log 用来记录某数据块被修改后的值，可以用来恢复未写入 data file 的已成功事务更新的数据</li>
+<li>Undo Log：Undo log 是用来记录数据更新前的值，保证数据更新失败能够回滚。</li>
+</ul>
+</li>
+</ul>
+<p>假如某个时刻数据库崩溃，在崩溃之前有事务 A 和事务 B 在执行，事务 A 已经提交，而事务 B 还未提交。当数据库重启进行 crash-recovery 时，就会通过 Redo log 将已经提交事务的更改写到数据文件，而还没有提交的就通过 Undo log 进行 roll back。</p>
+<h2 id="一致性（Consistent）"><a href="#一致性（Consistent）" class="headerlink" title="一致性（Consistent）"></a>一致性（Consistent）</h2><h2 id="隔离性（Isalotion）"><a href="#隔离性（Isalotion）" class="headerlink" title="隔离性（Isalotion）"></a>隔离性（Isalotion）</h2><h2 id="持久性-Durable"><a href="#持久性-Durable" class="headerlink" title="持久性(Durable)"></a>持久性(Durable)</h2><hr>
+<h1 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h1><ul>
+<li><strong>读未提交（READ UNCOMMITTED）</strong><ul>
+<li><strong>脏读问题</strong></li>
+</ul>
+</li>
+<li><strong>读提交 （READ COMMITTED）</strong><ul>
+<li><strong>解决脏读问题</strong></li>
+<li><strong>有不可重复读问题（update）</strong></li>
+</ul>
+</li>
+<li><strong>可重复读 （REPEATABLE READ）</strong><ul>
+<li><strong>解决了不可重复读问题</strong></li>
+<li><strong>有幻读问题（insert）</strong></li>
+</ul>
+</li>
+<li><strong>串行化 （SERIALIZABLE）</strong><ul>
+<li><strong>解决所有问题</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="MVCC-多版本并发控制）"><a href="#MVCC-多版本并发控制）" class="headerlink" title="MVCC(多版本并发控制）"></a>MVCC(多版本并发控制）</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fult8Bxn6TqZ2BawoKlb_viu46HY.png"></p>
+<ul>
+<li>在 InnoDB 中每一个事务都有一个自己的事务 id，并且是唯一的，递增的 。</li>
+<li>对于 Mysql 中的每一个数据行都有可能存在多个版本，在每次事务更新数据的时候，都会生成一个新的数据版本，并且把自己的事务 id 赋值给当前版本的 row trx_id。</li>
+<li>版本 1、版本 2 并非实际物理存在的</li>
+<li>U1 和 U2 实际就是 undo log，这 v1 和 v2 版本是根据当前 v3 和 undo log 计算出来的</li>
+</ul>
+<hr>
+<h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1><h2 id="共享锁-排他锁"><a href="#共享锁-排他锁" class="headerlink" title="共享锁/排他锁"></a>共享锁/排他锁</h2><p>共享锁是针对同一份数据，多个读操作可以同时进行，简单来说即读加锁，不能写并且可并行读；<br>排他锁针对写操作，假如当前写操作没有完成，那么它会阻断其它的写锁和读锁，即写加锁，其它读写都阻塞 。</p>
+<h2 id="行锁-表锁"><a href="#行锁-表锁" class="headerlink" title="行锁/表锁"></a>行锁/表锁</h2><p>是从锁的粒度上进行划分的，行锁锁定当前数据行，锁的粒度小，加锁慢，发生锁冲突的概率小，并发度高，行锁也是 MyISAM 和 InnoDB 的区别之一，InnoDB 支持行锁并且支持事务 。<br>表锁则锁的粒度大，加锁快，开销小，但是锁冲突的概率大，并发度低。</p>
+<h2 id="两个事务执行写操作，怎么保证并发？"><a href="#两个事务执行写操作，怎么保证并发？" class="headerlink" title="两个事务执行写操作，怎么保证并发？"></a>两个事务执行写操作，怎么保证并发？</h2><ul>
+<li>有索引：<ul>
+<li>事务 1 先 update 数据行的时候，先回获取行锁，锁定数据，当事务 2 要进行 update 操作的时候，也会取获取该数据行的行锁，但是已经被事务 1 占有，事务 2 只能 wait。</li>
+</ul>
+</li>
+<li>无索引：<ul>
+<li>获取所有行，都加上行锁，然后 Mysql 会再次过滤符合条件的的行并释放锁，只有符合条件的行才会继续持有锁。</li>
+<li>性能消耗大</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-5-%E4%BA%8B%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-5-%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">Redis-事务</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-07 10:00:54" itemprop="dateCreated datePublished" datetime="2021-02-07T10:00:54+08:00">2021-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:37:58" itemprop="dateModified" datetime="2023-02-08T00:37:58+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>一次执行多条命令<ul>
+<li>批量操作在发送 EXEC 命令前被放入队列缓存。</li>
+<li>收到 EXEC 命令后进入事务执行，事务中任意命令执行失败，其余的命令<strong>依然被执行（不会回滚）</strong>。</li>
+<li>在事务执行过程，其他客户端提交的命令请求不会插入到事务执行命令序列中。</li>
+</ul>
+</li>
+<li>阶段<ul>
+<li>开始事务。</li>
+<li>命令入队。</li>
+<li>执行事务。</li>
+</ul>
+</li>
+<li>事务命令：<br>| 1 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-discard.html">DISCARD</a><br>取消事务，放弃执行事务块内的所有命令。 |<br>| — | — |<br>| 2 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-exec.html">EXEC</a><br>执行所有事务块内的命令。 |<br>| 3 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-multi.html">MULTI</a><br>标记一个事务块的开始。 |<br>| 4 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-unwatch.html">UNWATCH</a><br>取消 WATCH 命令对所有 key 的监视。 |<br>| 5 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-watch.html">WATCH key [key …]</a><br>监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断。 |</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-7-%E6%8C%81%E4%B9%85%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-7-%E6%8C%81%E4%B9%85%E5%8C%96/" class="post-title-link" itemprop="url">Redis-持久化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-07 09:53:42" itemprop="dateCreated datePublished" datetime="2021-02-07T09:53:42+08:00">2021-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:38:15" itemprop="dateModified" datetime="2023-02-08T00:38:15+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="7-持久化"><a href="#7-持久化" class="headerlink" title="7 持久化"></a>7 持久化</h1><h2 id="7-1-RDB"><a href="#7-1-RDB" class="headerlink" title="7.1 RDB"></a>7.1 RDB</h2><ul>
+<li>全量持久化</li>
+</ul>
+<p>fork 和 cow。<br>fork 是指 redis 通过创建子进程来进行 RDB 操作，<br>cow 指的是 copy on write，子进程创建后，父子进程共享数据段，父进程继续提供读写服务，写脏的页面数据会逐渐和子进程分离开来。</p>
+<h2 id="7-2-AOF"><a href="#7-2-AOF" class="headerlink" title="7.2 AOF"></a>7.2 AOF</h2><ul>
+<li>使用 AOF 持久时，服务会将每个收到的写命令通过写函数追加到文件中（appendonly.aof）</li>
+<li>AOF 持久化存储方式参数说明<ul>
+<li>appendonly  yes                  #开启 AOF 持久化存储方式</li>
+<li>appendfsync   always           #收到写命令后就立即写入磁盘，效率最差，效果最好</li>
+<li>appendfsync   everysec        #每秒写入磁盘一次     效率与效果居中</li>
+<li>appendfsync   no                 #完全依赖操作系统，效率最佳，效果没法保证</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1021,19 +1190,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>

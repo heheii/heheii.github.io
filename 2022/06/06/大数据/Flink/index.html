@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="什么是 Flink？  Flink 是一个分布式的计算处理引擎   分布式：「它的存储或者计算交由多台服务器上完成，最后汇总起来达到最终的效果」。 实时：处理速度是毫秒级或者秒级的 计算：可以简单理解为对数据进行处理，比如清洗数据（对数据进行规整，取出有用的数据）   基于官网的一句话介绍，我们就可以联想出很多东西。 这篇文章可以带你简单认识一下 Flink 的一些基础概念，等你真正用到的时候就可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flink">
+<meta property="og:url" content="http://example.com/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Flink/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是 Flink？  Flink 是一个分布式的计算处理引擎   分布式：「它的存储或者计算交由多台服务器上完成，最后汇总起来达到最终的效果」。 实时：处理速度是毫秒级或者秒级的 计算：可以简单理解为对数据进行处理，比如清洗数据（对数据进行规整，取出有用的数据）   基于官网的一句话介绍，我们就可以联想出很多东西。 这篇文章可以带你简单认识一下 Flink 的一些基础概念，等你真正用到的时候就可">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsMXaK8CDlh7GUK63ySHXyL3kfQP.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FlN2MKtjO6zhQqAB13MsjFggsWjd.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjh-5bduezp6zuvNVIAnjSnRYHTQ.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhjQsjN32C23P8CMvyPy43wfZ-_z.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FpXP4P-sPKZmqmPSqkjFaYCwGvIY.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FglSUY0o61_9VvDAmWaWztxTRVuP.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FonrqiZmSLLQ5T2E8NqHfZsdwPLT.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiOhgdp8w34okCfvMhvOfNZ862Rr.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhMRqt7c0S_frH2_T8HeXMXDC5Nf.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fo_Iq0AlOjuz-x5gIVZc3Z2uPiV0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgSqiUqPQHcMS7gUXN4oNHZkwIlt.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmoyOqoDyVwpKAqg9-pVdap9tA1j.png">
+<meta property="article:published_time" content="2022-06-06T09:24:38.000Z">
+<meta property="article:modified_time" content="2023-02-07T16:45:24.505Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsMXaK8CDlh7GUK63ySHXyL3kfQP.png">
+
+<link rel="canonical" href="http://example.com/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Flink/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Flink | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Flink/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Flink
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-06-06 17:24:38" itemprop="dateCreated datePublished" datetime="2022-06-06T17:24:38+08:00">2022-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="什么是-Flink？"><a href="#什么是-Flink？" class="headerlink" title="什么是 Flink？"></a>什么是 Flink？</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsMXaK8CDlh7GUK63ySHXyL3kfQP.png"></p>
+<blockquote>
+<p>Flink 是一个分布式的计算处理引擎</p>
+</blockquote>
+<ul>
+<li>分布式：「它的存储或者计算交由多台服务器上完成，最后汇总起来达到最终的效果」。</li>
+<li>实时：处理速度是毫秒级或者秒级的</li>
+<li>计算：可以简单理解为对数据进行处理，比如清洗数据（对数据进行规整，取出有用的数据）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FlN2MKtjO6zhQqAB13MsjFggsWjd.png"></p>
+<p>基于官网的一句话介绍，我们就可以联想出很多东西。</p>
+<p>这篇文章可以带你简单认识一下 Flink 的一些基础概念，等你真正用到的时候就可以依据这篇文章来对 Flink 进行入门，现在 Storm 都被很多人给抛弃掉了，那么 Flink 优于 Storm 的地方有哪些呢？接下来我们一起来看看 Flink 吧。</p>
+<p>什么是有边界和无边界？<br>Apache Flink 是一个框架和分布式处理引擎，用于在无边界和有边界数据流上进行有状态的计算。</p>
+<p>官方其实也有介绍，但对初学者来说不太好理解，我来幼儿园化一下。</p>
+<p>大家学到 Flink 了，消息队列肯定有用过吧？那你们是怎么用消息队列的呢？Producer 生产数据，发给 Broker，Consumer 消费，完事。</p>
+<p>在消费的时候，我们需要管什么 Producer 什么时候发消息吗？不需要吧。反正来一条，我就处理一条，没毛病吧。</p>
+<p>这种没有做任何处理的消息，默认就是无边界的。</p>
+<p>那有边界就很好理解了：无边界的基础上加上条件，那就是有边界的。加什么条件呢？比如我要加个时间：我要消费从 8 月 8 号到 8 月 9 号的数据，那就是有边界的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjh-5bduezp6zuvNVIAnjSnRYHTQ.png"></p>
+<p>什么时候用无边界，什么时候用有边界？那也很好理解。我做数据清洗：来一条，我处理一条，这种无边界的就好了。我要做数据统计：每个小时的 pv(page view)是多少，那我就设置 1 小时的边界，攒着一小时的数据来处理一次。</p>
+<p>在 Flink 上，设置“边界”这种操作叫做开窗口(Windows)，窗口可简单分为两种类型：</p>
+<p>时间窗口(TimeWindows)：按照时间窗口进行聚合，比如上面所讲得攥着一个小时的数据处理一次。<br>计数窗口(CountWindows)：按照指定的条数来进行聚合，比如每来了 10 条数据处理一次。<br>看着就非常人性化（妈妈再也不用担心我需要聚合了）…</p>
+<p>不仅如此，在 Flink 使用窗口聚合的时候，还考虑到了数据的准确性问题。比如说：现在我在 11:06 分产生了 5 条数据，在 11:07 分 产生了 4 条数据，我现在是按每分钟的维度来进行聚合计算。</p>
+<p>理论上来讲：Flink 应该是在 06 分聚合了 5 条数据，在 07 分聚合了 4 条数据。但是，可能由于网络的延迟性等原因，导致 06 分的 3 条数据在 07 分时 Flink 才接收到。如果不做任何处理，那 07 分有可能处理了 7 条条数据。</p>
+<p>某些需要准确结果的场景来说，这就不太合理了。所以 Flink 可以给我们指定”时间语义“，不指定默认是「数据到 Flink 的时间」Processing Time 来进行聚合处理，可以给我们指定聚合的时间以「事件发生的时间」Event Time 来进行处理。</p>
+<p>事件发生的时间指的就是：日志真正记录的时间</p>
+<p>2020-11-22 00:00:02.552 INFO [http-nio-7001-exec-28] c.m.t.rye.admin.web.aop.LogAspect</p>
+<p>虽然指定了聚合的时间为「事件发生的时间」Event Time，但还是没解决数据乱序的问题（06 分产生了 5 条数据，实际上 06 分只收到了 3 条，而剩下的两条在 07 分才收到，那此时怎么办呢？在 06 分时该不该聚合，07 分收到的两条 06 分数据怎么办？）</p>
+<p>Flink 又可以给我们设置水位线(waterMarks)，Flink 意思就是：存在网络延迟等情况导致数据接收不是有序，这种情况我都能理解。你这样吧，根据自身的情况，你可以设置一个「延迟时间」，等延迟的时间到了，我再聚合统一聚合。</p>
+<p>比如说：现在我知道数据有可能会延迟一分钟，那我将水位线 waterMarks 设置延迟一分钟。</p>
+<p>解读：因为设置了「事件发生的时间」Event Time，所以 Flink 可以检测到每一条记录发生的时间，而设置了水位线 waterMarks 设置延迟一分钟，等到 Flink 发现 07 分:59 秒的数据来到了 Flink，那就确信 06 分的数据都来了（因为设置了 1 分钟延迟），此时才聚合 06 分的窗口数据。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhjQsjN32C23P8CMvyPy43wfZ-_z.png"></p>
+<p>什么叫做有状态？<br>Apache Flink 是一个框架和分布式处理引擎，用于在无边界和有边界数据流上进行有状态的计算。</p>
+<p>什么是有状态，什么是无状态？</p>
+<p>无状态我们可以简单认为：每次的执行都不依赖上一次或上 N 次的执行结果，每次的执行都是独立的。</p>
+<p>有状态我们可以简单认为：执行需要依赖上一次或上 N 次的执行结果，某次的执行需要依赖前面事件的处理结果。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FpXP4P-sPKZmqmPSqkjFaYCwGvIY.png"></p>
+<p>比如，我们现在要统计文章的阅读 PV(page view)，现在只要有一个点击了文章，在 Kafka 就会有一条消息。现在我要在流式处理平台上进行统计，那此时是有状态的还是无状态的？</p>
+<p>假设我们要在 Storm 做，那我们可能将每次的处理结果放到一个“外部存储”中，然后基于这个“外部存储”进行计算（这里我们不用 Storm Trident），那此时 Storm 是无状态的。</p>
+<p>比如说：我存储将每次得到的数据存储到 Redis 中，来一条数据，我就先查一下 Redis 目前的值是多少，跟 Redis 的值和现在的值做一次累加就完事了。</p>
+<p>假设要在 Flink 做，Flink 本身就提供了这种功能给我们使用，我们可以依赖 Flink 的“存储”，将每次的处理结果交由 Flink 管理，执行计算的逻辑。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FglSUY0o61_9VvDAmWaWztxTRVuP.png"></p>
+<p>可以简单的认为：Flink 本身就给我们提供了”存储“的功能，而我们每次执行是可以依赖 Flink 的”存储”的，所以它是有状态的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FonrqiZmSLLQ5T2E8NqHfZsdwPLT.png"></p>
+<p>那 Flink 是把这些有状态的数据存储在哪的呢？</p>
+<p>主要有三个地方：</p>
+<p>内存<br>文件系统（HDFS）<br>本地数据库<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiOhgdp8w34okCfvMhvOfNZ862Rr.png"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhMRqt7c0S_frH2_T8HeXMXDC5Nf.png"></p>
+<p>如果假设 Flink 挂了，可能内存的数据没了，磁盘可能存储了部分的数据，那再重启的时候（比如消息队列会重新拉取），就不怕会丢了或多了数据吗？</p>
+<p>看到这里，你可能在会在别的地方看过 Flink 的另外一个比较出名的特性：精确一次性</p>
+<p>（简单来说就是：Flink 遇到意外事件挂了以后，有什么机制来尽可能保证处理数据不重复和不丢失的呢）</p>
+<p>什么是精确一次性（exactly once）？<br>众所周知，流的语义性有三种：</p>
+<p>精确一次性（exactly once）：有且只有一条，不多不少<br>至少一次（at least once）：最少会有一条，只多不少<br>最多一次（at most once）：最多只有一条，可能会没有<br>Flink 实现了精确一次性，这个精确一次性是什么意思呢？</p>
+<p>Flink 的精确一次性指的是：状态只持久化一次到最终的存储介质中（本地数据库/HDFS…)<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fo_Iq0AlOjuz-x5gIVZc3Z2uPiV0.png"></p>
+<p>以上面的图为例：Source 数据流有以下数字 21,13,8,5,3,2,1,1，然后在 Flink 需要做累加操作（求和）</p>
+<p>现在处理完 2,1,1 了，所以累加的值是 4，现在 Flink 把累积后的状态 4 已经存储起来了（认为前面 2,1,1 这几个数字已经完全处理过了）。</p>
+<p>程序一直往下走，处理了 5,3，现在累加的值是 12，但现在 Flink 还没来得及把 12 存储到最终的介质，此时系统挂掉了。</p>
+<p>Flink 重启后会重新把系统恢复到累加的值是 4 的状态，所以 5,3 得继续计算一遍，程序继续往下走。</p>
+<p>看文章有的同学可能会认为：精确一次性指的不是某一段代码只会执行一次，不会执行多次或不执行。这 5 和 3 这两个数，你不是重复计算了吗？怎么就精确一次了？</p>
+<p>显然，代码只执行一次肯定是不可能的嘛。我们无法控制系统在哪一行代码挂掉的，你要是在挂的时候，当前方法还没执行完，你还是得重新执行该方法的。</p>
+<p>所以，状态只持久化一次到最终的存储介质中（本地数据库/HDFS)，在 Flink 下就叫做 exactly once（计算的数据可能会重复（无法避免），但状态在存储介质上只会存储一次）。</p>
+<p>那么 Flink 是在多长时间存储一次的呢？这个是我们自己手动配置的。</p>
+<p>所谓的 CheckPoint 其实就是 Flink 会在指定的时间段上保存状态的信息，假设 Flink 挂了可以将上一次状态信息再捞出来，重放还没保存的数据来执行计算，最终实现 exactly once。</p>
+<p>那 CheckPonit 是怎么办到的呢？想想我们在 Kafka 在业务上实现「至少一次」是怎么做的？我们从 Kafka 把数据拉下来，处理完业务了以后，手动提交 offset (告诉 Kafka 我已经处理完了)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgSqiUqPQHcMS7gUXN4oNHZkwIlt.png"></p>
+<p>我们是做完了业务规则才将 offset 进行 commit 的，checkponit 其实也是一样的（等拉下来该条数据所有的流程走完，才进行真正的 checkponit）。</p>
+<p>问题又来了，那 checkpoint 是怎么知道拉下来的数据已经走完了呢？Flink 在流处理过程中插入了 barrier，每个环节处理到 barrier 都会上报，等到 sink 都上报了 barrier 就说明这次 checkpoint 已经走完了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmoyOqoDyVwpKAqg9-pVdap9tA1j.png"></p>
+<p>要注意的是，Flink 实现的精确一次性只是保证内部的状态是精确一次的，如果想要端到端精确一次，需要端的支持</p>
+<p>数据源需要可回放，发证故障可以重新读取未确认的数据<br>Flink 需要把数据存到磁盘介质（不能用内存），发生故障可以恢复<br>发送源需要支持事务（从读到写需要事务的支持保证中途不失败）</p>
+<p>最后<br>这篇文章对 Flink 做了一次简单的介绍，希望对大家在入门的时候有所帮助。后续打算会再写一篇 Flink 文章对 CheckPoint 机制做更加深入的了解，有兴趣的同学可以点个关注第一时间能接收到。<br>————————————————<br>版权声明：本文为 CSDN 博主「Java3y」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Java_3y/article/details/110184903">https://blog.csdn.net/Java_3y/article/details/110184903</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/" rel="prev" title="Hadoop">
+      <i class="fa fa-chevron-left"></i> Hadoop
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%8D%95%E6%92%AD%E7%BB%84%E6%92%AD%E4%B8%8E%E5%B9%BF%E6%92%AD/" rel="next" title="单播组播与广播">
+      单播组播与广播 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Flink%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是 Flink？</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

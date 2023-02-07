@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1. 基本模型1.1 结构 database 数据库，与 SQL 的数据库(database)概念相同，一个数据库包含多个集合(表) collection 集合，相当于 SQL 中的表(table)，一个集合可以存放多个文档(行)。 不同之处就在于集合的结构(schema)是动态的，不需要预先声明一个严格的表结构。更重要的是，默认情况下 MongoDB 并不会对写入的数据做任何 schema 的校">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB">
+<meta property="og:url" content="http://example.com/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/MongoDB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 基本模型1.1 结构 database 数据库，与 SQL 的数据库(database)概念相同，一个数据库包含多个集合(表) collection 集合，相当于 SQL 中的表(table)，一个集合可以存放多个文档(行)。 不同之处就在于集合的结构(schema)是动态的，不需要预先声明一个严格的表结构。更重要的是，默认情况下 MongoDB 并不会对写入的数据做任何 schema 的校">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkzlQKEl3O8vxDYrEKuW_4lP5GKC.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh6J3UUwu--Q77i5rmpPn1ylMnN8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fm6osILrxRGBL0gEyMW3SIUO28jT.jpeg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fs0cHKKVu8jKEankU1QZlLFrpmjG.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fts2ENIKC2nmwt5n92EAmTn_EFHQ.jpeg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjf344dn5aFEzpw-l085FDYi3PeI.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtvRfH_1Rag5S1F_76PLc0vPDiGv.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FuvfzQSuKpqwSkTvqsGnFf24gCtP.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoCfygewaTMalugBcqqAuX-Vf0nq.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgWM8FdQIRJEQRr9Y9tPPmasBN1E.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FurMGQqoZissD9BwdGF5vdiyiwtj.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqGHV79G1QpWzgbd3KB0GpCREff6.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgRBvjWXRqyctHG2PICjOoB180Z_.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqUSlHSm68iGmtjayaNXFfLahaD9.png">
+<meta property="article:published_time" content="2020-09-28T07:47:47.000Z">
+<meta property="article:modified_time" content="2023-02-07T16:55:33.846Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkzlQKEl3O8vxDYrEKuW_4lP5GKC.png">
+
+<link rel="canonical" href="http://example.com/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/MongoDB/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>MongoDB | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/MongoDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MongoDB
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-28 15:47:47" itemprop="dateCreated datePublished" datetime="2020-09-28T15:47:47+08:00">2020-09-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/" itemprop="url" rel="index"><span itemprop="name">MongoDB</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-基本模型"><a href="#1-基本模型" class="headerlink" title="1. 基本模型"></a>1. 基本模型</h1><h2 id="1-1-结构"><a href="#1-1-结构" class="headerlink" title="1.1 结构"></a>1.1 结构</h2><ul>
+<li>database 数据库，与 SQL 的数据库(database)概念相同，一个数据库包含多个集合(表)</li>
+<li>collection 集合，相当于 SQL 中的表(table)，一个集合可以存放多个文档(行)。 不同之处就在于集合的结构(schema)是动态的，不需要预先声明一个严格的表结构。更重要的是，默认情况下 MongoDB 并不会对写入的数据做任何 schema 的校验。</li>
+<li>document 文档，相当于 SQL 中的行(row)，一个文档由多个字段(列)组成，并采用 bson(json)格式表示。</li>
+<li>field 字段，相当于 SQL 中的列(column)，相比普通 column 的差别在于 field 的类型可以更加灵活，比如支持嵌套的文档、数组。<br>此外，MongoDB 中字段的类型是固定的、区分大小写、并且文档中的字段也是有序的。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkzlQKEl3O8vxDYrEKuW_4lP5GKC.png"></p>
+<h2 id="1-2-关键字"><a href="#1-2-关键字" class="headerlink" title="1.2 关键字"></a>1.2 关键字</h2><ul>
+<li>_id 主键，MongoDB 默认使用一个_id 字段来保证文档的唯一性。</li>
+<li>reference 引用，勉强可以对应于 外键(foreign key) 的概念，之所以是勉强是因为 reference 并没有实现任何外键的约束，而只是由客户端(driver)自动进行关联查询、转换的一个特殊类型。</li>
+<li>view 视图，MongoDB 3.4 开始支持视图，和 SQL 的视图没有什么差异，视图是基于表/集合之上进行动态查询的一层对象，可以是虚拟的，也可以是物理的(物化视图)。</li>
+<li>index 索引，与 SQL 的索引相同。</li>
+<li>$lookup，这是一个聚合操作符，可以用于实现类似 SQL-join 连接的功能</li>
+<li>transaction 事务，从 MongoDB 4.0 版本开始，提供了对于事务的支持</li>
+<li>aggregation 聚合，MongoDB 提供了强大的聚合计算框架，group by 是其中的一类聚合操作。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh6J3UUwu--Q77i5rmpPn1ylMnN8.png"></p>
+<h2 id="1-3-格式"><a href="#1-3-格式" class="headerlink" title="1.3 格式"></a>1.3 格式</h2><ul>
+<li><strong>BSON</strong></li>
+</ul>
+<p>MongoDB 文档可以使用 Javascript 对象表示，从格式上讲，是基于 JSON 的。<br>但是 JSON 也有自己的短板，比如无法支持像日期这样的特定数据类型，因此 MongoDB 实际上使用的是一种扩展式的 JSON，叫 <strong>BSON</strong>(Binary JSON)。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fm6osILrxRGBL0gEyMW3SIUO28jT.jpeg"></p>
+<h2 id="1-4-分布式-ID"><a href="#1-4-分布式-ID" class="headerlink" title="1.4 分布式 ID"></a>1.4 分布式 ID</h2><p>在单机时代，大多数应用可以使用数据库自增式 ID 来作为主键。 传统的 RDBMS 也都支持这种方式，比如 mysql 可以通过声明 auto_increment 来实现自增的主键。 但一旦数据实现了分布式存储，这种方式就不再适用了，原因就在于无法保证多个节点上的主键不出现重复。<br>MongoDB 采用 ObjectId 来表示主键的类型，数据库中每个文档都拥有一个_id 字段表示主键。<br>_id 的生成规则如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fs0cHKKVu8jKEankU1QZlLFrpmjG.png"></p>
+<ul>
+<li>4-byte Unix 时间戳</li>
+<li>3-byte 机器 ID</li>
+<li>2-byte 进程 ID</li>
+<li>3-byte 计数器(初始化随机)</li>
+</ul>
+<p>_id 的生成实质上是由客户端(Driver)生成的，这样可以获得更好的随机性，同时降低服务端的负载。服务端也会检测写入的文档是否包含_id 字段，如果没有就生成一个。</p>
+<hr>
+<h1 id="2-操作语法"><a href="#2-操作语法" class="headerlink" title="2 操作语法"></a>2 操作语法</h1><hr>
+<h1 id="3-索引"><a href="#3-索引" class="headerlink" title="3 索引"></a>3 索引</h1><hr>
+<h1 id="4-集群"><a href="#4-集群" class="headerlink" title="4 集群"></a>4 集群</h1><h2 id="4-1-组件"><a href="#4-1-组件" class="headerlink" title="4.1 组件"></a>4.1 组件</h2><p>由于单机垂直扩展能力的局限，水平扩展的方式则显得更加的靠谱。 MongoDB 自带了这种能力，可以将数据存储到多个机器上以提供更大的容量和负载能力。为了保证数据的高可用，MongoDB 采用副本集的方式来实现数据复制。<br>MongoDB 分片集群(Shard Cluster)：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fts2ENIKC2nmwt5n92EAmTn_EFHQ.jpeg"></p>
+<ul>
+<li><strong>shard</strong>：分片</li>
+<li><strong>mongos</strong>：查询路由器</li>
+<li><strong>config servers</strong>：配置服务器</li>
+</ul>
+<h3 id="4-1-1-shard"><a href="#4-1-1-shard" class="headerlink" title="4.1.1 shard"></a>4.1.1 shard</h3><ul>
+<li>分片，是 MongoDB 用来将<strong>大型集合分割到不同服务器</strong>（或者说一个集群）上所采用的方法。</li>
+<li>和 MySQL 分区方案相比，MongoDB 的最大区别在于它几乎能<strong>自动完成所有事情</strong>，只要告诉 MongoDB 要分配数据，它就能自动维护数据在<strong>不同服务器之间的均衡</strong>（<strong>chunk 的分裂与迁移</strong>）。</li>
+<li>用于<strong>存储实际的数据块</strong>，实际生产环境中一个 shard server 角色可由几台机器组个一个 replica set 承担，提供了数据冗余和高等级的可靠性，防止主机单点故障。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjf344dn5aFEzpw-l085FDYi3PeI.png"></p>
+<h3 id="4-1-2-mongos"><a href="#4-1-2-mongos" class="headerlink" title="4.1.2 mongos"></a>4.1.2 mongos</h3><ul>
+<li>查询路由器，提供客户端应用程序和分片集群之间的接口，让整个集群看上去像单一数据库，前端应用可以透明使用。可以部署多个 mongos 路由器。</li>
+<li>mongos 本身没有任何数据，他也不知道该怎么处理这数据，去找 config server</li>
+</ul>
+<h3 id="4-1-3-config-servers"><a href="#4-1-3-config-servers" class="headerlink" title="4.1.3 config servers"></a>4.1.3 config servers</h3><ul>
+<li>配置服务器，<strong>存储集群的元数据和配置设置</strong>。从 MongoDB 3.4 开始，必须将配置服务器部署为 3 成员副本集</li>
+<li>存储所有存、取数据的方式，所有 shard 节点的信息，分片功能的一些配置信息。可以理解为真实数据的元数据。</li>
+</ul>
+<hr>
+<h2 id="4-2-分片策略"><a href="#4-2-分片策略" class="headerlink" title="4.2 分片策略"></a>4.2 分片策略</h2><h3 id="4-2-1-散列分片"><a href="#4-2-1-散列分片" class="headerlink" title="4.2.1 散列分片"></a>4.2.1 散列分片</h3><ul>
+<li>使用散列索引在共享群集中分区数据。散列索引计算<strong>单个字段的哈希值</strong>作为索引值; 此值用作分片键。</li>
+<li>使用散列索引解析查询时，MongoDB 会自动计算哈希值。应用程序也不会需要计算哈希值。</li>
+<li>基于散列值的数据分布有助于更均匀的数据分布，尤其是在分片键单调变化的数据集中。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtvRfH_1Rag5S1F_76PLc0vPDiGv.png"></p>
+<h3 id="4-2-2-范围分片"><a href="#4-2-2-范围分片" class="headerlink" title="4.2.2 范围分片"></a>4.2.2 范围分片</h3><ul>
+<li>基于<strong>分片键值</strong>将数据分成范围。然后根据分片键值为每个块分配一个范围。</li>
+<li>mongos 可以将操作仅路由到包含所需数据的分片。</li>
+<li>分片键的规划很重要，可能导致数据不能均匀分布。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FuvfzQSuKpqwSkTvqsGnFf24gCtP.png"></p>
+<hr>
+<h2 id="4-3-复制集选举策略"><a href="#4-3-复制集选举策略" class="headerlink" title="4.3 复制集选举策略"></a>4.3 复制集选举策略</h2><p>复制集通过 replSetInitiate 命令（或 mongo shell 的 rs.initiate()）进行初始化，初始化后各个成员间开始发送心跳消息，并发起 Priamry 选举操作，获得『大多数』成员投票支持的节点，会成为 Primary，其余节点成为 Secondary。<br>『大多数』：假设复制集内投票成员（后续介绍）数量为 N，则大多数为 <strong>N/2 + 1</strong>，当复制集内存活成员数量不足大多数时，整个复制集将无法选举出 Primary，复制集将无法提供写服务，处于只读状态。<br>所以当复制集成员为偶数时，最好加入一个 Arbiter 节点，以提升复制集可用性。</p>
+<hr>
+<h2 id="4-4-shard-chunk"><a href="#4-4-shard-chunk" class="headerlink" title="4.4 shard-chunk"></a>4.4 shard-chunk</h2><h3 id="4-4-1-Chunk-是什么"><a href="#4-4-1-Chunk-是什么" class="headerlink" title="4.4.1 Chunk 是什么"></a>4.4.1 Chunk 是什么</h3><p>在一个 shard server 内部，MongoDB 还是会把数据分为 chunks，每个 chunk 代表这个 shard server 内部一部分数据。</p>
+<ul>
+<li>chunk 有以下两个用途：<ul>
+<li><strong>Splitting</strong>：当一个 chunk 的大小超过配置中的 chunk size 时，MongoDB 的后台进程会把这个 chunk 切分成更小的 chunk，从而避免 chunk 过大的情况</li>
+<li><strong>Balancing</strong>：在 MongoDB 中，balancer 是一个后台进程，负责 chunk 的迁移，从而均衡各个 shard server 的负载，系统初始 1 个 chunk，chunk size 默认值 64M,生产库上选择适合业务的 chunk size 是最好的。mongoDB 会<strong>自动拆分和迁移 chunks</strong>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-4-2-Chunksize-的选择"><a href="#4-4-2-Chunksize-的选择" class="headerlink" title="4.4.2 Chunksize 的选择"></a>4.4.2 Chunksize 的选择</h3><ul>
+<li>小的 chunksize：数据均衡是迁移速度快，数据<strong>分布更均匀</strong>。数据分裂<strong>频繁</strong>，路由节点消耗更多资源。</li>
+<li>大的 chunksize：数据分裂少。数据块移动<strong>集中消耗 IO 资源</strong>。通常 100-200M</li>
+</ul>
+<h3 id="4-4-3-Chunk-分裂迁移"><a href="#4-4-3-Chunk-分裂迁移" class="headerlink" title="4.4.3 Chunk 分裂迁移"></a>4.4.3 Chunk 分裂迁移</h3><ul>
+<li>chunk 的分裂和迁移非常消耗 IO 资源；</li>
+<li>只在插入和更新时 chunk 才可能分裂迁移。</li>
+<li>chunk 只会分裂，不会合并，所以即使将 chunkSize 改大，现有的 chunk 数量不会减少，但 chunk 大小会随着写入不断增长，直到达到目标大小。</li>
+<li>过程：<ul>
+<li>chunk 的数据大小超过 chunk size：</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoCfygewaTMalugBcqqAuX-Vf0nq.png"></p>
+<ul>
+<li>此时各 shard 上的 chunk 数量不平衡，balancer 组件把 chunk 从 chunk 数量最多的 shard 节点挪动到数量最少的节点。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgWM8FdQIRJEQRr9Y9tPPmasBN1E.png"></p>
+<hr>
+<h2 id="4-5-replica-set-复制集"><a href="#4-5-replica-set-复制集" class="headerlink" title="4.5 replica set 复制集"></a>4.5 replica set 复制集</h2><h3 id="4-5-1-简介"><a href="#4-5-1-简介" class="headerlink" title="4.5.1 简介"></a>4.5.1 简介</h3><p>一组复制集就是一组 mongod 实例掌管同一个数据集，实例可以在不同的机器上面。</p>
+<ul>
+<li>实例中包含一个<strong>主导</strong>，接受客户端所有的写入操作，包含了所有的改变操作（写）的日志</li>
+<li>其他都是<strong>副本实例</strong>，从主服务器上获得数据并保持同步。包含有所有的主服务器数据，因此当主服务器挂掉了，就会在副本服务器上重新选取一个成为主服务器。</li>
+<li>每个复制集还有一个<strong>仲裁者</strong>，仲裁者不存储数据，在选取中不能成为主库，只是负责通过心跳包来确认集群中集合的数量，并在主服务器选举的时候作为仲裁决定结果。</li>
+</ul>
+<h3 id="4-5-2-复制集成员说明"><a href="#4-5-2-复制集成员说明" class="headerlink" title="4.5.2 复制集成员说明"></a>4.5.2 复制集成员说明</h3><ul>
+<li>**Secondary **<ul>
+<li>正常情况下，复制集的 Seconary 会参与 Primary 选举（自身也可能会被选为 Primary），并<strong>从 Primary 同步最新写入的数据</strong>，以保证与 Primary 存储相同的数据。</li>
+<li>Secondary<strong>可以提供读服务</strong>，增加 Secondary 节点可以提供复制集的读服务能力，同时提升复制集的可用性。另外，Mongodb 支持对复制集的 Secondary 节点进行灵活的配置，以适应多种场景的需求。</li>
+</ul>
+</li>
+<li><strong>Arbiter</strong><ul>
+<li>Arbiter 节点只参与投票，不能被选为 Primary，并且不从 Primary 同步数据。</li>
+<li>比如你部署了一个 2 个节点的复制集，1 个 Primary，1 个 Secondary，任意节点宕机，复制集将不能提供服务了（无法选出 Primary），这时可以给复制集添加一个 Arbiter 节点，即使有节点宕机，仍能选出 Primary。</li>
+<li>Arbiter 本身不存储数据，是非常轻量级的服务，当复制集成员为偶数时，最好加入一个 Arbiter 节点，以提升复制集可用性。</li>
+</ul>
+</li>
+<li>**Priority0 **<ul>
+<li>Priority0 节点的选举优先级为 0，不会被选举为 Primary</li>
+<li>比如你跨机房 A、B 部署了一个复制集，并且想指定 Primary 必须在 A 机房，这时可以将 B 机房的复制集成员 Priority 设置为 0，这样 Primary 就一定会是 A 机房的成员。（注意：如果这样部署，最好将『大多数』节点部署在 A 机房，否则网络分区时可能无法选出 Primary）</li>
+</ul>
+</li>
+<li><strong>Vote0</strong><ul>
+<li>Mongodb 3.0 里，复制集成员最多 50 个，参与 Primary 选举投票的成员最多 7 个，其他成员（Vote0）的 vote 属性必须设置为 0，即不参与投票。</li>
+</ul>
+</li>
+<li><strong>Hidden</strong><ul>
+<li>Hidden 节点不能被选为主（Priority 为 0），并且对 Driver 不可见。因 Hidden 节点不会接受 Driver 的请求，可使用 Hidden 节点做一些数据备份、离线计算的任务，不会影响复制集的服务。</li>
+</ul>
+</li>
+<li><strong>Delayed</strong><ul>
+<li>Delayed 节点必须是 Hidden 节点，并且其数据落后于 Primary 一段时间（可配置，比如 1 个小时）。</li>
+<li>因 Delayed 节点的数据比 Primary 落后一段时间，当错误或者无效的数据写入 Primary 时，可通过 Delayed 节点的数据来恢复到之前的时间点。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-5-3-基本架构"><a href="#4-5-3-基本架构" class="headerlink" title="4.5.3 基本架构"></a>4.5.3 基本架构</h3><ul>
+<li><strong>一主两从（三成员都有数据）</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FurMGQqoZissD9BwdGF5vdiyiwtj.png"><br>当主库宕机后,两个从库都会进行竞选，其中一个变为主库，当原主库恢复后，作为从库加入当前的复制集群即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqGHV79G1QpWzgbd3KB0GpCREff6.png"></p>
+<ul>
+<li><strong>一主一从一仲裁者（两个有数据）</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgRBvjWXRqyctHG2PICjOoB180Z_.png"><br>当主库宕机时，将会选择从库成为主，主库修复后，将其加入到现有的复制集群中即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqUSlHSm68iGmtjayaNXFfLahaD9.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/NoSQL/" rel="prev" title="NoSQL">
+      <i class="fa fa-chevron-left"></i> NoSQL
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/14/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/maven/Maven/" rel="next" title="Maven">
+      Maven <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">1. 基本模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E5%88%86%E5%B8%83%E5%BC%8F-ID"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 分布式 ID</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%93%8D%E4%BD%9C%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">2 操作语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E7%B4%A2%E5%BC%95"><span class="nav-number">3.</span> <span class="nav-text">3 索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E9%9B%86%E7%BE%A4"><span class="nav-number">4.</span> <span class="nav-text">4 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E7%BB%84%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-shard"><span class="nav-number">4.1.1.</span> <span class="nav-text">4.1.1 shard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-mongos"><span class="nav-number">4.1.2.</span> <span class="nav-text">4.1.2 mongos</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-config-servers"><span class="nav-number">4.1.3.</span> <span class="nav-text">4.1.3 config servers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%88%86%E7%89%87%E7%AD%96%E7%95%A5"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 分片策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-%E6%95%A3%E5%88%97%E5%88%86%E7%89%87"><span class="nav-number">4.2.1.</span> <span class="nav-text">4.2.1 散列分片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-%E8%8C%83%E5%9B%B4%E5%88%86%E7%89%87"><span class="nav-number">4.2.2.</span> <span class="nav-text">4.2.2 范围分片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E5%A4%8D%E5%88%B6%E9%9B%86%E9%80%89%E4%B8%BE%E7%AD%96%E7%95%A5"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 复制集选举策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-shard-chunk"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 shard-chunk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-Chunk-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">4.4.1.</span> <span class="nav-text">4.4.1 Chunk 是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-Chunksize-%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">4.4.2.</span> <span class="nav-text">4.4.2 Chunksize 的选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-3-Chunk-%E5%88%86%E8%A3%82%E8%BF%81%E7%A7%BB"><span class="nav-number">4.4.3.</span> <span class="nav-text">4.4.3 Chunk 分裂迁移</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-replica-set-%E5%A4%8D%E5%88%B6%E9%9B%86"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 replica set 复制集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-1-%E7%AE%80%E4%BB%8B"><span class="nav-number">4.5.1.</span> <span class="nav-text">4.5.1 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-2-%E5%A4%8D%E5%88%B6%E9%9B%86%E6%88%90%E5%91%98%E8%AF%B4%E6%98%8E"><span class="nav-number">4.5.2.</span> <span class="nav-text">4.5.2 复制集成员说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-3-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84"><span class="nav-number">4.5.3.</span> <span class="nav-text">4.5.3 基本架构</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1 Twitter-snowflakesnowflake 将 long 的 64 位分为了 3 部分，如图：其中，时间戳部分的时间单位一般为毫秒。也就是说 1 台工作机器 1 毫秒可产生 4096 个 id（2 的 12 次方）。 2 Baidu-UidGenerator 源码：（使用说明详见：README.md） https:&#x2F;&#x2F;github.com&#x2F;baidu&#x2F;uid-generator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UID">
+<meta property="og:url" content="http://example.com/2020/10/29/java%E5%9F%BA%E7%A1%80/UID/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 Twitter-snowflakesnowflake 将 long 的 64 位分为了 3 部分，如图：其中，时间戳部分的时间单位一般为毫秒。也就是说 1 台工作机器 1 毫秒可产生 4096 个 id（2 的 12 次方）。 2 Baidu-UidGenerator 源码：（使用说明详见：README.md） https:&#x2F;&#x2F;github.com&#x2F;baidu&#x2F;uid-generator">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmxI7YIky3StXkNIUwkYxATQDzGs.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fuw-sk1MrbFu_x8rbpm7EVlaHbk6.webp">
+<meta property="og:image" content="https://github.com/baidu/uid-generator/raw/master/doc/ringbuffer.png">
+<meta property="og:image" content="https://github.com/baidu/uid-generator/raw/master/doc/cacheline_padding.png">
+<meta property="article:published_time" content="2020-10-29T07:04:03.000Z">
+<meta property="article:modified_time" content="2023-02-07T16:45:24.480Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmxI7YIky3StXkNIUwkYxATQDzGs.png">
+
+<link rel="canonical" href="http://example.com/2020/10/29/java%E5%9F%BA%E7%A1%80/UID/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>UID | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/29/java%E5%9F%BA%E7%A1%80/UID/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UID
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-29 15:04:03" itemprop="dateCreated datePublished" datetime="2020-10-29T15:04:03+08:00">2020-10-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-Twitter-snowflake"><a href="#1-Twitter-snowflake" class="headerlink" title="1 Twitter-snowflake"></a>1 Twitter-snowflake</h1><p>snowflake 将 long 的 64 位分为了 3 部分，如图：<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmxI7YIky3StXkNIUwkYxATQDzGs.png"><br>其中，时间戳部分的时间单位一般<strong>为毫秒</strong>。也就是说 1 台工作机器 1 毫秒可产生 4096 个 id（2 的 12 次方）。</p>
+<h1 id="2-Baidu-UidGenerator"><a href="#2-Baidu-UidGenerator" class="headerlink" title="2 Baidu-UidGenerator"></a>2 Baidu-UidGenerator</h1><ul>
+<li>源码：（使用说明详见：README.md）<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/baidu/uid-generator">https://github.com/baidu/uid-generator</a></li>
+</ul>
+</li>
+<li>依赖版本：<ul>
+<li><a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java8</a>及以上版本</li>
+<li><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">MySQL</a>(内置 WorkerID 分配器, 启动阶段通过 DB 进行分配; 如自定义实现, 则 DB 非必选依赖）</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>UidGenerator 是 Java 实现的, 基于 Twitter 开源的<a target="_blank" rel="noopener" href="https://github.com/twitter/snowflake"><strong>Snowflake</strong></a>算法的唯一 ID 生成器</li>
+<li>采用 RingBuffer 来<strong>缓存</strong>已生成的 UID, 并行化 UID 的生产和消费（CachedUidGenerator）</li>
+<li>同时对<strong>CacheLine 补齐</strong>，避免了由 RingBuffer 带来的硬件级「伪共享」问题（CachedUidGenerator）</li>
+<li>单机 QPS(Query Per Second)  可达 600 万</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-Long-位数分配"><a href="#2-1-Long-位数分配" class="headerlink" title="2.1 Long 位数分配"></a>2.1 Long 位数分配</h2><p><code>**这些部分的长度可以根据具体需要进行动态的调整，满足总长度为64位即可，下图为默认位数：**</code><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fuw-sk1MrbFu_x8rbpm7EVlaHbk6.webp"></p>
+<ul>
+<li>sign(1bit)：固定 1bit 符号标识，即生成的 UID 为正数。</li>
+<li>delta seconds (28 bits)：当前时间，相对于时间基点”2016-05-20”的增量值，<strong>单位：秒</strong>，最多可支持约 8.7 年</li>
+<li>worker id (22 bits)：机器 id，最多可支持约 420w 次机器启动。内置实现为在启动时由数据库分配，默认分配策略为用后即弃，后续可提供复用策略。</li>
+<li>sequence (13 bits)：每秒下的并发序列，13 bits 可支持每秒 8192 个并发。</li>
+</ul>
+<h2 id="2-2-具体实现"><a href="#2-2-具体实现" class="headerlink" title="2.2 具体实现"></a>2.2 具体实现</h2><h3 id="2-2-1-DefaultUidGenerator"><a href="#2-2-1-DefaultUidGenerator" class="headerlink" title="2.2.1 DefaultUidGenerator"></a>2.2.1 DefaultUidGenerator</h3><ul>
+<li>实现了<em>InitializingBean</em>接口，会在初始化时添加 WorkerNode 至数据库，并返回一个 workerNodeId（可自定义实现：_implements WorkerIdAssigner_）</li>
+<li>nextId 方法主要负责 ID 的生成，这种实现方式很简单，<ul>
+<li>如果毫秒数未发生变化，在序列号加一即可；</li>
+<li>如果毫秒数未发生变化，并且序列号已分配至最大，则等待至下一秒</li>
+<li>毫秒数发生变化，重置 Sequence 为 0;</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">synchronized</span> <span class="type">long</span> <span class="title function_">nextId</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">long</span> <span class="variable">currentSecond</span> <span class="operator">=</span> getCurrentSecond();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Clock moved backwards, refuse to generate uid</span></span><br><span class="line">    <span class="keyword">if</span> (currentSecond &lt; lastSecond) &#123;</span><br><span class="line">        <span class="type">long</span> <span class="variable">refusedSeconds</span> <span class="operator">=</span> lastSecond - currentSecond;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">UidGenerateException</span>(<span class="string">&quot;Clock moved backwards. Refusing for %d seconds&quot;</span>, refusedSeconds);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// At the same second, increase sequence</span></span><br><span class="line">    <span class="keyword">if</span> (currentSecond == lastSecond) &#123;</span><br><span class="line">        sequence = (sequence + <span class="number">1</span>) &amp; bitsAllocator.getMaxSequence();</span><br><span class="line">        <span class="comment">// Exceed the max sequence, we wait the next second to generate uid</span></span><br><span class="line">        <span class="keyword">if</span> (sequence == <span class="number">0</span>) &#123;</span><br><span class="line">            currentSecond = getNextSecond(lastSecond);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// At the different second, sequence restart from zero</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        sequence = <span class="number">0L</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    lastSecond = currentSecond;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Allocate bits for UID</span></span><br><span class="line">    <span class="keyword">return</span> bitsAllocator.allocate(currentSecond - epochSeconds, workerId, sequence);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-2-CachedUidGenerator"><a href="#2-2-2-CachedUidGenerator" class="headerlink" title="2.2.2 CachedUidGenerator"></a>2.2.2 CachedUidGenerator</h3><ul>
+<li>结构</li>
+</ul>
+<p><img src="https://github.com/baidu/uid-generator/raw/master/doc/ringbuffer.png"></p>
+<ul>
+<li><p>RingBuffer 填充时机</p>
+<ul>
+<li>初始化预填充<br>    RingBuffer 初始化时，预先填充满整个 RingBuffer.</li>
+<li>即时填充<br>    Take 消费时，即时检查剩余可用 slot 量(<code>tail</code> - <code>cursor</code>)，如小于设定阈值，则补全空闲 slots。阈值可通过<code>paddingFactor</code>来进行配置，请参考 Quick Start 中 CachedUidGenerator 配置</li>
+<li>周期填充<br>     通过 Schedule 线程，定时补全空闲 slots。可通过<code>scheduleInterval</code>配置，以应用定时填充功能，并指定 Schedule 时间间隔</li>
+</ul>
+</li>
+<li><p>由于数组元素在内存中是连续分配的，可最大程度利用 CPU cache 以提升性能。但同时会带来「伪共享」FalseSharing 问题，为此在 Tail、Cursor 指针、Flag-RingBuffer 中采用了 CacheLine 补齐方式。</p>
+</li>
+</ul>
+<p><img src="https://github.com/baidu/uid-generator/raw/master/doc/cacheline_padding.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/22/%E9%A1%B9%E7%9B%AE/APP%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/" rel="prev" title="APP消息推送">
+      <i class="fa fa-chevron-left"></i> APP消息推送
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Cache/" rel="next" title="Cache">
+      Cache <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Twitter-snowflake"><span class="nav-number">1.</span> <span class="nav-text">1 Twitter-snowflake</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Baidu-UidGenerator"><span class="nav-number">2.</span> <span class="nav-text">2 Baidu-UidGenerator</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Long-%E4%BD%8D%E6%95%B0%E5%88%86%E9%85%8D"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Long 位数分配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-DefaultUidGenerator"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 DefaultUidGenerator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-CachedUidGenerator"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 CachedUidGenerator</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

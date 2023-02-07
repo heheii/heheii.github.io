@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/17/yuque/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,210 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/09/17/yuque/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">大数据</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-17 01:10:12" itemprop="dateCreated datePublished" datetime="2021-09-17T01:10:12+08:00">2021-09-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:38" itemprop="dateModified" datetime="2023-02-07T21:28:38+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/yuque/Hbase%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/13/yuque/Hbase%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">Hbase操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-13 20:53:52" itemprop="dateCreated datePublished" datetime="2021-09-13T20:53:52+08:00">2021-09-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:48" itemprop="dateModified" datetime="2023-02-07T21:28:48+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="0-总体操作流程"><a href="#0-总体操作流程" class="headerlink" title="0 总体操作流程"></a>0 总体操作流程</h1><ol>
-<li>client 请求到 Zookeeper，然后 Zookeeper 返回 HRegionServer 地址给 client</li>
-<li>client 得到 Zookeeper 返回的地址去请求 HRegionServer，</li>
-<li>HRegionServer 从 HDFS 读写数据后返回给 client。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoxoGTzSQ73G88ye66ouxoIe69CM.png"></li>
-</ol>
-<h1 id="1-查询"><a href="#1-查询" class="headerlink" title="1 查询"></a>1 查询</h1><h2 id="1-1-流程"><a href="#1-1-流程" class="headerlink" title="1.1 流程"></a>1.1 流程</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fp5a4UvHtzl9sGQkzjsEdt_TzrxK.png"></p>
-<ol>
-<li>hbase client 要读数据了，先从 zookeeper 中拿到 meta 表信息，根据要查的 rowkey 找到对应的数据在哪些 RegionServer 上</li>
-<li>分别在这些 RegionServer 上根据列簇定位到 Region，</li>
-<li>先在<strong>MemStore</strong>中查找，命中则返回，否则在<strong>Storefile</strong>中扫描，为了能快速的判断要查询的数据在不在这个 StoreFile 中，应用了<strong>BloomFilter</strong></li>
-<li>根据数据的版本找到最新数据进行返回</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkAuJDQruDuEqGuIv9v5aHonYG-K.png"></p>
-<h2 id="1-2-查询方式"><a href="#1-2-查询方式" class="headerlink" title="1.2 查询方式"></a>1.2 查询方式</h2><ul>
-<li>无法直接用 sql 查询，只能通过 rowKey 查询<ul>
-<li>rowKey 底层也是 b+ Tree</li>
-<li>把查询的条件字段放在 rowKey 中</li>
-</ul>
-</li>
-</ul>
-<p>注：有些中间件把 sql 翻译成 hbase 的查询规则，从而支持了 sql 间接查 hbase</p>
-<ul>
-<li>第一种是 scan：设置  <strong>startRow</strong>  和  <strong>stopRow</strong>  参数进行范围匹配<ul>
-<li>[<strong>startRow, stopRow</strong>) 左闭右开</li>
-</ul>
-</li>
-<li>第二种是根据一个 rowkey 进行查询</li>
-<li>第三种是全表扫描，直接获取整张表中的所有行记录</li>
-<li>如果 rowkey 复杂且查询条件复杂，hbase 还针对 rowkey 提供了自定义 Filter</li>
-</ul>
-<h2 id="1-3-设置-rowKey-需要注意的点"><a href="#1-3-设置-rowKey-需要注意的点" class="headerlink" title="1.3 设置 rowKey 需要注意的点"></a>1.3 设置 rowKey 需要注意的点</h2><blockquote>
-<p>一条数据的唯一标识：rowKey<br>rowKey = 散列字段 + indicator 信息 + 时间戳</p>
-</blockquote>
-<ul>
-<li>必须唯一</li>
-<li>尽可能短<ul>
-<li>每个 key-value 都包含 rowKey，这样可以节省存储空间</li>
-</ul>
-</li>
-<li>数字需要补齐<ul>
-<li>rowkey 是按照字符串字典序来组织成 B+树的，所以数字的话需要补齐，不然的话会出现 123w 小于 20w 的情况，但是补齐的话，你就会发现 020w 小于 123w</li>
-</ul>
-</li>
-<li>rowKey 散列性<ul>
-<li>数据是根据 rowkey 和一定的哈希规则，分散到不同的 Region 上面，而 Region 又是属于某一个 HRegionServer</li>
-<li>rowKey 的前几个字符若一样，会分布在同一个 HRegionServer 上，导致 server 负载不均（堆积的热点现象）</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="2-写入"><a href="#2-写入" class="headerlink" title="2 写入"></a>2 写入</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FrP7KKf4q6DMXIgBzZOTK443rzzH.png"></p>
-<h2 id="2-1-流程"><a href="#2-1-流程" class="headerlink" title="2.1 流程"></a>2.1 流程</h2><ol>
-<li>hbase client 要写入了，先从 zookeeper 中拿到**.META.**表信息，根据数据的 rowkey 找到应该往哪个 RegionServer 写</li>
-<li>然后记录操作日志<strong>WAL</strong>，再将数据写入对应<strong>MemStore</strong>中</li>
-<li>判断 MemStore 是否超过阈值，（当 MemStore 大小超过阈值时，就会创建一个新的 MemStore，并且将老的 MemStore 添加到 flush 队列，由单独的线程 flush 到磁盘上，成为一个 StoreFile）</li>
-<li>在触发了一定条件的时候，小的 StoreFile 会进行合并，变成大的 StoreFile，有利于 hdfs 存储</li>
-</ol>
-<hr>
-<h2 id="2-2-LSM-三层模型（数据-gt-内存-gt-小文件-gt-大文件）"><a href="#2-2-LSM-三层模型（数据-gt-内存-gt-小文件-gt-大文件）" class="headerlink" title="2.2 LSM 三层模型（数据-&gt;内存-&gt;小文件-&gt;大文件）"></a>2.2 LSM 三层模型（数据-&gt;内存-&gt;小文件-&gt;大文件）</h2><p>LSM 被设计来提供比传统的 B+树或者 ISAM 更好的写操作吞吐量，通过消去随机的本地更新操作来达到这个目标。这个问题的本质还是<strong>磁盘随机操作慢，顺序读写快</strong>的老问题。这二种操作存在巨大的差距，无论是磁盘还是 SSD</p>
-<ul>
-<li>小文件-&gt;大文件：分两种： - minor compact，这种方式只会将少数文件进行简单合并，不会进行数据的清理。一般在生产环境禁止大合并，不然可能资源被耗光，无法正常提供服务。 - major compact，这种方式会将大部分文件进行合并，并且清理数据，十分消耗性能，一般在业务低峰期手动进行或定时任务执行</li>
-</ul>
-<h2 id="2-3-WAL-机制保证宕机时内存中数据恢复"><a href="#2-3-WAL-机制保证宕机时内存中数据恢复" class="headerlink" title="2.3 WAL 机制保证宕机时内存中数据恢复"></a>2.3 WAL 机制保证宕机时内存中数据恢复</h2><p>WAL，即 Write ahead log。<br>类似 mysql 中的 binlog，用来做灾难恢复之用，Hlog 记录数据的所有变更</p>
-<ul>
-<li>数据在更新时首先写入 HLog(WAL Log)，再写入内存(MemStore)中，MemStore 中的数据是排序的，当 MemStore 累计到一定阈值时，就会创建一个新的 MemStore，并且将老的 MemStore 添加到 flush 队列，由单独的线程 flush 到磁盘上，成为一个 StoreFile。于此同时，系统会在 ZooKeeper 中记录一个 redo point，表示这个时刻之前的变更已经持久化了。当系统出现意外时，可能导致内存(MemStore)中的数据丢失，此时使用 HLog(WAL Log)来恢复 checkpoint 之后的数据。</li>
-<li>HLog 文件定期会滚动出新，并删除旧的文件(已持久化到 StoreFile 中的数据)。当 HRegionServer 意外终止 后，HMaster 会通过 ZooKeeper 感知，HMaster 首先处理遗留的 HLog 文件，将不同 Region 的 log 数据拆分，分别放到相应 Region 目录下，然后再将失效的 Region（带有刚刚拆分的 log） 重新分配，领取到这些 Region 的 HRegionServer 在 load Region 的过程中，会发现有历史 HLog 需要处理，因此会 Replay HLog 中的数据到 MemStore 中，然后 flush 到 StoreFiles，完成数据恢复。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FjmO7LjJAEEBfpsnnJE7HkJ6hnjx.png"></p>
-<hr>
-<h1 id="3-修改-删除"><a href="#3-修改-删除" class="headerlink" title="3 修改/删除"></a>3 修改/删除</h1><ul>
-<li>修改时原数据不变，只是追加一条版本号最新的数据</li>
-<li>删除时原数据不变，只是追加一条版本号最新的标识被删除的数据</li>
-<li>查询时只查版本最新的数据</li>
-</ul>
-<p>注：LSM 第三层 hbase 在<em>major compact</em>时会把用不到的数据删除</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/yuque/Hbase%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/13/yuque/Hbase%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Hbase逻辑结构</a>
+            <a href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Hbase逻辑结构</a>
         </h2>
 
         <div class="post-meta">
@@ -379,8 +176,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:54" itemprop="dateModified" datetime="2023-02-07T21:28:54+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:34:05" itemprop="dateModified" datetime="2023-02-08T00:34:05+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" itemprop="url" rel="index"><span itemprop="name">hbase</span></a>
+                </span>
+            </span>
 
           
 
@@ -425,7 +235,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/yuque/Hbase%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -439,7 +249,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/09/13/yuque/Hbase%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Hbase物理结构</a>
+            <a href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Hbase物理结构</a>
         </h2>
 
         <div class="post-meta">
@@ -456,8 +266,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:58" itemprop="dateModified" datetime="2023-02-07T21:28:58+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:34:09" itemprop="dateModified" datetime="2023-02-08T00:34:09+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" itemprop="url" rel="index"><span itemprop="name">hbase</span></a>
+                </span>
+            </span>
 
           
 
@@ -523,7 +346,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/03/yuque/liquibase/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/03/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/liquibase/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -537,7 +360,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/03/yuque/liquibase/" class="post-title-link" itemprop="url">liquibase</a>
+            <a href="/2021/08/03/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/liquibase/" class="post-title-link" itemprop="url">liquibase</a>
         </h2>
 
         <div class="post-meta">
@@ -554,8 +377,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:58" itemprop="dateModified" datetime="2023-02-07T21:28:58+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/" itemprop="url" rel="index"><span itemprop="name">liquibase</span></a>
+                </span>
+            </span>
 
           
 
@@ -588,7 +424,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/28/yuque/DDD/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/DDD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -602,7 +438,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/28/yuque/DDD/" class="post-title-link" itemprop="url">DDD</a>
+            <a href="/2021/07/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/DDD/" class="post-title-link" itemprop="url">DDD</a>
         </h2>
 
         <div class="post-meta">
@@ -619,8 +455,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:58" itemprop="dateModified" datetime="2023-02-07T21:28:58+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:26:03" itemprop="dateModified" datetime="2023-02-08T00:26:03+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
 
           
 
@@ -669,7 +514,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/29/yuque/%E6%B3%A8%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/29/java%E5%9F%BA%E7%A1%80/%E6%B3%A8%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -683,7 +528,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/29/yuque/%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">注解</a>
+            <a href="/2021/06/29/java%E5%9F%BA%E7%A1%80/%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">注解</a>
         </h2>
 
         <div class="post-meta">
@@ -700,8 +545,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:58" itemprop="dateModified" datetime="2023-02-07T21:28:58+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -765,7 +619,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/28/yuque/javax/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/28/java%E5%9F%BA%E7%A1%80/javax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -779,7 +633,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/28/yuque/javax/" class="post-title-link" itemprop="url">javax</a>
+            <a href="/2021/06/28/java%E5%9F%BA%E7%A1%80/javax/" class="post-title-link" itemprop="url">javax</a>
         </h2>
 
         <div class="post-meta">
@@ -796,8 +650,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:28:58" itemprop="dateModified" datetime="2023-02-07T21:28:58+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -830,7 +693,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/21/yuque/BASE%E7%90%86%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/21/%E5%88%86%E5%B8%83%E5%BC%8F/BASE%E7%90%86%E8%AE%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -844,7 +707,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/21/yuque/BASE%E7%90%86%E8%AE%BA/" class="post-title-link" itemprop="url">BASE理论</a>
+            <a href="/2021/06/21/%E5%88%86%E5%B8%83%E5%BC%8F/BASE%E7%90%86%E8%AE%BA/" class="post-title-link" itemprop="url">BASE理论</a>
         </h2>
 
         <div class="post-meta">
@@ -861,8 +724,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:00" itemprop="dateModified" datetime="2023-02-07T21:29:00+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:19:46" itemprop="dateModified" datetime="2023-02-08T00:19:46+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
+                </span>
+            </span>
 
           
 
@@ -903,7 +775,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/yuque/%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%E6%96%B9%E6%A1%88/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/%E9%A1%B9%E7%9B%AE/%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%E6%96%B9%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -917,7 +789,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/19/yuque/%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">最大努力通知方案</a>
+            <a href="/2021/06/19/%E9%A1%B9%E7%9B%AE/%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">最大努力通知方案</a>
         </h2>
 
         <div class="post-meta">
@@ -934,8 +806,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:29:03" itemprop="dateModified" datetime="2023-02-07T21:29:03+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
 
           
 
@@ -964,10 +845,179 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/03/java%E5%9F%BA%E7%A1%80/Guava%20Cache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/03/java%E5%9F%BA%E7%A1%80/Guava%20Cache/" class="post-title-link" itemprop="url">Guava Cache</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-03 11:41:41" itemprop="dateCreated datePublished" datetime="2021-06-03T11:41:41+08:00">2021-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hzw.fdc.web.rest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.common.base.Preconditions;</span><br><span class="line"><span class="keyword">import</span> com.google.common.cache.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestGuavaCache</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException &#123;</span><br><span class="line">        CacheLoader&lt;String, String&gt; loader = <span class="keyword">new</span> <span class="title class_">CacheLoader</span>&lt;String, String&gt; () &#123;</span><br><span class="line">            <span class="comment">// get 时先从缓存中找，找不到则通过load加载</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> String <span class="title function_">load</span><span class="params">(String key)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                <span class="keyword">if</span>(<span class="string">&quot;key&quot;</span>.equals(key)) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">                System.out.println(key + <span class="string">&quot; is loaded from a cacheLoader!&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span> key + <span class="string">&quot;&#x27;s value&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        RemovalListener&lt;String, String&gt; removalListener = <span class="keyword">new</span> <span class="title class_">RemovalListener</span>&lt;String, String&gt;() &#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onRemoval</span><span class="params">(RemovalNotification&lt;String, String&gt; removal)</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;[&quot;</span> + removal.getKey() + <span class="string">&quot;:&quot;</span> + removal.getValue() + <span class="string">&quot;] is evicted!&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// CacheBuilder缓存构建器。构建缓存的入口，指定缓存配置参数并初始化本地缓存。</span></span><br><span class="line">        LoadingCache&lt;String, String&gt; testCache = CacheBuilder.newBuilder()</span><br><span class="line">            .maximumSize(<span class="number">7</span>)</span><br><span class="line">            .expireAfterWrite(<span class="number">10</span>, TimeUnit.MINUTES)</span><br><span class="line">            .removalListener(removalListener)</span><br><span class="line">            .softValues() <span class="comment">// 使用软引用存储值</span></span><br><span class="line">            .recordStats() <span class="comment">// 开启后会对缓存的操作进行统计</span></span><br><span class="line">            .build(loader);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// get</span></span><br><span class="line">        <span class="comment">// 从本地缓存中找值，如果找不到返回null，找到就返回相应的值。</span></span><br><span class="line">        testCache.getIfPresent(<span class="string">&quot;myKey&quot;</span>);</span><br><span class="line">        <span class="comment">// get 时先从缓存中找，找不到则通过load加载</span></span><br><span class="line">        testCache.get(<span class="string">&quot;myKey&quot;</span>);</span><br><span class="line">        System.out.println(testCache.get(<span class="string">&quot;myKey&quot;</span>));</span><br><span class="line">        <span class="comment">// get时先从缓存中找，找不到则通过call加载</span></span><br><span class="line">        testCache.get(<span class="string">&quot;hehe&quot;</span>, ()-&gt;<span class="string">&quot;valueHehe&quot;</span>);</span><br><span class="line">        System.out.println(testCache.get(<span class="string">&quot;hehe&quot;</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(testCache.get(<span class="string">&quot;xixi&quot;</span>, ()-&gt;<span class="string">&quot;valueXixi&quot;</span>));</span><br><span class="line"></span><br><span class="line">        testCache.put(<span class="string">&quot;haha0&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        testCache.put(<span class="string">&quot;haha1&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(testCache.getIfPresent(<span class="string">&quot;haha0&quot;</span>));</span><br><span class="line">        System.out.println(testCache.getIfPresent(<span class="string">&quot;haha1&quot;</span>));</span><br><span class="line">        <span class="comment">// delete</span></span><br><span class="line"><span class="comment">//        testCache.invalidate(&quot;myKey&quot;);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// status</span></span><br><span class="line"><span class="comment">//        System.out.println(testCache.stats());</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/20/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/20/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F/" class="post-title-link" itemprop="url">唯一索引与唯一约束</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-20 16:36:22" itemprop="dateCreated datePublished" datetime="2021-05-20T16:36:22+08:00">2021-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>两者本质不同<ul>
+<li><strong>index</strong><ul>
+<li>Optional structure associated with tables and clusters. You can create indexes on one or more columns of a table to speed SQL statement execution on that table.</li>
+</ul>
+</li>
+<li><strong>integrity constraint</strong><ul>
+<li>Declarative method of defining a rule for a column of a table. Integrity constraints enforce the business rules associated with a database and prevent the entry of invalid information into tables.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>两者的关联<ul>
+<li>建立唯一约束时会自动建立唯一索引（若无唯一索引，要保证唯一约束只能全表扫描，这样不好）</li>
+<li>建立唯一索引不会有唯一约束</li>
+</ul>
+</li>
+<li>两者的不同<ul>
+<li>外键的建立必须有唯一约束，这是唯一索引做不到的</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1033,19 +1083,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>

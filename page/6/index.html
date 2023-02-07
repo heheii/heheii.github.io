@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/yuque/Mysql/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-4-%E5%86%85%E5%AD%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,279 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/07/yuque/Mysql/" class="post-title-link" itemprop="url">Mysql</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-07 17:19:38" itemprop="dateCreated datePublished" datetime="2021-02-07T17:19:38+08:00">2021-02-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:16" itemprop="dateModified" datetime="2023-02-07T21:30:16+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h1><h2 id="原子性（Atomicity）"><a href="#原子性（Atomicity）" class="headerlink" title="原子性（Atomicity）"></a>原子性（Atomicity）</h2><ul>
-<li>基于日志的<code>Redo/Undo</code>机制<ul>
-<li>Redo Log：Redo log 用来记录某数据块被修改后的值，可以用来恢复未写入 data file 的已成功事务更新的数据</li>
-<li>Undo Log：Undo log 是用来记录数据更新前的值，保证数据更新失败能够回滚。</li>
-</ul>
-</li>
-</ul>
-<p>假如某个时刻数据库崩溃，在崩溃之前有事务 A 和事务 B 在执行，事务 A 已经提交，而事务 B 还未提交。当数据库重启进行 crash-recovery 时，就会通过 Redo log 将已经提交事务的更改写到数据文件，而还没有提交的就通过 Undo log 进行 roll back。</p>
-<h2 id="一致性（Consistent）"><a href="#一致性（Consistent）" class="headerlink" title="一致性（Consistent）"></a>一致性（Consistent）</h2><h2 id="隔离性（Isalotion）"><a href="#隔离性（Isalotion）" class="headerlink" title="隔离性（Isalotion）"></a>隔离性（Isalotion）</h2><h2 id="持久性-Durable"><a href="#持久性-Durable" class="headerlink" title="持久性(Durable)"></a>持久性(Durable)</h2><hr>
-<h1 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h1><ul>
-<li><strong>读未提交（READ UNCOMMITTED）</strong><ul>
-<li><strong>脏读问题</strong></li>
-</ul>
-</li>
-<li><strong>读提交 （READ COMMITTED）</strong><ul>
-<li><strong>解决脏读问题</strong></li>
-<li><strong>有不可重复读问题（update）</strong></li>
-</ul>
-</li>
-<li><strong>可重复读 （REPEATABLE READ）</strong><ul>
-<li><strong>解决了不可重复读问题</strong></li>
-<li><strong>有幻读问题（insert）</strong></li>
-</ul>
-</li>
-<li><strong>串行化 （SERIALIZABLE）</strong><ul>
-<li><strong>解决所有问题</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="MVCC-多版本并发控制）"><a href="#MVCC-多版本并发控制）" class="headerlink" title="MVCC(多版本并发控制）"></a>MVCC(多版本并发控制）</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fult8Bxn6TqZ2BawoKlb_viu46HY.png"></p>
-<ul>
-<li>在 InnoDB 中每一个事务都有一个自己的事务 id，并且是唯一的，递增的 。</li>
-<li>对于 Mysql 中的每一个数据行都有可能存在多个版本，在每次事务更新数据的时候，都会生成一个新的数据版本，并且把自己的事务 id 赋值给当前版本的 row trx_id。</li>
-<li>版本 1、版本 2 并非实际物理存在的</li>
-<li>U1 和 U2 实际就是 undo log，这 v1 和 v2 版本是根据当前 v3 和 undo log 计算出来的</li>
-</ul>
-<hr>
-<h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1><h2 id="共享锁-排他锁"><a href="#共享锁-排他锁" class="headerlink" title="共享锁/排他锁"></a>共享锁/排他锁</h2><p>共享锁是针对同一份数据，多个读操作可以同时进行，简单来说即读加锁，不能写并且可并行读；<br>排他锁针对写操作，假如当前写操作没有完成，那么它会阻断其它的写锁和读锁，即写加锁，其它读写都阻塞 。</p>
-<h2 id="行锁-表锁"><a href="#行锁-表锁" class="headerlink" title="行锁/表锁"></a>行锁/表锁</h2><p>是从锁的粒度上进行划分的，行锁锁定当前数据行，锁的粒度小，加锁慢，发生锁冲突的概率小，并发度高，行锁也是 MyISAM 和 InnoDB 的区别之一，InnoDB 支持行锁并且支持事务 。<br>表锁则锁的粒度大，加锁快，开销小，但是锁冲突的概率大，并发度低。</p>
-<h2 id="两个事务执行写操作，怎么保证并发？"><a href="#两个事务执行写操作，怎么保证并发？" class="headerlink" title="两个事务执行写操作，怎么保证并发？"></a>两个事务执行写操作，怎么保证并发？</h2><ul>
-<li>有索引：<ul>
-<li>事务 1 先 update 数据行的时候，先回获取行锁，锁定数据，当事务 2 要进行 update 操作的时候，也会取获取该数据行的行锁，但是已经被事务 1 占有，事务 2 只能 wait。</li>
-</ul>
-</li>
-<li>无索引：<ul>
-<li>获取所有行，都加上行锁，然后 Mysql 会再次过滤符合条件的的行并释放锁，只有符合条件的行才会继续持有锁。</li>
-<li>性能消耗大</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/yuque/Redis-%E4%BA%8B%E5%8A%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/07/yuque/Redis-%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">Redis-事务</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-07 10:00:54" itemprop="dateCreated datePublished" datetime="2021-02-07T10:00:54+08:00">2021-02-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:16" itemprop="dateModified" datetime="2023-02-07T21:30:16+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>一次执行多条命令<ul>
-<li>批量操作在发送 EXEC 命令前被放入队列缓存。</li>
-<li>收到 EXEC 命令后进入事务执行，事务中任意命令执行失败，其余的命令<strong>依然被执行（不会回滚）</strong>。</li>
-<li>在事务执行过程，其他客户端提交的命令请求不会插入到事务执行命令序列中。</li>
-</ul>
-</li>
-<li>阶段<ul>
-<li>开始事务。</li>
-<li>命令入队。</li>
-<li>执行事务。</li>
-</ul>
-</li>
-<li>事务命令：<br>| 1 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-discard.html">DISCARD</a><br>取消事务，放弃执行事务块内的所有命令。 |<br>| — | — |<br>| 2 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-exec.html">EXEC</a><br>执行所有事务块内的命令。 |<br>| 3 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-multi.html">MULTI</a><br>标记一个事务块的开始。 |<br>| 4 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-unwatch.html">UNWATCH</a><br>取消 WATCH 命令对所有 key 的监视。 |<br>| 5 | <a target="_blank" rel="noopener" href="https://www.runoob.com/redis/transactions-watch.html">WATCH key [key …]</a><br>监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断。 |</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/yuque/Redis-%E6%8C%81%E4%B9%85%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/07/yuque/Redis-%E6%8C%81%E4%B9%85%E5%8C%96/" class="post-title-link" itemprop="url">Redis-持久化</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-07 09:53:42" itemprop="dateCreated datePublished" datetime="2021-02-07T09:53:42+08:00">2021-02-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:16" itemprop="dateModified" datetime="2023-02-07T21:30:16+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="7-持久化"><a href="#7-持久化" class="headerlink" title="7 持久化"></a>7 持久化</h1><h2 id="7-1-RDB"><a href="#7-1-RDB" class="headerlink" title="7.1 RDB"></a>7.1 RDB</h2><ul>
-<li>全量持久化</li>
-</ul>
-<p>fork 和 cow。<br>fork 是指 redis 通过创建子进程来进行 RDB 操作，<br>cow 指的是 copy on write，子进程创建后，父子进程共享数据段，父进程继续提供读写服务，写脏的页面数据会逐渐和子进程分离开来。</p>
-<h2 id="7-2-AOF"><a href="#7-2-AOF" class="headerlink" title="7.2 AOF"></a>7.2 AOF</h2><ul>
-<li>使用 AOF 持久时，服务会将每个收到的写命令通过写函数追加到文件中（appendonly.aof）</li>
-<li>AOF 持久化存储方式参数说明<ul>
-<li>appendonly  yes                  #开启 AOF 持久化存储方式</li>
-<li>appendfsync   always           #收到写命令后就立即写入磁盘，效率最差，效果最好</li>
-<li>appendfsync   everysec        #每秒写入磁盘一次     效率与效果居中</li>
-<li>appendfsync   no                 #完全依赖操作系统，效率最佳，效果没法保证</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/yuque/Redis-%E5%86%85%E5%AD%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/07/yuque/Redis-%E5%86%85%E5%AD%98/" class="post-title-link" itemprop="url">Redis-内存</a>
+            <a href="/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-4-%E5%86%85%E5%AD%98/" class="post-title-link" itemprop="url">Redis-内存</a>
         </h2>
 
         <div class="post-meta">
@@ -448,8 +176,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:23" itemprop="dateModified" datetime="2023-02-07T21:30:23+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:37:47" itemprop="dateModified" datetime="2023-02-08T00:37:47+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
 
           
 
@@ -589,7 +330,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/04/yuque/Redis-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -603,7 +344,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/04/yuque/Redis-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Redis-常见问题</a>
+            <a href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Redis-常见问题</a>
         </h2>
 
         <div class="post-meta">
@@ -620,8 +361,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:23" itemprop="dateModified" datetime="2023-02-07T21:30:23+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
 
           
 
@@ -654,7 +408,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/04/yuque/Redis-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -668,7 +422,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/04/yuque/Redis-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Redis-数据结构</a>
+            <a href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Redis-数据结构</a>
         </h2>
 
         <div class="post-meta">
@@ -685,8 +439,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:39" itemprop="dateModified" datetime="2023-02-07T21:30:39+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:37:36" itemprop="dateModified" datetime="2023-02-08T00:37:36+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
 
           
 
@@ -932,7 +699,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/29/yuque/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -946,7 +713,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/29/yuque/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">Spring事务管理</a>
+            <a href="/2021/01/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">Spring事务管理</a>
         </h2>
 
         <div class="post-meta">
@@ -963,8 +730,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:40" itemprop="dateModified" datetime="2023-02-07T21:30:40+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
+                </span>
+            </span>
 
           
 
@@ -1058,7 +838,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/yuque/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1072,7 +852,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/25/yuque/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" class="post-title-link" itemprop="url">分布式锁</a>
+            <a href="/2021/01/25/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" class="post-title-link" itemprop="url">分布式锁</a>
         </h2>
 
         <div class="post-meta">
@@ -1089,8 +869,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:40" itemprop="dateModified" datetime="2023-02-07T21:30:40+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:19:42" itemprop="dateModified" datetime="2023-02-08T00:19:42+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
+                </span>
+            </span>
 
           
 
@@ -1136,7 +925,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/yuque/Redis-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-2-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1150,7 +939,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/25/yuque/Redis-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/" class="post-title-link" itemprop="url">Redis-应用场景</a>
+            <a href="/2021/01/25/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-2-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/" class="post-title-link" itemprop="url">Redis-应用场景</a>
         </h2>
 
         <div class="post-meta">
@@ -1167,8 +956,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:40" itemprop="dateModified" datetime="2023-02-07T21:30:40+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:38:25" itemprop="dateModified" datetime="2023-02-08T00:38:25+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
 
           
 
@@ -1224,7 +1026,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/21/yuque/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/21/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1238,7 +1040,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/21/yuque/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">数据库</a>
+            <a href="/2021/01/21/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">数据库</a>
         </h2>
 
         <div class="post-meta">
@@ -1255,8 +1057,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:40" itemprop="dateModified" datetime="2023-02-07T21:30:40+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
 
           
 
@@ -1296,10 +1107,433 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/HBase/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/15/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/HBase/" class="post-title-link" itemprop="url">HBase</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-15 13:05:18" itemprop="dateCreated datePublished" datetime="2021-01-15T13:05:18+08:00">2021-01-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:33:26" itemprop="dateModified" datetime="2023-02-08T00:33:26+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" itemprop="url" rel="index"><span itemprop="name">hbase</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
+<li><strong>低成本存储海量</strong>的数据（依赖 HDFS）<ul>
+<li>低成本：列式存储，适合存储稀疏数据</li>
+</ul>
+</li>
+<li><strong>存储数据的”结构“可以地非常灵活（</strong>列式存储<strong>）</strong><ul>
+<li><strong>若只取某几列数据，可以直接取（列簇），无需扫描所有记录</strong></li>
+<li><strong>若想查询所有信息，可以通过列簇一次取出</strong></li>
+<li>拆开每一行的每一列，然后通过 rowKey 关联起来</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhvT32m8F0i_LIr09cLfEE2oqPDE.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99/" class="post-title-link" itemprop="url">字符集与编码规则</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-15 12:09:36" itemprop="dateCreated datePublished" datetime="2021-01-15T12:09:36+08:00">2021-01-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:26:48" itemprop="dateModified" datetime="2023-02-08T00:26:48+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>字符集：为每一个字符分配一个唯一 id（码位）<ul>
+<li>unicode</li>
+</ul>
+</li>
+<li>编码规则：将码位转化为字节序列的规则<ul>
+<li>utf-8 / utf-16</li>
+</ul>
+</li>
+</ul>
+<h1 id="ASCII-码"><a href="#ASCII-码" class="headerlink" title="ASCII 码"></a>ASCII 码</h1><p>在计算机中，1 字节对应 8 位二进制数，而每位二进制数有 0、1 两种状态，因此 1 字节可以组合出 256 种状态。如果这 256 中状态每一个都对应一个符号，就能通过 1 字节的数据表示 256 个字符。美国人于是就制定了一套编码（其实就是个字典），描述英语中的字符和这 8 位二进制数的对应关系，这被称为 ASCII 码。<br>ASCII 码一共定义了 128 个字符，例如大写的字母 A 是 65（对应二进制是 0100 0001）。这 128 个字符只使用了 8 位二进制数中的后面 7 位，最前面的一位统一规定为 0。</p>
+<p>历史问题<br>英语用 128 个字符来编码完全是足够的，但是用来表示其他语言，128 个字符是远远不够的。于是，一些欧洲的国家就决定，将 ASCII 码中闲置的最高位利用起来，这样一来就能表示 256 个字符。但是，这里又有了一个问题，那就是不同的国家的字符集可能不同，就算它们都能用 256 个字符表示全，但是同一个码点（也就是 8 位二进制数）表示的字符可能可能不同。例如，144 在阿拉伯人的 ASCII 码中是 گ，而在俄罗斯的 ASCII 码中是 ђ。         因此，ASCII 码的问题在于尽管所有人都在 0 - 127 号字符上达成了一致，但对于 128 - 255 号字符上却有很多种不同的解释。与此同时，亚洲语言有更多的字符需要被存储，一个字节已经不够用了。于是，人们开始使用两个字节来存储字符。<br>各种各样的编码方式成了系统开发者的噩梦，因为他们想把软件卖到国外。于是，他们提出了一个“内码表”的概念，可以切换到相应语言的一个内码表，这样才能显示相应语言的字母。在这种情况下，如果使用多语种，那么就需要频繁的在内码表内进行切换。</p>
+<h1 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h1><p>最终，美国人意识到他们应该提出一种标准方案来展示世界上所有语言中的所有字符，出于这个目的，Unicode 诞生了。<br>Unicode 可以当作是一本很厚的字典，记录着世界上所有字符与其对应的一个数字。具体是怎样的对应关系，又或者说是如何进行划分的，就不是 Unicode 考虑的问题了，我们只用知道 Unicode 给所有的字符指定了一个数字用来表示该字符。<br>对于 Unicode 有一些误解，它仅仅只是一个字符集，规定了符合对应的二进制代码，至于这个二进制代码如何存储则没有任何规定。它的想法很简单，就是为每个字符规定一个用来表示该字符的数字，仅此而已。<br>Unicode 编码方案：<br>之前提到，Unicode 没有规定字符对应的二进制码如何存储。以汉字“汉”为例，它的 Unicode 码点是 0x6c49，对应的二进制数是 110110001001001，二进制数有 15 位，这也就说明了它至少需要 2 个字节来表示。可以想象，在 Unicode 字典中往后的字符可能就需要 3 个字节或者 4 个字节，甚至更多字节来表示了。<br>这就导致了一些问题，计算机怎么知道你这个 2 个字节表示的是一个字符，而不是分别表示两个字符呢？这里我们可能会想到，那就取个最大的，假如 Unicode 中最大的字符用 4 字节就可以表示了，那么我们就将所有的字符都用 4 个字节来表示，不够的就往前面补 0。这样确实可以解决编码问题，但是却造成了空间的极大浪费，如果是一个英文文档，那文件大小就大出了 3 倍，这显然是无法接受的。<br>于是，为了较好的解决 Unicode 的编码问题， UTF-8 和 UTF-16 两种当前比较流行的编码方式诞生了。当然还有一个 UTF-32 的编码方式，也就是上述那种定长编码，字符统一使用 4 个字节，虽然看似方便，但是却不如另外两种编码方式使用广泛。</p>
+<h1 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h1><p>UTF-8 是一个非常惊艳的编码方式，漂亮的实现了对 ASCII 码的向后兼容，以保证 Unicode 可以被大众接受。<br>UTF-8 是目前互联网上使用最广泛的一种 Unicode 编码方式，它的最大特点就是<strong>可变长。它可以使用 1 - 4 个字节表示一个字符，根据字符的不同变换长度</strong>。编码规则如下：<br>对于单个字节的字符，第一位设为 0，后面的 7 位对应这个字符的 Unicode 码点。因此，对于英文中的 0 - 127 号字符，与 ASCII 码完全相同。这意味着 ASCII 码那个年代的文档用 UTF-8 编码打开完全没有问题。<br>对于需要使用 N 个字节来表示的字符（N &gt; 1），第一个字节的前 N 位都设为 1，第 N + 1 位设为 0，剩余的 N - 1 个字节的前两位都设位 10，剩下的二进制位则使用这个字符的 Unicode 码点来填充。<br><strong>编码规则如下：</strong><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FnPKjDyFsCKtDK9iIhxpe0rLRinQ.png"><br>根据上面编码规则对照表，进行 UTF-8 编码和解码就简单多了。下面以汉字“汉”为利，具体说明如何进行 UTF-8 编码和解码。<br>“汉”的 Unicode 码点是 0x6c49（110 1100 0100 1001），通过上面的对照表可以发现，0x0000 6c49 位于第三行的范围，那么得出其格式为 1110xxxx 10xxxxxx 10xxxxxx。接着，从“汉”的二进制数最后一位开始，从后向前依次填充对应格式中的 x，多出的 x 用 0 补上。这样，就得到了“汉”的 UTF-8 编码为 11100110 10110001 10001001，转换成十六进制就是 0xE6 0xB7 0x89。    <br>解码的过程也十分简单：如果一个字节的第一位是 0 ，则说明这个字节对应一个字符；如果一个字节的第一位 1，那么连续有多少个 1，就表示该字符占用多少个字节。</p>
+<h1 id="UTF-16"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</h1><p>在了解 UTF-16 编码方式之前，先了解一下另外一个概念——“平面”。<br>在上面的介绍中，提到了 Unicode 是一本很厚的字典，她将全世界所有的字符定义在一个集合里。这么多的字符不是一次性定义的，而是分区定义。每个区可以存放 65536 个（2^16）字符，称为一个平面（plane）。目前，一共有 17 个（2^5）平面，也就是说，整个 Unicode 字符集的大小现在是 2^21。<br>最前面的 65536 个字符位，称为基本平面（简称 BMP ），它的码点范围是从 0 到 2^16-1，写成 16 进制就是从 U+0000 到 U+FFFF。所有最常见的字符都放在这个平面，这是 Unicode 最先定义和公布的一个平面。剩下的字符都放在辅助平面（简称 SMP ），码点范围从 U+010000 到 U+10FFFF。<br>基本了解了平面的概念后，再说回到 UTF-16。UTF-16 编码介于 UTF-32 与 UTF-8 之间，同时结合了定长和变长两种编码方法的特点。<strong>它的编码规则很简单：基本平面的字符占用 2 个字节，辅助平面的字符占用 4 个字节</strong>。也就是说，UTF-16 的编码长度要么是 2 个字节（U+0000 到 U+FFFF），要么是 4 个字节（U+010000 到 U+10FFFF）。那么问题来了，当我们遇到两个字节时，到底是把这两个字节当作一个字符还是与后面的两个字节一起当作一个字符呢<br>这里有一个很巧妙的地方，在基本平面内，从 U+D800 到 U+DFFF 是一个空段，即这些码点不对应任何字符。因此，这个空段可以用来映射辅助平面的字符。<br>辅助平面的字符位共有 2^20 个，因此表示这些字符至少需要 20 个二进制位。UTF-16 将这 20 个二进制位分成两半，前 10 位映射在 U+D800 到 U+DBFF，称为高位（H），后 10 位映射在 U+DC00 到 U+DFFF，称为低位（L）。这意味着，一个辅助平面的字符，被拆成两个基本平面的字符表示。<br>因此，当我们遇到两个字节，发现它的码点在 U+D800 到 U+DBFF 之间，就可以断定，紧跟在后面的两个字节的码点，应该在 U+DC00 到 U+DFFF 之间，这四个字节必须放在一起解读。<br>接下来，以汉字”𠮷”为例，说明 UTF-16 编码方式是如何工作的。<br>汉字”𠮷”的 Unicode 码点为 0x20BB7，该码点显然超出了基本平面的范围（0x0000 - 0xFFFF），因此需要使用四个字节表示。首先用 0x20BB7 - 0x10000 计算出超出的部分，然后将其用 20 个二进制位表示（不足前面补 0 ），结果为 0001000010 1110110111。接着，将前 10 位映射到 U+D800 到 U+DBFF 之间，后 10 位映射到 U+DC00 到 U+DFFF 即可。U+D800 对应的二进制数为 1101100000000000，直接填充后面的 10 个二进制位即可，得到 1101100001000010，转成 16 进制数则为 0xD842。同理可得，低位为 0xDFB7。因此得出汉字”𠮷”的 UTF-16 编码为 0xD842 0xDFB7。<br>Unicode3.0 中给出了辅助平面字符的转换公式：<br>H = Math.floor((c-0x10000) / 0x400)+0xD800<br>L = (c - 0x10000) % 0x400 + 0xDC00<br>根据编码公式，可以很方便的计算出字符的 UTF-16 编码</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/%E5%91%BD%E4%BB%A4/%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/13/%E5%91%BD%E4%BB%A4/%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-13 22:11:25" itemprop="dateCreated datePublished" datetime="2021-01-13T22:11:25+08:00">2021-01-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:25:25" itemprop="dateModified" datetime="2023-02-08T00:25:25+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ul>
+<li><p>启动 systemctl start docker</p>
+</li>
+<li><p>关闭 systemctl stop docker</p>
+</li>
+<li><p>重启 systemctl restart docker</p>
+</li>
+<li><p>抓取 image</p>
+<ul>
+<li>docker image pull [组]/[image 文件名]</li>
+</ul>
+</li>
+<li><p>查看 image</p>
+<ul>
+<li>docker image ls</li>
+<li>docker images</li>
+</ul>
+</li>
+<li><p>运行</p>
+<ul>
+<li>根据 image 文件，每次都生成一个正在运行的容器实例，若本地没有该 image，则从仓库自动抓取<ul>
+<li>docker container run [image 文件名]</li>
+</ul>
+</li>
+<li>启动已经生成并停止运行的 container<ul>
+<li>docker container start [containID]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>终止</p>
+<ul>
+<li>强行立即终止（SIGKILL）<ul>
+<li>docker container kill [containID]</li>
+</ul>
+</li>
+<li>应用程序可以进行一些收尾工作（SIGTERM）<ul>
+<li>docker container stop [containID]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>查看 container</p>
+<ul>
+<li>正在运行<ul>
+<li>docker container ls</li>
+</ul>
+</li>
+<li>所有：正在运行的+停止运行的<ul>
+<li>docker container ls -all</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>删除 container</p>
+<ul>
+<li>docker container rm [containID]</li>
+</ul>
+</li>
+<li><p>创建 image 文件</p>
+<ul>
+<li>docker image build -t [imageName] . (. 表示 Dockerfile 文件路径)</li>
+</ul>
+</li>
+<li><p>查看 log 输出</p>
+<ul>
+<li>docker container logs [containerID]</li>
+<li>docker logs -f -t –tail=20 [redis]</li>
+</ul>
+</li>
+<li><p>进入容器</p>
+<ul>
+<li>docker container exec -it [containerID] /bin/bash</li>
+</ul>
+</li>
+<li><p>拷贝文件至本机</p>
+<ul>
+<li>docker container cp [containID]:[/path/to/file] .</li>
+</ul>
+</li>
+</ul>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><ul>
+<li>docker<ul>
+<li>docker run -d –name redis -p 6379:6379 redis:latest redis-server –appendonly yes –requirepass “123456”</li>
+</ul>
+</li>
+<li>启动：<ul>
+<li>redisstart</li>
+<li>nohup /usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf &amp;</li>
+</ul>
+</li>
+<li>关闭：<ul>
+<li>redisshutdown</li>
+<li>/usr/local/redis/bin/redis-cli shutdown</li>
+</ul>
+</li>
+</ul>
+<h1 id="clickhouse"><a href="#clickhouse" class="headerlink" title="clickhouse"></a>clickhouse</h1><p>docker run -d –name test-clickhouse-server-latest –ulimit nofile=262144:262144 –platform linux/amd64 yandex/clickhouse-server</p>
+<p>docker run -d –name single-clickhouse-server:21.11 <br>–ulimit nofile=262144:262144 <br>-p 8123:8123 -p 9000:9000 -p 9009:9009 <br>–volume=/Users/will/studySpace/docker/clickhouse/single-volume/data:/var/lib/clickhouse <br>–platform linux/amd64 <br>yandex/clickhouse-server:21.11</p>
+<p>docker pull yandex/clickhouse-server:21.11</p>
+<p>docker run -d –name clickhouse-server <br>–ulimit nofile=262144:262144 <br>-p 8123:8123 -p 9000:9000 -p 9009:9009 <br>–volume=/Users/will/studySpace/docker/clickhouse/single-volume/data:/var/lib/clickhouse <br>–platform linux/amd64 <br>lunalabsltd/clickhouse-server:21.7.2.7-arm</p>
+<hr>
+<h1 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">docker启动方式：</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">拉取kafka:</span></span><br><span class="line">  docker pull wurstmeister/zookeeper</span><br><span class="line"><span class="meta"># </span><span class="language-bash">拉取zookeeper:</span></span><br><span class="line">  docker pull wurstmeister/kafka</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">运行zookeeper:</span></span><br><span class="line">  docker run -d --name zookeeper  -p 2181:2181 -t wurstmeister/zookeeper</span><br><span class="line"><span class="meta">#</span><span class="language-bash">运行kafka:</span></span><br><span class="line">  docker run -d --name kafka --publish 9092:9092 \</span><br><span class="line">  --link zookeeper \</span><br><span class="line">  --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \</span><br><span class="line">  --env KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 \</span><br><span class="line">  --env KAFKA_ADVERTISED_PORT=9092 \</span><br><span class="line">  wurstmeister/kafka</span><br><span class="line"></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash"><span class="built_in">kill</span>进程</span></span><br><span class="line">kill -9 $(ps -ef|grep zookeeper |awk &#x27;$0 !~/grep/ &#123;print $2&#125;&#x27; |tr -s &#x27;\n&#x27; &#x27; &#x27;)</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">启动zookeeper</span></span><br><span class="line">nohup /usr/local/Cellar/kafka/2.7.0/bin/zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties &amp;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">启动kafka</span></span><br><span class="line">nohup /usr/local/Cellar/kafka/2.7.0/bin/kafka-server-start /usr/local/etc/kafka/server.properties &amp;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">创建topic列表</span></span><br><span class="line">kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mainfab_mes_topic</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">查看topic列表</span></span><br><span class="line">kafka-topics --list --zookeeper localhost:2181</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">查看消费者组的消费情况（可以查看谁在消费消息）</span></span><br><span class="line">./kafka-consumer-groups.sh --bootstrap-server 192.168.11.80:9092 --group aegis-consumer-alarmlevel-action-alarm --describe</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">发送消息</span></span><br><span class="line">kafka-console-producer --broker-list localhost:9092 --topic mainfab_mes_topic</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">接收消息</span></span><br><span class="line">kafka-console-consumer --bootstrap-server localhost:9092 --topic mainfab_mes_topic --from-beginning</span><br></pre></td></tr></table></figure>
+
+<h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><ul>
+<li><p>系统偏好设置</p>
+</li>
+<li><p>sudo /usr/local/mysql/support-files/mysql.server stop</p>
+</li>
+<li><p>sudo /usr/local/mysql/support-files/mysql.server start</p>
+</li>
+<li><p>sudo /usr/local/mysql/support-files/mysql.server restart</p>
+</li>
+</ul>
+<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><ul>
+<li>docker<ul>
+<li>docker pull nginx</li>
+<li>docker run –name nginx-test -p 8080:80 -d nginx</li>
+</ul>
+</li>
+<li>配置<ul>
+<li>vi /usr/local/etc/nginx/nginx.conf</li>
+</ul>
+</li>
+<li>命令<ul>
+<li>启动<ul>
+<li>nginx</li>
+</ul>
+</li>
+<li>停止<ul>
+<li>nginx -s quit</li>
+</ul>
+</li>
+<li>重启<ul>
+<li>nginx -s reload</li>
+</ul>
+</li>
+<li>查看配置文件是否正确<ul>
+<li>nginx -t</li>
+</ul>
+</li>
+<li>查看版本<ul>
+<li>nginx -v</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><ul>
+<li>配置<ul>
+<li>vi /Users/will/software/elasticsearch-7.12.0/config/elasticsearch.yml</li>
+</ul>
+</li>
+<li>命令<ul>
+<li>启动<ul>
+<li>elasticsearch</li>
+</ul>
+</li>
+<li>后台启动<ul>
+<li>elasticsearch -d</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><ul>
+<li>netstat<ul>
+<li>netstat -anop | grep 6379 | wc -l</li>
+<li>netstat -anop | grep 6379</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1365,19 +1599,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>

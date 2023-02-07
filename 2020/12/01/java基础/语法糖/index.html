@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="链接 1 什么是语法糖语法糖（Syntactic Sugar）指在计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。简而言之，语法糖让程序更加简洁，有更高的可读性。  Java 虚拟机并不支持语法糖（javac 属于 jdk，不在 jre 中） 解语法糖：语法糖在编译阶段就会被还原成简单的基础语法结构 com.sun.tools.javac.main.JavaCom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="语法糖">
+<meta property="og:url" content="http://example.com/2020/12/01/java%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E7%B3%96/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="链接 1 什么是语法糖语法糖（Syntactic Sugar）指在计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。简而言之，语法糖让程序更加简洁，有更高的可读性。  Java 虚拟机并不支持语法糖（javac 属于 jdk，不在 jre 中） 解语法糖：语法糖在编译阶段就会被还原成简单的基础语法结构 com.sun.tools.javac.main.JavaCom">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-01T15:39:18.000Z">
+<meta property="article:modified_time" content="2023-02-07T16:45:24.480Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/12/01/java%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E7%B3%96/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>语法糖 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/01/java%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E7%B3%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          语法糖
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-01 23:39:18" itemprop="dateCreated datePublished" datetime="2020-12-01T23:39:18+08:00">2020-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI3NzE0NjcwMg==%E2%88%A3=2650123905&idx=1&sn=d524d74e28c1f29ab9123bea1b50a542&chksm=f36bb3a0c41c3ab610c201b9eeb271494203f7281bb4434b24e7da62bd3f871afc000a5f3ac4&scene=21#wechat_redirect">链接</a></p>
+<h1 id="1-什么是语法糖"><a href="#1-什么是语法糖" class="headerlink" title="1 什么是语法糖"></a>1 什么是语法糖</h1><p>语法糖（Syntactic Sugar）指在计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。简而言之，语法糖让程序更加简洁，有更高的可读性。</p>
+<ul>
+<li>Java 虚拟机并不支持语法糖（javac 属于 jdk，不在 jre 中）</li>
+<li>解语法糖：语法糖在编译阶段就会被还原成简单的基础语法结构<ul>
+<li>com.sun.tools.javac.main.JavaCompiler 中的 compile()中有一个步骤就是调用 desugar()，这个方法负责解语法糖</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="2-JAVA-语法糖"><a href="#2-JAVA-语法糖" class="headerlink" title="2 JAVA 语法糖"></a>2 JAVA 语法糖</h1><h2 id="2-1-switch-支持-String"><a href="#2-1-switch-支持-String" class="headerlink" title="2.1 switch 支持 String"></a>2.1 switch 支持 String</h2><ul>
+<li>Java7 引入</li>
+</ul>
+<hr>
+<h2 id="2-2-泛型"><a href="#2-2-泛型" class="headerlink" title="2.2 泛型"></a>2.2 泛型</h2><hr>
+<h2 id="2-3-自动装箱与拆箱"><a href="#2-3-自动装箱与拆箱" class="headerlink" title="2.3 自动装箱与拆箱"></a>2.3 自动装箱与拆箱</h2><hr>
+<h2 id="2-4-方法边长参数"><a href="#2-4-方法边长参数" class="headerlink" title="2.4 方法边长参数"></a>2.4 方法边长参数</h2><ul>
+<li>JDK1.5 引入</li>
+</ul>
+<hr>
+<h2 id="2-5-枚举"><a href="#2-5-枚举" class="headerlink" title="2.5 枚举"></a>2.5 枚举</h2><ul>
+<li>JDK1.5 引入</li>
+</ul>
+<hr>
+<h2 id="2-6-内部类"><a href="#2-6-内部类" class="headerlink" title="2.6 内部类"></a>2.6 内部类</h2><hr>
+<h2 id="2-7-条件编译"><a href="#2-7-条件编译" class="headerlink" title="2.7 条件编译"></a>2.7 条件编译</h2><hr>
+<h2 id="2-8-断言"><a href="#2-8-断言" class="headerlink" title="2.8 断言"></a>2.8 断言</h2><ul>
+<li>JDK1.4 引入</li>
+<li>断言的底层实现就是 if 语句，如果断言结果为 true，则什么都不做，程序继续执行，如果断言结果为 false，则程序抛出 AssertError 来打断程序的执行。</li>
+</ul>
+<hr>
+<h2 id="2-9-数值字面量"><a href="#2-9-数值字面量" class="headerlink" title="2.9 数值字面量"></a>2.9 数值字面量</h2><ul>
+<li>JDK1.7 引入</li>
+</ul>
+<hr>
+<h2 id="2-10-for-each"><a href="#2-10-for-each" class="headerlink" title="2.10 for-each"></a>2.10 for-each</h2><ul>
+<li>本质是普通的 for 循环（非集合类型）和迭代器（集合类型）</li>
+</ul>
+<hr>
+<h2 id="2-11-try-with-resources"><a href="#2-11-try-with-resources" class="headerlink" title="2.11 try-with-resources"></a>2.11 try-with-resources</h2><ul>
+<li>JDK1.7 引入</li>
+<li>编译器帮我们关闭资源</li>
+</ul>
+<hr>
+<h2 id="2-12-lambda-表达式"><a href="#2-12-lambda-表达式" class="headerlink" title="2.12 lambda 表达式"></a>2.12 lambda 表达式</h2><ul>
+<li>JDK1.8 引入</li>
+<li>lambda 表达式的实现其实是依赖了一些 api，在编译阶段，编译器会把 lambda 表达式进行解糖，转换成调用内部 api 的方式</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/MD5%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84/" rel="prev" title="MD5为什么是不安全的">
+      <i class="fa fa-chevron-left"></i> MD5为什么是不安全的
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/01/java%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E4%B8%8E%E5%8F%8D%E7%BC%96%E8%AF%91/" rel="next" title="编译与反编译">
+      编译与反编译 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E8%AF%AD%E6%B3%95%E7%B3%96"><span class="nav-number">1.</span> <span class="nav-text">1 什么是语法糖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-JAVA-%E8%AF%AD%E6%B3%95%E7%B3%96"><span class="nav-number">2.</span> <span class="nav-text">2 JAVA 语法糖</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-switch-%E6%94%AF%E6%8C%81-String"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 switch 支持 String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%B3%9B%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E4%B8%8E%E6%8B%86%E7%AE%B1"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 自动装箱与拆箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E6%96%B9%E6%B3%95%E8%BE%B9%E9%95%BF%E5%8F%82%E6%95%B0"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 方法边长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E6%9E%9A%E4%B8%BE"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91"><span class="nav-number">2.7.</span> <span class="nav-text">2.7 条件编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-%E6%96%AD%E8%A8%80"><span class="nav-number">2.8.</span> <span class="nav-text">2.8 断言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-%E6%95%B0%E5%80%BC%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="nav-number">2.9.</span> <span class="nav-text">2.9 数值字面量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-10-for-each"><span class="nav-number">2.10.</span> <span class="nav-text">2.10 for-each</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-11-try-with-resources"><span class="nav-number">2.11.</span> <span class="nav-text">2.11 try-with-resources</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-12-lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.12.</span> <span class="nav-text">2.12 lambda 表达式</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

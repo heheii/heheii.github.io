@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/yuque/HBase/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/%E9%A1%B9%E7%9B%AE/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,422 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/15/yuque/HBase/" class="post-title-link" itemprop="url">HBase</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-15 13:05:18" itemprop="dateCreated datePublished" datetime="2021-01-15T13:05:18+08:00">2021-01-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:41" itemprop="dateModified" datetime="2023-02-07T21:30:41+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
-<li><strong>低成本存储海量</strong>的数据（依赖 HDFS）<ul>
-<li>低成本：列式存储，适合存储稀疏数据</li>
-</ul>
-</li>
-<li><strong>存储数据的”结构“可以地非常灵活（</strong>列式存储<strong>）</strong><ul>
-<li><strong>若只取某几列数据，可以直接取（列簇），无需扫描所有记录</strong></li>
-<li><strong>若想查询所有信息，可以通过列簇一次取出</strong></li>
-<li>拆开每一行的每一列，然后通过 rowKey 关联起来</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhvT32m8F0i_LIr09cLfEE2oqPDE.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/yuque/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/15/yuque/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99/" class="post-title-link" itemprop="url">字符集与编码规则</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-15 12:09:36" itemprop="dateCreated datePublished" datetime="2021-01-15T12:09:36+08:00">2021-01-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:42" itemprop="dateModified" datetime="2023-02-07T21:30:42+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>字符集：为每一个字符分配一个唯一 id（码位）<ul>
-<li>unicode</li>
-</ul>
-</li>
-<li>编码规则：将码位转化为字节序列的规则<ul>
-<li>utf-8 / utf-16</li>
-</ul>
-</li>
-</ul>
-<h1 id="ASCII-码"><a href="#ASCII-码" class="headerlink" title="ASCII 码"></a>ASCII 码</h1><p>在计算机中，1 字节对应 8 位二进制数，而每位二进制数有 0、1 两种状态，因此 1 字节可以组合出 256 种状态。如果这 256 中状态每一个都对应一个符号，就能通过 1 字节的数据表示 256 个字符。美国人于是就制定了一套编码（其实就是个字典），描述英语中的字符和这 8 位二进制数的对应关系，这被称为 ASCII 码。<br>ASCII 码一共定义了 128 个字符，例如大写的字母 A 是 65（对应二进制是 0100 0001）。这 128 个字符只使用了 8 位二进制数中的后面 7 位，最前面的一位统一规定为 0。</p>
-<p>历史问题<br>英语用 128 个字符来编码完全是足够的，但是用来表示其他语言，128 个字符是远远不够的。于是，一些欧洲的国家就决定，将 ASCII 码中闲置的最高位利用起来，这样一来就能表示 256 个字符。但是，这里又有了一个问题，那就是不同的国家的字符集可能不同，就算它们都能用 256 个字符表示全，但是同一个码点（也就是 8 位二进制数）表示的字符可能可能不同。例如，144 在阿拉伯人的 ASCII 码中是 گ，而在俄罗斯的 ASCII 码中是 ђ。         因此，ASCII 码的问题在于尽管所有人都在 0 - 127 号字符上达成了一致，但对于 128 - 255 号字符上却有很多种不同的解释。与此同时，亚洲语言有更多的字符需要被存储，一个字节已经不够用了。于是，人们开始使用两个字节来存储字符。<br>各种各样的编码方式成了系统开发者的噩梦，因为他们想把软件卖到国外。于是，他们提出了一个“内码表”的概念，可以切换到相应语言的一个内码表，这样才能显示相应语言的字母。在这种情况下，如果使用多语种，那么就需要频繁的在内码表内进行切换。</p>
-<h1 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h1><p>最终，美国人意识到他们应该提出一种标准方案来展示世界上所有语言中的所有字符，出于这个目的，Unicode 诞生了。<br>Unicode 可以当作是一本很厚的字典，记录着世界上所有字符与其对应的一个数字。具体是怎样的对应关系，又或者说是如何进行划分的，就不是 Unicode 考虑的问题了，我们只用知道 Unicode 给所有的字符指定了一个数字用来表示该字符。<br>对于 Unicode 有一些误解，它仅仅只是一个字符集，规定了符合对应的二进制代码，至于这个二进制代码如何存储则没有任何规定。它的想法很简单，就是为每个字符规定一个用来表示该字符的数字，仅此而已。<br>Unicode 编码方案：<br>之前提到，Unicode 没有规定字符对应的二进制码如何存储。以汉字“汉”为例，它的 Unicode 码点是 0x6c49，对应的二进制数是 110110001001001，二进制数有 15 位，这也就说明了它至少需要 2 个字节来表示。可以想象，在 Unicode 字典中往后的字符可能就需要 3 个字节或者 4 个字节，甚至更多字节来表示了。<br>这就导致了一些问题，计算机怎么知道你这个 2 个字节表示的是一个字符，而不是分别表示两个字符呢？这里我们可能会想到，那就取个最大的，假如 Unicode 中最大的字符用 4 字节就可以表示了，那么我们就将所有的字符都用 4 个字节来表示，不够的就往前面补 0。这样确实可以解决编码问题，但是却造成了空间的极大浪费，如果是一个英文文档，那文件大小就大出了 3 倍，这显然是无法接受的。<br>于是，为了较好的解决 Unicode 的编码问题， UTF-8 和 UTF-16 两种当前比较流行的编码方式诞生了。当然还有一个 UTF-32 的编码方式，也就是上述那种定长编码，字符统一使用 4 个字节，虽然看似方便，但是却不如另外两种编码方式使用广泛。</p>
-<h1 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h1><p>UTF-8 是一个非常惊艳的编码方式，漂亮的实现了对 ASCII 码的向后兼容，以保证 Unicode 可以被大众接受。<br>UTF-8 是目前互联网上使用最广泛的一种 Unicode 编码方式，它的最大特点就是<strong>可变长。它可以使用 1 - 4 个字节表示一个字符，根据字符的不同变换长度</strong>。编码规则如下：<br>对于单个字节的字符，第一位设为 0，后面的 7 位对应这个字符的 Unicode 码点。因此，对于英文中的 0 - 127 号字符，与 ASCII 码完全相同。这意味着 ASCII 码那个年代的文档用 UTF-8 编码打开完全没有问题。<br>对于需要使用 N 个字节来表示的字符（N &gt; 1），第一个字节的前 N 位都设为 1，第 N + 1 位设为 0，剩余的 N - 1 个字节的前两位都设位 10，剩下的二进制位则使用这个字符的 Unicode 码点来填充。<br><strong>编码规则如下：</strong><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FnPKjDyFsCKtDK9iIhxpe0rLRinQ.png"><br>根据上面编码规则对照表，进行 UTF-8 编码和解码就简单多了。下面以汉字“汉”为利，具体说明如何进行 UTF-8 编码和解码。<br>“汉”的 Unicode 码点是 0x6c49（110 1100 0100 1001），通过上面的对照表可以发现，0x0000 6c49 位于第三行的范围，那么得出其格式为 1110xxxx 10xxxxxx 10xxxxxx。接着，从“汉”的二进制数最后一位开始，从后向前依次填充对应格式中的 x，多出的 x 用 0 补上。这样，就得到了“汉”的 UTF-8 编码为 11100110 10110001 10001001，转换成十六进制就是 0xE6 0xB7 0x89。    <br>解码的过程也十分简单：如果一个字节的第一位是 0 ，则说明这个字节对应一个字符；如果一个字节的第一位 1，那么连续有多少个 1，就表示该字符占用多少个字节。</p>
-<h1 id="UTF-16"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</h1><p>在了解 UTF-16 编码方式之前，先了解一下另外一个概念——“平面”。<br>在上面的介绍中，提到了 Unicode 是一本很厚的字典，她将全世界所有的字符定义在一个集合里。这么多的字符不是一次性定义的，而是分区定义。每个区可以存放 65536 个（2^16）字符，称为一个平面（plane）。目前，一共有 17 个（2^5）平面，也就是说，整个 Unicode 字符集的大小现在是 2^21。<br>最前面的 65536 个字符位，称为基本平面（简称 BMP ），它的码点范围是从 0 到 2^16-1，写成 16 进制就是从 U+0000 到 U+FFFF。所有最常见的字符都放在这个平面，这是 Unicode 最先定义和公布的一个平面。剩下的字符都放在辅助平面（简称 SMP ），码点范围从 U+010000 到 U+10FFFF。<br>基本了解了平面的概念后，再说回到 UTF-16。UTF-16 编码介于 UTF-32 与 UTF-8 之间，同时结合了定长和变长两种编码方法的特点。<strong>它的编码规则很简单：基本平面的字符占用 2 个字节，辅助平面的字符占用 4 个字节</strong>。也就是说，UTF-16 的编码长度要么是 2 个字节（U+0000 到 U+FFFF），要么是 4 个字节（U+010000 到 U+10FFFF）。那么问题来了，当我们遇到两个字节时，到底是把这两个字节当作一个字符还是与后面的两个字节一起当作一个字符呢<br>这里有一个很巧妙的地方，在基本平面内，从 U+D800 到 U+DFFF 是一个空段，即这些码点不对应任何字符。因此，这个空段可以用来映射辅助平面的字符。<br>辅助平面的字符位共有 2^20 个，因此表示这些字符至少需要 20 个二进制位。UTF-16 将这 20 个二进制位分成两半，前 10 位映射在 U+D800 到 U+DBFF，称为高位（H），后 10 位映射在 U+DC00 到 U+DFFF，称为低位（L）。这意味着，一个辅助平面的字符，被拆成两个基本平面的字符表示。<br>因此，当我们遇到两个字节，发现它的码点在 U+D800 到 U+DBFF 之间，就可以断定，紧跟在后面的两个字节的码点，应该在 U+DC00 到 U+DFFF 之间，这四个字节必须放在一起解读。<br>接下来，以汉字”𠮷”为例，说明 UTF-16 编码方式是如何工作的。<br>汉字”𠮷”的 Unicode 码点为 0x20BB7，该码点显然超出了基本平面的范围（0x0000 - 0xFFFF），因此需要使用四个字节表示。首先用 0x20BB7 - 0x10000 计算出超出的部分，然后将其用 20 个二进制位表示（不足前面补 0 ），结果为 0001000010 1110110111。接着，将前 10 位映射到 U+D800 到 U+DBFF 之间，后 10 位映射到 U+DC00 到 U+DFFF 即可。U+D800 对应的二进制数为 1101100000000000，直接填充后面的 10 个二进制位即可，得到 1101100001000010，转成 16 进制数则为 0xD842。同理可得，低位为 0xDFB7。因此得出汉字”𠮷”的 UTF-16 编码为 0xD842 0xDFB7。<br>Unicode3.0 中给出了辅助平面字符的转换公式：<br>H = Math.floor((c-0x10000) / 0x400)+0xD800<br>L = (c - 0x10000) % 0x400 + 0xDC00<br>根据编码公式，可以很方便的计算出字符的 UTF-16 编码</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/yuque/%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/13/yuque/%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">命令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-13 22:11:25" itemprop="dateCreated datePublished" datetime="2021-01-13T22:11:25+08:00">2021-01-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:42" itemprop="dateModified" datetime="2023-02-07T21:30:42+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ul>
-<li><p>启动 systemctl start docker</p>
-</li>
-<li><p>关闭 systemctl stop docker</p>
-</li>
-<li><p>重启 systemctl restart docker</p>
-</li>
-<li><p>抓取 image</p>
-<ul>
-<li>docker image pull [组]/[image 文件名]</li>
-</ul>
-</li>
-<li><p>查看 image</p>
-<ul>
-<li>docker image ls</li>
-<li>docker images</li>
-</ul>
-</li>
-<li><p>运行</p>
-<ul>
-<li>根据 image 文件，每次都生成一个正在运行的容器实例，若本地没有该 image，则从仓库自动抓取<ul>
-<li>docker container run [image 文件名]</li>
-</ul>
-</li>
-<li>启动已经生成并停止运行的 container<ul>
-<li>docker container start [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>终止</p>
-<ul>
-<li>强行立即终止（SIGKILL）<ul>
-<li>docker container kill [containID]</li>
-</ul>
-</li>
-<li>应用程序可以进行一些收尾工作（SIGTERM）<ul>
-<li>docker container stop [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>查看 container</p>
-<ul>
-<li>正在运行<ul>
-<li>docker container ls</li>
-</ul>
-</li>
-<li>所有：正在运行的+停止运行的<ul>
-<li>docker container ls -all</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>删除 container</p>
-<ul>
-<li>docker container rm [containID]</li>
-</ul>
-</li>
-<li><p>创建 image 文件</p>
-<ul>
-<li>docker image build -t [imageName] . (. 表示 Dockerfile 文件路径)</li>
-</ul>
-</li>
-<li><p>查看 log 输出</p>
-<ul>
-<li>docker container logs [containerID]</li>
-<li>docker logs -f -t –tail=20 [redis]</li>
-</ul>
-</li>
-<li><p>进入容器</p>
-<ul>
-<li>docker container exec -it [containerID] /bin/bash</li>
-</ul>
-</li>
-<li><p>拷贝文件至本机</p>
-<ul>
-<li>docker container cp [containID]:[/path/to/file] .</li>
-</ul>
-</li>
-</ul>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><ul>
-<li>docker<ul>
-<li>docker run -d –name redis -p 6379:6379 redis:latest redis-server –appendonly yes –requirepass “123456”</li>
-</ul>
-</li>
-<li>启动：<ul>
-<li>redisstart</li>
-<li>nohup /usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf &amp;</li>
-</ul>
-</li>
-<li>关闭：<ul>
-<li>redisshutdown</li>
-<li>/usr/local/redis/bin/redis-cli shutdown</li>
-</ul>
-</li>
-</ul>
-<h1 id="clickhouse"><a href="#clickhouse" class="headerlink" title="clickhouse"></a>clickhouse</h1><p>docker run -d –name test-clickhouse-server-latest –ulimit nofile=262144:262144 –platform linux/amd64 yandex/clickhouse-server</p>
-<p>docker run -d –name single-clickhouse-server:21.11 <br>–ulimit nofile=262144:262144 <br>-p 8123:8123 -p 9000:9000 -p 9009:9009 <br>–volume=/Users/will/studySpace/docker/clickhouse/single-volume/data:/var/lib/clickhouse <br>–platform linux/amd64 <br>yandex/clickhouse-server:21.11</p>
-<p>docker pull yandex/clickhouse-server:21.11</p>
-<p>docker run -d –name clickhouse-server <br>–ulimit nofile=262144:262144 <br>-p 8123:8123 -p 9000:9000 -p 9009:9009 <br>–volume=/Users/will/studySpace/docker/clickhouse/single-volume/data:/var/lib/clickhouse <br>–platform linux/amd64 <br>lunalabsltd/clickhouse-server:21.7.2.7-arm</p>
-<hr>
-<h1 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">docker启动方式：</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">拉取kafka:</span></span><br><span class="line">  docker pull wurstmeister/zookeeper</span><br><span class="line"><span class="meta"># </span><span class="language-bash">拉取zookeeper:</span></span><br><span class="line">  docker pull wurstmeister/kafka</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">运行zookeeper:</span></span><br><span class="line">  docker run -d --name zookeeper  -p 2181:2181 -t wurstmeister/zookeeper</span><br><span class="line"><span class="meta">#</span><span class="language-bash">运行kafka:</span></span><br><span class="line">  docker run -d --name kafka --publish 9092:9092 \</span><br><span class="line">  --link zookeeper \</span><br><span class="line">  --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \</span><br><span class="line">  --env KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 \</span><br><span class="line">  --env KAFKA_ADVERTISED_PORT=9092 \</span><br><span class="line">  wurstmeister/kafka</span><br><span class="line"></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash"><span class="built_in">kill</span>进程</span></span><br><span class="line">kill -9 $(ps -ef|grep zookeeper |awk &#x27;$0 !~/grep/ &#123;print $2&#125;&#x27; |tr -s &#x27;\n&#x27; &#x27; &#x27;)</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">启动zookeeper</span></span><br><span class="line">nohup /usr/local/Cellar/kafka/2.7.0/bin/zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties &amp;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">启动kafka</span></span><br><span class="line">nohup /usr/local/Cellar/kafka/2.7.0/bin/kafka-server-start /usr/local/etc/kafka/server.properties &amp;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">创建topic列表</span></span><br><span class="line">kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mainfab_mes_topic</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">查看topic列表</span></span><br><span class="line">kafka-topics --list --zookeeper localhost:2181</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">查看消费者组的消费情况（可以查看谁在消费消息）</span></span><br><span class="line">./kafka-consumer-groups.sh --bootstrap-server 192.168.11.80:9092 --group aegis-consumer-alarmlevel-action-alarm --describe</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">发送消息</span></span><br><span class="line">kafka-console-producer --broker-list localhost:9092 --topic mainfab_mes_topic</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">接收消息</span></span><br><span class="line">kafka-console-consumer --bootstrap-server localhost:9092 --topic mainfab_mes_topic --from-beginning</span><br></pre></td></tr></table></figure>
-
-<h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><ul>
-<li><p>系统偏好设置</p>
-</li>
-<li><p>sudo /usr/local/mysql/support-files/mysql.server stop</p>
-</li>
-<li><p>sudo /usr/local/mysql/support-files/mysql.server start</p>
-</li>
-<li><p>sudo /usr/local/mysql/support-files/mysql.server restart</p>
-</li>
-</ul>
-<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><ul>
-<li>docker<ul>
-<li>docker pull nginx</li>
-<li>docker run –name nginx-test -p 8080:80 -d nginx</li>
-</ul>
-</li>
-<li>配置<ul>
-<li>vi /usr/local/etc/nginx/nginx.conf</li>
-</ul>
-</li>
-<li>命令<ul>
-<li>启动<ul>
-<li>nginx</li>
-</ul>
-</li>
-<li>停止<ul>
-<li>nginx -s quit</li>
-</ul>
-</li>
-<li>重启<ul>
-<li>nginx -s reload</li>
-</ul>
-</li>
-<li>查看配置文件是否正确<ul>
-<li>nginx -t</li>
-</ul>
-</li>
-<li>查看版本<ul>
-<li>nginx -v</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><ul>
-<li>配置<ul>
-<li>vi /Users/will/software/elasticsearch-7.12.0/config/elasticsearch.yml</li>
-</ul>
-</li>
-<li>命令<ul>
-<li>启动<ul>
-<li>elasticsearch</li>
-</ul>
-</li>
-<li>后台启动<ul>
-<li>elasticsearch -d</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><ul>
-<li>netstat<ul>
-<li>netstat -anop | grep 6379 | wc -l</li>
-<li>netstat -anop | grep 6379</li>
-</ul>
-</li>
-</ul>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><ul>
-<li>hexo clean<ul>
-<li>#清除缓存文件 db.json 和已生成的静态文件 public</li>
-</ul>
-</li>
-<li>hexo g<ul>
-<li>#生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)</li>
-</ul>
-</li>
-<li>hexo server<ul>
-<li>启动服务器。默认情况下，访问网址为： <a target="_blank" rel="noopener" href="http://localhost:4000/%E3%80%82">http://localhost:4000/。</a></li>
-</ul>
-</li>
-<li>hexo d<ul>
-<li>#自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</li>
-</ul>
-</li>
-<li>更换主题<ul>
-<li>cd /Users/will/blog</li>
-<li>git clone <a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next.git">https://github.com/iissnan/hexo-theme-next.git</a> themes/iissan</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/yuque/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/13/yuque/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">问题总结</a>
+            <a href="/2021/01/13/%E9%A1%B9%E7%9B%AE/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">问题总结</a>
         </h2>
 
         <div class="post-meta">
@@ -591,8 +176,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:42" itemprop="dateModified" datetime="2023-02-07T21:30:42+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
 
           
 
@@ -643,7 +237,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/yuque/Nginx/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/Nginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -657,7 +251,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/13/yuque/Nginx/" class="post-title-link" itemprop="url">Nginx</a>
+            <a href="/2021/01/13/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/Nginx/" class="post-title-link" itemprop="url">Nginx</a>
         </h2>
 
         <div class="post-meta">
@@ -674,8 +268,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:44" itemprop="dateModified" datetime="2023-02-07T21:30:44+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
+                </span>
+            </span>
 
           
 
@@ -710,7 +317,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/12/yuque/%E6%8E%A5%E5%8F%A3%E4%BF%9D%E6%8A%A4/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/12/%E9%A1%B9%E7%9B%AE/%E6%B6%88%E6%81%AF%E8%A1%A5%E5%81%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -724,71 +331,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/12/yuque/%E6%8E%A5%E5%8F%A3%E4%BF%9D%E6%8A%A4/" class="post-title-link" itemprop="url">接口保护</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-12 18:30:10" itemprop="dateCreated datePublished" datetime="2021-01-12T18:30:10+08:00">2021-01-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:44" itemprop="dateModified" datetime="2023-02-07T21:30:44+08:00">2023-02-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/12/yuque/%E6%B6%88%E6%81%AF%E8%A1%A5%E5%81%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/12/yuque/%E6%B6%88%E6%81%AF%E8%A1%A5%E5%81%BF/" class="post-title-link" itemprop="url">消息补偿</a>
+            <a href="/2021/01/12/%E9%A1%B9%E7%9B%AE/%E6%B6%88%E6%81%AF%E8%A1%A5%E5%81%BF/" class="post-title-link" itemprop="url">消息补偿</a>
         </h2>
 
         <div class="post-meta">
@@ -805,8 +348,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:44" itemprop="dateModified" datetime="2023-02-07T21:30:44+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
 
           
 
@@ -838,7 +390,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/yuque/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -852,7 +404,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/11/yuque/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">分布式事务</a>
+            <a href="/2021/01/11/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">分布式事务</a>
         </h2>
 
         <div class="post-meta">
@@ -869,8 +421,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:44" itemprop="dateModified" datetime="2023-02-07T21:30:44+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:18:47" itemprop="dateModified" datetime="2023-02-08T00:18:47+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
+                </span>
+            </span>
 
           
 
@@ -959,7 +520,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/05/yuque/MinIO/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/05/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/MinIO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -973,7 +534,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/05/yuque/MinIO/" class="post-title-link" itemprop="url">MinIO</a>
+            <a href="/2021/01/05/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/MinIO/" class="post-title-link" itemprop="url">MinIO</a>
         </h2>
 
         <div class="post-meta">
@@ -990,8 +551,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:44" itemprop="dateModified" datetime="2023-02-07T21:30:44+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/" itemprop="url" rel="index"><span itemprop="name">MinIO</span></a>
+                </span>
+            </span>
 
           
 
@@ -1029,7 +603,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/31/yuque/IO/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/31/java%E5%9F%BA%E7%A1%80/IO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1043,7 +617,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/12/31/yuque/IO/" class="post-title-link" itemprop="url">IO</a>
+            <a href="/2020/12/31/java%E5%9F%BA%E7%A1%80/IO/" class="post-title-link" itemprop="url">IO</a>
         </h2>
 
         <div class="post-meta">
@@ -1060,8 +634,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-07 21:30:47" itemprop="dateModified" datetime="2023-02-07T21:30:47+08:00">2023-02-07</time>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -1090,10 +673,385 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">设计模式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-31 09:53:31" itemprop="dateCreated datePublished" datetime="2020-12-31T09:53:31+08:00">2020-12-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:25:58" itemprop="dateModified" datetime="2023-02-08T00:25:58+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>适配器模式：<ul>
+<li>特点<ul>
+<li>包装另一个对象，并提供<strong>不同的接口</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>外观模式：<ul>
+<li>特点<ul>
+<li>包装<strong>许多</strong>对象，以简化他们的接口。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>装饰器模式（又称 包装（Wrapper）模式）：<ul>
+<li>特点<ul>
+<li>包装另一个对象，保持<strong>原有的接口</strong>，并提供<strong>额外的行为</strong>。</li>
+<li>从来不创建被装饰的对象，它总是添加新功能到已经存在的对象上</li>
+<li>可以通过嵌套装饰添加多重额外功能</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>java.io</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>代理模式：<ul>
+<li>特点<ul>
+<li>包装另一个对象，并**控制对它的访问(安全，权限等)**。</li>
+<li>在被代理对象不存在的时候会创建被代理对象</li>
+<li>一般不推荐使用嵌套代理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>观察者模式</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/30/java%E5%9F%BA%E7%A1%80/%E5%9B%BD%E9%99%85%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/30/java%E5%9F%BA%E7%A1%80/%E5%9B%BD%E9%99%85%E5%8C%96/" class="post-title-link" itemprop="url">国际化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-30 17:09:14" itemprop="dateCreated datePublished" datetime="2020-12-30T17:09:14+08:00">2020-12-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>java.util.ResourceBundle 类通常用来实现国际化</li>
+<li>它使用的 properties 文件的文件名规范：<ul>
+<li>自定义名<em>语言代码</em>国别代码.properties</li>
+<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fn-vQPd_DY6S_ezfXJEcNBksZdmO.png">（cn 需要大写，不然 Linux 环境无法读取该文件内容）</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/17/%E9%A1%B9%E7%9B%AE/%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/17/%E9%A1%B9%E7%9B%AE/%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">代码扫描记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-17 14:17:26" itemprop="dateCreated datePublished" datetime="2020-12-17T14:17:26+08:00">2020-12-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-Enum-中不应存在-public-属性-setter-方法"><a href="#1-Enum-中不应存在-public-属性-setter-方法" class="headerlink" title="1 Enum 中不应存在 public 属性/setter 方法"></a>1 Enum 中不应存在 public 属性/setter 方法</h1><h1 id="2-new-Random-伪随机，不是密码学安全的"><a href="#2-new-Random-伪随机，不是密码学安全的" class="headerlink" title="2 new Random 伪随机，不是密码学安全的"></a>2 new Random 伪随机，<strong>不是密码学安全的</strong></h1><ul>
+<li>加密相关的推荐使用** SecureRandom**<ul>
+<li><strong>慎用</strong>SecureRandom.getInstanceStrong()方式获取 SecureRandom，linux 环境下容易产生阻塞</li>
+<li><strong>推荐</strong>使用 new SecureRandom()获取 SecureRandom，伪随机</li>
+</ul>
+</li>
+<li>Random 使用当前系统时钟来生成种子 seed</li>
+</ul>
+<h1 id="3-sun-下的类不建议使用"><a href="#3-sun-下的类不建议使用" class="headerlink" title="3 sun.*下的类不建议使用"></a>3 sun.*下的类不建议使用</h1><ul>
+<li>是 sun 的 hotspot 虚拟机中的 java.*和 javax.*的实现类</li>
+<li>不是 sun 承诺公开的接口，不具有向后兼容性</li>
+</ul>
+<h1 id="4-Deprecated-不建议使用"><a href="#4-Deprecated-不建议使用" class="headerlink" title="4 @Deprecated 不建议使用"></a>4 @Deprecated 不建议使用</h1><h1 id="5-HttpOnly"><a href="#5-HttpOnly" class="headerlink" title="5 HttpOnly"></a>5 HttpOnly</h1><p>Cookie cookie = new Cookie(“myCookieName”, value);<br>cookie.setHttpOnly(true); // Compliant</p>
+<ul>
+<li>XSS</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93/es/ES/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93/es/ES/" class="post-title-link" itemprop="url">ES</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-14 00:22:24" itemprop="dateCreated datePublished" datetime="2020-12-14T00:22:24+08:00">2020-12-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-08 00:56:50" itemprop="dateModified" datetime="2023-02-08T00:56:50+08:00">2023-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/es/" itemprop="url" rel="index"><span itemprop="name">es</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>ElasticSearch</p>
+<ul>
+<li>作用<ul>
+<li>全文搜索引擎</li>
+</ul>
+</li>
+<li>本质<ul>
+<li>分布式数据库</li>
+<li>底层是 java 开源库 Lucene，Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。<ul>
+<li>我们没法直接用 Lucene，必须自己写代码去调用它的接口</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fj_uqEjv1jx865kzAL2aPx8lhzA3.jpeg"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1159,19 +1117,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
