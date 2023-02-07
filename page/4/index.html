@@ -1,1289 +1,927 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="will">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="热心市民王先生的小破站">
 <meta property="og:url" content="http://example.com/page/4/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="热心市民王先生的小破站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="will">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>热心市民王先生的小破站</title>
 
-<link rel="canonical" href="http://example.com/page/4/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Hexo</title>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>heheii</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                
+                <span>remark</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="heheii"></span>
+          
+        </div>
 
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
 
 </div>
-    </header>
 
+  </header>
+
+  <main>
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
           
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-          <div class="content index posts-expand">
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/12/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/OpenTSDB/" target="_self">
+          OpenTSDB
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/12/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/OpenTSDB/" target="_self">
+        <div>
+          参考：https://www.cnblogs.com/wangchaowei/p/7827366.html  基于 HBase  存储概念譬如假设我们采集 1 个服务器（hostname=qatest）的 CPU 使用率，发现该服务器在 21:00 的时候，CPU 使用率达到 99%  Metric：即平时我们所说的监控项。譬如上面的 CPU 使用率 Tags：一些标签， 在 OpenTSDB 里
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-12 23:07" pubdate>
+              2021-04-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-      
+
+<span class="category-chains">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/12/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/OpenTSDB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/12/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/OpenTSDB/" class="post-title-link" itemprop="url">OpenTSDB</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-12 23:07:41" itemprop="dateCreated datePublished" datetime="2021-04-12T23:07:41+08:00">2021-04-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/" itemprop="url" rel="index"><span itemprop="name">TSDB</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangchaowei/p/7827366.html">https://www.cnblogs.com/wangchaowei/p/7827366.html</a></p>
-<ul>
-<li>基于 HBase</li>
-</ul>
-<h1 id="存储概念"><a href="#存储概念" class="headerlink" title="存储概念"></a>存储概念</h1><p>譬如假设我们采集 1 个服务器（hostname=qatest）的 CPU 使用率，发现该服务器在 21:00 的时候，CPU 使用率达到 99%</p>
-<ul>
-<li>Metric：即平时我们所说的监控项。譬如上面的 CPU 使用率</li>
-<li>Tags：一些标签，<ul>
-<li>在 OpenTSDB 里面，Tags 由 tagk 和 tagv 组成，即 tagk=takv。</li>
-<li>标签是用来描述 Metric 的，譬如上面为了标记是服务器 A 的 CpuUsage，tags 可为 hostname=qatest</li>
-</ul>
-</li>
-<li>Value：一个 Value 表示一个 metric 的实际数值，譬如上面的 99%</li>
-<li>Timestamp：即时间戳，用来描述 Value 是什么时候的；譬如上面的 21:00</li>
-<li>Data Point：即某个 Metric 在某个时间点的数值。<ul>
-<li>Data Point 包括以下部分：Metric、Tags、Value、Timestamp</li>
-<li>上面描述的服务器在 21:00 时候的 cpu 使用率，就是 1 个 DataPoint 保存到 OpenTSDB 的，就是无数个 DataPoint。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/" class="category-chain-item">TSDB</a>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/02/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/02/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">关系型数据库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-02 14:47:15" itemprop="dateCreated datePublished" datetime="2021-04-02T14:47:15+08:00">2021-04-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:32:12" itemprop="dateModified" datetime="2023-02-08T00:32:12+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>关系型数据库：指采用了关系模型来组织数据的数据库。<br>关系模型：二维表格模型，而一个关系型数据库就是由二维表及其之间的联系所组成的一个数据组织。</strong><br>关系模型中常用的概念：<br>关系：一张二维表，每个关系都具有一个关系名，也就是表名<br>元组：二维表中的一行，在数据库中被称为记录<br>属性：二维表中的一列，在数据库中被称为字段<br>域：属性的取值范围，也就是数据库中某一列的取值限制<br>关键字：一组可以唯一标识元组的属性，数据库中常称为主键，由一个或多个列组成<br>关系模式：指对关系的描述。其格式为：关系名(属性 1，属性 2， … … ，属性 N)，在数据库中成为表结构</p>
-<p>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fd7b422d5f93">https://www.jianshu.com/p/fd7b422d5f93</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
   
 
-      
+      </span>
+    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/02/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/TSDB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/02/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/TSDB/" class="post-title-link" itemprop="url">TSDB</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-02 14:46:52" itemprop="dateCreated datePublished" datetime="2021-04-02T14:46:52+08:00">2021-04-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/" itemprop="url" rel="index"><span itemprop="name">TSDB</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>时序列数据库用来存储时序列（time-series）数据并以时间（点或区间）建立索引的软件</p>
-</blockquote>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h1><ul>
-<li>数据结构简单</li>
-<li>数据量大</li>
-</ul>
-<hr>
-<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="OpenTSDB"><a href="#OpenTSDB" class="headerlink" title="OpenTSDB"></a>OpenTSDB</h2><p>-</p>
-<h2 id="Prometheus"><a href="#Prometheus" class="headerlink" title="Prometheus"></a>Prometheus</h2><ul>
-<li>Golong</li>
-</ul>
-<h2 id="InfluxDB"><a href="#InfluxDB" class="headerlink" title="InfluxDB"></a>InfluxDB</h2><ul>
-<li>开源版本只有单机版是免费的，单机版性能差</li>
-<li>Golong</li>
-<li>默认存储原始数据，时间自由度高，Rollup 低效</li>
-</ul>
-<h2 id="Druid"><a href="#Druid" class="headerlink" title="Druid"></a>Druid</h2><ul>
-<li>不存储原始数据，时间自由度低，性能高</li>
-<li>双层存储</li>
-<li>查询自由度高</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/Client%E4%B8%8EServer%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/Client%E4%B8%8EServer%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">Client与Server交互方式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-31 14:00:12" itemprop="dateCreated datePublished" datetime="2021-03-31T14:00:12+08:00">2021-03-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:20:28" itemprop="dateModified" datetime="2023-02-08T00:20:28+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">计算机网络与安全</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Polling（短轮询）"><a href="#1-Polling（短轮询）" class="headerlink" title="1 Polling（短轮询）"></a>1 Polling（短轮询）</h1><blockquote>
-<p>客户端拉方式</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fr9kc8LJ2kEl8Ls1ZNRBhuwSFqOP.png"></p>
-<ul>
-<li><strong>交互方式</strong><ul>
-<li>client 每隔一段时间都会向 server 发送 http 请求，服务器收到请求后，将最新的数据发回给 client。</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li><strong>浪费网络带宽</strong>：比如在某个时间段 server 没有更新数据，但 client 仍然每隔一段时间发送请求来询问，所以这段时间内的询问都是无效的，这样浪费了网络带宽。</li>
-<li><strong>实时性不好</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="2-Comet"><a href="#2-Comet" class="headerlink" title="2 Comet"></a>2 Comet</h1><blockquote>
-<p>基于 HTTP 长连接的 “服务器推”  方式</p>
-</blockquote>
-<p>具体可以细分为两种实现方式，一种是长轮询机制，一种是流技术。</p>
-<h2 id="2-1-长轮询（Long-polling）"><a href="#2-1-长轮询（Long-polling）" class="headerlink" title="2.1 长轮询（Long-polling）"></a>2.1 长轮询（Long-polling）</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fhk_UDAmzIhTa5hSMVZdjW9UnnRm.png"></p>
-<ul>
-<li><strong>交互方式</strong><ul>
-<li>client 向 server 发出请求，server 接收到请求后，server 并不一定立即发送回应给 client，而是看数据是否更新，如果数据已经更新了的话，那就立即将数据返回给 client；但如果数据没有更新，那就把这个请求保持住（阻塞），等待有新的数据到来时，才将数据返回给 client</li>
-</ul>
-</li>
-<li><strong>缺点</strong><ul>
-<li>本质上还是一种轮询方式，实时性较差</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-2-流技术（Http-Streaming）"><a href="#2-2-流技术（Http-Streaming）" class="headerlink" title="2.2 流技术（Http Streaming）"></a>2.2 流技术（Http Streaming）</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Flu3bGTukP039HYhDFm6nNB4ZJ94.png"></p>
-<ul>
-<li>交互方式<ul>
-<li>一直保持连接，不需要 client 请求，当数据发生改变时，server 自动的将数据发送给 client。</li>
-<li>（疑问：HTTP 一个 request 只会对应一个 response，为什么可以有多个 response？）</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>网页会一直显示未加载完成的状态</li>
-</ul>
-</li>
-</ul>
-<h1 id="3-WebSocket"><a href="#3-WebSocket" class="headerlink" title="3 WebSocket"></a>3 WebSocket</h1><blockquote>
-<p>是一种基于 TCP 的<strong>应用层协议</strong></p>
-</blockquote>
-<p><strong><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fsulbs8daUM-utN5sr-eOZj7bc8G.png"></strong></p>
-<ul>
-<li><strong>交互流程</strong><ul>
-<li><strong>借助 HTTP 建立连接</strong></li>
-<li><strong>双向通信（与 HTTP 无关）</strong></li>
-<li>client 或者 server 中有一端主动断开连接</li>
-</ul>
-</li>
-<li><strong>缺点</strong><ul>
-<li><strong>兼容性</strong>：非现代浏览器 IE7 IE8 IE9 不支持 websocket</li>
-<li><strong>浪费流量和电：</strong>Websocket 的 ping/pong 包比较频繁，所以可能在长时间没信息的情况下<strong>浪费流量和电</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="3-1-WebSocket-与-socket"><a href="#3-1-WebSocket-与-socket" class="headerlink" title="3.1 WebSocket 与 socket"></a>3.1 WebSocket 与 socket</h2><ul>
-<li>WebSocekt 是 HTML5 规范中的一部分，其借鉴了 socket 的思想，为 client 和 server 之间提供了类似的双向通信机制</li>
-<li>socket 并不是一个协议，而是一组接口，其主要方便大家直接使用更底层的协议（比如 TCP 或 UDP）</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsyZy3EcaRR-yKsrWcpEHMmzTJpI.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/25/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/docker/Docker/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/25/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/docker/Docker/" class="post-title-link" itemprop="url">Docker</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-25 18:42:32" itemprop="dateCreated datePublished" datetime="2021-03-25T18:42:32+08:00">2021-03-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Docker-是如何运行的"><a href="#Docker-是如何运行的" class="headerlink" title="Docker 是如何运行的"></a>Docker 是如何运行的</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fp459VacyCm_dMeV0miK_rhMx1b3.png"></p>
-<hr>
-<h1 id="Docker-优势"><a href="#Docker-优势" class="headerlink" title="Docker 优势"></a>Docker 优势</h1><h2 id="快"><a href="#快" class="headerlink" title="快"></a>快</h2><ul>
-<li>Docker 的抽象层比 VM 少</li>
-<li>Docker 利用 HostOS（宿主机内核），VM 需要 GuestOS</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhEWCbyoIK5TRYtDglCPUQQ6Qsc4.png"></p>
-<hr>
-<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
-<li><p>启动 systemctl start docker</p>
-</li>
-<li><p>关闭 systemctl stop docker</p>
-</li>
-<li><p>重启 systemctl restart docker</p>
-</li>
-<li><p>抓取 image</p>
-<ul>
-<li>docker image pull [组]/[image 文件名]</li>
-</ul>
-</li>
-<li><p>查看 image</p>
-<ul>
-<li>docker image ls</li>
-<li>docker images</li>
-</ul>
-</li>
-<li><p>运行</p>
-<ul>
-<li>根据 image 文件，每次都生成一个正在运行的容器实例，若本地没有该 image，则从仓库自动抓取<ul>
-<li>docker container run [image 文件名]</li>
-</ul>
-</li>
-<li>启动已经生成并停止运行的 container<ul>
-<li>docker container start [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>终止</p>
-<ul>
-<li>强行立即终止（SIGKILL）<ul>
-<li>docker container kill [containID]</li>
-</ul>
-</li>
-<li>应用程序可以进行一些收尾工作（SIGTERM）<ul>
-<li>docker container stop [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>查看 container</p>
-<ul>
-<li>正在运行<ul>
-<li>docker container ls</li>
-</ul>
-</li>
-<li>所有：正在运行的+停止运行的<ul>
-<li>docker container ls -all</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>删除 container</p>
-<ul>
-<li>docker container rm [containID]</li>
-</ul>
-</li>
-<li><p>创建 image 文件</p>
-<ul>
-<li>docker image build -t [imageName] . (. 表示 Dockerfile 文件路径)</li>
-</ul>
-</li>
-<li><p>查看 log 输出</p>
-<ul>
-<li>docker container logs [containerID]</li>
-</ul>
-</li>
-<li><p>进入容器</p>
-<ul>
-<li>docker container exec -it [containerID] /bin/bash</li>
-</ul>
-</li>
-<li><p>拷贝文件至本机</p>
-<ul>
-<li>docker container cp [containID]:[/path/to/file] .</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="docker-引擎："><a href="#docker-引擎：" class="headerlink" title="docker 引擎："></a>docker 引擎：</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/490585683">https://zhuanlan.zhihu.com/p/490585683</a><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoUFNdai2hme7DQ3gNrLGV6BgTAj.webp"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/24/%E5%88%86%E5%B8%83%E5%BC%8F/IaaS,PaaS,SaaS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/24/%E5%88%86%E5%B8%83%E5%BC%8F/IaaS,PaaS,SaaS/" class="post-title-link" itemprop="url">IaaS,PaaS,SaaS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-24 13:15:24" itemprop="dateCreated datePublished" datetime="2021-03-24T13:15:24+08:00">2021-03-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:20:01" itemprop="dateModified" datetime="2023-02-08T00:20:01+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>Iaas 就是卖硬件，Paas 就是卖开发、运行环境，Saas 就是卖软件。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvqzWBN95dqM5akBAhuSLV9Cuwfc.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">编码转换方式与应用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-25 10:57:48" itemprop="dateCreated datePublished" datetime="2021-02-25T10:57:48+08:00">2021-02-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:26:37" itemprop="dateModified" datetime="2023-02-08T00:26:37+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Base64 是一种用 64 个字符来表示任意二进制数据的方法。</p>
-<ul>
-<li>小写字母 a-z、</li>
-<li>大写字母 A-Z、</li>
-<li>数字 0-9、</li>
-<li>符号”+”、”/“（再加上作为垫字的”=”，实际上是 65 个字符）所以不能直接用于 url</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmowlNSZhtcdfznahNX6u7V522D5.png"></p>
-<h2 id="编码步骤："><a href="#编码步骤：" class="headerlink" title="编码步骤："></a>编码步骤：</h2><ol>
-<li>将每三个字节作为一组，一共是 24 个二进制位。</li>
-<li>将这 24 个二进制位分为四组，每个组有 6 个二进制位。</li>
-<li>在每组前面加两个 00，扩展成 32 个二进制位，即四个字节。</li>
-<li>根据下表，得到扩展后的每个字节的对应符号，这就是 Base64 的编码值。</li>
-</ol>
-<p><strong>即，以 4x 个字节（每个字节只有其中 6 位有含义）表示 3x 个字节数据</strong><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FseKOXJPNGTdNc_gmlDRE27dsmZq.png"></p>
-<hr>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>jwt 令牌</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/SSH/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/SSH/" class="post-title-link" itemprop="url">SSH</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-24 15:17:27" itemprop="dateCreated datePublished" datetime="2021-02-24T15:17:27+08:00">2021-02-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:20:46" itemprop="dateModified" datetime="2023-02-08T00:20:46+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">计算机网络与安全</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h1><p>建互信，登陆服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">hostname是主机名，它可以是域名，也可能是 IP 地址或局域网内部的主机名。</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">username是用户名，不指定用户名的情况下，将使用客户端的当前用户名，作为远程服务器的登录用户名</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">-p参数可以指定其他端口，默认22</span></span><br><span class="line"><span class="meta">$ </span><span class="language-bash">ssh -p 22 username@hostname</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/23/java%E5%9F%BA%E7%A1%80/JVM/JVM%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/23/java%E5%9F%BA%E7%A1%80/JVM/JVM%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">JVM基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-23 10:30:16" itemprop="dateCreated datePublished" datetime="2021-02-23T10:30:16+08:00">2021-02-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="JVM-编译执行-解释执行"><a href="#JVM-编译执行-解释执行" class="headerlink" title="JVM 编译执行/解释执行"></a>JVM 编译执行/解释执行</h1><ul>
-<li>解释执行：<ul>
-<li>字节码 -&gt; [ 解释器 解释执行 ] -&gt; 执行结果</li>
-</ul>
-</li>
-<li>编译执行：<ul>
-<li>字节码 -&gt; [ 编译器 编译 ] -&gt; 机器码 -&gt; [ 执行 ] -&gt; 执行结果</li>
-</ul>
-</li>
-</ul>
-<p>javac 生成的字节码与 32 位，64 位 JVM 无关。它可以在两个 JVM 上运行。记住古老的诺言“编译一次，随处运行”</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/19/java%E5%9F%BA%E7%A1%80/%E9%81%8D%E5%8E%86%E5%88%A0%E9%99%A4List%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/19/java%E5%9F%BA%E7%A1%80/%E9%81%8D%E5%8E%86%E5%88%A0%E9%99%A4List%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" class="post-title-link" itemprop="url">遍历删除List中的元素</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-19 16:31:39" itemprop="dateCreated datePublished" datetime="2021-02-19T16:31:39+08:00">2021-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>ArrayList 中的 Iterator 实现:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">class</span> <span class="title class_">Itr</span> <span class="keyword">implements</span> <span class="title class_">Iterator</span>&lt;E&gt; &#123;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Index of element to be returned by subsequent call to next.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="type">int</span> <span class="variable">cursor</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Index of element returned by most recent call to next or</span></span><br><span class="line"><span class="comment">    * previous.  Reset to -1 if this element is deleted by a call</span></span><br><span class="line"><span class="comment">    * to remove.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="type">int</span> <span class="variable">lastRet</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * The modCount value that the iterator believes that the backing</span></span><br><span class="line"><span class="comment">    * List should have.  If this expectation is violated, the iterator</span></span><br><span class="line"><span class="comment">    * has detected concurrent modification.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="type">int</span> <span class="variable">expectedModCount</span> <span class="operator">=</span> modCount;</span><br><span class="line">   <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">hasNext</span><span class="params">()</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> cursor != size();</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> E <span class="title function_">next</span><span class="params">()</span> &#123;</span><br><span class="line">           checkForComodification();</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">       <span class="type">E</span> <span class="variable">next</span> <span class="operator">=</span> get(cursor);</span><br><span class="line">       lastRet = cursor++;</span><br><span class="line">       <span class="keyword">return</span> next;</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">       checkForComodification();</span><br><span class="line">       <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">NoSuchElementException</span>();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">remove</span><span class="params">()</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (lastRet == -<span class="number">1</span>)</span><br><span class="line">       <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>();</span><br><span class="line">           checkForComodification();</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">       AbstractList.<span class="built_in">this</span>.remove(lastRet);</span><br><span class="line">       <span class="keyword">if</span> (lastRet &lt; cursor)</span><br><span class="line">           cursor--;</span><br><span class="line">       lastRet = -<span class="number">1</span>;</span><br><span class="line">       expectedModCount = modCount;</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">       <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ConcurrentModificationException</span>();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">checkForComodification</span><span class="params">()</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (modCount != expectedModCount)</span><br><span class="line">       <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ConcurrentModificationException</span>();</span><br><span class="line">   &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>基本上 ArrayList 采用 size 属性来维护自已的状态，而 Iterator 采用 cursor 来来维护自已的状态。<br>当 size 出现变化时，cursor 并不一定能够得到同步，_除非这种变化是 Iterator 主动导致的_。</strong><br><strong>从上面的代码可以看到当 Iterator.remove 方法导致 ArrayList 列表发生变化时，他会更新 cursor 来同步这一变化。但其他方式导致的 ArrayList 变化，Iterator 是无法感知的。ArrayList 自然也不会主动通知 Iterator 们，那将是一个繁重的工作。Iterator 到底还是做了努力：为了防止状态不一致可能引发的无法设想的后果，Iterator 会经常做 checkForComodification 检查，以防有变。如果有变，则以异常抛出，所以就出现了上面的异常。</strong><br>如果对正在被迭代的集合进行结构上的改变（即对该集合使用 add、remove 或 clear 方法），那么迭代器就不再合法（并且在其后使用该迭代器将会有 ConcurrentModificationException 异常被抛出）.<br>如果使用迭代器自己的 remove 方法，那么这个迭代器就仍然是合法的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
+</span>
 
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+        
+        
+      </div>
+    </article>
   </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         
-          <span class="site-state-item-count">110</span>
-          <span class="site-state-item-name">posts</span>
+        <a href="/2021/04/02/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_self">
+          关系型数据库
         </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/02/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_self">
+        <div>
+          关系型数据库：指采用了关系模型来组织数据的数据库。关系模型：二维表格模型，而一个关系型数据库就是由二维表及其之间的联系所组成的一个数据组织。关系模型中常用的概念：关系：一张二维表，每个关系都具有一个关系名，也就是表名元组：二维表中的一行，在数据库中被称为记录属性：二维表中的一列，在数据库中被称为字段域：属性的取值范围，也就是数据库中某一列的取值限制关键字：一组可以唯一标识元组的属性，数据库中常称为
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-02 14:47" pubdate>
+              2021-04-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">categories</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/02/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/TSDB/" target="_self">
+          TSDB
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/04/02/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/TSDB/" target="_self">
+        <div>
+          时序列数据库用来存储时序列（time-series）数据并以时间（点或区间）建立索引的软件  使用场景： 数据结构简单 数据量大   数据库OpenTSDB- Prometheus Golong  InfluxDB 开源版本只有单机版是免费的，单机版性能差 Golong 默认存储原始数据，时间自由度高，Rollup 低效  Druid 不存储原始数据，时间自由度低，性能高 双层存储 查询自由度高
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-02 14:46" pubdate>
+              2021-04-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/TSDB/" class="category-chain-item">TSDB</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/Client%E4%B8%8EServer%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/" target="_self">
+          Client与Server交互方式
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/03/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/Client%E4%B8%8EServer%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/" target="_self">
+        <div>
+          1 Polling（短轮询） 客户端拉方式    交互方式 client 每隔一段时间都会向 server 发送 http 请求，服务器收到请求后，将最新的数据发回给 client。   缺点 浪费网络带宽：比如在某个时间段 server 没有更新数据，但 client 仍然每隔一段时间发送请求来询问，所以这段时间内的询问都是无效的，这样浪费了网络带宽。 实时性不好    2 Comet 基于 H
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-31 14:00" pubdate>
+              2021-03-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" class="category-chain-item">计算机网络与安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/25/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/docker/Docker/" target="_self">
+          Docker
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/03/25/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/docker/Docker/" target="_self">
+        <div>
+          Docker 是如何运行的  Docker 优势快 Docker 的抽象层比 VM 少 Docker 利用 HostOS（宿主机内核），VM 需要 GuestOS    命令 启动 systemctl start docker  关闭 systemctl stop docker  重启 systemctl restart docker  抓取 image  docker image pull [组
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-25 18:42" pubdate>
+              2021-03-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/docker/" class="category-chain-item">docker</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/24/%E5%88%86%E5%B8%83%E5%BC%8F/IaaS,PaaS,SaaS/" target="_self">
+          IaaS,PaaS,SaaS
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/03/24/%E5%88%86%E5%B8%83%E5%BC%8F/IaaS,PaaS,SaaS/" target="_self">
+        <div>
+          Iaas 就是卖硬件，Paas 就是卖开发、运行环境，Saas 就是卖软件。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-24 13:15" pubdate>
+              2021-03-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" class="category-chain-item">分布式</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%BA%94%E7%94%A8/" target="_self">
+          编码转换方式与应用
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%BA%94%E7%94%A8/" target="_self">
+        <div>
+          Base64简介Base64 是一种用 64 个字符来表示任意二进制数据的方法。  小写字母 a-z、 大写字母 A-Z、 数字 0-9、 符号”+”、”/“（再加上作为垫字的”=”，实际上是 65 个字符）所以不能直接用于 url   编码步骤： 将每三个字节作为一组，一共是 24 个二进制位。 将这 24 个二进制位分为四组，每个组有 6 个二进制位。 在每组前面加两个 00，扩展成 32 个
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-25 10:57" pubdate>
+              2021-02-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="category-chain-item">数据结构与算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/SSH/" target="_self">
+          SSH
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/SSH/" target="_self">
+        <div>
+          用途建互信，登陆服务器 1234# hostname是主机名，它可以是域名，也可能是 IP 地址或局域网内部的主机名。# username是用户名，不指定用户名的情况下，将使用客户端的当前用户名，作为远程服务器的登录用户名# -p参数可以指定其他端口，默认22$ ssh -p 22 username@hostname
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-24 15:17" pubdate>
+              2021-02-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" class="category-chain-item">计算机网络与安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/23/java%E5%9F%BA%E7%A1%80/JVM/JVM%E5%9F%BA%E7%A1%80/" target="_self">
+          JVM基础
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/23/java%E5%9F%BA%E7%A1%80/JVM/JVM%E5%9F%BA%E7%A1%80/" target="_self">
+        <div>
+          JVM 编译执行/解释执行 解释执行： 字节码 -&gt; [ 解释器 解释执行 ] -&gt; 执行结果   编译执行： 字节码 -&gt; [ 编译器 编译 ] -&gt; 机器码 -&gt; [ 执行 ] -&gt; 执行结果    javac 生成的字节码与 32 位，64 位 JVM 无关。它可以在两个 JVM 上运行。记住古老的诺言“编译一次，随处运行”
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-23 10:30" pubdate>
+              2021-02-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/JVM/" class="category-chain-item">JVM</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/19/java%E5%9F%BA%E7%A1%80/%E9%81%8D%E5%8E%86%E5%88%A0%E9%99%A4List%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" target="_self">
+          遍历删除List中的元素
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/19/java%E5%9F%BA%E7%A1%80/%E9%81%8D%E5%8E%86%E5%88%A0%E9%99%A4List%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" target="_self">
+        <div>
+          ArrayList 中的 Iterator 实现: 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950private class Itr implements Iterator&lt;E&gt; &#123;   /**    * Index of element t
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-19 16:31" pubdate>
+              2021-02-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#board">5</a><a class="page-number" href="/page/6/#board">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#board">11</a><a class="extend next" rel="next" href="/page/5/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
   </nav>
-</div>
 
 
 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  </div>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
-        
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
 
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

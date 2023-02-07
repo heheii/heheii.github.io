@@ -1,1635 +1,941 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="will">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="热心市民王先生的小破站">
 <meta property="og:url" content="http://example.com/page/9/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="热心市民王先生的小破站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="will">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>热心市民王先生的小破站</title>
 
-<link rel="canonical" href="http://example.com/page/9/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Hexo</title>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>heheii</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                
+                <span>remark</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="heheii"></span>
+          
+        </div>
 
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
 
 </div>
-    </header>
 
+  </header>
+
+  <main>
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
           
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-          <div class="content index posts-expand">
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/10/29/java%E5%9F%BA%E7%A1%80/UID/" target="_self">
+          UID
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/10/29/java%E5%9F%BA%E7%A1%80/UID/" target="_self">
+        <div>
+          1 Twitter-snowflakesnowflake 将 long 的 64 位分为了 3 部分，如图：其中，时间戳部分的时间单位一般为毫秒。也就是说 1 台工作机器 1 毫秒可产生 4096 个 id（2 的 12 次方）。 2 Baidu-UidGenerator 源码：（使用说明详见：README.md） https://github.com/baidu/uid-generator
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-29 15:04" pubdate>
+              2020-10-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-      
+
+<span class="category-chains">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/29/java%E5%9F%BA%E7%A1%80/UID/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/29/java%E5%9F%BA%E7%A1%80/UID/" class="post-title-link" itemprop="url">UID</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-10-29 15:04:03" itemprop="dateCreated datePublished" datetime="2020-10-29T15:04:03+08:00">2020-10-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Twitter-snowflake"><a href="#1-Twitter-snowflake" class="headerlink" title="1 Twitter-snowflake"></a>1 Twitter-snowflake</h1><p>snowflake 将 long 的 64 位分为了 3 部分，如图：<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmxI7YIky3StXkNIUwkYxATQDzGs.png"><br>其中，时间戳部分的时间单位一般<strong>为毫秒</strong>。也就是说 1 台工作机器 1 毫秒可产生 4096 个 id（2 的 12 次方）。</p>
-<h1 id="2-Baidu-UidGenerator"><a href="#2-Baidu-UidGenerator" class="headerlink" title="2 Baidu-UidGenerator"></a>2 Baidu-UidGenerator</h1><ul>
-<li>源码：（使用说明详见：README.md）<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/baidu/uid-generator">https://github.com/baidu/uid-generator</a></li>
-</ul>
-</li>
-<li>依赖版本：<ul>
-<li><a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java8</a>及以上版本</li>
-<li><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">MySQL</a>(内置 WorkerID 分配器, 启动阶段通过 DB 进行分配; 如自定义实现, 则 DB 非必选依赖）</li>
-</ul>
-</li>
-<li>特点<ul>
-<li>UidGenerator 是 Java 实现的, 基于 Twitter 开源的<a target="_blank" rel="noopener" href="https://github.com/twitter/snowflake"><strong>Snowflake</strong></a>算法的唯一 ID 生成器</li>
-<li>采用 RingBuffer 来<strong>缓存</strong>已生成的 UID, 并行化 UID 的生产和消费（CachedUidGenerator）</li>
-<li>同时对<strong>CacheLine 补齐</strong>，避免了由 RingBuffer 带来的硬件级「伪共享」问题（CachedUidGenerator）</li>
-<li>单机 QPS(Query Per Second)  可达 600 万</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-1-Long-位数分配"><a href="#2-1-Long-位数分配" class="headerlink" title="2.1 Long 位数分配"></a>2.1 Long 位数分配</h2><p><code>**这些部分的长度可以根据具体需要进行动态的调整，满足总长度为64位即可，下图为默认位数：**</code><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fuw-sk1MrbFu_x8rbpm7EVlaHbk6.webp"></p>
-<ul>
-<li>sign(1bit)：固定 1bit 符号标识，即生成的 UID 为正数。</li>
-<li>delta seconds (28 bits)：当前时间，相对于时间基点”2016-05-20”的增量值，<strong>单位：秒</strong>，最多可支持约 8.7 年</li>
-<li>worker id (22 bits)：机器 id，最多可支持约 420w 次机器启动。内置实现为在启动时由数据库分配，默认分配策略为用后即弃，后续可提供复用策略。</li>
-<li>sequence (13 bits)：每秒下的并发序列，13 bits 可支持每秒 8192 个并发。</li>
-</ul>
-<h2 id="2-2-具体实现"><a href="#2-2-具体实现" class="headerlink" title="2.2 具体实现"></a>2.2 具体实现</h2><h3 id="2-2-1-DefaultUidGenerator"><a href="#2-2-1-DefaultUidGenerator" class="headerlink" title="2.2.1 DefaultUidGenerator"></a>2.2.1 DefaultUidGenerator</h3><ul>
-<li>实现了<em>InitializingBean</em>接口，会在初始化时添加 WorkerNode 至数据库，并返回一个 workerNodeId（可自定义实现：_implements WorkerIdAssigner_）</li>
-<li>nextId 方法主要负责 ID 的生成，这种实现方式很简单，<ul>
-<li>如果毫秒数未发生变化，在序列号加一即可；</li>
-<li>如果毫秒数未发生变化，并且序列号已分配至最大，则等待至下一秒</li>
-<li>毫秒数发生变化，重置 Sequence 为 0;</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">synchronized</span> <span class="type">long</span> <span class="title function_">nextId</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">long</span> <span class="variable">currentSecond</span> <span class="operator">=</span> getCurrentSecond();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Clock moved backwards, refuse to generate uid</span></span><br><span class="line">    <span class="keyword">if</span> (currentSecond &lt; lastSecond) &#123;</span><br><span class="line">        <span class="type">long</span> <span class="variable">refusedSeconds</span> <span class="operator">=</span> lastSecond - currentSecond;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">UidGenerateException</span>(<span class="string">&quot;Clock moved backwards. Refusing for %d seconds&quot;</span>, refusedSeconds);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// At the same second, increase sequence</span></span><br><span class="line">    <span class="keyword">if</span> (currentSecond == lastSecond) &#123;</span><br><span class="line">        sequence = (sequence + <span class="number">1</span>) &amp; bitsAllocator.getMaxSequence();</span><br><span class="line">        <span class="comment">// Exceed the max sequence, we wait the next second to generate uid</span></span><br><span class="line">        <span class="keyword">if</span> (sequence == <span class="number">0</span>) &#123;</span><br><span class="line">            currentSecond = getNextSecond(lastSecond);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// At the different second, sequence restart from zero</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        sequence = <span class="number">0L</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    lastSecond = currentSecond;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Allocate bits for UID</span></span><br><span class="line">    <span class="keyword">return</span> bitsAllocator.allocate(currentSecond - epochSeconds, workerId, sequence);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-2-CachedUidGenerator"><a href="#2-2-2-CachedUidGenerator" class="headerlink" title="2.2.2 CachedUidGenerator"></a>2.2.2 CachedUidGenerator</h3><ul>
-<li>结构</li>
-</ul>
-<p><img src="https://github.com/baidu/uid-generator/raw/master/doc/ringbuffer.png"></p>
-<ul>
-<li><p>RingBuffer 填充时机</p>
-<ul>
-<li>初始化预填充<br>    RingBuffer 初始化时，预先填充满整个 RingBuffer.</li>
-<li>即时填充<br>    Take 消费时，即时检查剩余可用 slot 量(<code>tail</code> - <code>cursor</code>)，如小于设定阈值，则补全空闲 slots。阈值可通过<code>paddingFactor</code>来进行配置，请参考 Quick Start 中 CachedUidGenerator 配置</li>
-<li>周期填充<br>     通过 Schedule 线程，定时补全空闲 slots。可通过<code>scheduleInterval</code>配置，以应用定时填充功能，并指定 Schedule 时间间隔</li>
-</ul>
-</li>
-<li><p>由于数组元素在内存中是连续分配的，可最大程度利用 CPU cache 以提升性能。但同时会带来「伪共享」FalseSharing 问题，为此在 Tail、Cursor 指针、Flag-RingBuffer 中采用了 CacheLine 补齐方式。</p>
-</li>
-</ul>
-<p><img src="https://github.com/baidu/uid-generator/raw/master/doc/cacheline_padding.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
   
   
 
-      
+      </span>
+    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/22/%E9%A1%B9%E7%9B%AE/APP%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/22/%E9%A1%B9%E7%9B%AE/APP%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/" class="post-title-link" itemprop="url">APP消息推送</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-10-22 14:46:42" itemprop="dateCreated datePublished" datetime="2020-10-22T14:46:42+08:00">2020-10-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>真正的 Push 应该是只要一个 Client 设备连接到互联网中，什么也不做等在那里，Server 端随时都可以将数据（消息是数据的一种）发送到这个 Client 上，就好像 Server 等在那里，Client 随时可以访问 Server 一样。</p>
-<pre><code>用Server端做个类比，当一个Web Server在互联网上部署好以后，任何一台电脑都可以通过互联网去访问Server：从Server获取数据、向Server提交数据。向Server提交数据实际就是Client Push数据到Server。在这个模式中，Server所做的事情就是等待，等待任意的Client主动来访问它，并且不需要和Client端保持连接。Server是如何做到这点的呢，实际上是通过listen的方式，具体来说是socket的listen，Server端不需要做额外的事情，只要告诉socket，你去listen吧，有Client请求过来就交给对应的程序去完成吧，就这么简单。
-
-Client端的Push是否能做到这点呢，我们这里只考虑Client的设备是智能机的情况，主要就是Android、iOS，还有winPhone？大概吧。Android和iOS都是基于linux系统的，有完整的网络协议架构，所以使用socket完全没有问题，winPhone作为一个智能机来说，我想也是没有问题的。所以对于这些智能机来说，让一个socket去listen，等待互联网上的任意一台其他设备来访问是可行的，Server Push数据给Client只需要去连接Client的socket就可以了。
-
-事情是这么简单吗？显然不是，不然就不会有各个大小公司跳出来做平台了。
-
-ps：首先我们要了解socket是什么，socket是基于tcp/ip协议的一个实现，而tcp/ip是整个互联网的协议基础。关于tcp/ip，socket具体内容不在这里赘述，不了解的可以去查相关资料。
-
-Server端和Client端有一个很重要的区别，Server端是有固定的公网ip的，而Client端的ip不是固定的，甚至不一定具有公网ip。Client访问Server时，实际是通过ip找到Server进行访问的（域名？域名最终也是被解析成ip），有固定的公网ip才方便互联网上的其他设备来访问。而反过来Server想找某个Client时，由于Client的ip不固定，Server端是无法找到Client的。所以即使Client这里放了一个socket在listen，Server找不到Client，还是连接不上Client。
-
-所以Client是无法使用Server的这种模式去被动接受Push的。是否有办法让Server端知道Client的ip呢，比如每次Client更换ip以后将ip发给Server？这种方法显然是成本高且不可靠的。
-
-所以，目前的Push技术实现基本都是Client主动连接Server，钻牛角尖来讲，现在的Push其实都是伪Push。下面简单讲两种方式：
-</code></pre>
-<p>一、轮询法：</p>
-<pre><code>这种方法最简单，Client每过一段时间向Server请求一次数据。优缺点很明显，优点是实现简单；缺点是间隔时间不好控制，并且消耗大（电量、流量）。
-</code></pre>
-<p>二、长连接法：</p>
-<pre><code>还是从socket入手（又是这货？），Client使用socket连接Server，并且保持socket连接，Server随时可以通过这个socket发送数据给Client。优点：最有效，客户端设备消耗比第一种小（设备应该从系统层对socket的长连接做优化，socket链接维护成本从客户端来讲应该是小于频繁的http请求的）；缺点：服务端压力大，每一个设备都需要一个socket连接。
-
-还有一些其他协议比如xmpp，其实也逃不过上面两种方式，只是做了一些封装。或者还有一种非互联网方式的做法，比如监听短信法，要push的时候，先发一条手机到目的手机，Client监听到了标的短信，然后向Server请求数据，不过像这类剑走偏锋的方法，限制条件也很多，不是很实用。
-
-总结一下，目前各个推送平台的实现都是基于长连接法的，如果App要自己实现推送，也是建议使用这种方式。但是如果每个App都用一个长连接，那么手机也吃不消了，所以又有一些其他技术来实现。
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/14/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/maven/Maven/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/14/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/maven/Maven/" class="post-title-link" itemprop="url">Maven</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-10-14 22:19:56" itemprop="dateCreated datePublished" datetime="2020-10-14T22:19:56+08:00">2020-10-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/maven/" itemprop="url" rel="index"><span itemprop="name">maven</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h1><h1 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FnrwUvL28Bbu6LIgTKDj8twmoX68.png"></h1><h1 id="2-maven-访问仓库的顺序"><a href="#2-maven-访问仓库的顺序" class="headerlink" title="2 maven 访问仓库的顺序"></a>2 maven 访问仓库的顺序</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh3xdml9GgWUhndzBmCKdiLOcsWy.png"></p>
-<h1 id="3-maven-项目目录结构"><a href="#3-maven-项目目录结构" class="headerlink" title="3 maven 项目目录结构"></a>3 maven 项目目录结构</h1><p>约定的目录结构对于 Maven 实现自动化构建而言是必不可少的一环，就拿自动编译来说，Maven 必须能找到 Java 源文件，下一步才能编译，而编译之后也必须有一个准确的位置保持编译得到的字节码文件。<br>我们在开发中如果需要让第三方工具或框架知道我们自己创建的资源在哪，那么基本上就是两种方式：</p>
-<ul>
-<li>通过配置的形式明确告诉它</li>
-<li>基于第三方工具或框架的约定</li>
-</ul>
-<p>Maven 对工程目录结构的要求就属于后面的一种。<br>现在 JavaEE 开发领域普遍认同一个观点：约定&gt;配置&gt;编码。意思就是能用配置解决的问题就不编码，能基于约定的就不进行配置。而 Maven 正是因为指定了特定文件保存的目录才能够对我们的 Java 工程进行自动化构建。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FnxrUyiJZnLo2sf2by_tAXh8MPxv.jpg"></p>
-<h1 id="4-maven-坐标"><a href="#4-maven-坐标" class="headerlink" title="4 maven 坐标"></a>4 maven 坐标</h1><p>GAV:</p>
-<ul>
-<li>groupid：公司或组织的域名倒序+当前项目名称</li>
-<li>artifactId：当前项目的模块名称</li>
-<li>version：当前模块的版本</li>
-</ul>
-<p>例如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.30<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>将 gav 三个向量连起来：mysql+mysql-connector-java+5.1.30</li>
-<li>以连起来的字符串作为目录结构到仓库中查找 mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiwXezyn0Dep82UVVFxy_jTX0tEA.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiwXezyn0Dep82UVVFxy_jTX0tEA.png"></p>
-<h1 id="5-settings-xml-文件详解"><a href="#5-settings-xml-文件详解" class="headerlink" title="5 settings.xml 文件详解"></a>5 settings.xml 文件详解</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- 本地仓库的路径。默认值为$&#123;user.home&#125;/.m2/repository。 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>E:/java/apache-maven-3.3.9/repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Maven是否需要和用户交互以获得输入。如果Maven需要和用户交互以获得输入，则设置成true，反之则应为false。默认为true。--&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--&lt;interactiveMode&gt;true&lt;/interactiveMode&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--表示是否离线，默认是false。这个属性表示在Maven进行项目编译和部署等操作时是否允许Maven进行联网来下载所需要的信息。  --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- &lt;offline&gt;false&lt;/offline&gt;</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--当插件的组织Id（groupId）没有显式提供时，供搜寻插件组织Id（groupId）的列表。该元素包含一个pluginGroup元素列表，每个子元素包含了一个组织Id（groupId）。当我们使用某个插件，并且没有在命令行为其提供组织Id（groupId）的时候，Maven就会使用该列表。默认情况下该列表包含了org.apache.maven.plugins和org.codehaus.mojo --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- pluginGroup</span></span><br><span class="line"><span class="comment">     | Specifies a further group identifier to use for plugin lookup.</span></span><br><span class="line"><span class="comment">    &lt;pluginGroup&gt;com.your.plugins&lt;/pluginGroup&gt;</span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--其下面可以定义一系列的proxy子元素，表示Maven在进行联网时需要使用到的代理。当设置了多个代理的时候第一个标记active为true的代理将会被使用。 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">proxies</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--代理元素包含配置代理时需要的信息--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">proxy</span>&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!-- 代理的唯一定义符，用来区分不同的代理元素。--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>optional<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--该代理是否是激活的那个。true则激活代理。当我们声明了一组代理，而某个时候只需要激活一个代理的时候，该元素就可以派上用处。 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">active</span>&gt;</span>true<span class="tag">&lt;/<span class="name">active</span>&gt;</span></span><br><span class="line">	   <span class="comment">&lt;!--代理的协议。 协议://主机名:端口，分隔成离散的元素以方便配置。--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">protocol</span>&gt;</span>http<span class="tag">&lt;/<span class="name">protocol</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--代理的用户名，用户名和密码表示代理服务器认证的登录名和密码。 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">username</span>&gt;</span>proxyuser<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--代理的用户名，用户名和密码表示代理服务器认证的登录名和密码。 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">password</span>&gt;</span>proxypass<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">	   <span class="comment">&lt;!--代理的主机名。协议://主机名:端口，分隔成离散的元素以方便配置。  --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">host</span>&gt;</span>proxy.host.net<span class="tag">&lt;/<span class="name">host</span>&gt;</span></span><br><span class="line">	   <span class="comment">&lt;!--代理的主机名。协议://主机名:端口，分隔成离散的元素以方便配置。  --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">port</span>&gt;</span>80<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">	   <span class="comment">&lt;!--不该被代理的主机名列表。该列表的分隔符由代理服务器指定；例子中使用了竖线分隔符，使用逗号分隔也很常见。--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">nonProxyHosts</span>&gt;</span>local.net|some.host.com<span class="tag">&lt;/<span class="name">nonProxyHosts</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">proxy</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">proxies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--表示当需要连接到一个私有服务器的时候需要的认证信息 。--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servers</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--服务器元素包含配置服务器时需要的信息</span></span><br><span class="line"><span class="comment">  发布的服务器,发布的位置在POM中配置，以ID为关联，有很多公用的信息需要配置在POM文件里，最佳实践是定义一个公司级别的root pom -</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--这是server的id（注意不是用户登陆的id），该id与distributionManagement中repository元素的id相匹配。--&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">id</span>&gt;</span>frame-releases<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		   <span class="comment">&lt;!--鉴权用户名。鉴权用户名和鉴权密码表示服务器认证所需要的登录名和密码。 --&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">		   <span class="comment">&lt;!--鉴权用户名。鉴权用户名和鉴权密码表示服务器认证所需要的登录名和密码。 --&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin123<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">	   <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	  <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">id</span>&gt;</span>siteServer<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--鉴权时使用的私钥位置。和前两个元素类似，私钥位置和私钥密码指定了一个私钥的路径（默认是$&#123;user.home&#125;/.ssh/id_dsa）以及如果需要的话，一个密语。将来passphrase和password元素可能会被提取到外部，但目前它们必须在settings.xml文件以纯文本的形式声明。 --&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">privateKey</span>&gt;</span>/path/to/private/key<span class="tag">&lt;/<span class="name">privateKey</span>&gt;</span></span><br><span class="line">		  <span class="comment">&lt;!--鉴权时使用的私钥密码。--&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">passphrase</span>&gt;</span>optional; leave empty if not used.<span class="tag">&lt;/<span class="name">passphrase</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!--文件被创建时的权限。如果在部署的时候会创建一个仓库文件或者目录，这时候就可以使用权限（permission）。这两个元素合法的值是一个三位数字，其对应了unix文件系统的权限，如664，或者775。 --&gt;</span></span><br><span class="line">		   <span class="tag">&lt;<span class="name">filePermissions</span>&gt;</span>664<span class="tag">&lt;/<span class="name">filePermissions</span>&gt;</span></span><br><span class="line">		   <span class="comment">&lt;!--目录被创建时的权限。 --&gt;</span></span><br><span class="line">		   <span class="tag">&lt;<span class="name">directoryPermissions</span>&gt;</span>775<span class="tag">&lt;/<span class="name">directoryPermissions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--用于定义一系列的远程仓库的镜像。我们可以在pom中定义一个下载工件的时候所使用的远程仓库。但是有时候这个远程仓库会比较忙，所以这个时候人们就想着给它创建镜像以缓解远程仓库的压力，也就是说会把对远程仓库的请求转换到对其镜像地址的请求。每个远程仓库都会有一个id，这样我们就可以创建自己的mirror来关联到该仓库，那么以后需要从远程仓库下载工件的时候Maven就可以从我们定义好的mirror站点来下载，这可以很好的缓解我们远程仓库的压力。在我们定义的mirror中每个远程仓库都只能有一个mirror与它关联，也就是说你不能同时配置多个mirror的mirrorOf指向同一个repositoryId。--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--该镜像的唯一标识符。id用来区分不同的mirror元素。 --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">id</span>&gt;</span>mirrorId<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--　用来表示该mirror是关联的哪一个仓库，其值为其关联仓库的id。当要同时关联多个仓库时，这多个仓库之间可以用逗号隔开；当要关联所有的仓库时，可以使用“*”表示；当要关联除某一个仓库以外的其他所有仓库时，可以表示为“*,!repositoryId”；当要关联不是localhost或用file请求的仓库时，可以表示为“external:*”。--&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>repositoryId<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--镜像名称 --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>Human Readable Name for this Mirror.<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	  <span class="comment">&lt;!--该镜像的URL。构建系统会优先考虑使用该URL，而非使用</span></span><br><span class="line"><span class="comment">默认的服务器URL。 --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://196.160.1.211:8081/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--用于指定一系列的profile。profile元素由activation、repositories、pluginRepositories和properties四个元素组成。当一个profile在settings.xml中是处于活动状态并且在pom.xml中定义了一个相同id的profile时，settings.xml中的profile会覆盖pom.xml中的profile。 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!--根据环境参数来调整的构件的配置--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--该配置的唯一标识符。 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.4<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--当所有的约束条件都满足的时候就会激活这个profile。--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">	  <span class="comment">&lt;!--当其值为true的时候表示如果没有其他的profile处于激活状态的时候，该profile将自动被激活。--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>false<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--当匹配的jdk被检测到，profile被激活。例如，1.4激活JDK1.4，1.4.0_2，而!1.4激活所有版本不是以1.4开头的JDK。</span></span><br><span class="line"><span class="comment"> 这里的版本还可以用一个范围来表示，如</span></span><br><span class="line"><span class="comment">&lt;jdk&gt;[1.4,1.7)&lt;/jdk&gt;表示1.4、1.5和1.6满足；</span></span><br><span class="line"><span class="comment">&lt;jdk&gt;[1.4,1.7]&lt;/jdk&gt;表示1.4、1.5、1.6和1.7满足；--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.5<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--表示当操作系统满足条件的时候激活。--&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">os</span>&gt;</span></span><br><span class="line">		 <span class="comment">&lt;!--激活profile的操作系统的名字 --&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">name</span>&gt;</span>Windows XP<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		 <span class="comment">&lt;!--激活profile的操作系统所属家族(如 &#x27;windows&#x27;)  --&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">family</span>&gt;</span>Windows<span class="tag">&lt;/<span class="name">family</span>&gt;</span></span><br><span class="line">		 <span class="comment">&lt;!--激活profile的操作系统体系结构  --&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">arch</span>&gt;</span>x86<span class="tag">&lt;/<span class="name">arch</span>&gt;</span></span><br><span class="line">		 <span class="comment">&lt;!--激活profile的操作系统版本--&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.2600<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">os</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">&lt;!--property是键值对的形式，表示当Maven检测到了这样一个键值对的时候就激活该profile。如果值字段是空的，那么存在属性名称字段就会激活profile，否则按区分大小写方式匹配属性值字段--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">		 <span class="comment">&lt;!--这个时候如果要激活该profile的话，可以在调用Maven指令的时候加上参数mavenVersion并指定其值为&gt;2.0.3，如：mvn compile –DmavenVersion=&gt;2.0.3--&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">name</span>&gt;</span>mavenVersion<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		 <span class="comment">&lt;!--激活profile的属性的值 --&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">value</span>&gt;</span>2.0.3<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--表示当文件存在或不存在的时候激活，exists表示存在，missing表示不存在。如下面的例子表示当文件hello/world不存在的时候激活该profile。--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">file</span>&gt;</span></span><br><span class="line">		 <span class="comment">&lt;!--如果指定的文件存在，则激活profile。 --&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">exists</span>&gt;</span>$&#123;basedir&#125;/file2.properties<span class="tag">&lt;/<span class="name">exists</span>&gt;</span></span><br><span class="line">		 <span class="comment">&lt;!--如果指定的文件不存在，则激活profile。--&gt;</span></span><br><span class="line">		 <span class="tag">&lt;<span class="name">missing</span>&gt;</span>$&#123;basedir&#125;/file1.properties<span class="tag">&lt;/<span class="name">missing</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--用于定义远程仓库的，当该profile是激活状态的时候，这里面定义的远程仓库将作为当前pom的远程仓库。 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk14<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">name</span>&gt;</span>Repository for JDK 1.4 builds<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.myhost.com/maven/jdk14<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshotPolicy</span>&gt;</span>always<span class="tag">&lt;/<span class="name">snapshotPolicy</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>env-dev<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">name</span>&gt;</span>target-env<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">value</span>&gt;</span>dev<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tomcatPath</span>&gt;</span>/path/to/tomcat/instance<span class="tag">&lt;/<span class="name">tomcatPath</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>nexusProfile<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--远程仓库列表，它是Maven用来填充构建系统本地仓库所使用的一组远程项目。 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">	   <span class="comment">&lt;!--包含需要连接到远程仓库的信息 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">	    <span class="comment">&lt;!--远程仓库唯一标识--&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexusProfile<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		   <span class="comment">&lt;!--远程仓库名称 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>nexus repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		  <span class="comment">&lt;!--用于定位和排序构件的仓库布局类型-可以是default（默认）或者legacy（遗留）。Maven 2为其仓库提供了一个默认的布局；然而，Maven 1.x有一种不同的布局。我们可以使用该元素指定布局是default（默认）还是legacy（遗留）。 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">		  <span class="comment">&lt;!--远程仓库URL，按protocol://hostname/path形式</span></span><br><span class="line"><span class="comment">		  --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://196.160.1.211:8081/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">		   <span class="comment">&lt;!--如何处理远程仓库里发布版本的下载--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">releases</span>&gt;</span></span><br><span class="line">		   <span class="comment">&lt;!--true或者false表示该仓库是否为下载某种类型构件（发布版，快照版）开启。  --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--该元素指定更新发生的频率。Maven会比较本地POM和远程POM的时间戳。这里的选项是：always（一直），daily（默认，每日），interval：X（这里X是以分钟为单位的时间间隔），或者never（从不）。 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">updatePolicy</span>&gt;</span>always<span class="tag">&lt;/<span class="name">updatePolicy</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	     <span class="comment">&lt;!--当Maven验证构件校验文件失败时该怎么做-ignore（忽略），fail（失败），或者warn（警告）。--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">checksumPolicy</span>&gt;</span>warn<span class="tag">&lt;/<span class="name">checksumPolicy</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">releases</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		     <span class="comment">&lt;!--如何处理远程仓库里快照版本的下载。有了releases和snapshots这两组配置，POM就可以在每个单独的仓库中，为每种类型的构件采取不同的策略。例如，可能有人会决定只为开发目的开启对快照版本下载的支持。参见repositories/repository/releases元素--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">id</span>&gt;</span>centralProfile<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>central<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>Central Repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- 虚拟的URL形式,指向镜像的URL,因为所有的镜像都是用的是nexus，这里的central实际上指向的是http://repos.d.xxx.com/nexus/content/groups/public --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://repo.maven.apache.org/maven2<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">layout</span>&gt;</span>default<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--手动激活profiles的列表，按照profile被应用的顺序定义activeProfile。 该元素包含了一组activeProfile元素，每个activeProfile都含有一个profile id。任何在activeProfile中定义的profile id，不论环境设置如何，其对应的</span></span><br><span class="line"><span class="comment">        profile都会被激活。如果没有匹配的profile，则什么都不会发生。例如，env-test是一个activeProfile，则在pom.xml（或者profile.xml）中对应id的profile会被激活。如果运行过程中找不到这样一个profile，Maven则会像往常一样运行。 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>nexusProfile<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>centralProfile<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">备注：POM配置</span><br><span class="line"><span class="tag">&lt;<span class="name">distributionManagement</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--frame-releases与setting文件的server id 对应 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>frame-releases<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>frame-releases<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8081/nexus/content/repositories/releases/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>frame-snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>frame Snapshots Repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8081/nexus/content/repositories/snapshots/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">distributionManagement</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="6-项目打包上传至私服"><a href="#6-项目打包上传至私服" class="headerlink" title="6 项目打包上传至私服"></a>6 项目打包上传至私服</h1><ul>
-<li>pom.xml 文件添加 distributionManagement 节点</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用分发管理将本项目打成jar包，直接上传到指定服务器 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">distributionManagement</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--正式版本--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- nexus服务器中用户名：在settings.xml中&lt;server&gt;的id--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>yang<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 这个名称自己定义 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>Release repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://192.168.1.105:8081/repository/yang/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--快照</span></span><br><span class="line"><span class="comment">    &lt;snapshotRepository&gt;</span></span><br><span class="line"><span class="comment">        &lt;id&gt;nexus-snapshots&lt;/id&gt;</span></span><br><span class="line"><span class="comment">        &lt;name&gt;Snapshots repository&lt;/name&gt;</span></span><br><span class="line"><span class="comment">        &lt;url&gt;http://192.168.1.105/repository/yang/&lt;/url&gt;</span></span><br><span class="line"><span class="comment">    &lt;/snapshotRepository&gt;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">distributionManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>&lt; repository &gt;节点下的&lt; id &gt;对应 setting.xml 文件中的 server 的 id</strong></li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--maven连接nexus需要验证用户名和密码--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>yang<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin123<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>上传正式版本，pom.xml 文件 version 中不能有 SNAPSHOT，快照版本才有</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.yang<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>shade-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt; --&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/MongoDB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/MongoDB/" class="post-title-link" itemprop="url">MongoDB</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-28 15:47:47" itemprop="dateCreated datePublished" datetime="2020-09-28T15:47:47+08:00">2020-09-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/" itemprop="url" rel="index"><span itemprop="name">MongoDB</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-基本模型"><a href="#1-基本模型" class="headerlink" title="1. 基本模型"></a>1. 基本模型</h1><h2 id="1-1-结构"><a href="#1-1-结构" class="headerlink" title="1.1 结构"></a>1.1 结构</h2><ul>
-<li>database 数据库，与 SQL 的数据库(database)概念相同，一个数据库包含多个集合(表)</li>
-<li>collection 集合，相当于 SQL 中的表(table)，一个集合可以存放多个文档(行)。 不同之处就在于集合的结构(schema)是动态的，不需要预先声明一个严格的表结构。更重要的是，默认情况下 MongoDB 并不会对写入的数据做任何 schema 的校验。</li>
-<li>document 文档，相当于 SQL 中的行(row)，一个文档由多个字段(列)组成，并采用 bson(json)格式表示。</li>
-<li>field 字段，相当于 SQL 中的列(column)，相比普通 column 的差别在于 field 的类型可以更加灵活，比如支持嵌套的文档、数组。<br>此外，MongoDB 中字段的类型是固定的、区分大小写、并且文档中的字段也是有序的。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkzlQKEl3O8vxDYrEKuW_4lP5GKC.png"></p>
-<h2 id="1-2-关键字"><a href="#1-2-关键字" class="headerlink" title="1.2 关键字"></a>1.2 关键字</h2><ul>
-<li>_id 主键，MongoDB 默认使用一个_id 字段来保证文档的唯一性。</li>
-<li>reference 引用，勉强可以对应于 外键(foreign key) 的概念，之所以是勉强是因为 reference 并没有实现任何外键的约束，而只是由客户端(driver)自动进行关联查询、转换的一个特殊类型。</li>
-<li>view 视图，MongoDB 3.4 开始支持视图，和 SQL 的视图没有什么差异，视图是基于表/集合之上进行动态查询的一层对象，可以是虚拟的，也可以是物理的(物化视图)。</li>
-<li>index 索引，与 SQL 的索引相同。</li>
-<li>$lookup，这是一个聚合操作符，可以用于实现类似 SQL-join 连接的功能</li>
-<li>transaction 事务，从 MongoDB 4.0 版本开始，提供了对于事务的支持</li>
-<li>aggregation 聚合，MongoDB 提供了强大的聚合计算框架，group by 是其中的一类聚合操作。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh6J3UUwu--Q77i5rmpPn1ylMnN8.png"></p>
-<h2 id="1-3-格式"><a href="#1-3-格式" class="headerlink" title="1.3 格式"></a>1.3 格式</h2><ul>
-<li><strong>BSON</strong></li>
-</ul>
-<p>MongoDB 文档可以使用 Javascript 对象表示，从格式上讲，是基于 JSON 的。<br>但是 JSON 也有自己的短板，比如无法支持像日期这样的特定数据类型，因此 MongoDB 实际上使用的是一种扩展式的 JSON，叫 <strong>BSON</strong>(Binary JSON)。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fm6osILrxRGBL0gEyMW3SIUO28jT.jpeg"></p>
-<h2 id="1-4-分布式-ID"><a href="#1-4-分布式-ID" class="headerlink" title="1.4 分布式 ID"></a>1.4 分布式 ID</h2><p>在单机时代，大多数应用可以使用数据库自增式 ID 来作为主键。 传统的 RDBMS 也都支持这种方式，比如 mysql 可以通过声明 auto_increment 来实现自增的主键。 但一旦数据实现了分布式存储，这种方式就不再适用了，原因就在于无法保证多个节点上的主键不出现重复。<br>MongoDB 采用 ObjectId 来表示主键的类型，数据库中每个文档都拥有一个_id 字段表示主键。<br>_id 的生成规则如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fs0cHKKVu8jKEankU1QZlLFrpmjG.png"></p>
-<ul>
-<li>4-byte Unix 时间戳</li>
-<li>3-byte 机器 ID</li>
-<li>2-byte 进程 ID</li>
-<li>3-byte 计数器(初始化随机)</li>
-</ul>
-<p>_id 的生成实质上是由客户端(Driver)生成的，这样可以获得更好的随机性，同时降低服务端的负载。服务端也会检测写入的文档是否包含_id 字段，如果没有就生成一个。</p>
-<hr>
-<h1 id="2-操作语法"><a href="#2-操作语法" class="headerlink" title="2 操作语法"></a>2 操作语法</h1><hr>
-<h1 id="3-索引"><a href="#3-索引" class="headerlink" title="3 索引"></a>3 索引</h1><hr>
-<h1 id="4-集群"><a href="#4-集群" class="headerlink" title="4 集群"></a>4 集群</h1><h2 id="4-1-组件"><a href="#4-1-组件" class="headerlink" title="4.1 组件"></a>4.1 组件</h2><p>由于单机垂直扩展能力的局限，水平扩展的方式则显得更加的靠谱。 MongoDB 自带了这种能力，可以将数据存储到多个机器上以提供更大的容量和负载能力。为了保证数据的高可用，MongoDB 采用副本集的方式来实现数据复制。<br>MongoDB 分片集群(Shard Cluster)：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fts2ENIKC2nmwt5n92EAmTn_EFHQ.jpeg"></p>
-<ul>
-<li><strong>shard</strong>：分片</li>
-<li><strong>mongos</strong>：查询路由器</li>
-<li><strong>config servers</strong>：配置服务器</li>
-</ul>
-<h3 id="4-1-1-shard"><a href="#4-1-1-shard" class="headerlink" title="4.1.1 shard"></a>4.1.1 shard</h3><ul>
-<li>分片，是 MongoDB 用来将<strong>大型集合分割到不同服务器</strong>（或者说一个集群）上所采用的方法。</li>
-<li>和 MySQL 分区方案相比，MongoDB 的最大区别在于它几乎能<strong>自动完成所有事情</strong>，只要告诉 MongoDB 要分配数据，它就能自动维护数据在<strong>不同服务器之间的均衡</strong>（<strong>chunk 的分裂与迁移</strong>）。</li>
-<li>用于<strong>存储实际的数据块</strong>，实际生产环境中一个 shard server 角色可由几台机器组个一个 replica set 承担，提供了数据冗余和高等级的可靠性，防止主机单点故障。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjf344dn5aFEzpw-l085FDYi3PeI.png"></p>
-<h3 id="4-1-2-mongos"><a href="#4-1-2-mongos" class="headerlink" title="4.1.2 mongos"></a>4.1.2 mongos</h3><ul>
-<li>查询路由器，提供客户端应用程序和分片集群之间的接口，让整个集群看上去像单一数据库，前端应用可以透明使用。可以部署多个 mongos 路由器。</li>
-<li>mongos 本身没有任何数据，他也不知道该怎么处理这数据，去找 config server</li>
-</ul>
-<h3 id="4-1-3-config-servers"><a href="#4-1-3-config-servers" class="headerlink" title="4.1.3 config servers"></a>4.1.3 config servers</h3><ul>
-<li>配置服务器，<strong>存储集群的元数据和配置设置</strong>。从 MongoDB 3.4 开始，必须将配置服务器部署为 3 成员副本集</li>
-<li>存储所有存、取数据的方式，所有 shard 节点的信息，分片功能的一些配置信息。可以理解为真实数据的元数据。</li>
-</ul>
-<hr>
-<h2 id="4-2-分片策略"><a href="#4-2-分片策略" class="headerlink" title="4.2 分片策略"></a>4.2 分片策略</h2><h3 id="4-2-1-散列分片"><a href="#4-2-1-散列分片" class="headerlink" title="4.2.1 散列分片"></a>4.2.1 散列分片</h3><ul>
-<li>使用散列索引在共享群集中分区数据。散列索引计算<strong>单个字段的哈希值</strong>作为索引值; 此值用作分片键。</li>
-<li>使用散列索引解析查询时，MongoDB 会自动计算哈希值。应用程序也不会需要计算哈希值。</li>
-<li>基于散列值的数据分布有助于更均匀的数据分布，尤其是在分片键单调变化的数据集中。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtvRfH_1Rag5S1F_76PLc0vPDiGv.png"></p>
-<h3 id="4-2-2-范围分片"><a href="#4-2-2-范围分片" class="headerlink" title="4.2.2 范围分片"></a>4.2.2 范围分片</h3><ul>
-<li>基于<strong>分片键值</strong>将数据分成范围。然后根据分片键值为每个块分配一个范围。</li>
-<li>mongos 可以将操作仅路由到包含所需数据的分片。</li>
-<li>分片键的规划很重要，可能导致数据不能均匀分布。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FuvfzQSuKpqwSkTvqsGnFf24gCtP.png"></p>
-<hr>
-<h2 id="4-3-复制集选举策略"><a href="#4-3-复制集选举策略" class="headerlink" title="4.3 复制集选举策略"></a>4.3 复制集选举策略</h2><p>复制集通过 replSetInitiate 命令（或 mongo shell 的 rs.initiate()）进行初始化，初始化后各个成员间开始发送心跳消息，并发起 Priamry 选举操作，获得『大多数』成员投票支持的节点，会成为 Primary，其余节点成为 Secondary。<br>『大多数』：假设复制集内投票成员（后续介绍）数量为 N，则大多数为 <strong>N/2 + 1</strong>，当复制集内存活成员数量不足大多数时，整个复制集将无法选举出 Primary，复制集将无法提供写服务，处于只读状态。<br>所以当复制集成员为偶数时，最好加入一个 Arbiter 节点，以提升复制集可用性。</p>
-<hr>
-<h2 id="4-4-shard-chunk"><a href="#4-4-shard-chunk" class="headerlink" title="4.4 shard-chunk"></a>4.4 shard-chunk</h2><h3 id="4-4-1-Chunk-是什么"><a href="#4-4-1-Chunk-是什么" class="headerlink" title="4.4.1 Chunk 是什么"></a>4.4.1 Chunk 是什么</h3><p>在一个 shard server 内部，MongoDB 还是会把数据分为 chunks，每个 chunk 代表这个 shard server 内部一部分数据。</p>
-<ul>
-<li>chunk 有以下两个用途：<ul>
-<li><strong>Splitting</strong>：当一个 chunk 的大小超过配置中的 chunk size 时，MongoDB 的后台进程会把这个 chunk 切分成更小的 chunk，从而避免 chunk 过大的情况</li>
-<li><strong>Balancing</strong>：在 MongoDB 中，balancer 是一个后台进程，负责 chunk 的迁移，从而均衡各个 shard server 的负载，系统初始 1 个 chunk，chunk size 默认值 64M,生产库上选择适合业务的 chunk size 是最好的。mongoDB 会<strong>自动拆分和迁移 chunks</strong>。</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-4-2-Chunksize-的选择"><a href="#4-4-2-Chunksize-的选择" class="headerlink" title="4.4.2 Chunksize 的选择"></a>4.4.2 Chunksize 的选择</h3><ul>
-<li>小的 chunksize：数据均衡是迁移速度快，数据<strong>分布更均匀</strong>。数据分裂<strong>频繁</strong>，路由节点消耗更多资源。</li>
-<li>大的 chunksize：数据分裂少。数据块移动<strong>集中消耗 IO 资源</strong>。通常 100-200M</li>
-</ul>
-<h3 id="4-4-3-Chunk-分裂迁移"><a href="#4-4-3-Chunk-分裂迁移" class="headerlink" title="4.4.3 Chunk 分裂迁移"></a>4.4.3 Chunk 分裂迁移</h3><ul>
-<li>chunk 的分裂和迁移非常消耗 IO 资源；</li>
-<li>只在插入和更新时 chunk 才可能分裂迁移。</li>
-<li>chunk 只会分裂，不会合并，所以即使将 chunkSize 改大，现有的 chunk 数量不会减少，但 chunk 大小会随着写入不断增长，直到达到目标大小。</li>
-<li>过程：<ul>
-<li>chunk 的数据大小超过 chunk size：</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoCfygewaTMalugBcqqAuX-Vf0nq.png"></p>
-<ul>
-<li>此时各 shard 上的 chunk 数量不平衡，balancer 组件把 chunk 从 chunk 数量最多的 shard 节点挪动到数量最少的节点。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgWM8FdQIRJEQRr9Y9tPPmasBN1E.png"></p>
-<hr>
-<h2 id="4-5-replica-set-复制集"><a href="#4-5-replica-set-复制集" class="headerlink" title="4.5 replica set 复制集"></a>4.5 replica set 复制集</h2><h3 id="4-5-1-简介"><a href="#4-5-1-简介" class="headerlink" title="4.5.1 简介"></a>4.5.1 简介</h3><p>一组复制集就是一组 mongod 实例掌管同一个数据集，实例可以在不同的机器上面。</p>
-<ul>
-<li>实例中包含一个<strong>主导</strong>，接受客户端所有的写入操作，包含了所有的改变操作（写）的日志</li>
-<li>其他都是<strong>副本实例</strong>，从主服务器上获得数据并保持同步。包含有所有的主服务器数据，因此当主服务器挂掉了，就会在副本服务器上重新选取一个成为主服务器。</li>
-<li>每个复制集还有一个<strong>仲裁者</strong>，仲裁者不存储数据，在选取中不能成为主库，只是负责通过心跳包来确认集群中集合的数量，并在主服务器选举的时候作为仲裁决定结果。</li>
-</ul>
-<h3 id="4-5-2-复制集成员说明"><a href="#4-5-2-复制集成员说明" class="headerlink" title="4.5.2 复制集成员说明"></a>4.5.2 复制集成员说明</h3><ul>
-<li>**Secondary **<ul>
-<li>正常情况下，复制集的 Seconary 会参与 Primary 选举（自身也可能会被选为 Primary），并<strong>从 Primary 同步最新写入的数据</strong>，以保证与 Primary 存储相同的数据。</li>
-<li>Secondary<strong>可以提供读服务</strong>，增加 Secondary 节点可以提供复制集的读服务能力，同时提升复制集的可用性。另外，Mongodb 支持对复制集的 Secondary 节点进行灵活的配置，以适应多种场景的需求。</li>
-</ul>
-</li>
-<li><strong>Arbiter</strong><ul>
-<li>Arbiter 节点只参与投票，不能被选为 Primary，并且不从 Primary 同步数据。</li>
-<li>比如你部署了一个 2 个节点的复制集，1 个 Primary，1 个 Secondary，任意节点宕机，复制集将不能提供服务了（无法选出 Primary），这时可以给复制集添加一个 Arbiter 节点，即使有节点宕机，仍能选出 Primary。</li>
-<li>Arbiter 本身不存储数据，是非常轻量级的服务，当复制集成员为偶数时，最好加入一个 Arbiter 节点，以提升复制集可用性。</li>
-</ul>
-</li>
-<li>**Priority0 **<ul>
-<li>Priority0 节点的选举优先级为 0，不会被选举为 Primary</li>
-<li>比如你跨机房 A、B 部署了一个复制集，并且想指定 Primary 必须在 A 机房，这时可以将 B 机房的复制集成员 Priority 设置为 0，这样 Primary 就一定会是 A 机房的成员。（注意：如果这样部署，最好将『大多数』节点部署在 A 机房，否则网络分区时可能无法选出 Primary）</li>
-</ul>
-</li>
-<li><strong>Vote0</strong><ul>
-<li>Mongodb 3.0 里，复制集成员最多 50 个，参与 Primary 选举投票的成员最多 7 个，其他成员（Vote0）的 vote 属性必须设置为 0，即不参与投票。</li>
-</ul>
-</li>
-<li><strong>Hidden</strong><ul>
-<li>Hidden 节点不能被选为主（Priority 为 0），并且对 Driver 不可见。因 Hidden 节点不会接受 Driver 的请求，可使用 Hidden 节点做一些数据备份、离线计算的任务，不会影响复制集的服务。</li>
-</ul>
-</li>
-<li><strong>Delayed</strong><ul>
-<li>Delayed 节点必须是 Hidden 节点，并且其数据落后于 Primary 一段时间（可配置，比如 1 个小时）。</li>
-<li>因 Delayed 节点的数据比 Primary 落后一段时间，当错误或者无效的数据写入 Primary 时，可通过 Delayed 节点的数据来恢复到之前的时间点。</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-5-3-基本架构"><a href="#4-5-3-基本架构" class="headerlink" title="4.5.3 基本架构"></a>4.5.3 基本架构</h3><ul>
-<li><strong>一主两从（三成员都有数据）</strong></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FurMGQqoZissD9BwdGF5vdiyiwtj.png"><br>当主库宕机后,两个从库都会进行竞选，其中一个变为主库，当原主库恢复后，作为从库加入当前的复制集群即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqGHV79G1QpWzgbd3KB0GpCREff6.png"></p>
-<ul>
-<li><strong>一主一从一仲裁者（两个有数据）</strong></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgRBvjWXRqyctHG2PICjOoB180Z_.png"><br>当主库宕机时，将会选择从库成为主，主库修复后，将其加入到现有的复制集群中即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqUSlHSm68iGmtjayaNXFfLahaD9.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/NoSQL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/NoSQL/" class="post-title-link" itemprop="url">NoSQL</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-28 14:51:15" itemprop="dateCreated datePublished" datetime="2020-09-28T14:51:15+08:00">2020-09-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:35:22" itemprop="dateModified" datetime="2023-02-08T00:35:22+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Not Only SQL，非关系型数据库：<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhUiybrMR8r55N0vkDGatqUR1pTQ.jpeg"></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FnKx1d7xb1mieDPirCjoXFvTRJ_P.png"></h1><h1 id="1-文档数据库"><a href="#1-文档数据库" class="headerlink" title="1 文档数据库"></a>1 文档数据库</h1><p>这些数据库通常将每个键与称为文档的复杂数据结构配对。文档可以包含键数组对、键值对甚至嵌套文档</p>
-<hr>
-<h1 id="2-键值存储"><a href="#2-键值存储" class="headerlink" title="2 键值存储"></a>2 键值存储</h1><p>每个单独的项都存储为键值对。键值存储是所有 NoSQL 数据库中最简单的数据库</p>
-<hr>
-<h1 id="3-列式存储"><a href="#3-列式存储" class="headerlink" title="3 列式存储"></a>3 列式存储</h1><p>这些类型的数据库针对大型数据集上的查询进行了优化，它们将数据列存储在一起，而不是行。</p>
-<hr>
-<h1 id="4-图形存储"><a href="#4-图形存储" class="headerlink" title="4 图形存储"></a>4 图形存储</h1><p>这些存储关于图形、网络的信息，例如社会关系、路线图、交通链接</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/24/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Security/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/24/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Security/" class="post-title-link" itemprop="url">Spring Security</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-24 22:48:06" itemprop="dateCreated datePublished" datetime="2020-09-24T22:48:06+08:00">2020-09-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h1><p>安全访问控制功能其实就是对所有进入系统的请求进行拦截，校验每个请求是否能够访问它所期望的资源。SpringSecurity 对 Web 资源的保护是靠<strong>Filter</strong>实现的</p>
-<h1 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fk0ba_23P7QKgGgG25lO06ikD3tF.png"></h1><ul>
-<li>SecurityContextPersistenceFilter：这个 Filter 是整个拦截过程的入口和出口（也就是第一个和最后一个拦截<br>器），会在请求开始时从配置好的 SecurityContextRepository 中获取 SecurityContext，然后把它设置给 SecurityContextHolder。在请求完成后将 SecurityContextHolder 持有的 SecurityContext 再保存到配置好<br>的 SecurityContextRepository，同时清除 securityContextHolder 所持有的 SecurityContext；</li>
-<li>UsernamePasswordAuthenticationFilter：用于处理来自表单提交的认证。该表单必须提供对应的用户名密码，内部还有登录成功或失败后进行处理的 AuthenticationSuccessHandler 和 AuthenticationFailureHandler，这些都可以根据需求做相关改变；</li>
-<li>FilterSecurityInterceptor 是用于保护 web 资源的，使用 AccessDecisionManager 对当前用户进行授权访问，前<br>面已经详细介绍过了；</li>
-<li>ExceptionTranslationFilter 能够捕获来自 FilterChain 所有的异常，并进行处理。但是它只会处理两类异常：AuthenticationException 和 AccessDeniedException，其它的异常它会继续抛出。</li>
-</ul>
-<h1 id="2-认证"><a href="#2-认证" class="headerlink" title="2 认证"></a>2 认证</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fsjaz6wXG5w6nAGXePMY827AdR2V.png"></p>
-<h2 id="2-1-密码模式"><a href="#2-1-密码模式" class="headerlink" title="2.1 密码模式"></a>2.1 密码模式</h2><h3 id="2-1-1-UsernamePasswordAuthenticationFilter-源码："><a href="#2-1-1-UsernamePasswordAuthenticationFilter-源码：" class="headerlink" title="2.1.1 UsernamePasswordAuthenticationFilter 源码："></a>2.1.1 UsernamePasswordAuthenticationFilter 源码：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.security.web.authentication;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> org.springframework.lang.Nullable;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.authentication.AuthenticationServiceException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.authentication.UsernamePasswordAuthenticationToken;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.Authentication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.AuthenticationException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.web.util.matcher.AntPathRequestMatcher;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.Assert;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UsernamePasswordAuthenticationFilter</span> <span class="keyword">extends</span> <span class="title class_">AbstractAuthenticationProcessingFilter</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">SPRING_SECURITY_FORM_USERNAME_KEY</span> <span class="operator">=</span> <span class="string">&quot;username&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">SPRING_SECURITY_FORM_PASSWORD_KEY</span> <span class="operator">=</span> <span class="string">&quot;password&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">usernameParameter</span> <span class="operator">=</span> <span class="string">&quot;username&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">passwordParameter</span> <span class="operator">=</span> <span class="string">&quot;password&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="variable">postOnly</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">UsernamePasswordAuthenticationFilter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="keyword">new</span> <span class="title class_">AntPathRequestMatcher</span>(<span class="string">&quot;/login&quot;</span>, <span class="string">&quot;POST&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Authentication <span class="title function_">attemptAuthentication</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> AuthenticationException &#123;</span><br><span class="line">        <span class="comment">//判断是否是 POST 请求</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.postOnly &amp;&amp; !request.getMethod().equals(<span class="string">&quot;POST&quot;</span>)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">AuthenticationServiceException</span>(<span class="string">&quot;Authentication method not supported: &quot;</span> + request.getMethod());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 获取请求中的用户，密码。</span></span><br><span class="line">        	<span class="comment">// 就是最简单的：request.getParameter(xxx)</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="built_in">this</span>.obtainUsername(request);</span><br><span class="line">            <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="built_in">this</span>.obtainPassword(request);</span><br><span class="line">            <span class="keyword">if</span> (username == <span class="literal">null</span>) &#123;</span><br><span class="line">                username = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (password == <span class="literal">null</span>) &#123;</span><br><span class="line">                password = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            username = username.trim();</span><br><span class="line">            <span class="type">UsernamePasswordAuthenticationToken</span> <span class="variable">authRequest</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UsernamePasswordAuthenticationToken</span>(username, password);</span><br><span class="line">            <span class="built_in">this</span>.setDetails(request, authRequest);</span><br><span class="line">            <span class="comment">// 将authRequest 塞进 AuthenticationManager并返回</span></span><br><span class="line">            <span class="comment">// 此时的authRequest的权限是没有任何值的。</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.getAuthenticationManager().authenticate(authRequest);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="keyword">protected</span> String <span class="title function_">obtainPassword</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> request.getParameter(<span class="built_in">this</span>.passwordParameter);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="keyword">protected</span> String <span class="title function_">obtainUsername</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> request.getParameter(<span class="built_in">this</span>.usernameParameter);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setDetails</span><span class="params">(HttpServletRequest request, UsernamePasswordAuthenticationToken authRequest)</span> &#123;</span><br><span class="line">        authRequest.setDetails(<span class="built_in">this</span>.authenticationDetailsSource.buildDetails(request));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsernameParameter</span><span class="params">(String usernameParameter)</span> &#123;</span><br><span class="line">        Assert.hasText(usernameParameter, <span class="string">&quot;Username parameter must not be empty or null&quot;</span>);</span><br><span class="line">        <span class="built_in">this</span>.usernameParameter = usernameParameter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPasswordParameter</span><span class="params">(String passwordParameter)</span> &#123;</span><br><span class="line">        Assert.hasText(passwordParameter, <span class="string">&quot;Password parameter must not be empty or null&quot;</span>);</span><br><span class="line">        <span class="built_in">this</span>.passwordParameter = passwordParameter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPostOnly</span><span class="params">(<span class="type">boolean</span> postOnly)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.postOnly = postOnly;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> String <span class="title function_">getUsernameParameter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.usernameParameter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> String <span class="title function_">getPasswordParameter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.passwordParameter;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-1-2-UsernamePasswordAuthenticationToken"><a href="#2-1-2-UsernamePasswordAuthenticationToken" class="headerlink" title="2.1.2 UsernamePasswordAuthenticationToken"></a>2.1.2 UsernamePasswordAuthenticationToken</h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkQKLbOt6yIhq8Fyk3ZOvRMyog8G.png"></h3><p>Authentication 中包含了用户信息、请求信息等参数。</p>
-<h3 id="2-1-3-AuthenticationManager"><a href="#2-1-3-AuthenticationManager" class="headerlink" title="2.1.3 AuthenticationManager"></a>2.1.3 AuthenticationManager</h3><p>ProviderManager 为 AuthenticationManager 的一个实现类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ProviderManager</span> <span class="keyword">implements</span> <span class="title class_">AuthenticationManager</span>, MessageSourceAware, InitializingBean &#123;</span><br><span class="line">   ...</span><br><span class="line">    <span class="keyword">public</span> Authentication <span class="title function_">authenticate</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException &#123;</span><br><span class="line">        Class&lt;? <span class="keyword">extends</span> <span class="title class_">Authentication</span>&gt; toTest = authentication.getClass();</span><br><span class="line">        <span class="type">AuthenticationException</span> <span class="variable">lastException</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">AuthenticationException</span> <span class="variable">parentException</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">Authentication</span> <span class="variable">result</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">Authentication</span> <span class="variable">parentResult</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">debug</span> <span class="operator">=</span> logger.isDebugEnabled();</span><br><span class="line">        <span class="type">Iterator</span> <span class="variable">var8</span> <span class="operator">=</span> <span class="built_in">this</span>.getProviders().iterator();</span><br><span class="line"></span><br><span class="line">       	<span class="type">Iterator</span> <span class="variable">var8</span> <span class="operator">=</span> <span class="built_in">this</span>.getProviders().iterator();</span><br><span class="line">        <span class="keyword">while</span>(var8.hasNext()) &#123;</span><br><span class="line">            <span class="type">AuthenticationProvider</span> <span class="variable">provider</span> <span class="operator">=</span> (AuthenticationProvider)var8.next();</span><br><span class="line">            <span class="comment">// 1.判断是否有provider支持该Authentication</span></span><br><span class="line">            <span class="keyword">if</span> (provider.supports(toTest)) &#123;</span><br><span class="line">                <span class="keyword">if</span> (debug) &#123;</span><br><span class="line">                    logger.debug(<span class="string">&quot;Authentication attempt using &quot;</span> + provider.getClass().getName());</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="comment">// 2. 真正的逻辑判断</span></span><br><span class="line">                    result = provider.authenticate(authentication);</span><br><span class="line">                    <span class="keyword">if</span> (result != <span class="literal">null</span>) &#123;</span><br><span class="line">                        <span class="built_in">this</span>.copyDetails(authentication, result);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InternalAuthenticationServiceException | AccountStatusException var13) &#123;</span><br><span class="line">                    <span class="built_in">this</span>.prepareException(var13, authentication);</span><br><span class="line">                    <span class="keyword">throw</span> var13;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (AuthenticationException var14) &#123;</span><br><span class="line">                    lastException = var14;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里首先通过 provider 判断是否支持当前传入进来的<code>Authentication</code>，目前我们使用的是<code>UsernamePasswordAuthenticationToken</code>，因为除了帐号密码登录的方式，还会有其他的方式，比如<code>JwtAuthenticationToken</code>。</p>
-<hr>
-<h1 id="3-授权"><a href="#3-授权" class="headerlink" title="3 授权"></a>3 授权</h1><h1 id="-2"><a href="#-2" class="headerlink" title=""></a><em><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FlnEfUduY6ODer2h80zf5aGWxvPi.png"></em></h1><h1 id="-3"><a href="#-3" class="headerlink" title="_"></a>_</h1><h1 id="-4"><a href="#-4" class="headerlink" title="_"></a>_</h1><h1 id="-5"><a href="#-5" class="headerlink" title="_"></a>_</h1><h1 id="-6"><a href="#-6" class="headerlink" title="_"></a>_</h1><h1 id="-7"><a href="#-7" class="headerlink" title="_"></a>_</h1><h1 id="-8"><a href="#-8" class="headerlink" title="_"></a>_</h1><h1 id="-9"><a href="#-9" class="headerlink" title="_"></a>_</h1><h1 id="-10"><a href="#-10" class="headerlink" title="_"></a>_</h1><h1 id="1-UserDetailsService"><a href="#1-UserDetailsService" class="headerlink" title="_1. UserDetailsService _"></a>_1. UserDetailsService _</h1><p><em>定义用户信息服务（获取所有用户信息）</em></p>
-<hr>
-<h1 id="2-PasswordEncoder"><a href="#2-PasswordEncoder" class="headerlink" title="2. _PasswordEncoder _"></a>2. _PasswordEncoder _</h1><p>_密码编码器 _</p>
-<h2 id="2-1-BCryptPasswordEncoder"><a href="#2-1-BCryptPasswordEncoder" class="headerlink" title="2.1 BCryptPasswordEncoder"></a>2.1 BCryptPasswordEncoder</h2><p>使用 BCrypt 方式加密，这块代码的格式拼接可以查看 gensalt()方法源码<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgvwRNAIOD4MByrasbbzyPJh55si.png"></p>
-<ul>
-<li>$是分割符，无意义；</li>
-<li>2a 是 bcrypt 加密版本号；</li>
-<li>10 是 cost 的值；</li>
-<li>而后的前 22 位是 salt 值；</li>
-<li>再然后的字符串就是密码的密文。</li>
-</ul>
-<h2 id="2-2-NoOpPasswordEncoder"><a href="#2-2-NoOpPasswordEncoder" class="headerlink" title="2.2 NoOpPasswordEncoder"></a>2.2 NoOpPasswordEncoder</h2><hr>
-<h1 id="3-configure"><a href="#3-configure" class="headerlink" title="3. configure"></a><em>3. configure</em></h1><p><em>(WebSecurity web)/configure(HttpSecurity http) 安全拦截机制</em><br>_<br>FilterChainProxy：<br>真正处理认证和授权的：<br>Filter 1        —&gt;AuthenticationManger 认证管理器<br>…<br>Filter n        —&gt;AccessDecisionManager 决策管理器</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/21/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/git/Git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/21/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/git/Git/" class="post-title-link" itemprop="url">Git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-21 17:58:56" itemprop="dateCreated datePublished" datetime="2020-09-21T17:58:56+08:00">2020-09-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-指令"><a href="#1-指令" class="headerlink" title="1 指令"></a>1 指令</h1><p>–创建分支<br>git branch <name><br>–将 master 分支强制指向 HEAD 的第 3 级父提交。<br>git branch -f master HEAD<del>3<br>–切换到新的分支上<br>git checkout &lt;name/hash 值&gt;;<br>–在<name>分支上提交修改<br>git checkout <name>; –切换到 name 分支上<br>git commit;<br>–合并 name 分支至当前分支<br>git merge <name>;<br>–把当前分支 rebase 至 name 分支<br>git rebase <name>  <br>HEAD-指向你正在其基础上进行工作的提交记录<br>–查看提交记录的哈希值（基于 SHA-1）。<br>git log<br>–相对引用<br>使用 ^ 向上移动 1 个提交记录<br>使用 ~<num> 向上移动多个提交记录，如 ~3<br>ps: git checkout HEAD^^ == git checkout HEAD</del>4<br>–撤销变更<br>git reset C1 –撤回至 C1，在 reset 后， C2 所做的变更还在，但是处于未加入暂存区状态<br>git revert HEAD –提交新的记录，与 HEAD 的前一次记录相同</p>
-<h1 id="2-版本管理实践"><a href="#2-版本管理实践" class="headerlink" title="2 版本管理实践"></a>2 版本管理实践</h1><ul>
-<li><strong>FeatureXXX：</strong><ul>
-<li>具体功能开发分支，从 develop 分支拉，功能开发自测完后合并到 develop 分支。来不及上线的 feature 分支不要合并到 develop。</li>
-</ul>
-</li>
-<li><strong>develop 开发分支：</strong><ul>
-<li>上面代码都是已经开发完的代码（包括已上线和正在测试的）。</li>
-</ul>
-</li>
-<li><strong>Release 分支：</strong><ul>
-<li>测试分支，从 develop 上 fork 进行测试，测试发现问题就在 release 分支上修改，测试通过 release 代码合并到 master 分支发布和 develop 分支（如果有修改）。</li>
-</ul>
-</li>
-<li><strong>master 分支：</strong><ul>
-<li>发布分支，任何时候 master 上代码都是能上线的，可以打 tag。</li>
-</ul>
-</li>
-<li><strong>fix 分支：</strong><ul>
-<li>当上线后发现 bug，在 master 上开一个 fix 分支进行修正，修正完后合并到 master 进行发布，同时 fix 也要合并到 develop，（看情况决定是否合并到当前正在测试的 release 分支）。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/JWT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/JWT/" class="post-title-link" itemprop="url">JWT</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-19 02:02:00" itemprop="dateCreated datePublished" datetime="2020-09-19T02:02:00+08:00">2020-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:20:37" itemprop="dateModified" datetime="2023-02-08T00:20:37+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">计算机网络与安全</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案</p>
-<ul>
-<li>认证：用户认证就是判断一个用户的身份是否合法的过程</li>
-<li>授权：控制用户访问资源</li>
-</ul>
-<h1 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1 数据结构"></a>1 数据结构</h1><ul>
-<li>Base64UrlEncode[<strong>header</strong>]**.<strong>Base64UrlEncode[<strong>payload</strong>]</strong>.**Base64UrlEncode[<strong>signature</strong>]</li>
-<li>decode 后结构：</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fud2pnBR6oIos9Mr54YHZgk_Zgg-.png"></p>
-<h2 id="1-1-头部（header"><a href="#1-1-头部（header" class="headerlink" title="1.1 头部（header)"></a>1.1 头部（header)</h2><p>是一个 JSON 对象</p>
-<ul>
-<li>声明类型，这里是 jwt</li>
-<li>声明加密的算法：<ul>
-<li>RS256。非对称算法，易于使用方获取和使用公钥</li>
-<li>HS256。对称算法，必须注意确保密钥不被泄密</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="1-2-载荷（payload"><a href="#1-2-载荷（payload" class="headerlink" title="1.2 载荷（payload)"></a>1.2 载荷（payload)</h2><p>Payload 部分也是一个 JSON 对象，用来存放实际需要传递的数据</p>
-<ul>
-<li>JWT 规定了 7 个官方字段，供选用。<ul>
-<li>iss (issuer)：签发人</li>
-<li>exp (expiration time)：过期时间</li>
-<li>sub (subject)：主题</li>
-<li>aud (audience)：受众</li>
-<li>nbf (Not Before)：生效时间</li>
-<li>iat (Issued At)：签发时间</li>
-<li>jti (JWT ID)：编号</li>
-</ul>
-</li>
-<li>自定义信息<ul>
-<li>通过 TokenEnhance 实现</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>首先实现TokenEnhancer接口</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IatTokenEnhancer</span> <span class="keyword">implements</span> <span class="title class_">TokenEnhancer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> OAuth2AccessToken <span class="title function_">enhance</span><span class="params">(OAuth2AccessToken accessToken, OAuth2Authentication authentication)</span> &#123;</span><br><span class="line">        addClaims((DefaultOAuth2AccessToken) accessToken);</span><br><span class="line">        <span class="keyword">return</span> accessToken;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">addClaims</span><span class="params">(DefaultOAuth2AccessToken accessToken)</span> &#123;</span><br><span class="line">        <span class="type">DefaultOAuth2AccessToken</span> <span class="variable">token</span> <span class="operator">=</span> accessToken;</span><br><span class="line">        Map&lt;String, Object&gt; additionalInformation = token.getAdditionalInformation();</span><br><span class="line">        <span class="keyword">if</span> (additionalInformation.isEmpty()) &#123;</span><br><span class="line">            additionalInformation = <span class="keyword">new</span> <span class="title class_">LinkedHashMap</span>&lt;String, Object&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//添加自定义信息-------------------------</span></span><br><span class="line">        additionalInformation.put(<span class="string">&quot;iat&quot;</span>, <span class="keyword">new</span> <span class="title class_">Integer</span>((<span class="type">int</span>)(System.currentTimeMillis()/<span class="number">1000L</span>)));</span><br><span class="line">        additionalInformation.put(<span class="string">&quot;test&quot;</span>,<span class="string">&quot;myTest&quot;</span>);</span><br><span class="line">        token.setAdditionalInformation(additionalInformation);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>配置Enhancer至令牌增强器</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthorizationServerEndpointsConfigurer endpoints)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//pick up all  TokenEnhancers incl. those defined in the application</span></span><br><span class="line">        <span class="comment">//this avoids changes to this class if an application wants to add its own to the chain</span></span><br><span class="line">        Collection&lt;TokenEnhancer&gt; tokenEnhancers =</span><br><span class="line">            applicationContext.getBeansOfType(TokenEnhancer.class).values();</span><br><span class="line">        <span class="type">TokenEnhancerChain</span> <span class="variable">tokenEnhancerChain</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TokenEnhancerChain</span>();</span><br><span class="line">        tokenEnhancerChain.setTokenEnhancers(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(tokenEnhancers));</span><br><span class="line">        endpoints</span><br><span class="line">            .authenticationManager(authenticationManager)</span><br><span class="line">            .tokenStore(tokenStore())</span><br><span class="line">            .tokenEnhancer(tokenEnhancerChain)</span><br><span class="line">            .reuseRefreshTokens(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><hr>
-<h2 id="1-3-签名（signature"><a href="#1-3-签名（signature" class="headerlink" title="1.3 签名（signature)"></a>1.3 签名（signature)</h2><p>Signature 部分是对前两部分的签名，防止数据篡改。<br>使用 secret，对编码后的 header 和 payload 通过 header 中指定签名算法做数字签名，公式如下：<br><code>header中指定签名算法( ``**base64UrlEncode(header)+&quot;.&quot;+base64UrlEncode(payload)**</code> <code>,``**secret**``)</code></p>
-<ul>
-<li>算法<ul>
-<li>HS256<ul>
-<li>先做摘要 再用 MAC 对称加密算法加密</li>
-</ul>
-</li>
-<li>RS256<ul>
-<li>先做摘要 再用 RSA 非对称加密算法加密</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/18/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/kafka/Kafka/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/18/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/kafka/Kafka/" class="post-title-link" itemprop="url">Kafka</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-18 16:22:46" itemprop="dateCreated datePublished" datetime="2020-09-18T16:22:46+08:00">2020-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/kafka/" itemprop="url" rel="index"><span itemprop="name">kafka</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-构成"><a href="#1-构成" class="headerlink" title="1 构成"></a>1 构成</h1><ul>
-<li>Broker：一台 Kafka 服务器</li>
-<li>topic：即队列</li>
-<li>Partition：topic 的分区，一个 topic 会分为多个 Partition，每个 Partition 负责存储这个 Topic 一部分的数据。<ul>
-<li>主分区：若某个 Broker 挂了，会选举出其他 Broker 的备份分区做主分区。实现<strong>高可用</strong></li>
-<li>备份分区：只做备份，不做读写。</li>
-</ul>
-</li>
-<li>集群的 metadata（kafka 集群的每一台 broker 都缓存了整个集群的 metadata, 当 broker 或某一个 topic 的 metadata 信息发生变化时, 集群的<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a9f559ee6035">Controller</a>                              都会感知到作相应的状态转换, 同时把发生变化的新的 metadata 信息广播到所有的 broker;）<ul>
-<li>所有 broker 信息（包括 ip，port）</li>
-<li>所有 topic 的信息: topic name, partition 数量, 每个 partition 的 leader, isr, replica 集合等</li>
-</ul>
-</li>
-</ul>
-<h1 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Foc4FYlkhlLJH6kqQDn8lQj0inP0.png"></h1><hr>
-<ul>
-<li>offset<ul>
-<li>0.9 版本之前保存在 zookeeper<ul>
-<li>消费者需频繁从 zookeeper 拉取 offset</li>
-</ul>
-</li>
-<li>0.9 版本之后保存在 kafka 本地的某一个 topic</li>
-</ul>
-</li>
-</ul>
-<h1 id="2-特点"><a href="#2-特点" class="headerlink" title="2 特点"></a>2 特点</h1><h2 id="2-1-At-least-once"><a href="#2-1-At-least-once" class="headerlink" title="2.1 At least once"></a>2.1 At least once</h2><p>Kafka 采用的是至少一次（At least once）</p>
-<ul>
-<li><strong>消息不会丢</strong></li>
-<li><strong>但是可能会重复消费</strong><ul>
-<li>生产者角度：<ul>
-<li>消息发到 broker，broker 写入消息，broker 返回响应。若返回的响应（可能因为网络原因）生产者没有收到，然后生产者又重发了一次</li>
-</ul>
-</li>
-<li>消费者角度：<ul>
-<li>消费者拿到消息消费完成，更新 consumer offset。若更新 offset 前消费者额挂了，其他消费者又消费了这条消息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>幂等处理重复消费</li>
-</ul>
-<h2 id="2-2-acks-机制：确保消息写入成功"><a href="#2-2-acks-机制：确保消息写入成功" class="headerlink" title="2.2 acks 机制：确保消息写入成功"></a>2.2 acks 机制：确保消息写入成功</h2><p>生产者中设置：</p>
-<ul>
-<li>**acks=0   **<ul>
-<li>消息发出后就不管了</li>
-</ul>
-</li>
-<li>**acks=1（默认） **<ul>
-<li>只要 Partition Leader 接收到消息而且写入本地磁盘了，就认为成功了</li>
-</ul>
-</li>
-<li>**acks=all  **<ul>
-<li>Partition Leader 接收到消息之后，还必须要求 ISR 列表里跟 Leader 保持同步的那些 Follower 都要把消息同步过去，才能认为这条消息是写入成功了</li>
-<li>当 partition 中只有一个 leader 时，acks=all 也会丢失消息</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-3-多副本冗余的机制"><a href="#2-3-多副本冗余的机制" class="headerlink" title="2.3 多副本冗余的机制"></a>2.3 多副本冗余的机制</h2><pre><code>我们数据存在不同的partition上，那kafka就把这些partition做备份。比如，现在我们有三个partition，分别存在三台broker上。每个partition都会备份，这些备份散落在不同的broker上。
-</code></pre>
-<h2 id="2-4-多副本数据同步"><a href="#2-4-多副本数据同步" class="headerlink" title="2.4 多副本数据同步"></a>2.4 多副本数据同步</h2><p>只有 Partition Leader 是对外提供读写服务的,也就是说，如果有一个客户端往一个 Partition 写入数据，此时一般就是写入这个 Partition 的 Leader 副本。<br>然后 Leader 副本接收到数据之后，Follower 副本会不停的给他发送请求尝试去拉取最新的数据，拉取到自己本地后，写入磁盘中。</p>
-<h2 id="2-5-快"><a href="#2-5-快" class="headerlink" title="2.5 快"></a>2.5 快</h2><ul>
-<li><strong>顺序读写：</strong>Kafka 采取顺序写入磁盘的方式，避免了随机磁盘寻址的浪费</li>
-<li><strong>零拷贝：</strong>减少内核之间的切换<ul>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqVtxs0MQ6Ax9ChbsghT3fsto2te.png"></li>
-</ul>
-</li>
-<li><strong>消息压缩</strong></li>
-<li><strong>分批发送：</strong>Kafka 可以将数据记录分批发送，从生产者到文件系统（Kafka 主题日志）到消费者，可以端到端的查看这些批次的数据。</li>
-</ul>
-<h2 id="2-6-持久化"><a href="#2-6-持久化" class="headerlink" title="2.6 持久化"></a>2.6 持久化</h2><ul>
-<li>Kafka 是将 partition 的数据写在<strong>磁盘的消息日志</strong>，不是 partition 一有数据就立马将数据写到磁盘上，它会先缓存一部分，等到足够多数据量或等待一定的时间再批量写入(<strong>flush</strong>)</li>
-<li>Kafka 只允许<strong>追加写入</strong>(顺序访问)，避免缓慢的随机 I/O 操作。</li>
-</ul>
-<h2 id="2-7-全局有序（特定条件）-分区有序"><a href="#2-7-全局有序（特定条件）-分区有序" class="headerlink" title="2.7 全局有序（特定条件）/分区有序"></a>2.7 全局有序（特定条件）/分区有序</h2><ul>
-<li>全局有序(需特定条件)<ul>
-<li>特定条件：topic 中只有一个 partition（队列）</li>
-</ul>
-</li>
-<li>分区有序<ul>
-<li>在 topic 中有多个 partition 的时候，只能保证 partition 有序</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="3-消息堆积问题"><a href="#3-消息堆积问题" class="headerlink" title="3 消息堆积问题"></a>3 消息堆积问题</h1><ul>
-<li>原因<ul>
-<li><strong>生产者的生产速度与消费者的消费速度不匹配</strong></li>
-</ul>
-</li>
-<li>解决方案<ul>
-<li>优化代码逻辑<ul>
-<li>一条一条消费改为批量消费（如：数据库插入操作）</li>
-</ul>
-</li>
-<li>水平扩容<ul>
-<li>同时增加 Topic 的 partitions 和 consumer</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="4-场景"><a href="#4-场景" class="headerlink" title="4 场景"></a>4 场景</h1><ul>
-<li>追求<strong>高吞吐量</strong></li>
-<li>对消息的重复没有严格要求</li>
-<li>适合产生<strong>大量数据</strong>的互联网服务的数据收集业务（如日志采集）</li>
-</ul>
-<hr>
-<h1 id="5-配置"><a href="#5-配置" class="headerlink" title="5 配置"></a>5 配置</h1><h2 id="5-1-kafka-服务端配置"><a href="#5-1-kafka-服务端配置" class="headerlink" title="5.1 kafka 服务端配置"></a>5.1 kafka 服务端配置</h2><ul>
-<li>server.properties：</li>
-</ul>
-<p>#The id of the broker. This must be set to a unique integer for each broker.</p>
-<ul>
-<li>broker.id=0</li>
-</ul>
-<h1 id="A-comma-separated-list-of-directories-under-which-to-store-log-files（运行数据-日志存放路径）"><a href="#A-comma-separated-list-of-directories-under-which-to-store-log-files（运行数据-日志存放路径）" class="headerlink" title="A comma separated list of directories under which to store log files（运行数据/日志存放路径）"></a>A comma separated list of directories under which to store log files（运行数据/日志存放路径）</h1><ul>
-<li>log.dirs=/usr/local/var/lib/kafka-logs</li>
-</ul>
-<h1 id="The-minimum-age-of-a-log-file-to-be-eligible-for-deletion-due-to-age"><a href="#The-minimum-age-of-a-log-file-to-be-eligible-for-deletion-due-to-age" class="headerlink" title="The minimum age of a log file to be eligible for deletion due to age"></a>The minimum age of a log file to be eligible for deletion due to age</h1><ul>
-<li>log.retention.hours=168</li>
-</ul>
-<h2 id="5-2-kafka-客户端配置"><a href="#5-2-kafka-客户端配置" class="headerlink" title="5.2 kafka 客户端配置"></a>5.2 kafka 客户端配置</h2><ul>
-<li>拉取时设置的 timeout<ul>
-<li><strong>_@param _</strong><em>timeout The maximum time to block</em></li>
-<li><em>拉取消息时等待的最长时间，若到最长时间还没有消息，就直接返回 空</em></li>
-<li>public ConsumerRecords&lt;K, V&gt; poll(final Duration timeout)</li>
-</ul>
-</li>
-<li>max.poll.interval.ms: 600000<ul>
-<li>最大拉取间隔时间，若超过，则客户端会主动离开 group</li>
-<li>避免“活锁”的情况：客户端持续的发送心跳，但是没有拉取消息处理。为了预防消费者在这种情况下一直持有分 区，我们使用 max.poll.interval.ms 活跃检测机制。</li>
-</ul>
-</li>
-<li>heartbeat.interval.ms<ul>
-<li>间隔多久发送一次心跳</li>
-<li>默认 3s</li>
-</ul>
-</li>
-<li>session.timeout.ms<ul>
-<li>group coordinator 多久没收到心跳 就 rebalance</li>
-<li>默认 10s</li>
-</ul>
-</li>
-</ul>
-<p> </p>
-<hr>
-<h1 id="6-Java-API"><a href="#6-Java-API" class="headerlink" title="6 Java API"></a>6 Java API</h1><h2 id="6-1-Producer-端消息发送的基本流程"><a href="#6-1-Producer-端消息发送的基本流程" class="headerlink" title="6.1 Producer 端消息发送的基本流程"></a>6.1 Producer 端消息发送的基本流程</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjfc3k3xel-XF-jcQ0yChvS2n9mg.png"></p>
-<h3 id="6-1-1-序列化器"><a href="#6-1-1-序列化器" class="headerlink" title="6.1.1 序列化器"></a>6.1.1 序列化器</h3><h3 id="6-1-2-分区器"><a href="#6-1-2-分区器" class="headerlink" title="6.1.2 分区器"></a>6.1.2 分区器</h3><hr>
-<h2 id="6-2-kafkaConsumer–assign-与-subscribe"><a href="#6-2-kafkaConsumer–assign-与-subscribe" class="headerlink" title="6.2 kafkaConsumer–assign 与 subscribe"></a>6.2 kafkaConsumer–assign 与 subscribe</h2><blockquote>
-<p>一般场景建议使用 subscribe（） 函数来实现 partition 的分配。</p>
-</blockquote>
-<ul>
-<li>assign(Collection partitions)<ul>
-<li>为 consumer 手动、显示的指定需要消费的 topic-partitions，不受 group.id 限制，相当与指定的 group 无效（this method does not use the consumer’s group management）</li>
-</ul>
-</li>
-<li>subscribe(Collection<String> topics)<ul>
-<li>为 consumer 自动分配 partition，有内部算法保证 topic-partition 以最优的方式均匀分配给同 group 下的不同 consumer。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="6-3-Kafka-Producer-send-阻塞"><a href="#6-3-Kafka-Producer-send-阻塞" class="headerlink" title="6.3 Kafka Producer send 阻塞"></a>6.3 Kafka Producer send 阻塞</h2><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/objcoding/articles/13662337.html">https://www.cnblogs.com/objcoding/articles/13662337.html</a></p>
-<h3 id="6-3-1-场景-1–Producer-获取不到-metadata-信息："><a href="#6-3-1-场景-1–Producer-获取不到-metadata-信息：" class="headerlink" title="6.3.1 场景 1–Producer 获取不到 metadata 信息："></a>6.3.1 场景 1–Producer 获取不到 metadata 信息：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2021-06-15 00:00:01,141 WARN  [kafka-producer-network-thread | producer-1] NetworkClient: [Producer clientId=producer-1] Error while fetching metadata with correlation id 48587 : &#123;mainfab_offline_indicator_config_topic=UNKNOWN_TOPIC_OR_PARTITION&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Flt0YB2XiXWqud9exw0mxrljs3Tj.png"></p>
-<h3 id="6-3-2-场景-2–缓冲池内存用完"><a href="#6-3-2-场景-2–缓冲池内存用完" class="headerlink" title="6.3.2 场景 2–缓冲池内存用完"></a>6.3.2 场景 2–缓冲池内存用完</h3><blockquote>
-<p>RecordAccumulator（Kafka Producer 缓冲池核心类）中注释：<br>The accumulator uses a bounded amount of memory and append calls will block when that memory is exhausted, unless this behavior is explicitly disabled.<br>当缓冲池的内存块用完后，消息追加调用将会被阻塞，直到有空闲的内存块。</p>
-</blockquote>
-<ul>
-<li>在新版的 Kafka Producer 中，设计了一个消息缓冲池，客户端发送的消息都会被存储到缓冲池中，同时 Producer 启动后还会开启一个 Sender 线程，不断地从缓冲池获取消息并将其发送到 Broker</li>
-<li>缓冲池大小设置：buffer.memory</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiKrXCEUWgm1s5ZNS8W_PtFVqgKj.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/16/java%E5%9F%BA%E7%A1%80/JPA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/16/java%E5%9F%BA%E7%A1%80/JPA/" class="post-title-link" itemprop="url">JPA</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-16 17:27:49" itemprop="dateCreated datePublished" datetime="2020-09-16T17:27:49+08:00">2020-09-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><h2 id="1-1-Hibernate，JPA，Spring-Data-JPA-关系"><a href="#1-1-Hibernate，JPA，Spring-Data-JPA-关系" class="headerlink" title="1.1 Hibernate，JPA，Spring Data JPA 关系"></a>1.1 <strong>Hibernate，JPA，Spring Data JPA 关系</strong></h2><ul>
-<li>JPA 是一套<strong>规范</strong>，内部是由接口和抽象类组成的。</li>
-<li>hibernate 是一套 ORM 框架，而且 Hibernate<strong>实现了 JPA 规范</strong>，所以也可以称 hibernate 为 JPA 的一种实现方式</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fsb2t9Ku5ZqMhqWkD7prfpvWcXUW.png"></p>
-<ul>
-<li>Spring Data JPA 是 Spring 提供的一套对 JPA 操作更加高级的封装（编写规范）。Spring Data JPA 和 JPA 一样，虽然定义了持久层的编写规范，但是持久层的具体操作需要由第三方框架来做，它自己并不能做相应的 CRUD 操作。</li>
-</ul>
-<h1 id="2-使用"><a href="#2-使用" class="headerlink" title="2 使用"></a>2 使用</h1><h2 id="2-1-引入依赖"><a href="#2-1-引入依赖" class="headerlink" title="2.1 引入依赖"></a>2.1 引入依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">project.hibernate.version</span>&gt;</span>5.0.7.Final<span class="tag">&lt;/<span class="name">project.hibernate.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- junit --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- hibernate对jpa的支持包 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-entitymanager<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;project.hibernate.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- c3p0数据库连接池 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;project.hibernate.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- log日志 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Mysql and MariaDB --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="3-JPA-实现-Hibenate"><a href="#3-JPA-实现-Hibenate" class="headerlink" title="3 JPA 实现-Hibenate"></a>3 JPA 实现-Hibenate</h1><h2 id="3-1-Hibernate-缓存机制"><a href="#3-1-Hibernate-缓存机制" class="headerlink" title="3.1 Hibernate 缓存机制"></a>3.1 Hibernate 缓存机制</h2><h3 id="3-1-1-一级缓存"><a href="#3-1-1-一级缓存" class="headerlink" title="3.1.1 一级缓存"></a>3.1.1 一级缓存</h3><h3 id="3-1-2-二级缓存"><a href="#3-1-2-二级缓存" class="headerlink" title="3.1.2 二级缓存"></a>3.1.2 二级缓存</h3><hr>
-<h1 id="主键生成策略"><a href="#主键生成策略" class="headerlink" title="主键生成策略"></a>主键生成策略</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span></span><br><span class="line"><span class="keyword">private</span> Long id;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>strategy</strong><ul>
-<li>**IDENTITY: **主键由数据库自动生成（主要是自动增长型）（Mysql 支持）</li>
-<li><strong>SEQUENCE：</strong>根据底层数据库的序列来生成主键，条件是数据库支持序列。（oracle 支持）</li>
-<li>AUTO<strong>：</strong>主键由程序控制</li>
-<li>TABLE<strong>：</strong>使用一个特定的数据库表格来保存主键</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
+</span>
 
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+        
+        
+      </div>
+    </article>
   </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         
-          <span class="site-state-item-count">110</span>
-          <span class="site-state-item-name">posts</span>
+        <a href="/2020/10/22/%E9%A1%B9%E7%9B%AE/APP%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/" target="_self">
+          APP消息推送
         </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/10/22/%E9%A1%B9%E7%9B%AE/APP%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/" target="_self">
+        <div>
+          真正的 Push 应该是只要一个 Client 设备连接到互联网中，什么也不做等在那里，Server 端随时都可以将数据（消息是数据的一种）发送到这个 Client 上，就好像 Server 等在那里，Client 随时可以访问 Server 一样。 用Server端做个类比，当一个Web Server在互联网上部署好以后，任何一台电脑都可以通过互联网去访问Server：从Server获取数据、向
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-22 14:46" pubdate>
+              2020-10-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">categories</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/10/14/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/maven/Maven/" target="_self">
+          Maven
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/10/14/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/maven/Maven/" target="_self">
+        <div>
+          1 概念2 maven 访问仓库的顺序 3 maven 项目目录结构约定的目录结构对于 Maven 实现自动化构建而言是必不可少的一环，就拿自动编译来说，Maven 必须能找到 Java 源文件，下一步才能编译，而编译之后也必须有一个准确的位置保持编译得到的字节码文件。我们在开发中如果需要让第三方工具或框架知道我们自己创建的资源在哪，那么基本上就是两种方式：  通过配置的形式明确告诉它 基于第三方
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-14 22:19" pubdate>
+              2020-10-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/maven/" class="category-chain-item">maven</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/MongoDB/" target="_self">
+          MongoDB
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/MongoDB/" target="_self">
+        <div>
+          1. 基本模型1.1 结构 database 数据库，与 SQL 的数据库(database)概念相同，一个数据库包含多个集合(表) collection 集合，相当于 SQL 中的表(table)，一个集合可以存放多个文档(行)。 不同之处就在于集合的结构(schema)是动态的，不需要预先声明一个严格的表结构。更重要的是，默认情况下 MongoDB 并不会对写入的数据做任何 schema 的校
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-28 15:47" pubdate>
+              2020-09-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/" class="category-chain-item">MongoDB</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/NoSQL/" target="_self">
+          NoSQL
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/09/28/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/NoSQL/" target="_self">
+        <div>
+          Not Only SQL，非关系型数据库： 1 文档数据库这些数据库通常将每个键与称为文档的复杂数据结构配对。文档可以包含键数组对、键值对甚至嵌套文档  2 键值存储每个单独的项都存储为键值对。键值存储是所有 NoSQL 数据库中最简单的数据库  3 列式存储这些类型的数据库针对大型数据集上的查询进行了优化，它们将数据列存储在一起，而不是行。  4 图形存储这些存储关于图形、网络的信息，例如社会关
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-28 14:51" pubdate>
+              2020-09-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" class="category-chain-item">redis</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/24/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Security/" target="_self">
+          Spring Security
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/09/24/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Security/" target="_self">
+        <div>
+          1 概述安全访问控制功能其实就是对所有进入系统的请求进行拦截，校验每个请求是否能够访问它所期望的资源。SpringSecurity 对 Web 资源的保护是靠Filter实现的  SecurityContextPersistenceFilter：这个 Filter 是整个拦截过程的入口和出口（也就是第一个和最后一个拦截器），会在请求开始时从配置好的 SecurityContextRepositor
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-24 22:48" pubdate>
+              2020-09-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" class="category-chain-item">spring</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/21/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/git/Git/" target="_self">
+          Git
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/09/21/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/git/Git/" target="_self">
+        <div>
+          1 指令–创建分支git branch –将 master 分支强制指向 HEAD 的第 3 级父提交。git branch -f master HEAD3–切换到新的分支上git checkout &lt;name/hash 值&gt;;–在分支上提交修改git checkout ; –切换到 name 分支上git commit;–合并 name 分支至当前分支git merge ;–把当前分
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-21 17:58" pubdate>
+              2020-09-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/git/" class="category-chain-item">git</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/JWT/" target="_self">
+          JWT
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/JWT/" target="_self">
+        <div>
+          JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案  认证：用户认证就是判断一个用户的身份是否合法的过程 授权：控制用户访问资源  1 数据结构 Base64UrlEncode[header]**.Base64UrlEncode[payload].**Base64UrlEncode[signature] decode 后结构：   1.1 头部（header)是一个 JSO
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-19 02:02" pubdate>
+              2020-09-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AE%89%E5%85%A8/" class="category-chain-item">计算机网络与安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/18/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/kafka/Kafka/" target="_self">
+          Kafka
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/09/18/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/kafka/Kafka/" target="_self">
+        <div>
+          1 构成 Broker：一台 Kafka 服务器 topic：即队列 Partition：topic 的分区，一个 topic 会分为多个 Partition，每个 Partition 负责存储这个 Topic 一部分的数据。 主分区：若某个 Broker 挂了，会选举出其他 Broker 的备份分区做主分区。实现高可用 备份分区：只做备份，不做读写。   集群的 metadata（kafka 集
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-18 16:22" pubdate>
+              2020-09-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/kafka/" class="category-chain-item">kafka</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/09/16/java%E5%9F%BA%E7%A1%80/JPA/" target="_self">
+          JPA
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/09/16/java%E5%9F%BA%E7%A1%80/JPA/" target="_self">
+        <div>
+          1 简介1.1 Hibernate，JPA，Spring Data JPA 关系 JPA 是一套规范，内部是由接口和抽象类组成的。 hibernate 是一套 ORM 框架，而且 Hibernate实现了 JPA 规范，所以也可以称 hibernate 为 JPA 的一种实现方式    Spring Data JPA 是 Spring 提供的一套对 JPA 操作更加高级的封装（编写规范）。Spri
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-16 17:27" pubdate>
+              2020-09-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/8/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#board">7</a><a class="page-number" href="/page/8/#board">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/#board">10</a><a class="page-number" href="/page/11/#board">11</a><a class="extend next" rel="next" href="/page/10/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
   </nav>
-</div>
 
 
 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  </div>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
-        
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
 
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

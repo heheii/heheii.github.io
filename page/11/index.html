@@ -1,1561 +1,948 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="will">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="热心市民王先生的小破站">
 <meta property="og:url" content="http://example.com/page/11/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="热心市民王先生的小破站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="will">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>热心市民王先生的小破站</title>
 
-<link rel="canonical" href="http://example.com/page/11/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Hexo</title>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>heheii</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                
+                <span>remark</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="heheii"></span>
+          
+        </div>
 
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
 
 </div>
-    </header>
 
+  </header>
+
+  <main>
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
           
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-          <div class="content index posts-expand">
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84/" target="_self">
+          MySQL-基本架构
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84/" target="_self">
+        <div>
+          MySQL 基本架构： 1.连接器负责跟客户端建立链接、获取权限、维持和管理连接。链接的时候会经过 TCP 握手，然后身份验证，然后我们输入用户名密码就好了。验证 ok 后，我们就连上了这个 MySQL 服务了，但是这个时候我们处于空闲状态。我们数据库的客户端太久没响应，连接器就会自动断开了，这个时间参数是 wait_timeout 控制住的，默认时长为 8 小时。  2.查询缓存查询的时候会拿着
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 16:56" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-      
+
+<span class="category-chains">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/MySQL-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84/" class="post-title-link" itemprop="url">MySQL-基本架构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:56:26" itemprop="dateCreated datePublished" datetime="2020-08-27T16:56:26+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:34:32" itemprop="dateModified" datetime="2023-02-08T00:34:32+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>MySQL 基本架构：<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkyNUFlO8-sTmdMHSTKgFCaVEPqt.webp"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmhURtJZd4vP8NqsP7uPi5bVfc28.png"></p>
-<h1 id="1-连接器"><a href="#1-连接器" class="headerlink" title="1.连接器"></a>1.连接器</h1><p>负责跟客户端<strong>建立链接</strong>、<strong>获取权限</strong>、<strong>维持和管理连接</strong>。<br>链接的时候会经过 TCP 握手，然后身份验证，然后我们输入用户名密码就好了。验证 ok 后，我们就连上了这个 MySQL 服务了，但是这个时候我们处于空闲状态。<br>我们数据库的客户端太久没响应，连接器就会自动断开了，这个时间参数是 wait_timeout 控制住的，默认时长为 8 小时。</p>
-<hr>
-<h1 id="2-查询缓存"><a href="#2-查询缓存" class="headerlink" title="2.查询缓存"></a><del>2.查询缓存</del></h1><p>查询的时候会拿着语句先去缓存中查询（通过一个对大小写敏感的<strong>hash 查找</strong>实现），如果能够命中就返回缓存的 value，如果不命中就执行后面的阶段。同一条语句在 MySQL 执行两次，第一次和后面的时间是不一样的，后者明显快一些，这就是因为缓存的存在。<br>跟 Redis 一样，只要是之前执行过的语句，都会在内存里面用 key-value 形式存储。</p>
-<p><strong>缓存弊大于利：</strong><br>缓存的失效很容易，只要对表有任何的更新，这个表的所有查询缓存就会全部被清空，导致查询的命中率很低。<br>只有那种只查询不更新的表适用缓存，但是这样的表往往很少存在，一般都是什么配置表之类的。</p>
-<p><strong>缓存在 MySQL8.0 之后就取消了。</strong></p>
-<hr>
-<h1 id="3-分析器"><a href="#3-分析器" class="headerlink" title="3.分析器"></a>3.分析器</h1><ul>
-<li><strong>词法分析</strong></li>
-</ul>
-<p>识别每个字符串所代表的是什么，是关键字，表名，还是列名等等。</p>
-<ul>
-<li><strong>语法分析</strong></li>
-</ul>
-<p>根据词法分析的结果，语法分析会判断 sql 的对错，错了会提醒你，并且会提示哪里错了。</p>
-<hr>
-<h1 id="4-优化器"><a href="#4-优化器" class="headerlink" title="4.优化器"></a>4.优化器</h1><p>优化器在评估成本的时候并不考虑任何层面的缓存。</p>
-<h2 id="4-1-如何优化"><a href="#4-1-如何优化" class="headerlink" title="4.1 如何优化"></a>4.1 如何优化</h2><ul>
-<li><strong>确认使用哪个索引：</strong></li>
-</ul>
-<p>因为我们建立表可能会建立很多索引，优化有一步就是要确认使用哪个索引，比如使用你的主键索引，联合索引还是什么索引更好。<br><strong>优化过程</strong>大致如下：<br>1、根据搜索条件，找出所有可能使用的索引<br>2、计算全表扫描的代价<br>3、计算使用不同索引执行查询的代价<br>4、对比各种执行方案的代价，找出成本最低的那一个</p>
-<ul>
-<li><strong>对执行顺序进行优化</strong></li>
-</ul>
-<p>条件那么多，先查哪个表，还是先关联，会出现很多方案，最后由优化器决定选用哪种方案。</p>
-<h2 id="4-2-优化器错误选择执行计划原因"><a href="#4-2-优化器错误选择执行计划原因" class="headerlink" title="4.2 优化器错误选择执行计划原因"></a>4.2 优化器错误选择执行计划原因</h2><ul>
-<li>统计信息不准确。MySQL 依赖存储引擎提供的统计信息来评估成本，有的存储引擎提供的信息可能偏差较大。比如 InnoDB 因为 MVCC 不能维护一个数据表行数的精确统计信息。</li>
-<li>优化器在评估成本的时候并不考虑任何层面的缓存。</li>
-<li>MySQL 不考虑并发执行的查询</li>
-<li>优化器有时无法估算所有可能的执行计划。</li>
-</ul>
-<hr>
-<h1 id="5-执行器"><a href="#5-执行器" class="headerlink" title="5.执行器"></a>5.执行器</h1><p>MySQL 根据执行计划给出的指令逐步执行。<br><strong>explain</strong>可以看到执行计划</p>
-<hr>
-<h1 id="6-存储引擎"><a href="#6-存储引擎" class="headerlink" title="6.存储引擎"></a>6.存储引擎</h1><p>存储引擎负责 MySQL 中数据的存储和提取</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" class="category-chain-item">mysql</a>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/java%E5%9F%BA%E7%A1%80/String/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/String/" class="post-title-link" itemprop="url">String</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:36:13" itemprop="dateCreated datePublished" datetime="2020-08-27T16:36:13+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/49092.htm">https://www.jb51.net/article/49092.htm</a></p>
-<h1 id="String-为什么不可变"><a href="#String-为什么不可变" class="headerlink" title="String 为什么不可变"></a>String 为什么不可变</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Ft6EAAx1UMoRlif4R1g0e8l6R9W7.png"></p>
-<hr>
-<h1 id="为什么-String-要设计成不可变"><a href="#为什么-String-要设计成不可变" class="headerlink" title="为什么 String 要设计成不可变"></a>为什么 String 要设计成不可变</h1><h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><ul>
-<li>若 String 对象允许改变,那么将会导致各种逻辑错误（s1 的修改会影响 s2）<ul>
-<li>尤其是 String 对象会被当作各种参数使用</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;abcd&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtzzJw-sKSddZHpBl3-SKQFSy19f.png"></p>
-<h3 id="效率"><a href="#效率" class="headerlink" title="效率"></a>效率</h3><ul>
-<li>缓存 hash（修改时去修改缓存 hash 不可以吗？）</li>
-<li>适合作为 map 中的 key</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FjX62XA8N9InZbxN2NzVm8D2J6-F.png"></p>
-<h3 id="使用简单"><a href="#使用简单" class="headerlink" title="使用简单"></a>使用简单</h3><ul>
-<li>因为不可变，所以就不用考虑多线程的情况</li>
-</ul>
-<hr>
-<h1 id="循环中的-String"><a href="#循环中的-String" class="headerlink" title="循环中的 String"></a>循环中的 String</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// String</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testString</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        str += i;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// StringBuilder</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testStringBuilder</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        builder.append(i);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(builder.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>String：每一次循环都创建一个 StringBuilder 对象</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqsO-FJgwXgvJOF65Ak-VBI2rYND.png"></p>
-<ul>
-<li>StringBuilder：只在循环外创建一个 StringBuilder 对象</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqsO-FJgwXgvJOF65Ak-VBI2rYND.png"><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqY3_A-96W9mpysUgFt5IWCkV5vX.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
   
 
-      
+      </span>
+    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/JMM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/JMM/" class="post-title-link" itemprop="url">JMM</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:02:12" itemprop="dateCreated datePublished" datetime="2020-08-27T16:02:12+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiNxftbcfKLpuQ4VyOEomYZS80lj.jpeg">&gt; JMM 定义了 Java 虚拟机(JVM)在计算机内存(RAM)中的工作方式。（对特定的内存或高速缓存进行读写访问的过程抽象）</p>
-<blockquote>
-<p>从抽象的角度来看，JMM 定义了线程和主内存之间的抽象关系：线程之间的共享变量存储在主内存（Main Memory）中，每个线程都有一个私有的本地内存（Local Memory），本地内存中存储了该线程以读/写共享变量的副本。本地内存是 JMM 的一个抽象概念，并不真实存在</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fi0B1UrEQjpzwS2UUQG-DJC3ZJDr.png"></p>
-<h1 id="1-原子性"><a href="#1-原子性" class="headerlink" title="1 原子性"></a>1 原子性</h1><hr>
-<h1 id="2-可见性"><a href="#2-可见性" class="headerlink" title="2 可见性"></a>2 可见性</h1><h2 id="2-1-volatile"><a href="#2-1-volatile" class="headerlink" title="2.1 volatile"></a>2.1 volatile</h2><p>volatile 域规则：对一个 volatile 域的写操作，<strong>happens-before</strong>于任意线程后续对这个 volatile 域的读。</p>
-<ul>
-<li><p><strong>MESI:</strong></p>
-<p>当 CPU 写数据时，如果发现操作的变量是共享变量，即在其他 CPU 中也存在该变量的副本，会发出信号通知其他 CPU 将该变量的缓存行置为无效状态，因此当其他 CPU 需要读取这个变量时，发现自己缓存中缓存该变量的缓存行是无效的，那么它就会从内存重新读取。</p>
-</li>
-<li><p><strong>怎么发现数据是否失效呢?</strong></p>
-<p>每个处理器通过嗅探在总线上传播的数据来检查自己缓存的值是不是过期了，当处理器发现自己缓存行对应的内存地址被修改，就会将当前处理器的缓存行设置成无效状态，当处理器对这个数据进行修改操作的时候，会重新从系统内存中把数据读到处理器缓存里。</p>
-</li>
-<li><p><strong>缺点：</strong></p>
-<p>总线风暴。由于 Volatile 的 MESI 缓存一致性协议，需要不断的从主内存嗅探和 cas 不断循环，无效交互会导致总线带宽达到峰值。所以不要大量使用 volatile。</p>
-</li>
-</ul>
-<h2 id="2-2-synchronized"><a href="#2-2-synchronized" class="headerlink" title="2.2 synchronized"></a>2.2 synchronized</h2><p>因为某一个线程进入 synchronized 代码块前后，线程会获得锁，<strong>清空工作内存</strong>，从主内存拷贝共享变量最新的值到工作内存成为副本，执行代码，将修改后的副本的值刷新回主内存中，线程释放锁。<br>而获取不到锁的线程会阻塞等待，所以变量的值肯定一直都是最新的。</p>
-<h2 id="2-3-final"><a href="#2-3-final" class="headerlink" title="2.3 final"></a>2.3 final</h2><hr>
-<h1 id="3-有序性"><a href="#3-有序性" class="headerlink" title="3 有序性"></a>3 有序性</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" class="post-title-link" itemprop="url">类加载</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:02:03" itemprop="dateCreated datePublished" datetime="2020-08-27T16:02:03+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgnUA0yWY5iFMPbBDyUeYjpvUWVk.jpeg"></h2><h1 id="1-加载"><a href="#1-加载" class="headerlink" title="1 加载"></a>1 加载</h1><ol>
-<li>通过一个类的全限定名<strong>获取定义此类的二进制字节流</strong><ol>
-<li>可以不从 class 文件中获取</li>
-</ol>
-</li>
-<li>将二进制字节流代表的<strong>静态存储结构</strong>转化为<strong>方法区</strong>的<strong>运行时数据结构</strong></li>
-<li>在<strong>堆</strong>中生成一个代表这个类的 java.lang.<strong>Class 对象</strong>，作为程序访问方法区这个类型数据的外部接口</li>
-</ol>
-<h2 id="1-1-类加载器"><a href="#1-1-类加载器" class="headerlink" title="1.1 类加载器"></a>1.1 类加载器</h2><h3 id="1-1-1-类与类加载器"><a href="#1-1-1-类与类加载器" class="headerlink" title="1.1.1 类与类加载器"></a>1.1.1 类与类加载器</h3><h3 id="1-1-2-双亲委派模型"><a href="#1-1-2-双亲委派模型" class="headerlink" title="1.1.2 双亲委派模型"></a>1.1.2 双亲委派模型</h3><hr>
-<h1 id="2-连接"><a href="#2-连接" class="headerlink" title="2 连接"></a>2 连接</h1><ul>
-<li>加载阶段与连接阶段的部分动作是<strong>交叉进行</strong>的，但<strong>开始时间有固定的先后顺序</strong></li>
-</ul>
-<h2 id="2-1-验证"><a href="#2-1-验证" class="headerlink" title="2.1 验证"></a>2.1 验证</h2><ul>
-<li>为确保 Class 文件的字节流所包含信息符合 JVM 规范的全部约束要求，保证这些信息被当做代码运行后不会危害 JVM 自身的安全。</li>
-</ul>
-<h2 id="2-2-准备"><a href="#2-2-准备" class="headerlink" title="2.2 准备"></a>2.2 准备</h2><ul>
-<li>为类变量（类中的静态变量）分配内存</li>
-<li>为类变量设置初始值<ul>
-<li>不为 final 类型的置为 0</li>
-<li>final 类型直接赋值</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-3-解析"><a href="#2-3-解析" class="headerlink" title="2.3 解析"></a>2.3 解析</h2><ul>
-<li>解析阶段是 JVM 将常量池（在方法区中）内的<strong>符号引用</strong>替换为<strong>直接引用</strong>的过程<ul>
-<li>符号引用：以一组<strong>符号描述</strong>所引用的目标（引用的目标未必已经在 JVM 内存中）</li>
-<li>直接引用：是可以<strong>直接指向目标的指针</strong>，<strong>相对偏移量</strong>，一个能<strong>间接定位到目标的句柄</strong>（引用的目标必定已经在 JVM 内存中）</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-3-1-类-结构的解析"><a href="#2-3-1-类-结构的解析" class="headerlink" title="2.3.1 类/结构的解析"></a>2.3.1 类/结构的解析</h3><h3 id="2-3-2-字段的解析"><a href="#2-3-2-字段的解析" class="headerlink" title="2.3.2 字段的解析"></a>2.3.2 字段的解析</h3><h3 id="2-3-3-方法解析"><a href="#2-3-3-方法解析" class="headerlink" title="2.3.3 方法解析"></a>2.3.3 方法解析</h3><hr>
-<h1 id="3-初始化"><a href="#3-初始化" class="headerlink" title="3 初始化"></a>3 初始化</h1><ul>
-<li><p>初始化阶段就是执行类构造器**<clinit>()方法**的过程</p>
-<ul>
-<li><clinit>()方法并非程序员在代码中编写的，而是<strong>javac 编译器</strong>自动收集<strong>类中所有类变量的赋值动作</strong>和<strong>静态代码块中的语句</strong>合并产生</li>
-</ul>
-</li>
-<li><p>当初始化一个类的时候，若发现其父类还未初始化，则需要先初始化父类</p>
-</li>
-<li><p>JVM 会保证一个类的<clinit>()方法在多线程环境中被正确加锁和同步</p>
-<ul>
-<li>若多个线程同时初始化一个类，只有一个线程会执行<clinit>()方法，其余线<strong>程阻塞等待</strong>。（P279）</li>
-</ul>
-</li>
-<li><p><clinit>()方法<strong>不是必须的</strong></p>
-<ul>
-<li>若一个类中没有静态代码块和类变量的赋值动作，则 javac 编译器可以不为这个类生成<clinit>()方法</li>
-</ul>
-</li>
-<li><p><strong>主导：</strong></p>
-<ul>
-<li>前面的步骤除自定义类加载器方式（获取二进制字节流）局部参与外，其余完全由<strong>JVM 主导控制</strong></li>
-<li>直到初始化阶段，JVM 才真正开始执行类中编写的 java 代码，由<strong>应用程序主导控制</strong></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="4-使用"><a href="#4-使用" class="headerlink" title="4 使用"></a>4 使用</h1><h1 id="5-卸载"><a href="#5-卸载" class="headerlink" title="5 卸载"></a>5 卸载</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/GC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/GC/" class="post-title-link" itemprop="url">GC</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:01:33" itemprop="dateCreated datePublished" datetime="2020-08-27T16:01:33+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fv2VEpieE289bFYEbNSj-GGFWeFu.jpeg"></p>
-<h1 id="排查"><a href="#排查" class="headerlink" title="排查"></a>排查</h1><ul>
-<li>初步判断是否频繁 gc，以及 gc 效果：<ul>
-<li>jstat -gc 进程 id 刷新间隔时间 ms</li>
-<li>jstat -gc 7904 5000<ul>
-<li>S0C：第一个幸存区的大小</li>
-<li>S1C：第二个幸存区的大小</li>
-<li>S0U：第一个幸存区的使用大小</li>
-<li>S1U：第二个幸存区的使用大小</li>
-<li>EC：伊甸园区的大小</li>
-<li>EU：伊甸园区的使用大小</li>
-<li>OC：老年代大小</li>
-<li>OU：老年代使用大小</li>
-<li>MC：方法区大小</li>
-<li>MU：方法区使用大小</li>
-<li>CCSC:压缩类空间大小</li>
-<li>CCSU:压缩类空间使用大小</li>
-<li>YGC：年轻代垃圾回收次数</li>
-<li>YGCT：年轻代垃圾回收消耗时间</li>
-<li>FGC：老年代垃圾回收次数</li>
-<li>FGCT：老年代垃圾回收消耗时间</li>
-<li>GCT：垃圾回收消耗总时间</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>打印 gc 日志<ul>
-<li>-XX:+PrintGCDateStamps -XX:+PrintGCDetails -Xloggc:/Users/will/ideaProjects/hjzn/main_fab_core/gclogs</li>
-</ul>
-</li>
-<li>初步分析 jvm 内存：<ul>
-<li>jmap -histo:live 7904 | head -17</li>
-<li>jmap -histo:live 进程 id | head -17</li>
-</ul>
-</li>
-<li>分析 dump 文件<ul>
-<li>生成 dump 文件：<ul>
-<li>jmap -dump:format=b,file=heap.log 38510</li>
-</ul>
-</li>
-<li>分析 dump 文件：<ul>
-<li>jhat -port 9998 /tmp/dump.dat</li>
-<li></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Cloud/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Cloud/" class="post-title-link" itemprop="url">Spring Cloud</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:00:20" itemprop="dateCreated datePublished" datetime="2020-08-27T16:00:20+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqQYn20mWNJl66-qEf1EmkHdQ6Ru.jpeg"></p>
-<h1 id="1-Eureka"><a href="#1-Eureka" class="headerlink" title="1 Eureka"></a>1 Eureka</h1><h2 id="1-0-Eureka-与-Zookeeper-对比"><a href="#1-0-Eureka-与-Zookeeper-对比" class="headerlink" title="1.0 Eureka 与 Zookeeper 对比"></a>1.0 Eureka 与 Zookeeper 对比</h2><ul>
-<li>Eureka： <strong>符合 AP 原则</strong> 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。<ul>
-<li>注：2018 年已官宣停止维护</li>
-</ul>
-</li>
-<li>Zookeeper： <strong>符合 CP 原则</strong> 为了保证一致性，在所有节点同步完成之前是阻塞状态的。</li>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FghKc7yychyX0uiccQDuHg9JFAAe.png"></li>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkpWfwdQO6tlALG4GgkHggnlU6Jd.png"></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvCry-jadnLgyDS_2NucFa1x3xJe.webp"></p>
-<ul>
-<li>蓝色的  Eureka Server  是  Eureka  服务器。<ul>
-<li>这三个代表的是集群，而且他们是<strong>去中心化</strong>的。</li>
-</ul>
-</li>
-<li>绿色的  Application Client  是  Eureka  客户端。<ul>
-<li>其中可以是消费者和提供者，最左边的就是典型的提供者，它需要向  Eureka  服务器注册自己和发送心跳包进行续约，而其他消费者则通过  Eureka  服务器来获取提供者的信息以调用他们</li>
-</ul>
-</li>
-</ul>
-<h2 id="1-1-服务提供者"><a href="#1-1-服务提供者" class="headerlink" title="1.1 服务提供者"></a>1.1 服务提供者</h2><ul>
-<li><strong>服务注册：</strong></li>
-</ul>
-<p>启动的时候会通过发送 REST 请求的方式将自己注册到 Eureka Server 上，同时带上了自身服务的一些元数据。</p>
-<ul>
-<li><strong>服务续约：</strong></li>
-</ul>
-<p>xx 在注册完服务之后，服务提供者会维护一个心跳（默认每隔 30s 发送一次）用来持续告诉 Eureka Server: “我还活着 ” 、</p>
-<ul>
-<li><strong>服务下线：</strong></li>
-</ul>
-<p>当服务实例进行正常的关闭操作时，它会触发一个服务下线的 REST 请求给 Eureka Server, 告诉服务注册中心：“我要下线了 ”。</p>
-<h2 id="1-2-服务消费者"><a href="#1-2-服务消费者" class="headerlink" title="1.2 服务消费者"></a>1.2 服务消费者</h2><ul>
-<li><strong>获取服务：</strong></li>
-</ul>
-<p>当我们启动服务消费者的时候，它会发送一个 REST 请求给服务注册中心，来获取上面注册的服务列表信息（该注册列表信息定期 30s 更新一次）</p>
-<ul>
-<li><strong>服务调用：</strong></li>
-</ul>
-<p>服务消费者在获取服务清单后，通过服务名可以获得具体提供服务的实例名和该实例的元数据信息。在进行服务调用的时候，优先访问同处一个 Zone 中的服务提供方。</p>
-<h2 id="1-3-Eureka-Server-服务注册中心"><a href="#1-3-Eureka-Server-服务注册中心" class="headerlink" title="1.3 Eureka Server(服务注册中心)"></a>1.3 Eureka Server(服务注册中心)</h2><ul>
-<li><strong>失效剔除：</strong></li>
-</ul>
-<p>默认每隔一段时间（默认为 60 秒） 将当前清单中超时（默认为 90 秒，3 个续约周期）没有续约的服务从注册表中删除。</p>
-<ul>
-<li><strong>自我保护：</strong></li>
-</ul>
-<p>EurekaServer 在运行期间，会统计心跳失败的比例在 15 分钟之内是否低于 85%(通常由于网络不稳定导致)。 Eureka Server 会将当前的实例注册信息保护起来， 让这些实例不会过期，尽可能保护这些注册信息。</p>
-<hr>
-<h1 id="2-Ribbon"><a href="#2-Ribbon" class="headerlink" title="2 Ribbon"></a>2 Ribbon</h1><ul>
-<li>让服务<strong>调用端</strong>具备<strong>负载均衡</strong>能力，不用在服务集群内再架设负载均衡服务，很大程度简化了服务集群内的架构。<ul>
-<li>RestTemplate 内部调用负载均衡拦截器，拦截器内最终是调用了负载均衡器来选择服务实例。</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-1-Nginx-和-Ribbon-的对比"><a href="#2-1-Nginx-和-Ribbon-的对比" class="headerlink" title="2.1 Nginx 和 Ribbon 的对比"></a>2.1 Nginx 和 Ribbon 的对比</h2><ul>
-<li>Nginx<ul>
-<li><strong>集中式</strong>的负载均衡器，接收了所有的请求后进行负载均衡</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgKizsKTdZ4362lf35lTMUVoJoun.webp"></p>
-<ul>
-<li>Ribbon<ul>
-<li>先在客户端进行负载均衡才进行请求的</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FrlmTV4jNB1jtLFsJ9od3113WK4L.webp"></p>
-<h2 id="2-2-Ribbon-中的负载均衡算法"><a href="#2-2-Ribbon-中的负载均衡算法" class="headerlink" title="2.2 Ribbon 中的负载均衡算法"></a>2.2 Ribbon 中的负载均衡算法</h2><ul>
-<li><strong>RoundRobinRule</strong>：轮询策略（Ribbon 默认采用的策略）。若经过一轮轮询没有找到可用的<code>provider</code>，其最多轮询 10 轮。若最终还没有找到，则返回 null。</li>
-<li><strong>RandomRule</strong>: 随机策略，从所有可用的 provider 中随机选择一个。</li>
-<li><strong>RetryRule</strong>: 重试策略。先按照 RoundRobinRule 策略获取 provider，若获取失败，则在指定的时限内重试。默认的时限为 500 毫秒。</li>
-<li>等等。。。</li>
-<li><strong>自定义负载均衡算法。</strong><ul>
-<li>只需要实现<code>com.netflix.loadbalancer.IRule</code>接口，然后修改配置文件或者自定义<code>Java Config</code>类。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更换负载均衡算法</span></span><br><span class="line"><span class="attr">providerName:</span></span><br><span class="line">  <span class="attr">ribbon:</span></span><br><span class="line">    <span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.netflix.loadbalancer.RandomRule</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="3-Hystrix"><a href="#3-Hystrix" class="headerlink" title="3 Hystrix"></a>3 Hystrix</h1><h2 id="3-1-Fallback-失败快速返回-："><a href="#3-1-Fallback-失败快速返回-：" class="headerlink" title="3.1 Fallback(失败快速返回)："></a>3.1 Fallback(失败快速返回)：</h2><pre><code>当某个服务单元发生故障（类似用电器发生短路）之后，通过断路器的故障监控（类似熔断保险丝）， 向调用方返回一个错误响应， 而不是长时间的等待。这样就不会使得线程因调用故障服务被长时间占用不释放，避免了故障在分布式系统中的蔓延。
-</code></pre>
-<h2 id="3-2-资源-依赖隔离-线程池隔离-："><a href="#3-2-资源-依赖隔离-线程池隔离-：" class="headerlink" title="3.2 资源/依赖隔离(线程池隔离)："></a>3.2 资源/依赖隔离(线程池隔离)：</h2><pre><code>它会为每一个依赖服务创建一个独立的线程池，这样就算某个依赖服务出现延迟过高的情况，也只是对该依赖服务的调用产生影响， 而不会拖慢其他的依赖服务。
-</code></pre>
-<ul>
-<li>参数：<ul>
-<li>滑动窗口大小（20）、</li>
-<li>熔断器开关间隔（重新检测该触发条件，判断是否把熔断器关闭，或者继续打开的时间间隔）</li>
-<li>错误率（超过错误率时，会打开熔断器，此时再调用此服务，将会直接返回失败，不再调远程服务）</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-3-Hystrix-仪表盘："><a href="#3-3-Hystrix-仪表盘：" class="headerlink" title="3.3 Hystrix 仪表盘："></a>3.3 Hystrix 仪表盘：</h2><pre><code>它主要用来实时监控Hystrix的各项指标信息。通过Hystrix Dashboard反馈的实时信息，可以帮助我们快速发现系统中存在的问题，从而及时地采取应对措施。
-</code></pre>
-<hr>
-<h1 id="4-Feign-与-OpenFeign"><a href="#4-Feign-与-OpenFeign" class="headerlink" title="4 Feign 与 OpenFeign"></a>4 Feign 与 OpenFeign</h1><ul>
-<li>OpenFeign 在 Feign 的基础上支持了 Spring MVC 的注解</li>
-<li>Ribbon 和 Hystrix 这两个框架的使用几乎是同时出现的–&gt;Feign 整合了 Spring Cloud Ribbon 与 Spring Cloud Hystrix,还提供了声明式的服务调用(不再通过 RestTemplate)</li>
-</ul>
-<h2 id="4-1-原理"><a href="#4-1-原理" class="headerlink" title="4.1 原理"></a>4.1 原理</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgmfJFw7JJDlFtwRUrlvv0LF44Qm.png"></p>
-<ol>
-<li>通过 Spring IOC 容器实例，<strong>装配代理实例</strong>，然后进行远程调用。</li>
-<li>执行 **InvokeHandler **调用处理器的 invoke(…)方法<ol>
-<li>调用到默认的 FeignInvocationHandler 调用处理器实例的 invoke(…)方法</li>
-<li>默认的调用处理器 FeignInvocationHandle，内部保持了一个远程调用方法实例和方法处理器的一个 Key-Value 键值对 Map 映射。FeignInvocationHandle 在其 invoke(…)方法中，会根据 Java 反射的方法实例，在 dispatch 映射对象中，找到对应的 MethodHandler 方法处理器，然后由后者完成实际的 HTTP 请求和结果的处理。</li>
-</ol>
-</li>
-<li>执行 **MethodHandler **方法处理器的 invoke(…)方法<ol>
-<li>feign 默认的方法处理器为 SynchronousMethodHandler，其 invoke(…)方法主要是通过内部成员 feign 客户端成员 client，完成远程 URL 请求执行和获取远程结果。</li>
-</ol>
-</li>
-<li>通过** feign.Client** 客户端成员，完成远程 URL 请求执行和获取远程结果</li>
-</ol>
-<hr>
-<h1 id="5-SpringCloud-gateway"><a href="#5-SpringCloud-gateway" class="headerlink" title="5 SpringCloud gateway"></a>5 SpringCloud gateway</h1><h2 id="5-1-简介"><a href="#5-1-简介" class="headerlink" title="5.1 简介"></a>5.1 简介</h2><ul>
-<li><p>外层调用都必须通过 API 网关，使得将维护服务实例的工作交给了服务治理框架自动完成。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>zuul</th>
-<th>zuul2</th>
-<th>Gateway</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>所属公司</td>
-<td>Netflix</td>
-<td>Netflix</td>
-<td>springcloud</td>
-</tr>
-<tr>
-<td>springboot 版本</td>
-<td>springcloud 1.x</td>
-<td>Springcloud 2.x</td>
-<td>Springcloud 2.x</td>
-</tr>
-<tr>
-<td>架构</td>
-<td>基于 Servlet 2.5,使用阻塞架构，不支持任何长连接</td>
-<td>基于 Netty 非阻塞</td>
-<td>基于 webFlux 非阻塞</td>
-</tr>
-<tr>
-<td>长连接</td>
-<td>不支持任何长连接</td>
-<td>支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>性能</td>
-<td>已过时</td>
-<td>较好</td>
-<td>较好</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>工作原理</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh7k7es_KunqJjc3EDcS3N3vBVPH.webp"></p>
-<h2 id="5-2-配置"><a href="#5-2-配置" class="headerlink" title="5.2 配置"></a>5.2 配置</h2><hr>
-<h1 id="6-Spring-Cloud-Config"><a href="#6-Spring-Cloud-Config" class="headerlink" title="6 Spring Cloud Config"></a>6 Spring Cloud Config</h1><ul>
-<li>Spring Cloud Config 项目是一个解决分布式系统的<strong>配置管理</strong>方案。</li>
-<li>它包含了 Client 和 Server 两个部分<ul>
-<li>server 提供配置文件的存储、以接口的形式将配置文件的内容提供出去</li>
-<li>client 通过接口获取数据、并依据此数据初始化自己的应用。</li>
-</ul>
-</li>
-</ul>
-<p>简单来说，使用 Spring Cloud Config 就是将配置文件放到统一的位置管理(比如 GitHub)，客户端通过接口去获取这些配置文件。在 GitHub 上修改了某个配置文件，应用加载的就是修改后的配置文件。</p>
-<hr>
-<h1 id="7-UAA"><a href="#7-UAA" class="headerlink" title="7 UAA"></a>7 UAA</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FjlBcKTpPPPyZ_9sVvgmfCrukYVn.png"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvZKVa8yiBxYkFNM8A3XhXcOvF5h.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Boot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Boot/" class="post-title-link" itemprop="url">Spring Boot</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:00:12" itemprop="dateCreated datePublished" datetime="2020-08-27T16:00:12+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>–启动：</p>
-<ul>
-<li>new SpringApplication()：创建 SpringApplication 实例，负责加载配置一些基本的环境变量、资源、构造器、监听器</li>
-<li>run()：负责 springboot 整个启动过程，包括加载创建环境、打印 banner、配置文件、配置应用上下文，加载 bean 等等 sb 整个生命周期几乎都在 run 方法中；</li>
-</ul>
-<p>–配置<br>Spring Cloud 构建于 Spring Boot 之上，在 Spring Boot 中有两种上下文，一种是 bootstrap, 另外一种是 application, bootstrap 是应用程序的父上下文，也就是说 bootstrap 加载优先于 applicaton。<br>bootstrap 主要用于从额外的资源来加载配置信息，还可以在本地外部配置文件中解密属性。这两个上下文共用一个环境，它是任何 Spring 应用程序的外部属性的来源。bootstrap 里面的属性会优先加载，它们默认也不能被本地相同配置覆盖。</p>
-<ul>
-<li><p>bootstrap</p>
-<ul>
-<li>使用 Spring Cloud Config 配置中心时，这时需要在 bootstrap 配置文件中添加连接到配置中心的配置属性来加载外部配置中心的配置信息；</li>
-<li>一些固定的<strong>不能被覆盖</strong>的属性</li>
-<li>一些加密/解密的场景</li>
-</ul>
-</li>
-<li><p>application</p>
-<ul>
-<li>applcation.properties 文件中指定当前的环境 spring.profiles.active=test，这时候读取的就是 application-test.yml 文件。</li>
-</ul>
-<p>Spring Boot 项目的自动化配置。</p>
-</li>
-<li><p>YAML 语法：</p>
-<ul>
-<li>以空格的缩进程度来控制层级关系。空格的个数并不重要，只要左边空格对齐则视为同一个层级。</li>
-<li>注意不能用 tab 代替空格</li>
-<li>且大小写敏感</li>
-<li>字面值：字符串，布尔类型，数值，日期。字符串默认不加引号，单引号或者不加引号会转义特殊字符，双引号直接输出。日期格式支持 yyyy/MM/dd HH:mm:ss</li>
-<li>对象：由键值对组成，形如 key:(空格)value 的数据组成。冒号后面的空格是必须要有的，每组键值对占用一行，且缩进的程度要一致，也可以使用行内写法：{k1: v1, ….kn: vn}</li>
-<li>数组：由形如 -(空格)value 的数据组成。短横线后面的空格是必须要有的，每组数据占用一行，且缩进的程度要一致，也可以使用行内写法： [1,2,…n]</li>
-<li>复合结构：上面三种数据结构任意组合</li>
-</ul>
-</li>
-</ul>
-<p>–注解：<br>@ConfigurationProperties(prefix = “library”)   读取配置信息并与 bean 绑定。<br>@EnableConfigurationProperties       注解的作用是：使使用 @ConfigurationProperties 注解的类生效。<br>eg：@EnableConfigurationProperties(RedisProperties.class)<br>@SpringBootApplication<br>@Configuration         允许在 Spring 上下文中注册额外的 bean 或导入其他配置类  <br>@ComponentScan         注解默认会扫描该类所在的包下所有的类。<br>@EnableAutoConfiguration       启用 SpringBoot 的自动配置机制<br> @Import(AutoConfigurationImportSelector.class)   借助 AutoConfigurationImportSelector，@EnableAutoConfiguration 可以帮助 SpringBoot 应用将所有符合条件的@Configuration 配置都加载到当前 SpringBoot 创建并使用的 IoC 容器。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Framework/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Framework/" class="post-title-link" itemprop="url">Spring Framework</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:00:05" itemprop="dateCreated datePublished" datetime="2020-08-27T16:00:05+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Spring-MVC"><a href="#1-Spring-MVC" class="headerlink" title="1 Spring MVC"></a>1 Spring MVC</h1><ul>
-<li>Spring 最初利用“工厂模式”（DI）和“代理模式”（AOP）解耦应用组件。大家觉得挺好用，于是按照这种模式搞了一个 MVC 框架（一些用 Spring 解耦的组件），用开发 web 应用（ SpringMVC ）。然后有发现每次开发都写很多样板代码，为了简化工作流程，于是开发出了一些“懒人整合包”（starter），这套就是 Spring Boot</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FpjVVCaSqSJZBUQuesaQUfb1IyPG.png"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsiTzpJlXxan02k5JoIBDR7A-UIw.jpeg?x-oss-process=image/auto-orient,1"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fij1jsx_uA-2AlAT2O7DbpWE6sir.png"></p>
-<h1 id="2-bean-生命周期"><a href="#2-bean-生命周期" class="headerlink" title="2 bean 生命周期"></a>2 bean 生命周期</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmKLo8YIeqm_-EflprdvHYSgBwps.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">多线程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 15:58:47" itemprop="dateCreated datePublished" datetime="2020-08-27T15:58:47+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-锁"><a href="#1-锁" class="headerlink" title="1 锁"></a>1 锁</h1><h2 id="1-1-synchronized"><a href="#1-1-synchronized" class="headerlink" title="1.1 synchronized"></a>1.1 synchronized</h2><h3 id="1-1-1-锁升级"><a href="#1-1-1-锁升级" class="headerlink" title="1.1.1 锁升级"></a>1.1.1 锁升级</h3><p><strong>Hotspot 实现：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fnfai6GntcGYzKTH0Q3Wnhf6AMuP.jpeg"></p>
-<hr>
-<h3 id="1-1-2-锁消除"><a href="#1-1-2-锁消除" class="headerlink" title="1.1.2 锁消除"></a>1.1.2 锁消除</h3><h3 id="1-1-3-锁粗化"><a href="#1-1-3-锁粗化" class="headerlink" title="1.1.3 锁粗化"></a>1.1.3 锁粗化</h3><hr>
-<h2 id="1-2-Lock"><a href="#1-2-Lock" class="headerlink" title="1.2 Lock"></a>1.2 Lock</h2><hr>
-<h2 id="1-3-volatile"><a href="#1-3-volatile" class="headerlink" title="1.3 volatile"></a>1.3 volatile</h2><hr>
-<h1 id="2-ThreadLocal"><a href="#2-ThreadLocal" class="headerlink" title="2 ThreadLocal"></a>2 ThreadLocal</h1><ul>
-<li><strong>应用：</strong><ul>
-<li>Spring 中的@Transaction 中有应用</li>
-<li>SpringSecurity 中有应用</li>
-<li>myBatis 的 PageHelper 分页插件</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiGSQzI-UOT3iHxetWDde-oaq3Ms.jpeg"></p>
-<ul>
-<li><strong>Thread,ThreadLocal,ThreadLocalMap 三者关系：</strong><ul>
-<li>线程类 Thread 内部持有 ThreadLocalMap 的成员变量</li>
-<li>ThreadLocalMap 是 ThreadLocal 的内部类</li>
-<li>ThreadLocal 操作了 thread 内部持有的 ThreadLocalMap 对象内部的数据，对外暴露的都是 ThreadLocal 的方法 API，隐藏了 ThreadLocalMap 的具体实现</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fr4K7ZOfI3zlL2PSRzFx3nrBNS8q.jpeg"></p>
-<ul>
-<li><strong>ThreadLocalMap 理解：</strong><ul>
-<li>创建的 table 可以看成一个哈希表，默认大小是 16，即有 16 个槽(slot)。创建 table 完毕，根据 firstKey 算出本次插入的槽位，然后用内部类 Entry 将两个值包装成键值对(entry)，放入槽中：table[i] = new Entry(firstKey, firstValue);</li>
-</ul>
-</li>
-<li><strong>内存泄漏分析</strong><ul>
-<li><strong>防止无法回收 threadLocal</strong><ul>
-<li><strong>threadLocalMap 中 entry 的 key 为弱引用</strong></li>
-<li><strong>当线程一直存在时，即使 threadLocal 不再使用，若不是弱引用，就无法回收 threadLocal</strong></li>
-</ul>
-</li>
-<li><strong>防止 entry 与 value 无法回收</strong><ul>
-<li>**用完后需要手动 remove() 即：置 value 与 entry 为 null; **</li>
-<li><strong>当线程一直存在时，若不 remove，就可能会内存泄漏；但是当线程销毁时，即使不 remove，也不会泄漏</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="3-创建线程"><a href="#3-创建线程" class="headerlink" title="3 创建线程"></a>3 创建线程</h1><hr>
-<h1 id="4-线程池"><a href="#4-线程池" class="headerlink" title="4 线程池"></a>4 线程池</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fg7UlO56cgzZ7elQA-mscsOTzgln.png"></p>
-<h2 id="4-1-阻塞队列"><a href="#4-1-阻塞队列" class="headerlink" title="4.1 阻塞队列"></a>4.1 阻塞队列</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fthds15rrsnV2SdIn3ge_SJWqCXp.png"></p>
-<hr>
-<h2 id="4-2-七大参数"><a href="#4-2-七大参数" class="headerlink" title="4.2 七大参数"></a>4.2 七大参数</h2><ul>
-<li><strong>corePoolSize：</strong> 线程池核心线程数最大值</li>
-<li><strong>maximumPoolSize：</strong> 线程池最大线程数大小</li>
-<li><strong>keepAliveTime：</strong> 线程池中非核心线程空闲的存活时间大小</li>
-<li><strong>unit：</strong> 线程空闲存活时间单位</li>
-<li><strong>workQueue：</strong> 存放任务的阻塞队列</li>
-<li><strong>threadFactory：</strong> 用于设置创建线程的工厂，可以给创建的线程设置有意义的名字，可方便排查问题。</li>
-<li><strong>handler：</strong> 线城池的饱和策略事件，主要有四种类型。</li>
-</ul>
-<hr>
-<h2 id="4-3-拒绝策略"><a href="#4-3-拒绝策略" class="headerlink" title="4.3 拒绝策略"></a>4.3 拒绝策略</h2><ul>
-<li>AbortPolicy(抛出一个异常，默认的)</li>
-<li>DiscardPolicy(直接丢弃任务)</li>
-<li>DiscardOldestPolicy（丢弃队列里最老的任务，将当前这个任务继续提交给线程池）</li>
-<li>CallerRunsPolicy（交给线程池调用所在的线程进行处理)</li>
-</ul>
-<hr>
-<h2 id="4-4-JDK1-5-后-Executors"><a href="#4-4-JDK1-5-后-Executors" class="headerlink" title="4.4 JDK1.5 后 Executors"></a>4.4 JDK1.5 后 Executors</h2><hr>
-<h1 id="5-Fork-Join"><a href="#5-Fork-Join" class="headerlink" title="5 Fork/Join"></a>5 Fork/Join</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/366781946">https://zhuanlan.zhihu.com/p/366781946</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">集合</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 15:58:41" itemprop="dateCreated datePublished" datetime="2020-08-27T15:58:41+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgNNG85_rtKsyWW37yV2uHusOtzp.jpeg"></p>
-<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><ul>
-<li>结构：<ul>
-<li>Entry[] 哈希桶数组（默认大小为 16）</li>
-<li>链表</li>
-<li>红黑树</li>
-</ul>
-</li>
-<li>Entry 节点：</li>
-</ul>
-<p>hash、key、value、next</p>
-<ul>
-<li><p>插入方式：</p>
-<p>1.8 前为头插法（并发时可能导致死循环）<br>因为写这个代码的作者认为后来的值被查找的可能性更大一点，提升查找的效率。<br>1.8 及以后为尾插法（并发不会死循环）</p>
-</li>
-<li><p>线程不安全</p>
-<ul>
-<li>1.8 前 头插法，并发时可能造成死循环</li>
-<li>1.8 后 尾插法，没有死循环。并发时插入数据可能被覆盖</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h2><h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><h2 id="ConcurrentSkipListMap"><a href="#ConcurrentSkipListMap" class="headerlink" title="ConcurrentSkipListMap"></a>ConcurrentSkipListMap</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span>
-  </nav>
-
-
+</span>
 
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+        
+        
+      </div>
+    </article>
   </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         
-          <span class="site-state-item-count">110</span>
-          <span class="site-state-item-name">posts</span>
+        <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/String/" target="_self">
+          String
         </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/java%E5%9F%BA%E7%A1%80/String/" target="_self">
+        <div>
+          https://www.jb51.net/article/49092.htm String 为什么不可变  为什么 String 要设计成不可变安全 若 String 对象允许改变,那么将会导致各种逻辑错误（s1 的修改会影响 s2） 尤其是 String 对象会被当作各种参数使用    12String s1 = &quot;abcd&quot;;String s2 = &quot;abcd&q
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 16:36" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">categories</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/JMM/" target="_self">
+          JMM
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/JMM/" target="_self">
+        <div>
+          &gt; JMM 定义了 Java 虚拟机(JVM)在计算机内存(RAM)中的工作方式。（对特定的内存或高速缓存进行读写访问的过程抽象）  从抽象的角度来看，JMM 定义了线程和主内存之间的抽象关系：线程之间的共享变量存储在主内存（Main Memory）中，每个线程都有一个私有的本地内存（Local Memory），本地内存中存储了该线程以读/写共享变量的副本。本地内存是 JMM 的一个抽象概念
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 16:02" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/JVM/" class="category-chain-item">JVM</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" target="_self">
+          类加载
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" target="_self">
+        <div>
+          1 加载 通过一个类的全限定名获取定义此类的二进制字节流 可以不从 class 文件中获取   将二进制字节流代表的静态存储结构转化为方法区的运行时数据结构 在堆中生成一个代表这个类的 java.lang.Class 对象，作为程序访问方法区这个类型数据的外部接口  1.1 类加载器1.1.1 类与类加载器1.1.2 双亲委派模型 2 连接 加载阶段与连接阶段的部分动作是交叉进行的，但开始时间有固
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 16:02" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/JVM/" class="category-chain-item">JVM</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/GC/" target="_self">
+          GC
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/GC/" target="_self">
+        <div>
+          排查 初步判断是否频繁 gc，以及 gc 效果： jstat -gc 进程 id 刷新间隔时间 ms jstat -gc 7904 5000 S0C：第一个幸存区的大小 S1C：第二个幸存区的大小 S0U：第一个幸存区的使用大小 S1U：第二个幸存区的使用大小 EC：伊甸园区的大小 EU：伊甸园区的使用大小 OC：老年代大小 OU：老年代使用大小 MC：方法区大小 MU：方法区使用大小 CCSC
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 16:01" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/JVM/" class="category-chain-item">JVM</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Cloud/" target="_self">
+          Spring Cloud
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Cloud/" target="_self">
+        <div>
+          1 Eureka1.0 Eureka 与 Zookeeper 对比 Eureka： 符合 AP 原则 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。 注：2018 年已官宣停止维护   Zookeeper： 符合 CP 原则 为了保证一致性，在所有节点同步完成之前是阻塞状态的。      蓝色的  Eureka Server  是  Eureka
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 16:00" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" class="category-chain-item">spring</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Boot/" target="_self">
+          Spring Boot
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Boot/" target="_self">
+        <div>
+          –启动：  new SpringApplication()：创建 SpringApplication 实例，负责加载配置一些基本的环境变量、资源、构造器、监听器 run()：负责 springboot 整个启动过程，包括加载创建环境、打印 banner、配置文件、配置应用上下文，加载 bean 等等 sb 整个生命周期几乎都在 run 方法中；  –配置Spring Cloud 构建于 Sprin
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 16:00" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" class="category-chain-item">spring</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Framework/" target="_self">
+          Spring Framework
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Framework/" target="_self">
+        <div>
+          1 Spring MVC Spring 最初利用“工厂模式”（DI）和“代理模式”（AOP）解耦应用组件。大家觉得挺好用，于是按照这种模式搞了一个 MVC 框架（一些用 Spring 解耦的组件），用开发 web 应用（ SpringMVC ）。然后有发现每次开发都写很多样板代码，为了简化工作流程，于是开发出了一些“懒人整合包”（starter），这套就是 Spring Boot    2 bea
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 16:00" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" class="category-chain-item">spring</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" target="_self">
+          多线程
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/java%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" target="_self">
+        <div>
+          1 锁1.1 synchronized1.1.1 锁升级Hotspot 实现：   1.1.2 锁消除1.1.3 锁粗化 1.2 Lock 1.3 volatile 2 ThreadLocal 应用： Spring 中的@Transaction 中有应用 SpringSecurity 中有应用 myBatis 的 PageHelper 分页插件      Thread,ThreadLocal,Th
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 15:58" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88/" target="_self">
+          集合
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/08/27/java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88/" target="_self">
+        <div>
+          MapHashMap 结构： Entry[] 哈希桶数组（默认大小为 16） 链表 红黑树   Entry 节点：  hash、key、value、next  插入方式： 1.8 前为头插法（并发时可能导致死循环）因为写这个代码的作者认为后来的值被查找的可能性更大一点，提升查找的效率。1.8 及以后为尾插法（并发不会死循环）  线程不安全  1.8 前 头插法，并发时可能造成死循环 1.8 后
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-27 15:58" pubdate>
+              2020-08-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/10/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#board">9</a><a class="page-number" href="/page/10/#board">10</a><span class="page-number current">11</span>
+    </span>
   </nav>
-</div>
 
 
 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  </div>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
-        
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
 
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

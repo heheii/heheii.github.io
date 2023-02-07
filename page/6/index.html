@@ -1,1696 +1,941 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="will">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="热心市民王先生的小破站">
 <meta property="og:url" content="http://example.com/page/6/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="热心市民王先生的小破站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="will">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>热心市民王先生的小破站</title>
 
-<link rel="canonical" href="http://example.com/page/6/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Hexo</title>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>heheii</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                
+                <span>remark</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="heheii"></span>
+          
+        </div>
 
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
 
 </div>
-    </header>
 
+  </header>
+
+  <main>
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
           
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-          <div class="content index posts-expand">
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-4-%E5%86%85%E5%AD%98/" target="_self">
+          Redis-内存
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-4-%E5%86%85%E5%AD%98/" target="_self">
+        <div>
+          4 内存 4.1 Redis 内存消耗划分 4.1.1 自身内存4.1.2 对象内存 redis 内存占用最大一部分，存储用户的所有数据 简单理解为 sizeof（keys）+sizeof（values） key：应当尽量避免使用过长的 key value：在使用时一定要合理预估并监控 value 对象占用情况， 避免内存溢出    4.1.3 缓冲内存 客户端缓冲（所有接入到 Redis 服务器
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-07 09:51" pubdate>
+              2021-02-07
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-      
+
+<span class="category-chains">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-4-%E5%86%85%E5%AD%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-4-%E5%86%85%E5%AD%98/" class="post-title-link" itemprop="url">Redis-内存</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-07 09:51:27" itemprop="dateCreated datePublished" datetime="2021-02-07T09:51:27+08:00">2021-02-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:37:47" itemprop="dateModified" datetime="2023-02-08T00:37:47+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="4-内存"><a href="#4-内存" class="headerlink" title="4 内存"></a>4 内存</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fp9joROEraAgrK03OLKLv3iAMNlo.png"></p>
-<h2 id="4-1-Redis-内存消耗划分"><a href="#4-1-Redis-内存消耗划分" class="headerlink" title="4.1 Redis 内存消耗划分"></a>4.1 Redis 内存消耗划分</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fsc8r_QXa7nptyKiER-MKHjX8w4r.png"></p>
-<h3 id="4-1-1-自身内存"><a href="#4-1-1-自身内存" class="headerlink" title="4.1.1 自身内存"></a>4.1.1 自身内存</h3><h3 id="4-1-2-对象内存"><a href="#4-1-2-对象内存" class="headerlink" title="4.1.2 对象内存"></a>4.1.2 <strong>对象内存</strong></h3><ul>
-<li>redis 内存占用最大一部分，存储用户的所有数据</li>
-<li>简单理解为 sizeof（keys）+sizeof（values）<ul>
-<li>key：应当尽量避免使用过长的 key</li>
-<li>value：在使用时一定要合理预估并监控 value 对象占用情况， 避免内存溢出</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-1-3-缓冲内存"><a href="#4-1-3-缓冲内存" class="headerlink" title="4.1.3 缓冲内存"></a>4.1.3 缓冲内存</h3><ul>
-<li>客户端缓冲（所有接入到 Redis 服务器 TCP 连接的输入输出缓冲 ，输入输出缓冲区在大流量的场景中容易失控， 造成 Redis 内存的不稳定， 需要重点监控 ）<ul>
-<li>输入缓冲：无法控制，最大 1G，如果超过将断开连接</li>
-<li>输出缓冲：通过参数 client-output-buffer-limit 控制 ，具体如下：<ul>
-<li>普通客户端</li>
-<li>从客户端</li>
-<li>订阅客户端</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>复制积压缓冲区<ul>
-<li>Redis 在 2.8 版本之后提供了一个可重用的固定大小缓<br>冲区用于实现部分复制功能， 根据 repl-backlog-size 参数控制， 默认 1MB。 对<br>于复制积压缓冲区整个主节点只有一个， 所有的从节点共享此缓冲区， 因此<br>可以设置较大的缓冲区空间， 如 100MB， 这部分内存投入是有价值的， 可以<br>有效避免全量复制</li>
-</ul>
-</li>
-<li>AOF 缓冲区<ul>
-<li>用于在 Redis 重写期间保存最近的写入命令 ，AOF 缓冲区空间消耗用户无法控制， 消耗的内存取决于 AOF 重写时间和写入命令量， 这部分空间占用通常很小。</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-1-4-内存碎片"><a href="#4-1-4-内存碎片" class="headerlink" title="4.1.4 内存碎片"></a>4.1.4 内存碎片</h3><ul>
-<li><strong>内存分配器</strong><ul>
-<li>jemalloc （默认）</li>
-<li>glibc</li>
-<li>tcmalloc</li>
-</ul>
-</li>
-<li><strong>内存分配策略</strong><ul>
-<li>一般采用<strong>固定范围的内存块</strong>进行分配</li>
-</ul>
-</li>
-<li><strong>出现内存碎片的情况</strong>（当存储的数据长短差异较大时， 以下场景容易出现高内存碎片问题：）<ul>
-<li><strong>频繁更新操作</strong>（例如频繁对已存在的键执行 append、 setrange 等更新操作）</li>
-<li><strong>大量过期键删除</strong>（键对象过期删除后， 释放的空间无法得到充分利用， 导致碎片率上升）</li>
-</ul>
-</li>
-<li>**出现高内存碎片问题时常见的解决方式 **<ul>
-<li><strong>数据对齐</strong><ul>
-<li>（在条件允许的情况下尽量做数据对齐， 比如数据尽量采用数字类型或者固定长度字符串等， 但是这要视具体的业务而定， 有些场景无法做到 ）</li>
-</ul>
-</li>
-<li><strong>安全重启</strong><ul>
-<li>重启节点可以做到内存碎片重新整理</li>
-<li>可以利用高可用架构， 如 Sentinel（哨兵）或 Cluster， 将碎片率过高的主节点转换为从节点， 进行安全重启</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="4-2-内存分析"><a href="#4-2-内存分析" class="headerlink" title="4.2 内存分析"></a>4.2 内存分析</h2><ul>
-<li>info memory<ul>
-<li>used_memory_rss<ul>
-<li>redis 进程占用的内存总量</li>
-</ul>
-</li>
-<li>used_memory<ul>
-<li>redis 分配器分配的内存总量，即内部存储的所有数据内存占用量</li>
-</ul>
-</li>
-<li>men_fragmentation_ratio = used_memory_rss / used_memory<ul>
-<li><blockquote>
-<p>1 时：多出的部分没有用于数据存储，被内存碎片消耗</p>
-</blockquote>
-</li>
-<li>&lt;1 时：OS 把 redis 内存交换到硬盘，redis 性能会变很差，甚至僵死！</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtAK1R6aa0RqgQj3XUztzEqfqlC2.png"></p>
-<hr>
-<h2 id="4-3-内存管理"><a href="#4-3-内存管理" class="headerlink" title="4.3 内存管理"></a>4.3 内存管理</h2><p><a target="_blank" rel="noopener" href="https://redis.io/commands/expire">https://redis.io/commands/expire</a></p>
-<h3 id="4-3-1-内存回收策略"><a href="#4-3-1-内存回收策略" class="headerlink" title="4.3.1 内存回收策略"></a>4.3.1 内存回收策略</h3><ul>
-<li><strong>删除到达过期时间的键对象</strong><ul>
-<li><strong>惰性删除</strong><ul>
-<li>A key is passively expired simply when some client tries to access it, and the key is found to be timed out.</li>
-</ul>
-</li>
-<li><strong>定时任务删除</strong><ul>
-<li>自适应算法，根据键的过期比例、 使用快慢两种速率模式回收键</li>
-<li>快慢两种速率模式内部删除逻辑相同，仅执行的超时时间不同</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>内存溢出控制策略（</strong>内存使用达到 maxmemory 上限时触发）<ul>
-<li>noeviction （默认）</li>
-<li>volatile-lru</li>
-<li>allkeys-lru</li>
-<li>allkeys-random</li>
-<li>volatile-random</li>
-<li>volatile-ttl</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-3-2-内存上限"><a href="#4-3-2-内存上限" class="headerlink" title="4.3.2 内存上限"></a>4.3.2 内存上限</h3><hr>
-<h2 id="4-4-内存优化"><a href="#4-4-内存优化" class="headerlink" title="4.4 内存优化"></a>4.4 内存优化</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" class="category-chain-item">redis</a>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Redis-常见问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-04 16:28:36" itemprop="dateCreated datePublished" datetime="2021-02-04T16:28:36+08:00">2021-02-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>未设置好 ttl 导致 redis 占用内存过多（30+G）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
   
 
-      
+      </span>
+    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Redis-数据结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-04 16:23:55" itemprop="dateCreated datePublished" datetime="2021-02-04T16:23:55+08:00">2021-02-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:37:36" itemprop="dateModified" datetime="2023-02-08T00:37:36+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="0-概述"><a href="#0-概述" class="headerlink" title="0 概述"></a>0 概述</h1><ul>
-<li>键对象都是字符串</li>
-<li>value 对象更复杂些， 主要包含 5 种基本数据类型：<ul>
-<li>字符串</li>
-<li>列表</li>
-<li>哈希</li>
-<li>集合</li>
-<li>有序集合</li>
-<li>其他数据类型都是建立在这 5 种数据结构之上实现的， 如：<ul>
-<li>Bitmaps 和 HyperLogLog 使用字符串实现</li>
-<li>GEO 使用有序集合实现等</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="1-五种基本数据结构"><a href="#1-五种基本数据结构" class="headerlink" title="1 五种基本数据结构"></a>1 五种基本数据结构</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhtAfmZnk8SAHaZmtateCZJYu-Vz.png"></p>
-<h2 id="1-1-String"><a href="#1-1-String" class="headerlink" title="1.1 String"></a>1.1 String</h2><h3 id="1-1-1-SDS-数据结构"><a href="#1-1-1-SDS-数据结构" class="headerlink" title="1.1.1 SDS 数据结构"></a>1.1.1 SDS 数据结构</h3><blockquote>
-<p>类似 java 的<strong>ArrayList</strong></p>
-</blockquote>
-<ul>
-<li>Redis 没有直接使用 C 中的 String，自己定义了 SDS （_Simple Dynamic String_）数据结构存储字符串</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">char</span> *sds;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr5</span> &#123;</span>     <span class="comment">// 对应的字符串长度小于 1&lt;&lt;5</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 3 lsb of type, and 5 msb of string length */</span></span><br><span class="line">    <span class="type">char</span> buf[];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr8</span> &#123;</span>     <span class="comment">// 对应的字符串长度小于 1&lt;&lt;8</span></span><br><span class="line">    <span class="type">uint8_t</span> len; <span class="comment">/* used */</span>                       <span class="comment">//目前字符串的长度</span></span><br><span class="line">    <span class="type">uint8_t</span> alloc;                                <span class="comment">//已分配大小</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags;                          <span class="comment">//flag用3bit来标明类型，其余5bit目前没有使用</span></span><br><span class="line">    <span class="type">char</span> buf[];                                   <span class="comment">//柔性数组，以&#x27;\0&#x27;结尾</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr16</span> &#123;</span>    <span class="comment">// 对应的字符串长度小于 1&lt;&lt;16</span></span><br><span class="line">    <span class="type">uint16_t</span> len; <span class="comment">/* used */</span></span><br><span class="line">    <span class="type">uint16_t</span> alloc; <span class="comment">/* excluding the header and null terminator */</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 3 lsb of type, 5 unused bits */</span></span><br><span class="line">    <span class="type">char</span> buf[];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr32</span> &#123;</span>    <span class="comment">// 对应的字符串长度小于 1&lt;&lt;32</span></span><br><span class="line">    <span class="type">uint32_t</span> len; <span class="comment">/* used */</span></span><br><span class="line">    <span class="type">uint32_t</span> alloc; <span class="comment">/* excluding the header and null terminator */</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 3 lsb of type, 5 unused bits */</span></span><br><span class="line">    <span class="type">char</span> buf[];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> __<span class="title">attribute__</span> ((__<span class="title">packed__</span>)) <span class="title">sdshdr64</span> &#123;</span>    <span class="comment">// 对应的字符串长度小于 1&lt;&lt;64</span></span><br><span class="line">    <span class="type">uint64_t</span> len; <span class="comment">/* used */</span></span><br><span class="line">    <span class="type">uint64_t</span> alloc; <span class="comment">/* excluding the header and null terminator */</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> flags; <span class="comment">/* 3 lsb of type, 5 unused bits */</span></span><br><span class="line">    <span class="type">char</span> buf[];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-1-2-对比"><a href="#1-1-2-对比" class="headerlink" title="1.1.2 对比"></a>1.1.2 对比</h3><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th>C 语言的 String</th>
-<th>SDS <strong>（</strong><em>Simple Dynamic String</em><strong>）</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>效率</td>
-<td>获取字符串长度时间复杂度</td>
-<td>** O(N)**</td>
-<td>O(1）</td>
-<td>因为 C 不保存数组的长度，每次都需要遍历一遍整个数组；</td>
-</tr>
-<tr>
-<td></td>
-<td>空间预分配</td>
-<td>-</td>
-<td>✔</td>
-<td>修改 SDS 扩充长度时，会预分配额外的空间</td>
-</tr>
-<tr>
-<td></td>
-<td>惰性空间释放</td>
-<td>-</td>
-<td>✔</td>
-<td></td>
-</tr>
-<tr>
-<td>安全性</td>
-<td><strong>杜绝缓冲区溢出/内存泄漏</strong></td>
-<td>-</td>
-<td>✔</td>
-<td>String 执行拼接/截断操作，如果操作不当（忘记重新分配内存）就很容易造成问题，SDS 则会自动扩容/释放空间；</td>
-</tr>
-<tr>
-<td>功能</td>
-<td>二进制安全</td>
-<td>-</td>
-<td>✔</td>
-<td>C 语言中的字符串中间出现的 <code>&#39;\\0&#39;</code>就认为到了末尾，所以不能保存图片，视频等二进制文件</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="1-2-Hash"><a href="#1-2-Hash" class="headerlink" title="1.2 Hash"></a>1.2 Hash</h2><blockquote>
-<ul>
-<li>与 java 的 HashMap 类似<ul>
-<li>数组+链表</li>
-<li>链地址法解决 hash 冲突</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 哈希表节点 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dictEntry</span> &#123;</span></span><br><span class="line">    <span class="comment">// 键</span></span><br><span class="line">    <span class="type">void</span> *key;</span><br><span class="line">    <span class="comment">// 值</span></span><br><span class="line">    <span class="class"><span class="keyword">union</span> &#123;</span></span><br><span class="line">        <span class="type">void</span> *val;</span><br><span class="line">        <span class="type">uint64_t</span> u64;</span><br><span class="line">        <span class="type">int64_t</span> s64;</span><br><span class="line">    &#125; v;</span><br><span class="line">    <span class="comment">// 指向下个哈希表节点，形成链表</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dictEntry</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; dictEntry;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* This is our hash table structure. Every dictionary has two of this as we implement incremental rehashing, for the old to the new table.</span></span><br><span class="line"><span class="comment"> * 哈希表</span></span><br><span class="line"><span class="comment"> * 每个字典都使用两个哈希表，以实现渐进式 rehash 。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dictht</span> &#123;</span></span><br><span class="line">    <span class="comment">// 哈希表数组(一个哈希表数组，数组的每个项是entry链表的头结点)</span></span><br><span class="line">    dictEntry **table;</span><br><span class="line">    <span class="comment">// 哈希表大小</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> size;</span><br><span class="line">    <span class="comment">// 哈希表大小掩码，用于计算索引值</span></span><br><span class="line">    <span class="comment">// 总是等于 size - 1</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> sizemask;</span><br><span class="line">    <span class="comment">// 该哈希表已有节点的数量</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> used;</span><br><span class="line">&#125; dictht;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 字典 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">dict</span> &#123;</span></span><br><span class="line">    <span class="comment">// 类型特定函数</span></span><br><span class="line">    dictType *type;</span><br><span class="line">    <span class="comment">// 私有数据</span></span><br><span class="line">    <span class="type">void</span> *privdata;</span><br><span class="line">    <span class="comment">// 哈希表</span></span><br><span class="line">    dictht ht[<span class="number">2</span>];</span><br><span class="line">    <span class="comment">// rehash 索引(当 rehash 不在进行时，值为 -1)</span></span><br><span class="line">    <span class="type">int</span> rehashidx; <span class="comment">/* rehashing not in progress if rehashidx == -1 */</span></span><br><span class="line">    <span class="comment">// 目前正在运行的安全迭代器的数量</span></span><br><span class="line">    <span class="type">int</span> iterators; <span class="comment">/* number of iterators currently running */</span></span><br><span class="line">&#125; dict;</span><br></pre></td></tr></table></figure>
-
-<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fqb7VIsI1QxCLiH0I5Odq5BiLjta.png"></h3><h3 id="1-2-1-渐进式-Rehash"><a href="#1-2-1-渐进式-Rehash" class="headerlink" title="1.2.1 渐进式 Rehash"></a>1.2.1 渐进式 Rehash</h3><ul>
-<li><strong>目的：</strong><ul>
-<li>保证数据量大时<strong>不会阻塞其他操作</strong></li>
-<li>rehash 是以<strong>bucket</strong>(桶,哈希表数组中的一条 entry 链表)为基本单位进行渐进式的数据迁移的，从 ht[0]中迁移至 ht[1]，每步完成一个 bucket 的迁移，直至所有数据迁移完毕</li>
-</ul>
-</li>
-<li><strong>步骤</strong><ol>
-<li> 在执行添加，删除，查找操作时，执行一次 dictRehash(dict,1)，迁移一个 bucket 数据</li>
-<li> 为 ht[1] 分配空间，让字典同时拥有 ht[0] 和 ht[1] 两个哈希表。</li>
-<li> 字典中维护一个 rehashidx，并将它置为 0，表示 Rehash 开始。</li>
-<li> 在 Rehash 期间，每次对字典操作时，程序还顺便将 ht[0] 在 rehashidx 索引上 bucket rehash 到 ht[1] 中（_ Move all the keys in this _<strong>_bucket _</strong>_from the old to the new hash HT_）</li>
-<li> rehashidx++</li>
-</ol>
-</li>
-<li><strong>在 rehash 期间其他操作</strong><ul>
-<li>查询：会先查 ht[0] ，若无，再查 ht[1]</li>
-<li>插入：直接插入 ht[1]，保证 ht[0] 中数据只减不增</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="1-3-List"><a href="#1-3-List" class="headerlink" title="1.3 List"></a>1.3 List</h2><blockquote>
-<ul>
-<li>类似 java 的<strong>LinkedList</strong><ul>
-<li><strong>双向链表</strong></li>
-<li><strong>插入删除快</strong></li>
-<li><strong>查询慢</strong></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">listNode</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">listNode</span> *<span class="title">prev</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">listNode</span> *<span class="title">next</span>;</span></span><br><span class="line">    <span class="type">void</span> *value;</span><br><span class="line">&#125; listNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">listIter</span> &#123;</span></span><br><span class="line">    listNode *next;</span><br><span class="line">    <span class="type">int</span> direction;</span><br><span class="line">&#125; listIter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">list</span> &#123;</span></span><br><span class="line">    listNode *head;</span><br><span class="line">    listNode *tail;</span><br><span class="line">    <span class="type">void</span> *(*dup)(<span class="type">void</span> *ptr);</span><br><span class="line">    <span class="type">void</span> (*<span class="built_in">free</span>)(<span class="type">void</span> *ptr);</span><br><span class="line">    <span class="type">int</span> (*match)(<span class="type">void</span> *ptr, <span class="type">void</span> *key);</span><br><span class="line">    unsignedlong len;</span><br><span class="line">&#125; <span class="built_in">list</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FoJBk_azdL1YX1ra1kcyxArjDfX9.png"></p>
-<hr>
-<h2 id="1-4-Set"><a href="#1-4-Set" class="headerlink" title="1.4 Set"></a>1.4 Set</h2><blockquote>
-<p>类似 java 的 HashSet</p>
-</blockquote>
-<ul>
-<li>特点<ul>
-<li>无序</li>
-<li>不重复</li>
-</ul>
-</li>
-<li>应用场景<ul>
-<li>随机事件<ul>
-<li>抽奖</li>
-<li>验证码</li>
-<li>好友推荐（取集合交集）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-4-1-intset"><a href="#1-4-1-intset" class="headerlink" title="1.4.1 intset"></a>1.4.1 intset</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 集合对象保存的所有元素都是整数值 &amp;&amp; 集合对象保存的元素数量不超过512个</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">intset</span> &#123;</span></span><br><span class="line">    <span class="comment">// 编码方式</span></span><br><span class="line">    <span class="type">uint32_t</span> encoding;</span><br><span class="line">    <span class="comment">// 集合包含的元素数量</span></span><br><span class="line">    <span class="type">uint32_t</span> length;</span><br><span class="line">    <span class="comment">// 保存元素的数组</span></span><br><span class="line">    <span class="type">int8_t</span> contents[];</span><br><span class="line">&#125; intset;</span><br><span class="line"><span class="comment">//------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">// 不符合以上情况，则使用hashtable, 字典中所有的 value 都是NULL。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsK9C0daGl6AiK5xefHL39KZG9YD.png"></p>
-<h3 id="1-4-2-hashtable"><a href="#1-4-2-hashtable" class="headerlink" title="1.4.2 hashtable"></a>1.4.2 hashtable</h3><p>集合对象保存的所有元素都是整数值 &amp;&amp; 集合对象保存的元素数量不超过 512 个，这时候使用 intset，<br>不然就使用 hashtable, 字典中所有的 value 都是 NULL。这时候 set 就是 value 为 NULL 的特使字典。</p>
-<hr>
-<h2 id="1-5-zset"><a href="#1-5-zset" class="headerlink" title="1.5 zset"></a>1.5 zset</h2><ul>
-<li>底层数据结构（超过阈值（可自己设置），数据结构变成 ziplist）</li>
-</ul>
-<h3 id="1-5-1-跳表-skiplist"><a href="#1-5-1-跳表-skiplist" class="headerlink" title="1.5.1 跳表 skiplist"></a>1.5.1 跳表 skiplist</h3><ul>
-<li>（近似折半查找）有序链表改造成支持折半查找的数据结构（方便查找及插入删除）</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkP1gb9ASQpEvNACPBeOpenIAW9v.png"></p>
-<h3 id="1-5-2-压缩列表-ziplist"><a href="#1-5-2-压缩列表-ziplist" class="headerlink" title="1.5.2 压缩列表 ziplist"></a>1.5.2 压缩列表 ziplist</h3><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgFIp9z1o0dbyry_XX_GzPUR9dC5.svg"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqJu6UdfE4e1BOBtlhK2qpqptEYS.png"></p>
-<ul>
-<li>zlbytes 为 0x50(十进制 80),表示压缩列表的总长度为 80 字节。</li>
-<li>zltail 为 0x3c(十进制 60),尾节点偏移量 60</li>
-<li>zlen 为 0x3(十进制 3),表示压缩列表包含三个节点</li>
-<li>entry：</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmcsD9Knkev4SkTVgRlQbWnZt4Dh.png"></p>
-<ul>
-<li>previous_entry_length 属性以字节为单位,记录了压缩列表中前一个节点的长度。</li>
-<li>encoding 属性记录了节点的 content 属性所保存数据的类型以及长度。</li>
-<li>content 属性负责保存节点的值，节点值可以是一个字节数组或者整数，值的类型和长度由节点的 encoding 属性决定</li>
-</ul>
-<hr>
-<h1 id="2-其他数据类型"><a href="#2-其他数据类型" class="headerlink" title="2 其他数据类型"></a>2 其他数据类型</h1><h2 id="2-1-HyperLogLog"><a href="#2-1-HyperLogLog" class="headerlink" title="2.1 HyperLogLog"></a>2.1 HyperLogLog</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="http://content.research.neustar.biz/blog/hll.html">http://content.research.neustar.biz/blog/hll.html</a></p>
-</blockquote>
-<ul>
-<li>特点<ul>
-<li>无法保证高精度</li>
-<li>节省空间（初始状态的稀疏存储 HyperLogLog 只需 2 字节，密集存储结构为 12KB）</li>
-</ul>
-</li>
-<li>适合场景<ul>
-<li>适合对精度要求不高的大量统计需求</li>
-</ul>
-</li>
-<li>做法<ul>
-<li>HyperLogLog 的基本思想是利用集合中数字的比特串第一个 1 出现位置的最大值来预估整体基数，但是这种预估方法存在较大误差，为了改善误差情况，HyperLogLog 中引入分桶平均的概念，计算 16384 个桶的调和平均数。</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-1-1-存储过程"><a href="#2-1-1-存储过程" class="headerlink" title="2.1.1 存储过程"></a>2.1.1 存储过程</h3><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fq1lfZdZCnUQBDGNnBbToLRwghib.png"></p>
-<h3 id="2-1-2-存储结构"><a href="#2-1-2-存储结构" class="headerlink" title="2.1.2 存储结构"></a>2.1.2 存储结构</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?type=content&q=redis%20HyperLogLog">https://www.zhihu.com/search?type=content&amp;q=redis%20HyperLogLog</a></p>
-</blockquote>
-<ul>
-<li>数据结构</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">hllhdr</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> magic[<span class="number">4</span>]; <span class="comment">/* 魔法值 &quot;HYLL&quot; */</span></span><br><span class="line">    <span class="type">uint8_t</span> encoding; <span class="comment">/* 密集结构或者稀疏结构 HLL_DENSE or HLL_SPARSE. */</span></span><br><span class="line">    <span class="type">uint8_t</span> notused[<span class="number">3</span>]; <span class="comment">/* 保留位, 全为0. */</span></span><br><span class="line">    <span class="type">uint8_t</span> card[<span class="number">8</span>]; <span class="comment">/* 基数大小的缓存 */</span></span><br><span class="line">    <span class="type">uint8_t</span> registers[]; <span class="comment">/* 数据字节数组 */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>HLL_DENSE 密集存储结构<ul>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fj7N3RTAhHdBTngN2KCVeHGFQ893.png"></li>
-</ul>
-</li>
-<li>HLL_SPARSE 稀疏存储结构<ul>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtQyGD5Wt1y7_GP7gF6k5llRjVHO.png"></li>
-<li>ZERO : 一字节，表示连续多少个桶计数为 0，前两位为标志 00，后 6 位表示有多少个桶，最大为 64。</li>
-<li>XZERO : 两个字节，表示连续多少个桶计数为 0，前两位为标志 01，后 14 位表示有多少个桶，最大为 16384。</li>
-<li>VAL : 一字节，表示连续多少个桶的计数为多少，前一位为标志 1，四位表示连桶内计数，所以最大表示桶的计数为 32。后两位表示连续多少个桶。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="2-2-BitMap"><a href="#2-2-BitMap" class="headerlink" title="2.2 BitMap"></a>2.2 BitMap</h2><ul>
-<li>bitmap 并不是一种真实的数据结构，它本质上是<strong>String 数据结构</strong>，只不过操作的<strong>粒度</strong>变成了<strong>位（bit）</strong></li>
-<li>bitmap 就是通过最小的单位 bit 来进行 0 或者 1 的设置，表示某个元素对应的值或者状态。</li>
-<li>bitmap 最多可以存储 2^32 个 bit（String 类型最大长度为 512MB）</li>
-</ul>
-<h3 id="2-2-1-应用场景-BloomFilter"><a href="#2-2-1-应用场景-BloomFilter" class="headerlink" title="2.2.1 应用场景-BloomFilter"></a>2.2.1 应用场景-BloomFilter</h3><p>这个就是 Redis 实现的 BloomFilter，BloomFilter 非常简单，如下图所示，假设已经有 3 个元素 a、b 和 c，分别通过 3 个 hash 算法 h1()、h2()和 h2()计算然后对一个 bit 进行赋值，接下来假设需要判断 d 是否已经存在，那么也需要使用 3 个 hash 算法 h1()、h2()和 h2()对 d 进行计算，然后得到 3 个 bit 的值，恰好这 3 个 bit 的值为 1，这就能够说明：<strong>d 可能存在集合中</strong>。再判断 e，由于 h1(e)算出来的 bit 之前的值是 0，那么说明：<strong>e 一定不存在集合中</strong>：<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvDNDM0nhjvvMPr4DK_KZXxMo3Zi.jpeg"></p>
-<hr>
-<h2 id="2-3-GEO"><a href="#2-3-GEO" class="headerlink" title="2.3 GEO"></a>2.3 GEO</h2><hr>
-<h2 id="2-4-Streams"><a href="#2-4-Streams" class="headerlink" title="2.4 Streams"></a>2.4 Streams</h2><p>Redis5.0 引入的全新数据结构<br>用一句话概括 Streams 就是 Redis 实现的<strong>内存版 kafka</strong>。<br>Stream 的消费模型借鉴了 kafka 的**Consumer Groups(<strong>消费分组</strong>)**的概念，它弥补了 Redis Pub/Sub 不能持久化消息的缺陷。<br>但是它又不同于 kafka，kafka 的消息可以分 partition，而 Stream 不行。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">Spring事务管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-29 17:04:26" itemprop="dateCreated datePublished" datetime="2021-01-29T17:04:26+08:00">2021-01-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-编程式事务"><a href="#1-编程式事务" class="headerlink" title="1 编程式事务"></a>1 编程式事务</h1><ul>
-<li>在代码中手动的管理事务的提交、回滚等操作，代码侵入性比较强</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DefaultTransactionDefinition def = new DefaultTransactionDefinition();</span><br><span class="line">        def.setReadOnly(false);</span><br><span class="line">        def.setIsolationLevel(TransactionDefinition.ISOLATION_READ_COMMITTED);</span><br><span class="line">        def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRES_NEW);</span><br><span class="line">        TransactionStatus status = transactionManager.getTransaction(def);</span><br><span class="line">        try &#123;</span><br><span class="line">            // xxxxxxxxxxxxxxxxxxxxxxxxxxx</span><br><span class="line">            transactionManager.commit(status);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            transactionManager.rollback(status);</span><br><span class="line">            log.error(&quot;删除失败，事务回滚&quot;, e);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-声明式事务"><a href="#2-声明式事务" class="headerlink" title="2 声明式事务"></a>2 声明式事务</h1><ul>
-<li>基于 AOP 面向切面的，它将具体业务与事务处理部分解耦，代码侵入性很低</li>
-<li>实现方式：<ul>
-<li>基于 TX 和 AOP 的 xml 配置文件</li>
-<li>基于@Transactional 注解</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-1-Transactional"><a href="#2-1-Transactional" class="headerlink" title="2.1 @Transactional"></a>2.1 @Transactional</h2><h3 id="2-1-1-作用范围"><a href="#2-1-1-作用范围" class="headerlink" title="2.1.1 作用范围"></a>2.1.1 作用范围</h3><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FuVlXalzP4YQ-wN4CTzvh0I6Cxc6.png"></p>
-<ul>
-<li>TYPE（Class, interface (including annotation type), or enum declaration）<ul>
-<li>类</li>
-<li>接口</li>
-<li>枚举</li>
-</ul>
-</li>
-<li>METHOD（Method declaration）<ul>
-<li>方法</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="2-1-2-Transactional-属性"><a href="#2-1-2-Transactional-属性" class="headerlink" title="2.1.2 @Transactional 属性"></a>2.1.2 @Transactional 属性</h3><h4 id="propagation-属性"><a href="#propagation-属性" class="headerlink" title="propagation 属性"></a>propagation 属性</h4><p>propagation 代表事务的传播行为，默认值为 Propagation.REQUIRED</p>
-<ul>
-<li><strong>Propagation.REQUIRED</strong>：如果当前存在事务，则加入该事务，如果当前不存在事务，则创建一个新的事务。( 也就是说如果 A 方法和 B 方法都添加了注解，在默认传播模式下，A 方法内部调用 B 方法，会把两个方法的事务<strong>合并为一个事务</strong> ）</li>
-<li>Propagation.SUPPORTS：如果当前存在事务，则加入该事务；如果当前不存在事务，则以非事务的方式继续运行。</li>
-<li>Propagation.MANDATORY：如果当前存在事务，则加入该事务；如果当前不存在事务，则抛出异常。</li>
-<li>Propagation.REQUIRES_NEW：重新创建一个新的事务，如果当前存在事务，暂停当前的事务。( 当类 A 中的 a 方法用默认 Propagation.REQUIRED 模式，类 B 中的 b 方法加上采用 Propagation.REQUIRES_NEW 模式，然后在 a 方法中调用 b 方法操作数据库，然而 a 方法抛出异常后，b 方法并没有进行回滚，因为 Propagation.REQUIRES_NEW 会暂停 a 方法的事务 )</li>
-<li>Propagation.NOT_SUPPORTED：以非事务的方式运行，如果当前存在事务，暂停当前的事务。</li>
-<li>Propagation.NEVER：以非事务的方式运行，如果当前存在事务，则抛出异常。</li>
-<li>Propagation.NESTED ：和 Propagation.REQUIRED 效果一样。</li>
-</ul>
-<h4 id="isolation-属性"><a href="#isolation-属性" class="headerlink" title="isolation 属性"></a>isolation 属性</h4><ul>
-<li>isolation ：事务的隔离级别，默认值为 Isolation.DEFAULT。</li>
-<li><strong>Isolation.DEFAULT</strong>：使用底层数据库默认的隔离级别。</li>
-<li>Isolation.READ_UNCOMMITTED</li>
-<li>Isolation.READ_COMMITTED</li>
-<li>Isolation.REPEATABLE_READ</li>
-<li>Isolation.SERIALIZABLE</li>
-</ul>
-<h4 id="timeout-属性"><a href="#timeout-属性" class="headerlink" title="timeout 属性"></a>timeout 属性</h4><ul>
-<li>timeout ：事务的超时时间，默认值为 <strong>-1</strong>。如果超过该时间限制但事务还没有完成，则自动回滚事务。</li>
-</ul>
-<h4 id="readOnly-属性"><a href="#readOnly-属性" class="headerlink" title="readOnly 属性"></a>readOnly 属性</h4><ul>
-<li>readOnly ：指定事务是否为只读事务，默认值为 <strong>false</strong>；为了忽略那些不需要事务的方法，比如读取数据，可以设置 read-only 为 true。</li>
-</ul>
-<h4 id="rollbackFor-属性"><a href="#rollbackFor-属性" class="headerlink" title="rollbackFor 属性"></a>rollbackFor 属性</h4><blockquote>
-<p>By default, a transaction will be rolling back on <strong>RuntimeException</strong> and <strong>Error</strong> but not on checked exceptions (business exceptions</p>
-</blockquote>
-<ul>
-<li>rollbackFor ：用于指定能够触发事务回滚的异常类型（默认只有在<strong>RuntimeException</strong> and <strong>Error 时回滚</strong>），可以指定多个异常类型。</li>
-</ul>
-<h4 id="noRollbackFor-属性"><a href="#noRollbackFor-属性" class="headerlink" title="noRollbackFor 属性"></a>noRollbackFor 属性</h4><ul>
-<li>noRollbackFor：抛出指定的异常类型，不回滚事务，也可以指定多个异常类型。</li>
-</ul>
-<hr>
-<h3 id="2-1-3-Transactional-失效场景"><a href="#2-1-3-Transactional-失效场景" class="headerlink" title="2.1.3 @Transactional 失效场景"></a>2.1.3 @Transactional 失效场景</h3><h4 id="2-1-3-1-应用在非-public-修饰的方法"><a href="#2-1-3-1-应用在非-public-修饰的方法" class="headerlink" title="2.1.3.1 应用在非 public 修饰的方法"></a>2.1.3.1 应用在非 public 修饰的方法</h4><h4 id="2-1-3-2-被同一个类中方法调用"><a href="#2-1-3-2-被同一个类中方法调用" class="headerlink" title="2.1.3.2 被同一个类中方法调用"></a>2.1.3.2 被同一个类中方法调用</h4><h4 id="2-1-3-3-异常被-catch"><a href="#2-1-3-3-异常被-catch" class="headerlink" title="2.1.3.3 异常被 catch"></a>2.1.3.3 异常被 catch</h4><h4 id="2-1-3-4-数据库引擎不支持事务"><a href="#2-1-3-4-数据库引擎不支持事务" class="headerlink" title="2.1.3.4 数据库引擎不支持事务"></a>2.1.3.4 数据库引擎不支持事务</h4><hr>
-<h1 id="3-坑"><a href="#3-坑" class="headerlink" title="3 坑"></a>3 坑</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/25/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" class="post-title-link" itemprop="url">分布式锁</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-25 22:28:51" itemprop="dateCreated datePublished" datetime="2021-01-25T22:28:51+08:00">2021-01-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:19:42" itemprop="dateModified" datetime="2023-02-08T00:19:42+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>基于 MySQL 中的锁：<ul>
-<li>MySQL 本身有自带的悲观锁 for update 关键字，也可以自己实现悲观/乐观锁来达到目的；</li>
-</ul>
-</li>
-<li>基于 Zookeeper 有序节点：<ul>
-<li>Zookeeper 允许临时创建有序的子节点，这样客户端获取节点列表时，就能够当前子节点列表中的序号判断是否能够获得锁；</li>
-</ul>
-</li>
-<li>基于 Redis 的单线程：<ul>
-<li>由于 Redis 是单线程，所以命令会以串行的方式执行，并且本身提供了像 SETNX(set if not exists) 这样的指令，本身具有互斥性；</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/25/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-2-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/25/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-2-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/" class="post-title-link" itemprop="url">Redis-应用场景</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-25 18:39:03" itemprop="dateCreated datePublished" datetime="2021-01-25T18:39:03+08:00">2021-01-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:38:25" itemprop="dateModified" datetime="2023-02-08T00:38:25+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-什么是-redis"><a href="#1-什么是-redis" class="headerlink" title="1 什么是 redis"></a>1 什么是 redis</h1><p>Redis 是一个开源的，使用 C 语言编写，基于内存的数据结构存储，可用作于缓存、消息中间件。</p>
-<h1 id="2-redis-的特点"><a href="#2-redis-的特点" class="headerlink" title="2 redis 的特点"></a>2 redis 的特点</h1><ul>
-<li>性能极高。Redis 能读的速度是 110000 次/s,写的速度是 81000 次/s 。</li>
-<li>丰富的数据类型。</li>
-<li>原子。 Redis 的操作是原子性的，同时 Redis 还支持对几个操作合并后的原子性执行。</li>
-<li>丰富的特性。Redis 还支持 publish/subscribe, 通知, key 过期等等特性。</li>
-</ul>
-<h1 id="3-如何使用-redis"><a href="#3-如何使用-redis" class="headerlink" title="3 如何使用 redis"></a>3 如何使用 redis</h1><h1 id="3-1-添加依赖"><a href="#3-1-添加依赖" class="headerlink" title="3.1 添加依赖"></a>3.1 添加依赖</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-boot-starter-data-redis-reactive&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;commons-pool2&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-2-添加配置"><a href="#3-2-添加配置" class="headerlink" title="3.2 添加配置"></a>3.2 添加配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@ConditionalOnClass(RedisOperations.class)</span><br><span class="line">@EnableConfigurationProperties(RedisProperties.class)</span><br><span class="line">public class RedisConfig &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnMissingBean(name = &quot;redisTemplate&quot;)</span><br><span class="line">    public RedisTemplate&lt;Object, Object&gt; redisTemplate(RedisConnectionFactory redisConnectionFactory) &#123;</span><br><span class="line">        RedisTemplate&lt;Object, Object&gt; template = new RedisTemplate&lt;&gt;();</span><br><span class="line">        // 使用Jackson2JsonRedisSerialize 替换默认序列化(默认采用的是JDK序列化)</span><br><span class="line">        Jackson2JsonRedisSerializer&lt;Object&gt; jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer&lt;&gt;(Object.class);</span><br><span class="line">        ObjectMapper objectMapper = new ObjectMapper();</span><br><span class="line">        // 解决jackson2无法反序列化LocalDateTime的问题</span><br><span class="line">        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);</span><br><span class="line">        objectMapper.registerModule(new JavaTimeModule());</span><br><span class="line">        // 指定要序列化的域，field,get和set,以及修饰符范围，ANY是都有包括private和public</span><br><span class="line">        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">        // 指定序列化输入的类型，类必须是非final修饰的，final修饰的类，比如String,Integer等会跑出异常</span><br><span class="line">        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class="line">        jackson2JsonRedisSerializer.setObjectMapper(objectMapper);</span><br><span class="line">        // value值的序列化采用Jackson2JsonRedisSerialize</span><br><span class="line">        template.setValueSerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        template.setHashValueSerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        // key的序列化采用StringRedisSerializer</span><br><span class="line">        template.setKeySerializer(new StringRedisSerializer());</span><br><span class="line">        template.setHashKeySerializer(new StringRedisSerializer());</span><br><span class="line">        template.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">        return template;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    @ConditionalOnMissingBean(StringRedisTemplate.class)</span><br><span class="line">    public StringRedisTemplate stringRedisTemplate(</span><br><span class="line">        RedisConnectionFactory redisConnectionFactory) &#123;</span><br><span class="line">        StringRedisTemplate template = new StringRedisTemplate();</span><br><span class="line">        template.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">        return template;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">    database: 3</span><br><span class="line">    host: 192.168.8.123</span><br><span class="line">    port: 6379</span><br><span class="line">    lettuce:</span><br><span class="line">      pool:</span><br><span class="line">        max-active: 100</span><br><span class="line">        max-idle: 10</span><br><span class="line">        max-wait: 100000</span><br><span class="line">    timeout: 1000000</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-redis-的应用场景"><a href="#4-redis-的应用场景" class="headerlink" title="4 redis 的应用场景"></a>4 redis 的应用场景</h1><h2 id="4-1-缓存热点数据"><a href="#4-1-缓存热点数据" class="headerlink" title="4.1 缓存热点数据"></a>4.1 缓存热点数据</h2><p>由于 redis 访问速度快、支持的数据类型比较丰富，所以 redis 很适合用来存储热点数据。<br>在新闻及来信来访等模块中，会把一网首页中的信息保存至 redis，从而保证首页的访问速度以及减轻对数据库的压力。</p>
-<h2 id="4-2-分布式锁"><a href="#4-2-分布式锁" class="headerlink" title="4.2 分布式锁"></a>4.2 分布式锁</h2><p>主要利用 redis 的 SET key value [EX seconds|PX milliseconds|KEEPTTL] [NX|XX] [GET]命令实现分布式锁，在获取锁时同时设置过期时间保证获取锁的节点宕机后不会造成死锁。<br>新闻模块及来信来访等模块中有定时任务，为防止集群环境中各节点多次执行定时任务，就采取了通过 redis 实现分布式锁的方案。</p>
-<h2 id="4-3-统计点击量"><a href="#4-3-统计点击量" class="headerlink" title="4.3 统计点击量"></a>4.3 统计点击量</h2><p>在一网首页统计点击量时，若直接刷新点击量至数据库可能会对数据库造成较大压力。由于 redis incrby 命令可以实现原子性的递增，所以可以在 redis 中保存点击量，然后定时刷新至数据库，以此减轻数据库的压力，并且提升性能。</p>
-<h2 id="4-4-获取全局唯一-id"><a href="#4-4-获取全局唯一-id" class="headerlink" title="4.4 获取全局唯一 id"></a>4.4 获取全局唯一 id</h2><p>主要利用 incrby 命令实现原子性的递增，以此获取全局唯一 id<br>在来信来访模块中，为保证信访件号唯一，就采取了通过 redis 获取全局唯一 id 的方案</p>
-<h2 id="4-5-定时任务"><a href="#4-5-定时任务" class="headerlink" title="4.5 定时任务"></a>4.5 定时任务</h2><ul>
-<li>redis.conf 中添加 notify-keyspace-events Ex 配置</li>
-<li>客户端监听 redis 的过期事件（只知道过期的 key，不知道 value）</li>
-</ul>
-<h2 id="4-6-获取时间范围内的值"><a href="#4-6-获取时间范围内的值" class="headerlink" title="4.6 获取时间范围内的值"></a>4.6 获取时间范围内的值</h2><ul>
-<li>zset 数据结构，score 保存时间</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/21/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/21/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">数据库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-21 17:49:53" itemprop="dateCreated datePublished" datetime="2021-01-21T17:49:53+08:00">2021-01-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-OLTP-与-OLAP"><a href="#1-OLTP-与-OLAP" class="headerlink" title="1 OLTP 与 OLAP"></a>1 OLTP 与 OLAP</h1><ul>
-<li>OLTP：<ul>
-<li>应用叫联机事务处理应用，就是类似银行转账等业务的，这类应用对事务要求比较高。</li>
-<li>适合用 mysql 这类数据库</li>
-</ul>
-</li>
-<li>OLAP：<ul>
-<li>应用叫联机分析处理应用，比如推荐系统，是在收集了大量用户行为后进行分析，再得出结论的应用，主要侧重分析，对事务要求非常低。</li>
-<li>适合用 hbase 这类数据库</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/HBase/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/15/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/HBase/" class="post-title-link" itemprop="url">HBase</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-15 13:05:18" itemprop="dateCreated datePublished" datetime="2021-01-15T13:05:18+08:00">2021-01-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:33:26" itemprop="dateModified" datetime="2023-02-08T00:33:26+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" itemprop="url" rel="index"><span itemprop="name">hbase</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
-<li><strong>低成本存储海量</strong>的数据（依赖 HDFS）<ul>
-<li>低成本：列式存储，适合存储稀疏数据</li>
-</ul>
-</li>
-<li><strong>存储数据的”结构“可以地非常灵活（</strong>列式存储<strong>）</strong><ul>
-<li><strong>若只取某几列数据，可以直接取（列簇），无需扫描所有记录</strong></li>
-<li><strong>若想查询所有信息，可以通过列簇一次取出</strong></li>
-<li>拆开每一行的每一列，然后通过 rowKey 关联起来</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhvT32m8F0i_LIr09cLfEE2oqPDE.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99/" class="post-title-link" itemprop="url">字符集与编码规则</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-15 12:09:36" itemprop="dateCreated datePublished" datetime="2021-01-15T12:09:36+08:00">2021-01-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:26:48" itemprop="dateModified" datetime="2023-02-08T00:26:48+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>字符集：为每一个字符分配一个唯一 id（码位）<ul>
-<li>unicode</li>
-</ul>
-</li>
-<li>编码规则：将码位转化为字节序列的规则<ul>
-<li>utf-8 / utf-16</li>
-</ul>
-</li>
-</ul>
-<h1 id="ASCII-码"><a href="#ASCII-码" class="headerlink" title="ASCII 码"></a>ASCII 码</h1><p>在计算机中，1 字节对应 8 位二进制数，而每位二进制数有 0、1 两种状态，因此 1 字节可以组合出 256 种状态。如果这 256 中状态每一个都对应一个符号，就能通过 1 字节的数据表示 256 个字符。美国人于是就制定了一套编码（其实就是个字典），描述英语中的字符和这 8 位二进制数的对应关系，这被称为 ASCII 码。<br>ASCII 码一共定义了 128 个字符，例如大写的字母 A 是 65（对应二进制是 0100 0001）。这 128 个字符只使用了 8 位二进制数中的后面 7 位，最前面的一位统一规定为 0。</p>
-<p>历史问题<br>英语用 128 个字符来编码完全是足够的，但是用来表示其他语言，128 个字符是远远不够的。于是，一些欧洲的国家就决定，将 ASCII 码中闲置的最高位利用起来，这样一来就能表示 256 个字符。但是，这里又有了一个问题，那就是不同的国家的字符集可能不同，就算它们都能用 256 个字符表示全，但是同一个码点（也就是 8 位二进制数）表示的字符可能可能不同。例如，144 在阿拉伯人的 ASCII 码中是 گ，而在俄罗斯的 ASCII 码中是 ђ。         因此，ASCII 码的问题在于尽管所有人都在 0 - 127 号字符上达成了一致，但对于 128 - 255 号字符上却有很多种不同的解释。与此同时，亚洲语言有更多的字符需要被存储，一个字节已经不够用了。于是，人们开始使用两个字节来存储字符。<br>各种各样的编码方式成了系统开发者的噩梦，因为他们想把软件卖到国外。于是，他们提出了一个“内码表”的概念，可以切换到相应语言的一个内码表，这样才能显示相应语言的字母。在这种情况下，如果使用多语种，那么就需要频繁的在内码表内进行切换。</p>
-<h1 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h1><p>最终，美国人意识到他们应该提出一种标准方案来展示世界上所有语言中的所有字符，出于这个目的，Unicode 诞生了。<br>Unicode 可以当作是一本很厚的字典，记录着世界上所有字符与其对应的一个数字。具体是怎样的对应关系，又或者说是如何进行划分的，就不是 Unicode 考虑的问题了，我们只用知道 Unicode 给所有的字符指定了一个数字用来表示该字符。<br>对于 Unicode 有一些误解，它仅仅只是一个字符集，规定了符合对应的二进制代码，至于这个二进制代码如何存储则没有任何规定。它的想法很简单，就是为每个字符规定一个用来表示该字符的数字，仅此而已。<br>Unicode 编码方案：<br>之前提到，Unicode 没有规定字符对应的二进制码如何存储。以汉字“汉”为例，它的 Unicode 码点是 0x6c49，对应的二进制数是 110110001001001，二进制数有 15 位，这也就说明了它至少需要 2 个字节来表示。可以想象，在 Unicode 字典中往后的字符可能就需要 3 个字节或者 4 个字节，甚至更多字节来表示了。<br>这就导致了一些问题，计算机怎么知道你这个 2 个字节表示的是一个字符，而不是分别表示两个字符呢？这里我们可能会想到，那就取个最大的，假如 Unicode 中最大的字符用 4 字节就可以表示了，那么我们就将所有的字符都用 4 个字节来表示，不够的就往前面补 0。这样确实可以解决编码问题，但是却造成了空间的极大浪费，如果是一个英文文档，那文件大小就大出了 3 倍，这显然是无法接受的。<br>于是，为了较好的解决 Unicode 的编码问题， UTF-8 和 UTF-16 两种当前比较流行的编码方式诞生了。当然还有一个 UTF-32 的编码方式，也就是上述那种定长编码，字符统一使用 4 个字节，虽然看似方便，但是却不如另外两种编码方式使用广泛。</p>
-<h1 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h1><p>UTF-8 是一个非常惊艳的编码方式，漂亮的实现了对 ASCII 码的向后兼容，以保证 Unicode 可以被大众接受。<br>UTF-8 是目前互联网上使用最广泛的一种 Unicode 编码方式，它的最大特点就是<strong>可变长。它可以使用 1 - 4 个字节表示一个字符，根据字符的不同变换长度</strong>。编码规则如下：<br>对于单个字节的字符，第一位设为 0，后面的 7 位对应这个字符的 Unicode 码点。因此，对于英文中的 0 - 127 号字符，与 ASCII 码完全相同。这意味着 ASCII 码那个年代的文档用 UTF-8 编码打开完全没有问题。<br>对于需要使用 N 个字节来表示的字符（N &gt; 1），第一个字节的前 N 位都设为 1，第 N + 1 位设为 0，剩余的 N - 1 个字节的前两位都设位 10，剩下的二进制位则使用这个字符的 Unicode 码点来填充。<br><strong>编码规则如下：</strong><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FnPKjDyFsCKtDK9iIhxpe0rLRinQ.png"><br>根据上面编码规则对照表，进行 UTF-8 编码和解码就简单多了。下面以汉字“汉”为利，具体说明如何进行 UTF-8 编码和解码。<br>“汉”的 Unicode 码点是 0x6c49（110 1100 0100 1001），通过上面的对照表可以发现，0x0000 6c49 位于第三行的范围，那么得出其格式为 1110xxxx 10xxxxxx 10xxxxxx。接着，从“汉”的二进制数最后一位开始，从后向前依次填充对应格式中的 x，多出的 x 用 0 补上。这样，就得到了“汉”的 UTF-8 编码为 11100110 10110001 10001001，转换成十六进制就是 0xE6 0xB7 0x89。    <br>解码的过程也十分简单：如果一个字节的第一位是 0 ，则说明这个字节对应一个字符；如果一个字节的第一位 1，那么连续有多少个 1，就表示该字符占用多少个字节。</p>
-<h1 id="UTF-16"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</h1><p>在了解 UTF-16 编码方式之前，先了解一下另外一个概念——“平面”。<br>在上面的介绍中，提到了 Unicode 是一本很厚的字典，她将全世界所有的字符定义在一个集合里。这么多的字符不是一次性定义的，而是分区定义。每个区可以存放 65536 个（2^16）字符，称为一个平面（plane）。目前，一共有 17 个（2^5）平面，也就是说，整个 Unicode 字符集的大小现在是 2^21。<br>最前面的 65536 个字符位，称为基本平面（简称 BMP ），它的码点范围是从 0 到 2^16-1，写成 16 进制就是从 U+0000 到 U+FFFF。所有最常见的字符都放在这个平面，这是 Unicode 最先定义和公布的一个平面。剩下的字符都放在辅助平面（简称 SMP ），码点范围从 U+010000 到 U+10FFFF。<br>基本了解了平面的概念后，再说回到 UTF-16。UTF-16 编码介于 UTF-32 与 UTF-8 之间，同时结合了定长和变长两种编码方法的特点。<strong>它的编码规则很简单：基本平面的字符占用 2 个字节，辅助平面的字符占用 4 个字节</strong>。也就是说，UTF-16 的编码长度要么是 2 个字节（U+0000 到 U+FFFF），要么是 4 个字节（U+010000 到 U+10FFFF）。那么问题来了，当我们遇到两个字节时，到底是把这两个字节当作一个字符还是与后面的两个字节一起当作一个字符呢<br>这里有一个很巧妙的地方，在基本平面内，从 U+D800 到 U+DFFF 是一个空段，即这些码点不对应任何字符。因此，这个空段可以用来映射辅助平面的字符。<br>辅助平面的字符位共有 2^20 个，因此表示这些字符至少需要 20 个二进制位。UTF-16 将这 20 个二进制位分成两半，前 10 位映射在 U+D800 到 U+DBFF，称为高位（H），后 10 位映射在 U+DC00 到 U+DFFF，称为低位（L）。这意味着，一个辅助平面的字符，被拆成两个基本平面的字符表示。<br>因此，当我们遇到两个字节，发现它的码点在 U+D800 到 U+DBFF 之间，就可以断定，紧跟在后面的两个字节的码点，应该在 U+DC00 到 U+DFFF 之间，这四个字节必须放在一起解读。<br>接下来，以汉字”𠮷”为例，说明 UTF-16 编码方式是如何工作的。<br>汉字”𠮷”的 Unicode 码点为 0x20BB7，该码点显然超出了基本平面的范围（0x0000 - 0xFFFF），因此需要使用四个字节表示。首先用 0x20BB7 - 0x10000 计算出超出的部分，然后将其用 20 个二进制位表示（不足前面补 0 ），结果为 0001000010 1110110111。接着，将前 10 位映射到 U+D800 到 U+DBFF 之间，后 10 位映射到 U+DC00 到 U+DFFF 即可。U+D800 对应的二进制数为 1101100000000000，直接填充后面的 10 个二进制位即可，得到 1101100001000010，转成 16 进制数则为 0xD842。同理可得，低位为 0xDFB7。因此得出汉字”𠮷”的 UTF-16 编码为 0xD842 0xDFB7。<br>Unicode3.0 中给出了辅助平面字符的转换公式：<br>H = Math.floor((c-0x10000) / 0x400)+0xD800<br>L = (c - 0x10000) % 0x400 + 0xDC00<br>根据编码公式，可以很方便的计算出字符的 UTF-16 编码</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/%E5%91%BD%E4%BB%A4/%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/13/%E5%91%BD%E4%BB%A4/%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">命令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-13 22:11:25" itemprop="dateCreated datePublished" datetime="2021-01-13T22:11:25+08:00">2021-01-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:25:25" itemprop="dateModified" datetime="2023-02-08T00:25:25+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ul>
-<li><p>启动 systemctl start docker</p>
-</li>
-<li><p>关闭 systemctl stop docker</p>
-</li>
-<li><p>重启 systemctl restart docker</p>
-</li>
-<li><p>抓取 image</p>
-<ul>
-<li>docker image pull [组]/[image 文件名]</li>
-</ul>
-</li>
-<li><p>查看 image</p>
-<ul>
-<li>docker image ls</li>
-<li>docker images</li>
-</ul>
-</li>
-<li><p>运行</p>
-<ul>
-<li>根据 image 文件，每次都生成一个正在运行的容器实例，若本地没有该 image，则从仓库自动抓取<ul>
-<li>docker container run [image 文件名]</li>
-</ul>
-</li>
-<li>启动已经生成并停止运行的 container<ul>
-<li>docker container start [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>终止</p>
-<ul>
-<li>强行立即终止（SIGKILL）<ul>
-<li>docker container kill [containID]</li>
-</ul>
-</li>
-<li>应用程序可以进行一些收尾工作（SIGTERM）<ul>
-<li>docker container stop [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>查看 container</p>
-<ul>
-<li>正在运行<ul>
-<li>docker container ls</li>
-</ul>
-</li>
-<li>所有：正在运行的+停止运行的<ul>
-<li>docker container ls -all</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>删除 container</p>
-<ul>
-<li>docker container rm [containID]</li>
-</ul>
-</li>
-<li><p>创建 image 文件</p>
-<ul>
-<li>docker image build -t [imageName] . (. 表示 Dockerfile 文件路径)</li>
-</ul>
-</li>
-<li><p>查看 log 输出</p>
-<ul>
-<li>docker container logs [containerID]</li>
-<li>docker logs -f -t –tail=20 [redis]</li>
-</ul>
-</li>
-<li><p>进入容器</p>
-<ul>
-<li>docker container exec -it [containerID] /bin/bash</li>
-</ul>
-</li>
-<li><p>拷贝文件至本机</p>
-<ul>
-<li>docker container cp [containID]:[/path/to/file] .</li>
-</ul>
-</li>
-</ul>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><ul>
-<li>docker<ul>
-<li>docker run -d –name redis -p 6379:6379 redis:latest redis-server –appendonly yes –requirepass “123456”</li>
-</ul>
-</li>
-<li>启动：<ul>
-<li>redisstart</li>
-<li>nohup /usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf &amp;</li>
-</ul>
-</li>
-<li>关闭：<ul>
-<li>redisshutdown</li>
-<li>/usr/local/redis/bin/redis-cli shutdown</li>
-</ul>
-</li>
-</ul>
-<h1 id="clickhouse"><a href="#clickhouse" class="headerlink" title="clickhouse"></a>clickhouse</h1><p>docker run -d –name test-clickhouse-server-latest –ulimit nofile=262144:262144 –platform linux/amd64 yandex/clickhouse-server</p>
-<p>docker run -d –name single-clickhouse-server:21.11 <br>–ulimit nofile=262144:262144 <br>-p 8123:8123 -p 9000:9000 -p 9009:9009 <br>–volume=/Users/will/studySpace/docker/clickhouse/single-volume/data:/var/lib/clickhouse <br>–platform linux/amd64 <br>yandex/clickhouse-server:21.11</p>
-<p>docker pull yandex/clickhouse-server:21.11</p>
-<p>docker run -d –name clickhouse-server <br>–ulimit nofile=262144:262144 <br>-p 8123:8123 -p 9000:9000 -p 9009:9009 <br>–volume=/Users/will/studySpace/docker/clickhouse/single-volume/data:/var/lib/clickhouse <br>–platform linux/amd64 <br>lunalabsltd/clickhouse-server:21.7.2.7-arm</p>
-<hr>
-<h1 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">docker启动方式：</span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">拉取kafka:</span></span><br><span class="line">  docker pull wurstmeister/zookeeper</span><br><span class="line"><span class="meta"># </span><span class="language-bash">拉取zookeeper:</span></span><br><span class="line">  docker pull wurstmeister/kafka</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">运行zookeeper:</span></span><br><span class="line">  docker run -d --name zookeeper  -p 2181:2181 -t wurstmeister/zookeeper</span><br><span class="line"><span class="meta">#</span><span class="language-bash">运行kafka:</span></span><br><span class="line">  docker run -d --name kafka --publish 9092:9092 \</span><br><span class="line">  --link zookeeper \</span><br><span class="line">  --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \</span><br><span class="line">  --env KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 \</span><br><span class="line">  --env KAFKA_ADVERTISED_PORT=9092 \</span><br><span class="line">  wurstmeister/kafka</span><br><span class="line"></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash"><span class="built_in">kill</span>进程</span></span><br><span class="line">kill -9 $(ps -ef|grep zookeeper |awk &#x27;$0 !~/grep/ &#123;print $2&#125;&#x27; |tr -s &#x27;\n&#x27; &#x27; &#x27;)</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">启动zookeeper</span></span><br><span class="line">nohup /usr/local/Cellar/kafka/2.7.0/bin/zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties &amp;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">启动kafka</span></span><br><span class="line">nohup /usr/local/Cellar/kafka/2.7.0/bin/kafka-server-start /usr/local/etc/kafka/server.properties &amp;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">创建topic列表</span></span><br><span class="line">kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mainfab_mes_topic</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">查看topic列表</span></span><br><span class="line">kafka-topics --list --zookeeper localhost:2181</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">查看消费者组的消费情况（可以查看谁在消费消息）</span></span><br><span class="line">./kafka-consumer-groups.sh --bootstrap-server 192.168.11.80:9092 --group aegis-consumer-alarmlevel-action-alarm --describe</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">发送消息</span></span><br><span class="line">kafka-console-producer --broker-list localhost:9092 --topic mainfab_mes_topic</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"># </span><span class="language-bash">接收消息</span></span><br><span class="line">kafka-console-consumer --bootstrap-server localhost:9092 --topic mainfab_mes_topic --from-beginning</span><br></pre></td></tr></table></figure>
-
-<h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><ul>
-<li><p>系统偏好设置</p>
-</li>
-<li><p>sudo /usr/local/mysql/support-files/mysql.server stop</p>
-</li>
-<li><p>sudo /usr/local/mysql/support-files/mysql.server start</p>
-</li>
-<li><p>sudo /usr/local/mysql/support-files/mysql.server restart</p>
-</li>
-</ul>
-<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><ul>
-<li>docker<ul>
-<li>docker pull nginx</li>
-<li>docker run –name nginx-test -p 8080:80 -d nginx</li>
-</ul>
-</li>
-<li>配置<ul>
-<li>vi /usr/local/etc/nginx/nginx.conf</li>
-</ul>
-</li>
-<li>命令<ul>
-<li>启动<ul>
-<li>nginx</li>
-</ul>
-</li>
-<li>停止<ul>
-<li>nginx -s quit</li>
-</ul>
-</li>
-<li>重启<ul>
-<li>nginx -s reload</li>
-</ul>
-</li>
-<li>查看配置文件是否正确<ul>
-<li>nginx -t</li>
-</ul>
-</li>
-<li>查看版本<ul>
-<li>nginx -v</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><ul>
-<li>配置<ul>
-<li>vi /Users/will/software/elasticsearch-7.12.0/config/elasticsearch.yml</li>
-</ul>
-</li>
-<li>命令<ul>
-<li>启动<ul>
-<li>elasticsearch</li>
-</ul>
-</li>
-<li>后台启动<ul>
-<li>elasticsearch -d</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><ul>
-<li>netstat<ul>
-<li>netstat -anop | grep 6379 | wc -l</li>
-<li>netstat -anop | grep 6379</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
+</span>
 
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+        
+        
+      </div>
+    </article>
   </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         
-          <span class="site-state-item-count">110</span>
-          <span class="site-state-item-name">posts</span>
+        <a href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" target="_self">
+          Redis-常见问题
         </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" target="_self">
+        <div>
+          未设置好 ttl 导致 redis 占用内存过多（30+G）
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-04 16:28" pubdate>
+              2021-02-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" class="category-chain-item">redis</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">categories</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
+          Redis-数据结构
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
+        <div>
+          0 概述 键对象都是字符串 value 对象更复杂些， 主要包含 5 种基本数据类型： 字符串 列表 哈希 集合 有序集合 其他数据类型都是建立在这 5 种数据结构之上实现的， 如： Bitmaps 和 HyperLogLog 使用字符串实现 GEO 使用有序集合实现等       1 五种基本数据结构 1.1 String1.1.1 SDS 数据结构 类似 java 的ArrayList   R
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-04 16:23" pubdate>
+              2021-02-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" class="category-chain-item">redis</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" target="_self">
+          Spring事务管理
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/29/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" target="_self">
+        <div>
+          1 编程式事务 在代码中手动的管理事务的提交、回滚等操作，代码侵入性比较强  123456789101112DefaultTransactionDefinition def = new DefaultTransactionDefinition();        def.setReadOnly(false);        def.setIsolationLevel(TransactionDefi
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-29 17:04" pubdate>
+              2021-01-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" class="category-chain-item">spring</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/25/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" target="_self">
+          分布式锁
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/25/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" target="_self">
+        <div>
+          基于 MySQL 中的锁： MySQL 本身有自带的悲观锁 for update 关键字，也可以自己实现悲观/乐观锁来达到目的；   基于 Zookeeper 有序节点： Zookeeper 允许临时创建有序的子节点，这样客户端获取节点列表时，就能够当前子节点列表中的序号判断是否能够获得锁；   基于 Redis 的单线程： 由于 Redis 是单线程，所以命令会以串行的方式执行，并且本身提供了
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-25 22:28" pubdate>
+              2021-01-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" class="category-chain-item">分布式</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/25/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-2-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/" target="_self">
+          Redis-应用场景
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/25/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/Redis-2-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/" target="_self">
+        <div>
+          1 什么是 redisRedis 是一个开源的，使用 C 语言编写，基于内存的数据结构存储，可用作于缓存、消息中间件。 2 redis 的特点 性能极高。Redis 能读的速度是 110000 次/s,写的速度是 81000 次/s 。 丰富的数据类型。 原子。 Redis 的操作是原子性的，同时 Redis 还支持对几个操作合并后的原子性执行。 丰富的特性。Redis 还支持 publish/s
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-25 18:39" pubdate>
+              2021-01-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" class="category-chain-item">redis</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/21/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_self">
+          数据库
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/21/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_self">
+        <div>
+          1 OLTP 与 OLAP OLTP： 应用叫联机事务处理应用，就是类似银行转账等业务的，这类应用对事务要求比较高。 适合用 mysql 这类数据库   OLAP： 应用叫联机分析处理应用，比如推荐系统，是在收集了大量用户行为后进行分析，再得出结论的应用，主要侧重分析，对事务要求非常低。 适合用 hbase 这类数据库
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-21 17:49" pubdate>
+              2021-01-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/15/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/HBase/" target="_self">
+          HBase
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/15/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/HBase/" target="_self">
+        <div>
+          简介 低成本存储海量的数据（依赖 HDFS） 低成本：列式存储，适合存储稀疏数据   存储数据的”结构“可以地非常灵活（列式存储） 若只取某几列数据，可以直接取（列簇），无需扫描所有记录 若想查询所有信息，可以通过列簇一次取出 拆开每一行的每一列，然后通过 rowKey 关联起来
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-15 13:05" pubdate>
+              2021-01-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" class="category-chain-item">hbase</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99/" target="_self">
+          字符集与编码规则
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99/" target="_self">
+        <div>
+          字符集：为每一个字符分配一个唯一 id（码位） unicode   编码规则：将码位转化为字节序列的规则 utf-8 / utf-16    ASCII 码在计算机中，1 字节对应 8 位二进制数，而每位二进制数有 0、1 两种状态，因此 1 字节可以组合出 256 种状态。如果这 256 中状态每一个都对应一个符号，就能通过 1 字节的数据表示 256 个字符。美国人于是就制定了一套编码（其实
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-15 12:09" pubdate>
+              2021-01-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="category-chain-item">数据结构与算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/13/%E5%91%BD%E4%BB%A4/%E5%91%BD%E4%BB%A4/" target="_self">
+          命令
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/13/%E5%91%BD%E4%BB%A4/%E5%91%BD%E4%BB%A4/" target="_self">
+        <div>
+          Docker 启动 systemctl start docker  关闭 systemctl stop docker  重启 systemctl restart docker  抓取 image  docker image pull [组]/[image 文件名]   查看 image  docker image ls docker images   运行  根据 image 文件，每次都生成一个
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-13 22:11" pubdate>
+              2021-01-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%91%BD%E4%BB%A4/" class="category-chain-item">命令</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/5/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#board">7</a><a class="page-number" href="/page/8/#board">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#board">11</a><a class="extend next" rel="next" href="/page/7/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
   </nav>
-</div>
 
 
 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  </div>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
-        
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
 
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

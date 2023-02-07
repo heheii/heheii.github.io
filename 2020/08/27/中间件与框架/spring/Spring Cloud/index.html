@@ -1,32 +1,28 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="1 Eureka1.0 Eureka 与 Zookeeper 对比 Eureka： 符合 AP 原则 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。 注：2018 年已官宣停止维护   Zookeeper： 符合 CP 原则 为了保证一致性，在所有节点同步完成之前是阻塞状态的。      蓝色的  Eureka Server  是  Eureka">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="will">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1 Eureka1.0 Eureka 与 Zookeeper 对比 Eureka： 符合 AP 原则 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。 注：2018 年已官宣停止维护   Zookeeper： 符合 CP 原则 为了保证一致性，在所有节点同步完成之前是阻塞状态的。      蓝色的  Eureka Server  是  Eureka">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud">
 <meta property="og:url" content="http://example.com/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Cloud/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="热心市民王先生的小破站">
 <meta property="og:description" content="1 Eureka1.0 Eureka 与 Zookeeper 对比 Eureka： 符合 AP 原则 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。 注：2018 年已官宣停止维护   Zookeeper： 符合 CP 原则 为了保证一致性，在所有节点同步完成之前是阻塞状态的。      蓝色的  Eureka Server  是  Eureka">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqQYn20mWNJl66-qEf1EmkHdQ6Ru.jpeg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FghKc7yychyX0uiccQDuHg9JFAAe.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkpWfwdQO6tlALG4GgkHggnlU6Jd.png">
@@ -39,196 +35,278 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvZKVa8yiBxYkFNM8A3XhXcOvF5h.png">
 <meta property="article:published_time" content="2020-08-27T08:00:20.000Z">
 <meta property="article:modified_time" content="2023-02-07T16:55:33.846Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="article:author" content="will">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqQYn20mWNJl66-qEf1EmkHdQ6Ru.jpeg">
+  
+  
+  
+  <title>Spring Cloud - 热心市民王先生的小破站</title>
 
-<link rel="canonical" href="http://example.com/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Cloud/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Spring Cloud | Hexo</title>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>heheii</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                
+                <span>remark</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Spring Cloud"></span>
+          
+        </div>
 
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-08-27 16:00" pubdate>
+          2020年8月27日 下午
+        </time>
+      </span>
+    
+  </div>
 
-</div>
-    </header>
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3k 字
+        
+      </span>
+    
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          25 分钟
+        
+      </span>
+    
+
+    
+    
   </div>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Cloud/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Spring Cloud
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-27 16:00:20" itemprop="dateCreated datePublished" datetime="2020-08-27T16:00:20+08:00">2020-08-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+        
+      </div>
 
       
-        <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqQYn20mWNJl66-qEf1EmkHdQ6Ru.jpeg"></p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Spring Cloud</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqQYn20mWNJl66-qEf1EmkHdQ6Ru.jpeg" srcset="/img/loading.gif" lazyload></p>
 <h1 id="1-Eureka"><a href="#1-Eureka" class="headerlink" title="1 Eureka"></a>1 Eureka</h1><h2 id="1-0-Eureka-与-Zookeeper-对比"><a href="#1-0-Eureka-与-Zookeeper-对比" class="headerlink" title="1.0 Eureka 与 Zookeeper 对比"></a>1.0 Eureka 与 Zookeeper 对比</h2><ul>
 <li>Eureka： <strong>符合 AP 原则</strong> 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。<ul>
 <li>注：2018 年已官宣停止维护</li>
 </ul>
 </li>
 <li>Zookeeper： <strong>符合 CP 原则</strong> 为了保证一致性，在所有节点同步完成之前是阻塞状态的。</li>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FghKc7yychyX0uiccQDuHg9JFAAe.png"></li>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkpWfwdQO6tlALG4GgkHggnlU6Jd.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FghKc7yychyX0uiccQDuHg9JFAAe.png" srcset="/img/loading.gif" lazyload></li>
+<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkpWfwdQO6tlALG4GgkHggnlU6Jd.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvCry-jadnLgyDS_2NucFa1x3xJe.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvCry-jadnLgyDS_2NucFa1x3xJe.webp" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>蓝色的  Eureka Server  是  Eureka  服务器。<ul>
 <li>这三个代表的是集群，而且他们是<strong>去中心化</strong>的。</li>
@@ -280,14 +358,14 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgKizsKTdZ4362lf35lTMUVoJoun.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgKizsKTdZ4362lf35lTMUVoJoun.webp" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li>Ribbon<ul>
 <li>先在客户端进行负载均衡才进行请求的</li>
 </ul>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FrlmTV4jNB1jtLFsJ9od3113WK4L.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FrlmTV4jNB1jtLFsJ9od3113WK4L.webp" srcset="/img/loading.gif" lazyload></p>
 <h2 id="2-2-Ribbon-中的负载均衡算法"><a href="#2-2-Ribbon-中的负载均衡算法" class="headerlink" title="2.2 Ribbon 中的负载均衡算法"></a>2.2 Ribbon 中的负载均衡算法</h2><ul>
 <li><strong>RoundRobinRule</strong>：轮询策略（Ribbon 默认采用的策略）。若经过一轮轮询没有找到可用的<code>provider</code>，其最多轮询 10 轮。若最终还没有找到，则返回 null。</li>
 <li><strong>RandomRule</strong>: 随机策略，从所有可用的 provider 中随机选择一个。</li>
@@ -298,12 +376,12 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更换负载均衡算法</span></span><br><span class="line"><span class="attr">providerName:</span></span><br><span class="line">  <span class="attr">ribbon:</span></span><br><span class="line">    <span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.netflix.loadbalancer.RandomRule</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment">#更换负载均衡算法</span><br><span class="hljs-attr">providerName:</span><br>  <span class="hljs-attr">ribbon:</span><br>    <span class="hljs-attr">NFLoadBalancerRuleClassName:</span> <span class="hljs-string">com.netflix.loadbalancer.RandomRule</span><br></code></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="3-Hystrix"><a href="#3-Hystrix" class="headerlink" title="3 Hystrix"></a>3 Hystrix</h1><h2 id="3-1-Fallback-失败快速返回-："><a href="#3-1-Fallback-失败快速返回-：" class="headerlink" title="3.1 Fallback(失败快速返回)："></a>3.1 Fallback(失败快速返回)：</h2><pre><code>当某个服务单元发生故障（类似用电器发生短路）之后，通过断路器的故障监控（类似熔断保险丝）， 向调用方返回一个错误响应， 而不是长时间的等待。这样就不会使得线程因调用故障服务被长时间占用不释放，避免了故障在分布式系统中的蔓延。
+<h1 id="3-Hystrix"><a href="#3-Hystrix" class="headerlink" title="3 Hystrix"></a>3 Hystrix</h1><h2 id="3-1-Fallback-失败快速返回-："><a href="#3-1-Fallback-失败快速返回-：" class="headerlink" title="3.1 Fallback(失败快速返回)："></a>3.1 Fallback(失败快速返回)：</h2><pre><code class="hljs">当某个服务单元发生故障（类似用电器发生短路）之后，通过断路器的故障监控（类似熔断保险丝）， 向调用方返回一个错误响应， 而不是长时间的等待。这样就不会使得线程因调用故障服务被长时间占用不释放，避免了故障在分布式系统中的蔓延。
 </code></pre>
-<h2 id="3-2-资源-依赖隔离-线程池隔离-："><a href="#3-2-资源-依赖隔离-线程池隔离-：" class="headerlink" title="3.2 资源/依赖隔离(线程池隔离)："></a>3.2 资源/依赖隔离(线程池隔离)：</h2><pre><code>它会为每一个依赖服务创建一个独立的线程池，这样就算某个依赖服务出现延迟过高的情况，也只是对该依赖服务的调用产生影响， 而不会拖慢其他的依赖服务。
+<h2 id="3-2-资源-依赖隔离-线程池隔离-："><a href="#3-2-资源-依赖隔离-线程池隔离-：" class="headerlink" title="3.2 资源/依赖隔离(线程池隔离)："></a>3.2 资源/依赖隔离(线程池隔离)：</h2><pre><code class="hljs">它会为每一个依赖服务创建一个独立的线程池，这样就算某个依赖服务出现延迟过高的情况，也只是对该依赖服务的调用产生影响， 而不会拖慢其他的依赖服务。
 </code></pre>
 <ul>
 <li>参数：<ul>
@@ -313,14 +391,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="3-3-Hystrix-仪表盘："><a href="#3-3-Hystrix-仪表盘：" class="headerlink" title="3.3 Hystrix 仪表盘："></a>3.3 Hystrix 仪表盘：</h2><pre><code>它主要用来实时监控Hystrix的各项指标信息。通过Hystrix Dashboard反馈的实时信息，可以帮助我们快速发现系统中存在的问题，从而及时地采取应对措施。
+<h2 id="3-3-Hystrix-仪表盘："><a href="#3-3-Hystrix-仪表盘：" class="headerlink" title="3.3 Hystrix 仪表盘："></a>3.3 Hystrix 仪表盘：</h2><pre><code class="hljs">它主要用来实时监控Hystrix的各项指标信息。通过Hystrix Dashboard反馈的实时信息，可以帮助我们快速发现系统中存在的问题，从而及时地采取应对措施。
 </code></pre>
 <hr>
 <h1 id="4-Feign-与-OpenFeign"><a href="#4-Feign-与-OpenFeign" class="headerlink" title="4 Feign 与 OpenFeign"></a>4 Feign 与 OpenFeign</h1><ul>
 <li>OpenFeign 在 Feign 的基础上支持了 Spring MVC 的注解</li>
 <li>Ribbon 和 Hystrix 这两个框架的使用几乎是同时出现的–&gt;Feign 整合了 Spring Cloud Ribbon 与 Spring Cloud Hystrix,还提供了声明式的服务调用(不再通过 RestTemplate)</li>
 </ul>
-<h2 id="4-1-原理"><a href="#4-1-原理" class="headerlink" title="4.1 原理"></a>4.1 原理</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgmfJFw7JJDlFtwRUrlvv0LF44Qm.png"></p>
+<h2 id="4-1-原理"><a href="#4-1-原理" class="headerlink" title="4.1 原理"></a>4.1 原理</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgmfJFw7JJDlFtwRUrlvv0LF44Qm.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>通过 Spring IOC 容器实例，<strong>装配代理实例</strong>，然后进行远程调用。</li>
 <li>执行 **InvokeHandler **调用处理器的 invoke(…)方法<ol>
@@ -381,7 +459,7 @@
 <li><p>工作原理</p>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh7k7es_KunqJjc3EDcS3N3vBVPH.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh7k7es_KunqJjc3EDcS3N3vBVPH.webp" srcset="/img/loading.gif" lazyload></p>
 <h2 id="5-2-配置"><a href="#5-2-配置" class="headerlink" title="5.2 配置"></a>5.2 配置</h2><hr>
 <h1 id="6-Spring-Cloud-Config"><a href="#6-Spring-Cloud-Config" class="headerlink" title="6 Spring Cloud Config"></a>6 Spring Cloud Config</h1><ul>
 <li>Spring Cloud Config 项目是一个解决分布式系统的<strong>配置管理</strong>方案。</li>
@@ -393,193 +471,374 @@
 </ul>
 <p>简单来说，使用 Spring Cloud Config 就是将配置文件放到统一的位置管理(比如 GitHub)，客户端通过接口去获取这些配置文件。在 GitHub 上修改了某个配置文件，应用加载的就是修改后的配置文件。</p>
 <hr>
-<h1 id="7-UAA"><a href="#7-UAA" class="headerlink" title="7 UAA"></a>7 UAA</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FjlBcKTpPPPyZ_9sVvgmfCrukYVn.png"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvZKVa8yiBxYkFNM8A3XhXcOvF5h.png"></p>
+<h1 id="7-UAA"><a href="#7-UAA" class="headerlink" title="7 UAA"></a>7 UAA</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FjlBcKTpPPPyZ_9sVvgmfCrukYVn.png" srcset="/img/loading.gif" lazyload><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvZKVa8yiBxYkFNM8A3XhXcOvF5h.png" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/" class="category-chain-item">spring</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
 
     </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-
-        
+  
+  
+</div>
 
 
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Boot/" rel="prev" title="Spring Boot">
-      <i class="fa fa-chevron-left"></i> Spring Boot
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/GC/" rel="next" title="GC">
-      GC <i class="fa fa-chevron-right"></i>
-    </a></div>
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Spring Cloud</div>
+      <div>http://example.com/2020/08/27/中间件与框架/spring/Spring Cloud/</div>
     </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>will</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年8月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
           </div>
-          
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
 
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/27/java%E5%9F%BA%E7%A1%80/JVM/GC/" title="GC">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">GC</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/27/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/spring/Spring%20Boot/" title="Spring Boot">
+                        <span class="hidden-mobile">Spring Boot</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
       }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
     });
-  }
+  });
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
+  <script>Fluid.plugins.codeWidget();</script>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Eureka"><span class="nav-number">1.</span> <span class="nav-text">1 Eureka</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-0-Eureka-%E4%B8%8E-Zookeeper-%E5%AF%B9%E6%AF%94"><span class="nav-number">1.1.</span> <span class="nav-text">1.0 Eureka 与 Zookeeper 对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85"><span class="nav-number">1.2.</span> <span class="nav-text">1.1 服务提供者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85"><span class="nav-number">1.3.</span> <span class="nav-text">1.2 服务消费者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Eureka-Server-%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83"><span class="nav-number">1.4.</span> <span class="nav-text">1.3 Eureka Server(服务注册中心)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Ribbon"><span class="nav-number">2.</span> <span class="nav-text">2 Ribbon</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Nginx-%E5%92%8C-Ribbon-%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Nginx 和 Ribbon 的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Ribbon-%E4%B8%AD%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Ribbon 中的负载均衡算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Hystrix"><span class="nav-number">3.</span> <span class="nav-text">3 Hystrix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Fallback-%E5%A4%B1%E8%B4%A5%E5%BF%AB%E9%80%9F%E8%BF%94%E5%9B%9E-%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 Fallback(失败快速返回)：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E8%B5%84%E6%BA%90-%E4%BE%9D%E8%B5%96%E9%9A%94%E7%A6%BB-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E9%9A%94%E7%A6%BB-%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 资源&#x2F;依赖隔离(线程池隔离)：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Hystrix-%E4%BB%AA%E8%A1%A8%E7%9B%98%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 Hystrix 仪表盘：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Feign-%E4%B8%8E-OpenFeign"><span class="nav-number">4.</span> <span class="nav-text">4 Feign 与 OpenFeign</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E5%8E%9F%E7%90%86"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-SpringCloud-gateway"><span class="nav-number">5.</span> <span class="nav-text">5 SpringCloud gateway</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E7%AE%80%E4%BB%8B"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E9%85%8D%E7%BD%AE"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Spring-Cloud-Config"><span class="nav-number">6.</span> <span class="nav-text">6 Spring Cloud Config</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-UAA"><span class="nav-number">7.</span> <span class="nav-text">7 UAA</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">110</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-<script src="/js/utils.js"></script>
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
-<script src="/js/motion.js"></script>
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
 
-<script src="/js/schemes/pisces.js"></script>
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
-<script src="/js/next-boot.js"></script>
 
 
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

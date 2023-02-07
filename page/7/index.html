@@ -1,1214 +1,920 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="will">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="热心市民王先生的小破站">
 <meta property="og:url" content="http://example.com/page/7/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="热心市民王先生的小破站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="will">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>热心市民王先生的小破站</title>
 
-<link rel="canonical" href="http://example.com/page/7/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Hexo</title>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>heheii</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                
+                <span>remark</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="heheii"></span>
+          
+        </div>
 
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
 
 </div>
-    </header>
 
+  </header>
+
+  <main>
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
           
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-          <div class="content index posts-expand">
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/13/%E9%A1%B9%E7%9B%AE/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" target="_self">
+          问题总结
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/13/%E9%A1%B9%E7%9B%AE/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" target="_self">
+        <div>
+          1 正向代理：push 服务部署的环境无法直接访问外网，无法调用第三方 api，需要通过代理服务器访问。 1234--push容器需要配置环境变量：JAVA_OPTS   -Dhttps.proxyPort=3128 -Dhttps.proxyHost=192.168.4.11 -Dhttps.proxySet=true -Dhttp.proxyPort=3128 -Dhttp.proxyHost
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-13 17:20" pubdate>
+              2021-01-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-      
+
+<span class="category-chains">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/%E9%A1%B9%E7%9B%AE/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/13/%E9%A1%B9%E7%9B%AE/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">问题总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-13 17:20:43" itemprop="dateCreated datePublished" datetime="2021-01-13T17:20:43+08:00">2021-01-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-正向代理："><a href="#1-正向代理：" class="headerlink" title="1 正向代理："></a>1 正向代理：</h1><p>push 服务部署的环境无法直接访问外网，无法调用第三方 api，需要通过代理服务器访问。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--push容器需要配置环境变量：</span><br><span class="line">JAVA_OPTS   -Dhttps.proxyPort=3128 -Dhttps.proxyHost=192.168.4.11 -Dhttps.proxySet=true -Dhttp.proxyPort=3128 -Dhttp.proxyHost=192.168.4.11</span><br><span class="line">http_proxy 192.168.4.11:3128</span><br><span class="line">https_proxy 192.168.4.11:3128</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="2-SecureRandom-getInstanceStrong"><a href="#2-SecureRandom-getInstanceStrong" class="headerlink" title="2 SecureRandom.getInstanceStrong()"></a>2 SecureRandom.getInstanceStrong()</h1><p>图形验证码生成时需获取随机数，用 SecureRandom.getInstanceStrong()方式获取 SecureRandom，linux 环境下容易产生阻塞</p>
-<hr>
-<h1 id="3-i18n-的-properties-文件需区分大小写"><a href="#3-i18n-的-properties-文件需区分大小写" class="headerlink" title="3 i18n 的 properties 文件需区分大小写"></a>3 i18n 的 properties 文件需区分大小写</h1><p>windows 环境下不区分大小写也不会暴露问题，但是在 linux 上就会导致文件内容无法获取的问题</p>
-<hr>
-<h1 id="4-Flink-集群中每个节点都读取-oracle，导致-cpu-资源暴涨"><a href="#4-Flink-集群中每个节点都读取-oracle，导致-cpu-资源暴涨" class="headerlink" title="4 Flink 集群中每个节点都读取 oracle，导致 cpu 资源暴涨"></a>4 Flink 集群中每个节点都读取 oracle，导致 cpu 资源暴涨</h1><p>把 oracle 中的数据存一份到 hbase 中，然后 job 读 hbase</p>
-<hr>
-<h1 id="5-kf-sh-从头消费-topic-中消息"><a href="#5-kf-sh-从头消费-topic-中消息" class="headerlink" title="5 kf.sh 从头消费 topic 中消息"></a>5 kf.sh 从头消费 topic 中消息</h1><p>导致内存耗尽</p>
-<hr>
-<h1 id="5-redis"><a href="#5-redis" class="headerlink" title="5 redis"></a>5 redis</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 5 second(s)</span><br><span class="line">        at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:70)</span><br><span class="line">        at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)</span><br><span class="line">        at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44)</span><br><span class="line">        at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42)</span><br><span class="line">        at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:270)</span><br><span class="line">        at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.convertLettuceAccessException(LettuceHashCommands.java:471)</span><br><span class="line">        at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hMSet(LettuceHashCommands.java:347)</span><br><span class="line">        at org.springframework.data.redis.connection.DefaultedRedisConnection.hMSet(DefaultedRedisConnection.java:1095)</span><br><span class="line">        at org.springframework.data.redis.core.DefaultHashOperations.lambda$putAll$7(DefaultHashOperations.java:151)</span><br><span class="line">        at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:228)</span><br><span class="line">        at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188)</span><br><span class="line">        at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)</span><br><span class="line">        at org.springframework.data.redis.core.DefaultHashOperations.putAll(DefaultHashOperations.java:150)</span><br></pre></td></tr></table></figure>
-
-<p>ulimit -n 太小，需要改大</p>
-<hr>
-<h1 id="6-redis-连接池满"><a href="#6-redis-连接池满" class="headerlink" title="6 redis 连接池满"></a>6 redis 连接池满</h1><p>客户端不释放资源，导致连接池被占满。<br>现象：redis 中查看客户端数量爆满，重启 redis 后之前 established 状态的连接变成了 close_wait 状态，因为客户端不释放连接。杀掉有问题的客户端进程后问题消失</p>
-<hr>
-<h1 id="7-hashMap-并发-put-导致死循环-gt-cpu-资源耗尽"><a href="#7-hashMap-并发-put-导致死循环-gt-cpu-资源耗尽" class="headerlink" title="7 hashMap 并发 put 导致死循环 -&gt; cpu 资源耗尽"></a>7 hashMap 并发 put 导致死循环 -&gt; cpu 资源耗尽</h1><p>hashMap + parallelStream 并行流 导致了问题。<br>把 hashMap 改成 ConcurrentHashMap 问题解决</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
   
   
 
-      
+      </span>
+    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/13/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/Nginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/13/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/Nginx/" class="post-title-link" itemprop="url">Nginx</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-13 11:03:05" itemprop="dateCreated datePublished" datetime="2021-01-13T11:03:05+08:00">2021-01-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="0-Nginx-配置"><a href="#0-Nginx-配置" class="headerlink" title="0 Nginx 配置"></a>0 Nginx 配置</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">...              #全局块</span><br><span class="line"></span><br><span class="line">events &#123;         #events块</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http      #http块</span><br><span class="line">&#123;</span><br><span class="line">    ...   #http全局块</span><br><span class="line">    keepalive_timeout   65;</span><br><span class="line">    proxy_read_timeout  60; --接口超时时间,默认60（单位：s）</span><br><span class="line">    server        #server块</span><br><span class="line">    &#123;</span><br><span class="line">        ...       #server全局块</span><br><span class="line">        location [PATTERN]   #location块</span><br><span class="line">        &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        location [PATTERN]</span><br><span class="line">        &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        -- error_page</span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">        location = /404.html &#123;</span><br><span class="line">                root /usr/share/nginx/html; -- 会在该/usr/share/nginx/html路径下找404.html文件</span><br><span class="line">        &#125;</span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">                root /usr/share/nginx/html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    server</span><br><span class="line">    &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...     #http全局块</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="1-正向代理-反向代理"><a href="#1-正向代理-反向代理" class="headerlink" title="1 正向代理/反向代理"></a>1 正向代理/反向代理</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhjOnzGxJE-hIDb3UZ0yzHu2tjbN.png"></p>
-<h1 id="2-负载均衡"><a href="#2-负载均衡" class="headerlink" title="2 负载均衡"></a>2 负载均衡</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/12/%E9%A1%B9%E7%9B%AE/%E6%B6%88%E6%81%AF%E8%A1%A5%E5%81%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/12/%E9%A1%B9%E7%9B%AE/%E6%B6%88%E6%81%AF%E8%A1%A5%E5%81%BF/" class="post-title-link" itemprop="url">消息补偿</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-12 18:29:52" itemprop="dateCreated datePublished" datetime="2021-01-12T18:29:52+08:00">2021-01-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/11/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">分布式事务</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-11 22:22:16" itemprop="dateCreated datePublished" datetime="2021-01-11T22:22:16+08:00">2021-01-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:18:47" itemprop="dateModified" datetime="2023-02-08T00:18:47+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-事务"><a href="#1-事务" class="headerlink" title="1 事务"></a>1 事务</h1><ul>
-<li><p>严格意义上的事务：ACID</p>
-<ul>
-<li><p><strong>原子性（Atomicity）</strong></p>
-<ul>
-<li>可以理解为一个事务内的所有操作要么都执行，要么都不执行。</li>
-</ul>
-</li>
-<li><p><strong>一致性（Consistency）</strong></p>
-<ul>
-<li>可以理解为数据是满足完整性约束的，也就是不会存在中间状态的数据，比如你账上有 400，我账上有 100，你给我打 200 块，此时你账上的钱应该是 200，我账上的钱应该是 300，不会存在我账上钱加了，你账上钱没扣的<strong>中间状态</strong>。</li>
-</ul>
-</li>
-<li><p><strong>隔离性（Isolation）</strong></p>
-<ul>
-<li>指的是多个事务并发执行的时候不会互相干扰，即一个事务内部的数据对于其他事务来说是隔离的。</li>
-</ul>
-</li>
-<li><p><strong>持久性（Durability）</strong></p>
-<ul>
-<li>指的是一个事务完成了之后数据就被永远保存下来，之后的其他操作或故障都不会对事务的结果产生影响。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>通俗的事务：</p>
-<ul>
-<li>一些更新操作要么都成功，要么都失败。</li>
-</ul>
-</li>
-</ul>
-<p><em>注：redis 事务无法回滚，不能保证 AC?</em></p>
-<hr>
-<h1 id="2-分布式事务"><a href="#2-分布式事务" class="headerlink" title="2 分布式事务"></a>2 分布式事务</h1><p>分布式系统中实现事务，其实由多个本地事务组成<br>鸵鸟算法</p>
-<h2 id="2-1-两阶段提交"><a href="#2-1-两阶段提交" class="headerlink" title="2.1 两阶段提交"></a>2.1 两阶段提交</h2><p>缺点：<br>单点故障（事务协调者：seata）<br>阻塞资源（提交或者回滚前占用数据库连接）<br>数据不一致（事务提交失败/事务回滚失败）</p>
-<ul>
-<li>seata 作为一个 server 注册在 eureka 上<ul>
-<li>AT</li>
-<li>TCC</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-2-三阶段提交（用的不多）"><a href="#2-2-三阶段提交（用的不多）" class="headerlink" title="2.2 三阶段提交（用的不多）"></a>2.2 三阶段提交（用的不多）</h2><p>can-&gt;pre-&gt;do</p>
-<ul>
-<li>流程<ul>
-<li>can commit（检查 sql，看是否可以执行）</li>
-<li>pre commit（执行 sql，占用连接，但不提交）</li>
-<li>do commit（提交事务）</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-3-TCC（就是两阶段的一种）"><a href="#2-3-TCC（就是两阶段的一种）" class="headerlink" title="2.3 TCC（就是两阶段的一种）"></a>2.3 TCC（就是两阶段的一种）</h2><ul>
-<li>try</li>
-<li>comfirm</li>
-<li>cancel</li>
-</ul>
-<h2 id="2-4-MQ"><a href="#2-4-MQ" class="headerlink" title="2.4 MQ"></a>2.4 MQ</h2><p>base 理论：允许数据暂时的不一致<br>提升性能：server1 -&gt; server2 -&gt; server3，只在 server1 执行完后直接返回，通过 mq 通知后续服务执行。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/05/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/MinIO/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/05/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/MinIO/" class="post-title-link" itemprop="url">MinIO</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-01-05 18:26:50" itemprop="dateCreated datePublished" datetime="2021-01-05T18:26:50+08:00">2021-01-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/" itemprop="url" rel="index"><span itemprop="name">MinIO</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>基于 Apache License v2.0 开源协议</li>
-<li>兼容 Amazon S3 云存储服务接口</li>
-<li>适合于存储大容量非结构化的数据，例如图片、视频、日志文件、备份数据和容器/虚拟机镜像（存储对象大小从几 kb 到最大 5T 不等）</li>
-</ul>
-<h1 id="1-Amazon-S3"><a href="#1-Amazon-S3" class="headerlink" title="1 Amazon S3"></a>1 Amazon S3</h1><p><strong>Amazon Simple Storage Service</strong> (Amazon S3) 是一种面向 Internet 的存储服务。可以通过 Amazon S3 随时在 Web 上的任何位置存储和检索的任意大小的数据。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/31/java%E5%9F%BA%E7%A1%80/IO/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/31/java%E5%9F%BA%E7%A1%80/IO/" class="post-title-link" itemprop="url">IO</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-12-31 11:51:20" itemprop="dateCreated datePublished" datetime="2020-12-31T11:51:20+08:00">2020-12-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiampI4hMgKOD3bVN98SFHVN3QoS.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">设计模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-12-31 09:53:31" itemprop="dateCreated datePublished" datetime="2020-12-31T09:53:31+08:00">2020-12-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:25:58" itemprop="dateModified" datetime="2023-02-08T00:25:58+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>适配器模式：<ul>
-<li>特点<ul>
-<li>包装另一个对象，并提供<strong>不同的接口</strong>。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>外观模式：<ul>
-<li>特点<ul>
-<li>包装<strong>许多</strong>对象，以简化他们的接口。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>装饰器模式（又称 包装（Wrapper）模式）：<ul>
-<li>特点<ul>
-<li>包装另一个对象，保持<strong>原有的接口</strong>，并提供<strong>额外的行为</strong>。</li>
-<li>从来不创建被装饰的对象，它总是添加新功能到已经存在的对象上</li>
-<li>可以通过嵌套装饰添加多重额外功能</li>
-</ul>
-</li>
-<li>应用<ul>
-<li>java.io</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>代理模式：<ul>
-<li>特点<ul>
-<li>包装另一个对象，并**控制对它的访问(安全，权限等)**。</li>
-<li>在被代理对象不存在的时候会创建被代理对象</li>
-<li>一般不推荐使用嵌套代理</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>观察者模式</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/30/java%E5%9F%BA%E7%A1%80/%E5%9B%BD%E9%99%85%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/30/java%E5%9F%BA%E7%A1%80/%E5%9B%BD%E9%99%85%E5%8C%96/" class="post-title-link" itemprop="url">国际化</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-12-30 17:09:14" itemprop="dateCreated datePublished" datetime="2020-12-30T17:09:14+08:00">2020-12-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>java.util.ResourceBundle 类通常用来实现国际化</li>
-<li>它使用的 properties 文件的文件名规范：<ul>
-<li>自定义名<em>语言代码</em>国别代码.properties</li>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fn-vQPd_DY6S_ezfXJEcNBksZdmO.png">（cn 需要大写，不然 Linux 环境无法读取该文件内容）</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/17/%E9%A1%B9%E7%9B%AE/%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/17/%E9%A1%B9%E7%9B%AE/%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">代码扫描记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-12-17 14:17:26" itemprop="dateCreated datePublished" datetime="2020-12-17T14:17:26+08:00">2020-12-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Enum-中不应存在-public-属性-setter-方法"><a href="#1-Enum-中不应存在-public-属性-setter-方法" class="headerlink" title="1 Enum 中不应存在 public 属性/setter 方法"></a>1 Enum 中不应存在 public 属性/setter 方法</h1><h1 id="2-new-Random-伪随机，不是密码学安全的"><a href="#2-new-Random-伪随机，不是密码学安全的" class="headerlink" title="2 new Random 伪随机，不是密码学安全的"></a>2 new Random 伪随机，<strong>不是密码学安全的</strong></h1><ul>
-<li>加密相关的推荐使用** SecureRandom**<ul>
-<li><strong>慎用</strong>SecureRandom.getInstanceStrong()方式获取 SecureRandom，linux 环境下容易产生阻塞</li>
-<li><strong>推荐</strong>使用 new SecureRandom()获取 SecureRandom，伪随机</li>
-</ul>
-</li>
-<li>Random 使用当前系统时钟来生成种子 seed</li>
-</ul>
-<h1 id="3-sun-下的类不建议使用"><a href="#3-sun-下的类不建议使用" class="headerlink" title="3 sun.*下的类不建议使用"></a>3 sun.*下的类不建议使用</h1><ul>
-<li>是 sun 的 hotspot 虚拟机中的 java.*和 javax.*的实现类</li>
-<li>不是 sun 承诺公开的接口，不具有向后兼容性</li>
-</ul>
-<h1 id="4-Deprecated-不建议使用"><a href="#4-Deprecated-不建议使用" class="headerlink" title="4 @Deprecated 不建议使用"></a>4 @Deprecated 不建议使用</h1><h1 id="5-HttpOnly"><a href="#5-HttpOnly" class="headerlink" title="5 HttpOnly"></a>5 HttpOnly</h1><p>Cookie cookie = new Cookie(“myCookieName”, value);<br>cookie.setHttpOnly(true); // Compliant</p>
-<ul>
-<li>XSS</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93/es/ES/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93/es/ES/" class="post-title-link" itemprop="url">ES</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-12-14 00:22:24" itemprop="dateCreated datePublished" datetime="2020-12-14T00:22:24+08:00">2020-12-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:56:50" itemprop="dateModified" datetime="2023-02-08T00:56:50+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/es/" itemprop="url" rel="index"><span itemprop="name">es</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>ElasticSearch</p>
-<ul>
-<li>作用<ul>
-<li>全文搜索引擎</li>
-</ul>
-</li>
-<li>本质<ul>
-<li>分布式数据库</li>
-<li>底层是 java 开源库 Lucene，Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。<ul>
-<li>我们没法直接用 Lucene，必须自己写代码去调用它的接口</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fj_uqEjv1jx865kzAL2aPx8lhzA3.jpeg"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
+</span>
 
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+        
+        
+      </div>
+    </article>
   </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         
-          <span class="site-state-item-count">110</span>
-          <span class="site-state-item-name">posts</span>
+        <a href="/2021/01/13/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/Nginx/" target="_self">
+          Nginx
         </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/13/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/Nginx/" target="_self">
+        <div>
+          0 Nginx 配置12345678910111213141516171819202122232425262728293031323334353637383940...              #全局块events &#123;         #events块   ...&#125;http      #http块&#123;    ...   #http全局块    keepalive_ti
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-13 11:03" pubdate>
+              2021-01-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/nginx/" class="category-chain-item">nginx</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">categories</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/12/%E9%A1%B9%E7%9B%AE/%E6%B6%88%E6%81%AF%E8%A1%A5%E5%81%BF/" target="_self">
+          消息补偿
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/12/%E9%A1%B9%E7%9B%AE/%E6%B6%88%E6%81%AF%E8%A1%A5%E5%81%BF/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-12 18:29" pubdate>
+              2021-01-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/11/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" target="_self">
+          分布式事务
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/11/%E5%88%86%E5%B8%83%E5%BC%8F/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" target="_self">
+        <div>
+          1 事务 严格意义上的事务：ACID  原子性（Atomicity）  可以理解为一个事务内的所有操作要么都执行，要么都不执行。   一致性（Consistency）  可以理解为数据是满足完整性约束的，也就是不会存在中间状态的数据，比如你账上有 400，我账上有 100，你给我打 200 块，此时你账上的钱应该是 200，我账上的钱应该是 300，不会存在我账上钱加了，你账上钱没扣的中间状态。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-11 22:22" pubdate>
+              2021-01-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" class="category-chain-item">分布式</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/05/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/MinIO/" target="_self">
+          MinIO
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/01/05/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/MinIO/" target="_self">
+        <div>
+          基于 Apache License v2.0 开源协议 兼容 Amazon S3 云存储服务接口 适合于存储大容量非结构化的数据，例如图片、视频、日志文件、备份数据和容器/虚拟机镜像（存储对象大小从几 kb 到最大 5T 不等）  1 Amazon S3Amazon Simple Storage Service (Amazon S3) 是一种面向 Internet 的存储服务。可以通过 Amaz
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-05 18:26" pubdate>
+              2021-01-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MinIO/" class="category-chain-item">MinIO</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/31/java%E5%9F%BA%E7%A1%80/IO/" target="_self">
+          IO
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/12/31/java%E5%9F%BA%E7%A1%80/IO/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-31 11:51" pubdate>
+              2020-12-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" target="_self">
+          设计模式
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/12/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" target="_self">
+        <div>
+          适配器模式： 特点 包装另一个对象，并提供不同的接口。     外观模式： 特点 包装许多对象，以简化他们的接口。     装饰器模式（又称 包装（Wrapper）模式）： 特点 包装另一个对象，保持原有的接口，并提供额外的行为。 从来不创建被装饰的对象，它总是添加新功能到已经存在的对象上 可以通过嵌套装饰添加多重额外功能   应用 java.io     代理模式： 特点 包装另一个对象，并*
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-31 09:53" pubdate>
+              2020-12-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="category-chain-item">设计模式</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/30/java%E5%9F%BA%E7%A1%80/%E5%9B%BD%E9%99%85%E5%8C%96/" target="_self">
+          国际化
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/12/30/java%E5%9F%BA%E7%A1%80/%E5%9B%BD%E9%99%85%E5%8C%96/" target="_self">
+        <div>
+          java.util.ResourceBundle 类通常用来实现国际化 它使用的 properties 文件的文件名规范： 自定义名语言代码国别代码.properties （cn 需要大写，不然 Linux 环境无法读取该文件内容）
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-30 17:09" pubdate>
+              2020-12-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/17/%E9%A1%B9%E7%9B%AE/%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F%E8%AE%B0%E5%BD%95/" target="_self">
+          代码扫描记录
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/12/17/%E9%A1%B9%E7%9B%AE/%E4%BB%A3%E7%A0%81%E6%89%AB%E6%8F%8F%E8%AE%B0%E5%BD%95/" target="_self">
+        <div>
+          1 Enum 中不应存在 public 属性/setter 方法2 new Random 伪随机，不是密码学安全的 加密相关的推荐使用** SecureRandom** 慎用SecureRandom.getInstanceStrong()方式获取 SecureRandom，linux 环境下容易产生阻塞 推荐使用 new SecureRandom()获取 SecureRandom，伪随机   Ra
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-17 14:17" pubdate>
+              2020-12-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93/es/ES/" target="_self">
+          ES
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2020/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93/es/ES/" target="_self">
+        <div>
+          ElasticSearch  作用 全文搜索引擎   本质 分布式数据库 底层是 java 开源库 Lucene，Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。 我们没法直接用 Lucene，必须自己写代码去调用它的接口      结构
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-14 00:22" pubdate>
+              2020-12-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/es/" class="category-chain-item">es</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/6/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#board">5</a><a class="page-number" href="/page/6/#board">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/#board">8</a><a class="page-number" href="/page/9/#board">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#board">11</a><a class="extend next" rel="next" href="/page/8/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
   </nav>
-</div>
 
 
 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  </div>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
-        
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
 
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

@@ -1,1279 +1,906 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="will">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="热心市民王先生的小破站">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="热心市民王先生的小破站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="will">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>热心市民王先生的小破站</title>
 
-<link rel="canonical" href="http://example.com/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Hexo</title>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>heheii</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                
+                <span>remark</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="heheii"></span>
+          
+        </div>
 
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
 
 </div>
-    </header>
 
+  </header>
+
+  <main>
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
           
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-          <div class="content index posts-expand">
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/02/04/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/consul/consul/" target="_self">
+          consul
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/02/04/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/consul/consul/" target="_self">
+        <div>
+          Consul 支持多数据中心，在上图中有两个数据中心(DateCenter)，数据中心之间通过 Internet 互联，为了提高通信效率，只有 Server 节点才能加入跨数据中心的通信。 在单个数据中心中，Consul 分为 Client 和 Server 两种节点(所有的节点被称为 Agent)。 Server 节点保存数据，推荐数量是 3 个或者 5 个； Client 节点负责健康检查
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-02-04 16:07" pubdate>
+              2023-02-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-      
+
+<span class="category-chains">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/04/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/consul/consul/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/04/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/consul/consul/" class="post-title-link" itemprop="url">consul</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-02-04 16:07:09" itemprop="dateCreated datePublished" datetime="2023-02-04T16:07:09+08:00">2023-02-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/consul/" itemprop="url" rel="index"><span itemprop="name">consul</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkQzi14_daTk2E4nXJ1DJDv0wfIH.png"></p>
-<ul>
-<li>Consul 支持多数据中心，在上图中有两个数据中心(DateCenter)，数据中心之间通过 Internet 互联，为了提高通信效率，只有 Server 节点才能加入跨数据中心的通信。</li>
-<li>在单个数据中心中，Consul 分为 Client 和 Server 两种节点(所有的节点被称为 Agent)。<ul>
-<li>Server 节点保存数据，推荐数量是 3 个或者 5 个；</li>
-<li>Client 节点负责健康检查及转发数据请求到 Server。</li>
-</ul>
-</li>
-<li>Server 节点包含一个 Leader 和多个 Follower,Leader 节点会将数据同步到 Follower，在 Leader 挂掉的时候会启动选举机制产生一个新的 Leader。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/consul/" class="category-chain-item">consul</a>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/18/%E5%A4%A7%E6%95%B0%E6%8D%AE/Atlas%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/18/%E5%A4%A7%E6%95%B0%E6%8D%AE/Atlas%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">Atlas简单介绍</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-01-18 16:12:42" itemprop="dateCreated datePublished" datetime="2023-01-18T16:12:42+08:00">2023-01-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Atlas 是一组可伸缩和可扩展的核心基础治理服务——使企业能够有效且高效地满足其在 Hadoop 中的合规性要求，并允许与整个企业数据生态系统集成。<br>Apache Atlas 为组织提供开放的元数据管理和治理功能，以构建其数据资产的目录，对这些资产进行分类和治理，并为数据科学家、分析师和数据治理团队提供围绕这些数据资产的协作能力。</p>
-<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>元数据管理<br>数据血缘查询<br>审计</p>
-<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Foz_hdn5PfKuiRBvJ7G9CowzgS-L.png"></p>
-<h1 id="Atlas-获取元数据方式"><a href="#Atlas-获取元数据方式" class="headerlink" title="Atlas 获取元数据方式"></a>Atlas 获取元数据方式</h1><p>/opt/module/atlas/hook-bin/import-hive.sh 该脚本同步全量数据<br>通过配置的 hook 同步增量数据（sources -&gt; kafka -&gt; core -&gt; store）</p>
-<h1 id="Integration"><a href="#Integration" class="headerlink" title="Integration"></a>Integration</h1><h2 id="Messaging"><a href="#Messaging" class="headerlink" title="Messaging"></a>Messaging</h2><p>topic-ATLAS_HOOK:<br>来自各个组件的 Hook 的元数据通知事件通过写入到名为 ATLAS_HOOK 的 Kafka topic 发送到 Atlas.<br>topic-ATLAS_ENTITIES：<br>从 Atlas 到其他集成组件（如 Ranger）的事件写入到名为 ATLAS_ENTITIES 的 Kafka topic</p>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p><a target="_blank" rel="noopener" href="https://atlas.apache.org/api/v2/ui/index.html#/">https://atlas.apache.org/api/v2/ui/index.html#/</a></p>
-<h1 id="Core"><a href="#Core" class="headerlink" title="Core"></a>Core</h1><h2 id="Type-System"><a href="#Type-System" class="headerlink" title="Type System"></a>Type System</h2><p>Atlas 允许用户为他们想要管理的元数据对象定义一个模型。该模型由称为“types” 的定义组成。“types” （类）的实例被称为 “entities” 表示被管理的实际元数据对象</p>
-<h2 id="Graph-Engine"><a href="#Graph-Engine" class="headerlink" title="Graph Engine"></a>Graph Engine</h2><p>在内部，Atlas 通过使用图模型管理元数据对象。以实现元数据对象之间的巨大灵活性和丰富的关系。图形引擎是负责在类型系统的类型和实体之间进行转换的组件，以及基础图形模型。<br>除了管理图形对象之外，图形引擎还为元数据对象创建适当的索引，以便有效地搜索它们</p>
-<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="Glossary"><a href="#Glossary" class="headerlink" title="Glossary"></a><strong>Glossary</strong></h2><p>词汇表为业务用户提供适当的词汇表，它允许术语（单词）彼此相关并进行分类，以便在不同的上下文中可以理解它们。然后可以将这些术语映射到数据库、表、列等资产。这有助于抽象化与存储库相关的技术术语，并允许用户发现/使用他们更熟悉的词汇表中的数据。</p>
-<h2 id="Classification-Propagation"><a href="#Classification-Propagation" class="headerlink" title="Classification Propagation"></a>Classification Propagation</h2><ul>
-<li>分类传播使与实体相关联的分类能够自动与该实体的其他相关实体相关联。这在处理数据集从其他数据集派生数据的场景时非常有用——比如在文件中加载数据的表，从表/视图生成的报告等。</li>
-<li>例如，当一个表被归类为<em>PII</em>时，从该表派生数据的表或视图将被自动归类为<em>PII</em>。</li>
-<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh_R29vfYGZx9nTwqQWMqL2QgQD4.png"></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
   
 
-      
+      </span>
+    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/18/%E5%A4%A7%E6%95%B0%E6%8D%AE/Atlas%E5%AE%89%E8%A3%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/18/%E5%A4%A7%E6%95%B0%E6%8D%AE/Atlas%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">Atlas安装</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-01-18 16:10:54" itemprop="dateCreated datePublished" datetime="2023-01-18T16:10:54+08:00">2023-01-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Solr-安装"><a href="#1-Solr-安装" class="headerlink" title="1. Solr 安装"></a>1. Solr 安装</h1><p>需要在三个节点都执行</p>
-<h2 id="1-1-创建系统用户-solr"><a href="#1-1-创建系统用户-solr" class="headerlink" title="1.1 创建系统用户 solr"></a>1.1 创建系统用户 solr</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd solr</span><br><span class="line">echo solr | sudo passwd --stdin solr</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-上传-solr-安装包-solr-7-7-3-tgz，并解压到-opt-module-目录，重命名为-solr"><a href="#1-2-上传-solr-安装包-solr-7-7-3-tgz，并解压到-opt-module-目录，重命名为-solr" class="headerlink" title="1.2 上传 solr 安装包 solr-7.7.3.tgz，并解压到/opt/module 目录，重命名为 solr"></a>1.2 上传 solr 安装包 solr-7.7.3.tgz，并解压到/opt/module 目录，重命名为 solr</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf solr-7.7.3.tgz -C /opt/module/</span><br><span class="line">cd /opt/module</span><br><span class="line">mv solr-7.7.3/ solr</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-修改-solr-目录的所有者为-solr-用户"><a href="#1-3-修改-solr-目录的所有者为-solr-用户" class="headerlink" title="1.3 修改 solr 目录的所有者为 solr 用户"></a>1.3 修改 solr 目录的所有者为 solr 用户</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R solr:solr /opt/module/solr</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-4-修改-solr-配置"><a href="#1-4-修改-solr-配置" class="headerlink" title="1.4 修改 solr 配置"></a>1.4 修改 solr 配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /opt/module/solr/bin/solr.in.sh</span><br><span class="line"></span><br><span class="line"># 修改ZK_HOST</span><br><span class="line">ZK_HOST=&quot;szst-dev-bigdata-05:2181,szst-dev-bigdata-06:2181,szst-dev-bigdata-07:2181&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-5-启动-solr"><a href="#1-5-启动-solr" class="headerlink" title="1.5 启动 solr"></a>1.5 启动 solr</h2><p>启动前需要保证 ZK 已正常运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 三个节点各自执行</span><br><span class="line">sudo -i -u solr /opt/module/solr/bin/solr start</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-6-访问-web-页面"><a href="#1-6-访问-web-页面" class="headerlink" title="1.6 访问 web 页面"></a>1.6 访问 web 页面</h2><p>默认端口为 8983，可指定三台节点中的任意一台 IP，<a target="_blank" rel="noopener" href="http://szst-dev-bigdata-05:8983/">http://szst-dev-bigdata-05:8983</a></p>
-<h1 id="2-Atlas-安装"><a href="#2-Atlas-安装" class="headerlink" title="2 Atlas 安装"></a>2 Atlas 安装</h1><h2 id="2-1-解压-apache-atlas-2-1-0-server-tar-gz-到-opt-module-目录下面"><a href="#2-1-解压-apache-atlas-2-1-0-server-tar-gz-到-opt-module-目录下面" class="headerlink" title="2.1 解压 apache-atlas-2.1.0-server.tar.gz 到/opt/module/目录下面"></a>2.1 解压 apache-atlas-2.1.0-server.tar.gz 到/opt/module/目录下面</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-atlas-2.1.0-server.tar.gz -C /opt/module/</span><br><span class="line">cd /opt/module/</span><br><span class="line">mv apache-atlas-2.1.0 atlas</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-Atlas-配置"><a href="#2-2-Atlas-配置" class="headerlink" title="2.2 Atlas 配置"></a>2.2 <strong>Atlas 配置</strong></h2><p>配置完以下内容后，根据实际需要集成对应的组件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># atlas集成hbase</span><br><span class="line">atlas.graph.storage.hostname=szst-dev-bigdata-05:2181,szst-dev-bigdata-06:2181,szst-dev-bigdata-07:2181</span><br><span class="line">export HBASE_CONF_DIR=/opt/datasophon/hbase-2.0.2/conf</span><br><span class="line"></span><br><span class="line"># atlas集成solr</span><br><span class="line">atlas.graph.index.search.backend=solr</span><br><span class="line">atlas.graph.index.search.solr.mode=cloud</span><br><span class="line">atlas.graph.index.search.solr.zookeeper-url=szst-dev-bigdata-05:2181,szst-dev-bigdata-06:2181,szst-dev-bigdata-07:2181</span><br><span class="line"></span><br><span class="line"># atlas集成kafka</span><br><span class="line">atlas.notification.embedded=false</span><br><span class="line">atlas.kafka.data=/data/kafka-logs</span><br><span class="line">atlas.kafka.zookeeper.connect=szst-dev-bigdata-05:2181,szst-dev-bigdata-06:2181,szst-dev-bigdata-07:2181</span><br><span class="line">atlas.kafka.bootstrap.servers=szst-dev-bigdata-05:9092,szst-dev-bigdata-06:9092,szst-dev-bigdata-07:9092</span><br><span class="line"></span><br><span class="line"># atlas server配置</span><br><span class="line">######### Server Properties #########</span><br><span class="line">atlas.rest.address=http://szst-dev-bigdata-05:21000</span><br><span class="line"># If enabled and set to true, this will run setup steps when the server starts</span><br><span class="line">atlas.server.run.setup.on.start=false</span><br><span class="line">######### Entity Audit Configs #########</span><br><span class="line">atlas.audit.hbase.tablename=apache_atlas_entity_audit</span><br><span class="line">atlas.audit.zookeeper.session.timeout.ms=1000</span><br><span class="line">atlas.audit.hbase.zookeeper.quorum=szst-dev-bigdata-05:2181,szst-dev-bigdata-06:2181,szst-dev-bigdata-07:2181</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo -i -u solr /opt/module/solr/bin/solr create -c vertex_index -d /opt/module/atlas/conf/solr -shards 3 -replicationFactor 2</span><br><span class="line">sudo -i -u solr /opt/module/solr/bin/solr create -c edge_index -d /opt/module/atlas/conf/solr -shards 3 -replicationFactor 2</span><br><span class="line">sudo -i -u solr /opt/module/solr/bin/solr create -c fulltext_index -d /opt/module/atlas/conf/solr -shards 3 -replicationFactor 2</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export HBASE_CONF_DIR=/opt/datasophon/hbase-2.0.2/conf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#去掉如下代码的注释</span><br><span class="line">&lt;appender name=&quot;perf_appender&quot; class=&quot;org.apache.log4j.DailyRollingFileAppender&quot;&gt;</span><br><span class="line">   &lt;param name=&quot;file&quot; value=&quot;$&#123;atlas.log.dir&#125;/atlas_perf.log&quot; /&gt;</span><br><span class="line">   &lt;param name=&quot;datePattern&quot; value=&quot;&#x27;.&#x27;yyyy-MM-dd&quot; /&gt;</span><br><span class="line">   &lt;param name=&quot;append&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">   &lt;layout class=&quot;org.apache.log4j.PatternLayout&quot;&gt;</span><br><span class="line">   		&lt;param name=&quot;ConversionPattern&quot; value=&quot;%d|%t|%m%n&quot; /&gt;</span><br><span class="line">   &lt;/layout&gt;</span><br><span class="line">&lt;/appender&gt;</span><br><span class="line">&lt;logger name=&quot;org.apache.atlas.perf&quot; additivity=&quot;false&quot;&gt;</span><br><span class="line">   &lt;level value=&quot;debug&quot; /&gt;</span><br><span class="line">   &lt;appender-ref ref=&quot;perf_appender&quot; /&gt;</span><br><span class="line">&lt;/logger&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-Atlas-集成组件（以-Hive-为例）"><a href="#2-3-Atlas-集成组件（以-Hive-为例）" class="headerlink" title="2.3 Atlas 集成组件（以 Hive 为例）"></a>2.3 Atlas 集成组件（以 Hive 为例）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">######### Hive Hook Configs #######</span><br><span class="line">atlas.hook.hive.synchronous=false</span><br><span class="line">atlas.hook.hive.numRetries=3</span><br><span class="line">atlas.hook.hive.queueSize=10000</span><br><span class="line">atlas.cluster.name=primary</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 配置 Hive Hook</span><br><span class="line">&lt;property&gt;</span><br><span class="line"> &lt;name&gt;hive.exec.post.hooks&lt;/name&gt;</span><br><span class="line"> &lt;value&gt;org.apache.atlas.hive.hook.HiveHook&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 解压</span><br><span class="line">tar -zxvf apache-atlas-2.1.0-hive-hook.tar.gz</span><br><span class="line"># 将 Hive Hook 依赖复制到 Atlas 安装路径</span><br><span class="line">cp -r apache-atlas-hive-hook-2.1.0/* /opt/module/atlas/</span><br><span class="line"></span><br><span class="line">cd /opt/module/hive/conf/</span><br><span class="line">mv hive-env.sh.template hive-env.sh</span><br><span class="line">vi hive-env.sh</span><br><span class="line">增加以下配置 export HIVE_AUX_JARS_PATH=/opt/module/atlas/hook/hive</span><br><span class="line"></span><br><span class="line"># 将 Atlas 配置文件/opt/module/atlas/conf/atlas-application.properties拷贝到/opt/module/hive/conf 目录</span><br><span class="line">cp /opt/module/atlas/conf/atlas-application.properties /opt/module/hive/conf/</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-4-启动-atlas"><a href="#2-4-启动-atlas" class="headerlink" title="2.4 启动 atlas"></a>2.4 启动 atlas</h2><p>依赖环境： hadoop 集群，zookeeper 集群，kafka 集群，hbase 集群，solr 集群</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/module/atlas/bin/atlas_start.py</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-5-访问-web-页面"><a href="#2-5-访问-web-页面" class="headerlink" title="2.5 访问 web 页面"></a>2.5 访问 web 页面</h2><p>url:<br><a target="_blank" rel="noopener" href="http://szst-dev-bigdata-05:21000/">http://szst-dev-bigdata-05:21000</a><br>账号/密码：<br>admin/admin</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/30/java%E5%9F%BA%E7%A1%80/JDBC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/30/java%E5%9F%BA%E7%A1%80/JDBC/" class="post-title-link" itemprop="url">JDBC</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-11-30 16:54:49" itemprop="dateCreated datePublished" datetime="2022-11-30T16:54:49+08:00">2022-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FthfZ5Fl_s7b6BX_nQVV-SJgQJ_5.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%8D%95%E6%92%AD%E7%BB%84%E6%92%AD%E4%B8%8E%E5%B9%BF%E6%92%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%8D%95%E6%92%AD%E7%BB%84%E6%92%AD%E4%B8%8E%E5%B9%BF%E6%92%AD/" class="post-title-link" itemprop="url">单播组播与广播</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-10-13 00:21:44" itemprop="dateCreated datePublished" datetime="2022-10-13T00:21:44+08:00">2022-10-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="组播"><a href="#组播" class="headerlink" title="组播"></a>组播</h1><p>组播是主机间一对多的通讯模式， 组播是一种允许一个或多个组播源发送同一报文到多个接收者的技术。组播源将一份报文发送到特定的组播地址，组播地址不同于单播地址，它并不属于特定某个主机，而是属于一组主机。一个组播地址表示一个群组，需要接收组播报文的接收者都加入这个群组。</p>
-<h1 id="单播"><a href="#单播" class="headerlink" title="单播"></a>单播</h1><p>单播是主机间一对一的通讯模式，网络中的设备根据网络报文中包含的目的地址选择传输路径，将单播报文传送到指定的目的地，只对接收到的数据进行转发，不会进行复制。它能够针对每台主机及时的响应，现在的网页浏览全部都是采用单播模式。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FtpQTBtFGlhKzQyFBR14oCsNtv__.png"></p>
-<h1 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h1><p>广播是主机间一对所有的通讯模式，设备会将报文发送到网络中的所有可能接收者。设备简单地将它收到的任何广播报文都复制并转发到除该报文到达的接口外的每个接口。广播处理流程简单，不用选择路径。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fgg4vH1F0y4pJKHtHXGwkro6fehN.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Flink/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Flink/" class="post-title-link" itemprop="url">Flink</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-06-06 17:24:38" itemprop="dateCreated datePublished" datetime="2022-06-06T17:24:38+08:00">2022-06-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="什么是-Flink？"><a href="#什么是-Flink？" class="headerlink" title="什么是 Flink？"></a>什么是 Flink？</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsMXaK8CDlh7GUK63ySHXyL3kfQP.png"></p>
-<blockquote>
-<p>Flink 是一个分布式的计算处理引擎</p>
-</blockquote>
-<ul>
-<li>分布式：「它的存储或者计算交由多台服务器上完成，最后汇总起来达到最终的效果」。</li>
-<li>实时：处理速度是毫秒级或者秒级的</li>
-<li>计算：可以简单理解为对数据进行处理，比如清洗数据（对数据进行规整，取出有用的数据）</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FlN2MKtjO6zhQqAB13MsjFggsWjd.png"></p>
-<p>基于官网的一句话介绍，我们就可以联想出很多东西。</p>
-<p>这篇文章可以带你简单认识一下 Flink 的一些基础概念，等你真正用到的时候就可以依据这篇文章来对 Flink 进行入门，现在 Storm 都被很多人给抛弃掉了，那么 Flink 优于 Storm 的地方有哪些呢？接下来我们一起来看看 Flink 吧。</p>
-<p>什么是有边界和无边界？<br>Apache Flink 是一个框架和分布式处理引擎，用于在无边界和有边界数据流上进行有状态的计算。</p>
-<p>官方其实也有介绍，但对初学者来说不太好理解，我来幼儿园化一下。</p>
-<p>大家学到 Flink 了，消息队列肯定有用过吧？那你们是怎么用消息队列的呢？Producer 生产数据，发给 Broker，Consumer 消费，完事。</p>
-<p>在消费的时候，我们需要管什么 Producer 什么时候发消息吗？不需要吧。反正来一条，我就处理一条，没毛病吧。</p>
-<p>这种没有做任何处理的消息，默认就是无边界的。</p>
-<p>那有边界就很好理解了：无边界的基础上加上条件，那就是有边界的。加什么条件呢？比如我要加个时间：我要消费从 8 月 8 号到 8 月 9 号的数据，那就是有边界的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjh-5bduezp6zuvNVIAnjSnRYHTQ.png"></p>
-<p>什么时候用无边界，什么时候用有边界？那也很好理解。我做数据清洗：来一条，我处理一条，这种无边界的就好了。我要做数据统计：每个小时的 pv(page view)是多少，那我就设置 1 小时的边界，攒着一小时的数据来处理一次。</p>
-<p>在 Flink 上，设置“边界”这种操作叫做开窗口(Windows)，窗口可简单分为两种类型：</p>
-<p>时间窗口(TimeWindows)：按照时间窗口进行聚合，比如上面所讲得攥着一个小时的数据处理一次。<br>计数窗口(CountWindows)：按照指定的条数来进行聚合，比如每来了 10 条数据处理一次。<br>看着就非常人性化（妈妈再也不用担心我需要聚合了）…</p>
-<p>不仅如此，在 Flink 使用窗口聚合的时候，还考虑到了数据的准确性问题。比如说：现在我在 11:06 分产生了 5 条数据，在 11:07 分 产生了 4 条数据，我现在是按每分钟的维度来进行聚合计算。</p>
-<p>理论上来讲：Flink 应该是在 06 分聚合了 5 条数据，在 07 分聚合了 4 条数据。但是，可能由于网络的延迟性等原因，导致 06 分的 3 条数据在 07 分时 Flink 才接收到。如果不做任何处理，那 07 分有可能处理了 7 条条数据。</p>
-<p>某些需要准确结果的场景来说，这就不太合理了。所以 Flink 可以给我们指定”时间语义“，不指定默认是「数据到 Flink 的时间」Processing Time 来进行聚合处理，可以给我们指定聚合的时间以「事件发生的时间」Event Time 来进行处理。</p>
-<p>事件发生的时间指的就是：日志真正记录的时间</p>
-<p>2020-11-22 00:00:02.552 INFO [http-nio-7001-exec-28] c.m.t.rye.admin.web.aop.LogAspect</p>
-<p>虽然指定了聚合的时间为「事件发生的时间」Event Time，但还是没解决数据乱序的问题（06 分产生了 5 条数据，实际上 06 分只收到了 3 条，而剩下的两条在 07 分才收到，那此时怎么办呢？在 06 分时该不该聚合，07 分收到的两条 06 分数据怎么办？）</p>
-<p>Flink 又可以给我们设置水位线(waterMarks)，Flink 意思就是：存在网络延迟等情况导致数据接收不是有序，这种情况我都能理解。你这样吧，根据自身的情况，你可以设置一个「延迟时间」，等延迟的时间到了，我再聚合统一聚合。</p>
-<p>比如说：现在我知道数据有可能会延迟一分钟，那我将水位线 waterMarks 设置延迟一分钟。</p>
-<p>解读：因为设置了「事件发生的时间」Event Time，所以 Flink 可以检测到每一条记录发生的时间，而设置了水位线 waterMarks 设置延迟一分钟，等到 Flink 发现 07 分:59 秒的数据来到了 Flink，那就确信 06 分的数据都来了（因为设置了 1 分钟延迟），此时才聚合 06 分的窗口数据。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhjQsjN32C23P8CMvyPy43wfZ-_z.png"></p>
-<p>什么叫做有状态？<br>Apache Flink 是一个框架和分布式处理引擎，用于在无边界和有边界数据流上进行有状态的计算。</p>
-<p>什么是有状态，什么是无状态？</p>
-<p>无状态我们可以简单认为：每次的执行都不依赖上一次或上 N 次的执行结果，每次的执行都是独立的。</p>
-<p>有状态我们可以简单认为：执行需要依赖上一次或上 N 次的执行结果，某次的执行需要依赖前面事件的处理结果。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FpXP4P-sPKZmqmPSqkjFaYCwGvIY.png"></p>
-<p>比如，我们现在要统计文章的阅读 PV(page view)，现在只要有一个点击了文章，在 Kafka 就会有一条消息。现在我要在流式处理平台上进行统计，那此时是有状态的还是无状态的？</p>
-<p>假设我们要在 Storm 做，那我们可能将每次的处理结果放到一个“外部存储”中，然后基于这个“外部存储”进行计算（这里我们不用 Storm Trident），那此时 Storm 是无状态的。</p>
-<p>比如说：我存储将每次得到的数据存储到 Redis 中，来一条数据，我就先查一下 Redis 目前的值是多少，跟 Redis 的值和现在的值做一次累加就完事了。</p>
-<p>假设要在 Flink 做，Flink 本身就提供了这种功能给我们使用，我们可以依赖 Flink 的“存储”，将每次的处理结果交由 Flink 管理，执行计算的逻辑。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FglSUY0o61_9VvDAmWaWztxTRVuP.png"></p>
-<p>可以简单的认为：Flink 本身就给我们提供了”存储“的功能，而我们每次执行是可以依赖 Flink 的”存储”的，所以它是有状态的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FonrqiZmSLLQ5T2E8NqHfZsdwPLT.png"></p>
-<p>那 Flink 是把这些有状态的数据存储在哪的呢？</p>
-<p>主要有三个地方：</p>
-<p>内存<br>文件系统（HDFS）<br>本地数据库<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiOhgdp8w34okCfvMhvOfNZ862Rr.png"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FhMRqt7c0S_frH2_T8HeXMXDC5Nf.png"></p>
-<p>如果假设 Flink 挂了，可能内存的数据没了，磁盘可能存储了部分的数据，那再重启的时候（比如消息队列会重新拉取），就不怕会丢了或多了数据吗？</p>
-<p>看到这里，你可能在会在别的地方看过 Flink 的另外一个比较出名的特性：精确一次性</p>
-<p>（简单来说就是：Flink 遇到意外事件挂了以后，有什么机制来尽可能保证处理数据不重复和不丢失的呢）</p>
-<p>什么是精确一次性（exactly once）？<br>众所周知，流的语义性有三种：</p>
-<p>精确一次性（exactly once）：有且只有一条，不多不少<br>至少一次（at least once）：最少会有一条，只多不少<br>最多一次（at most once）：最多只有一条，可能会没有<br>Flink 实现了精确一次性，这个精确一次性是什么意思呢？</p>
-<p>Flink 的精确一次性指的是：状态只持久化一次到最终的存储介质中（本地数据库/HDFS…)<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fo_Iq0AlOjuz-x5gIVZc3Z2uPiV0.png"></p>
-<p>以上面的图为例：Source 数据流有以下数字 21,13,8,5,3,2,1,1，然后在 Flink 需要做累加操作（求和）</p>
-<p>现在处理完 2,1,1 了，所以累加的值是 4，现在 Flink 把累积后的状态 4 已经存储起来了（认为前面 2,1,1 这几个数字已经完全处理过了）。</p>
-<p>程序一直往下走，处理了 5,3，现在累加的值是 12，但现在 Flink 还没来得及把 12 存储到最终的介质，此时系统挂掉了。</p>
-<p>Flink 重启后会重新把系统恢复到累加的值是 4 的状态，所以 5,3 得继续计算一遍，程序继续往下走。</p>
-<p>看文章有的同学可能会认为：精确一次性指的不是某一段代码只会执行一次，不会执行多次或不执行。这 5 和 3 这两个数，你不是重复计算了吗？怎么就精确一次了？</p>
-<p>显然，代码只执行一次肯定是不可能的嘛。我们无法控制系统在哪一行代码挂掉的，你要是在挂的时候，当前方法还没执行完，你还是得重新执行该方法的。</p>
-<p>所以，状态只持久化一次到最终的存储介质中（本地数据库/HDFS)，在 Flink 下就叫做 exactly once（计算的数据可能会重复（无法避免），但状态在存储介质上只会存储一次）。</p>
-<p>那么 Flink 是在多长时间存储一次的呢？这个是我们自己手动配置的。</p>
-<p>所谓的 CheckPoint 其实就是 Flink 会在指定的时间段上保存状态的信息，假设 Flink 挂了可以将上一次状态信息再捞出来，重放还没保存的数据来执行计算，最终实现 exactly once。</p>
-<p>那 CheckPonit 是怎么办到的呢？想想我们在 Kafka 在业务上实现「至少一次」是怎么做的？我们从 Kafka 把数据拉下来，处理完业务了以后，手动提交 offset (告诉 Kafka 我已经处理完了)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgSqiUqPQHcMS7gUXN4oNHZkwIlt.png"></p>
-<p>我们是做完了业务规则才将 offset 进行 commit 的，checkponit 其实也是一样的（等拉下来该条数据所有的流程走完，才进行真正的 checkponit）。</p>
-<p>问题又来了，那 checkpoint 是怎么知道拉下来的数据已经走完了呢？Flink 在流处理过程中插入了 barrier，每个环节处理到 barrier 都会上报，等到 sink 都上报了 barrier 就说明这次 checkpoint 已经走完了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FmoyOqoDyVwpKAqg9-pVdap9tA1j.png"></p>
-<p>要注意的是，Flink 实现的精确一次性只是保证内部的状态是精确一次的，如果想要端到端精确一次，需要端的支持</p>
-<p>数据源需要可回放，发证故障可以重新读取未确认的数据<br>Flink 需要把数据存到磁盘介质（不能用内存），发生故障可以恢复<br>发送源需要支持事务（从读到写需要事务的支持保证中途不失败）</p>
-<p>最后<br>这篇文章对 Flink 做了一次简单的介绍，希望对大家在入门的时候有所帮助。后续打算会再写一篇 Flink 文章对 CheckPoint 机制做更加深入的了解，有兴趣的同学可以点个关注第一时间能接收到。<br>————————————————<br>版权声明：本文为 CSDN 博主「Java3y」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Java_3y/article/details/110184903">https://blog.csdn.net/Java_3y/article/details/110184903</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/" class="post-title-link" itemprop="url">Hadoop</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-06-06 15:19:11" itemprop="dateCreated datePublished" datetime="2022-06-06T15:19:11+08:00">2022-06-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="三大发行版本"><a href="#三大发行版本" class="headerlink" title="三大发行版本"></a>三大发行版本</h1><ol>
-<li>Apache 版本<ol>
-<li>最原始（最基础）的版本，对于入门学习最好。</li>
-<li>组件兼容性需要自己调研</li>
-</ol>
-</li>
-<li>CDH<ol>
-<li>开源</li>
-<li>在大型互联网企业中用的较多。</li>
-</ol>
-</li>
-<li>HDP<ol>
-<li>开源，可以二次开发</li>
-<li>没有 cdh 稳定，使用较少</li>
-</ol>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%8A%80%E6%9C%AF%E6%A0%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="post-title-link" itemprop="url">技术栈</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-06-06 14:35:08" itemprop="dateCreated datePublished" datetime="2022-06-06T14:35:08+08:00">2022-06-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <table>
-<thead>
-<tr>
-<th><strong>类别</strong></th>
-<th></th>
-<th><strong>主流代表技术</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>分布式文件系统</td>
-<td></td>
-<td>Hadoop HDFS</td>
-</tr>
-<tr>
-<td>资源调度与管理</td>
-<td></td>
-<td>Hadoop YARN 、Kubernetes</td>
-</tr>
-</tbody></table>
-<p>|</p>
-<p>分布式计算 | 批处理：特点是有界、持久、大量，非常适合需要访问全套记录才能完成的计算工作，一般用于离线统计。</p>
-<p>| MapReduce（中间过程会落盘，慢）<br>Hive<br>Spark |<br>| | 流处理：特点是无界、实时, 无需针对整个数据集执行操作，而是对通过系统传输的每个数据项执行操作，一般用于实时统计。 | Spark Streaming（微批处理）、<br>Flink</p>
-<p>|</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E7%AE%80%E4%BB%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">简介</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-06-06 14:32:59" itemprop="dateCreated datePublished" datetime="2022-06-06T14:32:59+08:00">2022-06-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="主要解决问题："><a href="#主要解决问题：" class="headerlink" title="主要解决问题："></a>主要解决问题：</h1><p>海量的数据存储 海量数据的分析计算</p>
-<h1 id="大数据技术的特点："><a href="#大数据技术的特点：" class="headerlink" title="大数据技术的特点："></a>大数据技术的特点：</h1><p>高可靠性：数据多副本，某个存储故障不会导致数据丢失。<br>高扩展性：随着数据量的增大，可以横向扩展数以千计的节点。<br>高效性：数据处理和计算是并行工作的，以加快数据处理速度。<br>高容错性: 因为外部原因（硬件、网络）处理出现错误，可以自动重新分配，继续提供服务。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/12/%E5%91%BD%E4%BB%A4/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/12/%E5%91%BD%E4%BB%A4/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">docker常用操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-03-12 16:03:08" itemprop="dateCreated datePublished" datetime="2022-03-12T16:03:08+08:00">2022-03-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:25:17" itemprop="dateModified" datetime="2023-02-08T00:25:17+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>抓取 image<ul>
-<li>docker image pull [组]/[image 文件名]</li>
-</ul>
-</li>
-<li>查看 image<ul>
-<li>docker image ls</li>
-<li>docker images</li>
-</ul>
-</li>
-<li>运行<ul>
-<li>根据 image 文件，每次都生成一个正在运行的容器实例，若本地没有该 image，则从仓库自动抓取<ul>
-<li>docker run -itd –name redis -p 6379:6379 redis</li>
-<li>docker run –name nginx -p 8080:80 -d nginx</li>
-</ul>
-</li>
-<li>启动已经生成并停止运行的 container<ul>
-<li>docker container start [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>终止<ul>
-<li>强行立即终止（SIGKILL）<ul>
-<li>docker container kill [containID]</li>
-</ul>
-</li>
-<li>应用程序可以进行一些收尾工作（SIGTERM）<ul>
-<li>docker container stop [containID]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>查看 container<ul>
-<li>正在运行<ul>
-<li>docker container ls</li>
-</ul>
-</li>
-<li>所有：正在运行的+停止运行的<ul>
-<li>docker container ls -all</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>删除 container<ul>
-<li>docker container rm [containID]</li>
-</ul>
-</li>
-<li>创建 image 文件<ul>
-<li>docker image build -t [imageName] . (. 表示 Dockerfile 文件路径)</li>
-</ul>
-</li>
-<li>查看 log 输出<ul>
-<li>docker container logs [containerID]</li>
-</ul>
-</li>
-<li>进入容器<ul>
-<li>docker container exec -it [containerID] /bin/bash</li>
-</ul>
-</li>
-<li>拷贝文件至本机<ul>
-<li>docker container cp [containID]:[/path/to/file] .</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
+</span>
 
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+        
+        
+      </div>
+    </article>
   </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         
-          <span class="site-state-item-count">110</span>
-          <span class="site-state-item-name">posts</span>
+        <a href="/2023/01/18/%E5%A4%A7%E6%95%B0%E6%8D%AE/Atlas%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/" target="_self">
+          Atlas简单介绍
         </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/18/%E5%A4%A7%E6%95%B0%E6%8D%AE/Atlas%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/" target="_self">
+        <div>
+          简介Atlas 是一组可伸缩和可扩展的核心基础治理服务——使企业能够有效且高效地满足其在 Hadoop 中的合规性要求，并允许与整个企业数据生态系统集成。Apache Atlas 为组织提供开放的元数据管理和治理功能，以构建其数据资产的目录，对这些资产进行分类和治理，并为数据科学家、分析师和数据治理团队提供围绕这些数据资产的协作能力。 功能元数据管理数据血缘查询审计 架构 Atlas 获取元数据方
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-18 16:12" pubdate>
+              2023-01-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">categories</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/18/%E5%A4%A7%E6%95%B0%E6%8D%AE/Atlas%E5%AE%89%E8%A3%85/" target="_self">
+          Atlas安装
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/01/18/%E5%A4%A7%E6%95%B0%E6%8D%AE/Atlas%E5%AE%89%E8%A3%85/" target="_self">
+        <div>
+          1. Solr 安装需要在三个节点都执行 1.1 创建系统用户 solr12sudo useradd solrecho solr | sudo passwd --stdin solr  1.2 上传 solr 安装包 solr-7.7.3.tgz，并解压到/opt/module 目录，重命名为 solr123tar -zxvf solr-7.7.3.tgz -C /opt/module/cd /o
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-18 16:10" pubdate>
+              2023-01-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/30/java%E5%9F%BA%E7%A1%80/JDBC/" target="_self">
+          JDBC
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/30/java%E5%9F%BA%E7%A1%80/JDBC/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-30 16:54" pubdate>
+              2022-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%8D%95%E6%92%AD%E7%BB%84%E6%92%AD%E4%B8%8E%E5%B9%BF%E6%92%AD/" target="_self">
+          单播组播与广播
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%8D%95%E6%92%AD%E7%BB%84%E6%92%AD%E4%B8%8E%E5%B9%BF%E6%92%AD/" target="_self">
+        <div>
+          组播组播是主机间一对多的通讯模式， 组播是一种允许一个或多个组播源发送同一报文到多个接收者的技术。组播源将一份报文发送到特定的组播地址，组播地址不同于单播地址，它并不属于特定某个主机，而是属于一组主机。一个组播地址表示一个群组，需要接收组播报文的接收者都加入这个群组。 单播单播是主机间一对一的通讯模式，网络中的设备根据网络报文中包含的目的地址选择传输路径，将单播报文传送到指定的目的地，只对接收到的
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-10-13 00:21" pubdate>
+              2022-10-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Flink/" target="_self">
+          Flink
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Flink/" target="_self">
+        <div>
+          什么是 Flink？  Flink 是一个分布式的计算处理引擎   分布式：「它的存储或者计算交由多台服务器上完成，最后汇总起来达到最终的效果」。 实时：处理速度是毫秒级或者秒级的 计算：可以简单理解为对数据进行处理，比如清洗数据（对数据进行规整，取出有用的数据）   基于官网的一句话介绍，我们就可以联想出很多东西。 这篇文章可以带你简单认识一下 Flink 的一些基础概念，等你真正用到的时候就可
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-06 17:24" pubdate>
+              2022-06-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/" target="_self">
+          Hadoop
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/" target="_self">
+        <div>
+          三大发行版本 Apache 版本 最原始（最基础）的版本，对于入门学习最好。 组件兼容性需要自己调研   CDH 开源 在大型互联网企业中用的较多。   HDP 开源，可以二次开发 没有 cdh 稳定，使用较少
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-06 15:19" pubdate>
+              2022-06-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%8A%80%E6%9C%AF%E6%A0%88/" target="_self">
+          技术栈
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%8A%80%E6%9C%AF%E6%A0%88/" target="_self">
+        <div>
+          类别  主流代表技术    分布式文件系统  Hadoop HDFS   资源调度与管理  Hadoop YARN 、Kubernetes   | 分布式计算 | 批处理：特点是有界、持久、大量，非常适合需要访问全套记录才能完成的计算工作，一般用于离线统计。 | MapReduce（中间过程会落盘，慢）HiveSpark || | 流处理：特点是无界、实时, 无需针对整个数据集执行操作，而是
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-06 14:35" pubdate>
+              2022-06-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E7%AE%80%E4%BB%8B/" target="_self">
+          简介
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/06/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E7%AE%80%E4%BB%8B/" target="_self">
+        <div>
+          主要解决问题：海量的数据存储 海量数据的分析计算 大数据技术的特点：高可靠性：数据多副本，某个存储故障不会导致数据丢失。高扩展性：随着数据量的增大，可以横向扩展数以千计的节点。高效性：数据处理和计算是并行工作的，以加快数据处理速度。高容错性: 因为外部原因（硬件、网络）处理出现错误，可以自动重新分配，继续提供服务。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-06 14:32" pubdate>
+              2022-06-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/03/12/%E5%91%BD%E4%BB%A4/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" target="_self">
+          docker常用操作
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/03/12/%E5%91%BD%E4%BB%A4/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" target="_self">
+        <div>
+          抓取 image docker image pull [组]/[image 文件名]   查看 image docker image ls docker images   运行 根据 image 文件，每次都生成一个正在运行的容器实例，若本地没有该 image，则从仓库自动抓取 docker run -itd –name redis -p 6379:6379 redis docker run –
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-12 16:03" pubdate>
+              2022-03-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%91%BD%E4%BB%A4/" class="category-chain-item">命令</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#board">11</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
   </nav>
-</div>
 
 
 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  </div>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
-        
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
 
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

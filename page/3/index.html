@@ -1,1180 +1,920 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="will">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="热心市民王先生的小破站">
 <meta property="og:url" content="http://example.com/page/3/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="热心市民王先生的小破站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="will">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>热心市民王先生的小破站</title>
 
-<link rel="canonical" href="http://example.com/page/3/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Hexo</title>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>heheii</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                
+                <span>remark</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="heheii"></span>
+          
+        </div>
 
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
 
 </div>
-    </header>
 
+  </header>
+
+  <main>
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
           
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-          <div class="content index posts-expand">
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" target="_self">
+          Hbase逻辑结构
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" target="_self">
+        <div>
+          参考：https://zhuanlan.zhihu.com/p/54184168  row key ：表的主键，按照字典序排序。 列簇：在 HBase 中，列簇将表进行横向切割。 列：属于某一个列簇，在 HBase 中可以进行动态的添加。 Cell : 是指具体的 Value 。 Version ：在这张图里面没有显示出来，这个是指版本号，用时间戳（TimeStamp ）来表示。  key ~ v
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-13 20:52" pubdate>
+              2021-09-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-      
+
+<span class="category-chains">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Hbase逻辑结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-13 20:52:19" itemprop="dateCreated datePublished" datetime="2021-09-13T20:52:19+08:00">2021-09-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:34:05" itemprop="dateModified" datetime="2023-02-08T00:34:05+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" itemprop="url" rel="index"><span itemprop="name">hbase</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/54184168">https://zhuanlan.zhihu.com/p/54184168</a><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fvo8jmib0CglazvnO4jD6MN8I1P4.png"></p>
-<ul>
-<li>row key ：表的主键，按照字典序排序。</li>
-<li>列簇：在 HBase 中，列簇将表进行横向切割。</li>
-<li>列：属于某一个列簇，在 HBase 中可以进行动态的添加。</li>
-<li>Cell : 是指具体的 Value 。</li>
-<li>Version ：在这张图里面没有显示出来，这个是指版本号，用时间戳（TimeStamp ）来表示。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FnvguPJV6EiqOun1jf8XD26UEpYX.png"><br><strong>key ~ value</strong></p>
-<ul>
-<li>key:         rowKey + CF(ColumnFamily)  + Column + TimeStamp</li>
-<li>value:     value</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" class="category-chain-item">hbase</a>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Hbase物理结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-13 20:33:27" itemprop="dateCreated datePublished" datetime="2021-09-13T20:33:27+08:00">2021-09-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:34:09" itemprop="dateModified" datetime="2023-02-08T00:34:09+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" itemprop="url" rel="index"><span itemprop="name">hbase</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FlU6_ekCHKLdlYKBwyRZr5CTEPOO.png"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fi9RbQT5VHrt4_TxrtOAT7_fjSaA.jpeg"></p>
-<h2 id="1-Master"><a href="#1-Master" class="headerlink" title="1 Master"></a>1 Master</h2><ul>
-<li>为 RegionServer 分配 Region</li>
-<li>负责 RegionServer 的负载均衡</li>
-<li>发现失效的 RegionServer 并重新分配其上的 Region</li>
-</ul>
-<p>注：client 访问 HBase 上数据的过程并不需要 Master 参与，在没有 Region 分裂的情况，Master 宕机一段时间是可以忍受的</p>
-<hr>
-<h2 id="2-RegionServer"><a href="#2-RegionServer" class="headerlink" title="2 RegionServer"></a>2 RegionServer</h2><ul>
-<li>RegionServer 维护 Master 分配给它的 Region，处理对这些 Region 的 IO 请求</li>
-<li>RegionServer 负责 Split 在运行过程中变得过大的 Region，负责 Compact 操作</li>
-</ul>
-<h3 id="2-1-Region"><a href="#2-1-Region" class="headerlink" title="2.1 Region"></a>2.1 Region</h3><blockquote>
-<p>两个重要属性：startRowkey，endRowkey，表示 Region 维护的 rowKey 范围</p>
-</blockquote>
-<ul>
-<li>Region 按大小分隔，每个表一开始只有一个 region。随着数据不断插入表，region 不断增大，当 region 的某个列簇达到阈值时就会分成两个新的 region。</li>
-<li>每个 region 由以下信息标识：&lt; 表名,startRowkey,创建时间&gt;</li>
-<li>由目录表(-ROOT-和.META.)记录该 region 的 endRowkey</li>
-</ul>
-<h4 id="2-1-1-Store"><a href="#2-1-1-Store" class="headerlink" title="2.1.1 Store"></a>2.1.1 Store</h4><ul>
-<li>hbase 会把一起访问的数据放在一个 store 里面，即为每个 ColumnFamily 建一个 store。 HBase 以 store 的大小来判断是否需要切分 region</li>
-</ul>
-<h5 id="2-1-1-1-MemStore"><a href="#2-1-1-1-MemStore" class="headerlink" title="2.1.1.1 MemStore"></a>2.1.1.1 MemStore</h5><ul>
-<li>memStore 是在内存里的。保存修改的数据即 keyValues。当 memStore 的大小达到阈值（默认 128MB）时，memStore 会被 flush 到 StoreFile。目前 hbase 会有一个线程来负责 memStore 的 flush 操作。</li>
-</ul>
-<h5 id="2-1-1-2-StoreFile"><a href="#2-1-1-2-StoreFile" class="headerlink" title="2.1.1.2 StoreFile"></a>2.1.1.2 StoreFile</h5><ul>
-<li>StoreFile 底层是以 HFile 的格式保存。当 storefile 文件的数量增长到一定阈值后，系统会进行合并（minor、major compaction），在合并过程中会进行版本合并和删除工作（majar compaction 才会删除），形成更大的 storefile。</li>
-<li>HFile 是 Hadoop 中的二进制格式文件，实际上 StoreFile 就是对 Hfile 做了轻量级包装，即 StoreFile 底层就是 HFile。</li>
-</ul>
-<h3 id="2-2-HLog"><a href="#2-2-HLog" class="headerlink" title="2.2 HLog"></a>2.2 HLog</h3><ul>
-<li>HLog(WAL log)：WAL 意为 write ahead log，用来做灾难恢复使用，HLog 记录数据的所有变更，一旦 region server 宕机，就可以从 log 中进行恢复。</li>
-</ul>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
   
 
-      
+      </span>
+    
   
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/03/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/liquibase/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/03/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/liquibase/" class="post-title-link" itemprop="url">liquibase</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-08-03 21:28:49" itemprop="dateCreated datePublished" datetime="2021-08-03T21:28:49+08:00">2021-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:55:33" itemprop="dateModified" datetime="2023-02-08T00:55:33+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">中间件与框架</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/" itemprop="url" rel="index"><span itemprop="name">liquibase</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">--删除唯一约束</span><br><span class="line"><span class="tag">&lt;<span class="name">dropNotNullConstraint</span> <span class="attr">tableName</span>=<span class="string">&quot;FDC_MES_DATA&quot;</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">columnName</span>=<span class="string">&quot;LAYER_ID&quot;</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">columnDataType</span>=<span class="string">&quot;bigint&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">--修改字段类型</span><br><span class="line"><span class="tag">&lt;<span class="name">modifyDataType</span>  <span class="attr">columnName</span>=<span class="string">&quot;NO_DATA_TIME&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">newDataType</span>=<span class="string">&quot;DATE&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">tableName</span>=<span class="string">&quot;HIST_CHAMBER_GROUP&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">nullable</span>=<span class="string">&quot;false&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">--删除字段</span><br><span class="line"><span class="tag">&lt;<span class="name">dropColumn</span> <span class="attr">tableName</span>=<span class="string">&quot;HIST_CHAMBER_GROUP&quot;</span> <span class="attr">columnName</span>=<span class="string">&quot;CHAMBER_GROUP&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">--添加字段</span><br><span class="line"><span class="tag">&lt;<span class="name">addColumn</span> <span class="attr">tableName</span>=<span class="string">&quot;HIST_CHAMBER_GROUP&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">&quot;CHAMBER_GROUP&quot;</span> <span class="attr">type</span>=<span class="string">&quot;CLOB&quot;</span> <span class="attr">remarks</span>=<span class="string">&quot;Chamber Group的json对象&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">addColumn</span>&gt;</span></span><br><span class="line"></span><br><span class="line">--创建唯一索引</span><br><span class="line"><span class="tag">&lt;<span class="name">createIndex</span> <span class="attr">indexName</span>=<span class="string">&quot;SYS_C007461&quot;</span> <span class="attr">tableName</span>=<span class="string">&quot;FDC_CONF_CHAMBER&quot;</span> <span class="attr">unique</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">&quot;TOOL_ID&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">&quot;CHAMBER_NAME&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">createIndex</span>&gt;</span></span><br><span class="line"></span><br><span class="line">--创建外键约束</span><br><span class="line"><span class="tag">&lt;<span class="name">addForeignKeyConstraint</span> <span class="attr">constraintName</span>=<span class="string">&quot;FK_FDC_CONF_MES_CHAMBER_MES_TOOL_ID&quot;</span></span></span><br><span class="line"><span class="tag">                                 <span class="attr">baseTableName</span>=<span class="string">&quot;FDC_CONF_MES_CHAMBER&quot;</span> <span class="attr">baseColumnNames</span>=<span class="string">&quot;MES_TOOL_ID&quot;</span></span></span><br><span class="line"><span class="tag">                                 <span class="attr">referencedTableName</span>=<span class="string">&quot;FDC_CONF_MES_TOOL&quot;</span> <span class="attr">referencedColumnNames</span>=<span class="string">&quot;ID&quot;</span></span></span><br><span class="line"><span class="tag">                                 <span class="attr">deferrable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">initiallyDeferred</span>=<span class="string">&quot;false&quot;</span> <span class="attr">onDelete</span>=<span class="string">&quot;RESTRICT&quot;</span> <span class="attr">onUpdate</span>=<span class="string">&quot;RESTRICT&quot;</span> <span class="attr">validate</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">--删除外键约束</span><br><span class="line"><span class="tag">&lt;<span class="name">dropForeignKeyConstraint</span> <span class="attr">baseTableName</span>=<span class="string">&quot;FDC_CONF_SENSOR&quot;</span></span></span><br><span class="line"><span class="tag">                          <span class="attr">baseColumnNames</span>=<span class="string">&quot;CHAMBER_ID&quot;</span></span></span><br><span class="line"><span class="tag">                          <span class="attr">constraintName</span>=<span class="string">&quot;FK_CONF_SENSOR_CHAMBER_ID&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">--校验</span><br><span class="line"><span class="tag">&lt;<span class="name">preConditions</span> <span class="attr">onFail</span>=<span class="string">&quot;MARK_RAN&quot;</span> <span class="attr">onError</span>=<span class="string">&quot;MARK_RAN&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tableExists</span> <span class="attr">tableName</span>=<span class="string">&quot;FDC_CONF_CHAMBER_GROUP_VIRTUAL_SENSOR_MAPPING&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">preConditions</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/DDD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/DDD/" class="post-title-link" itemprop="url">DDD</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-28 00:21:16" itemprop="dateCreated datePublished" datetime="2021-07-28T00:21:16+08:00">2021-07-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:26:03" itemprop="dateModified" datetime="2023-02-08T00:26:03+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>一种设计思想，不解决技术问题，只解决复杂的业务问题</p>
-</blockquote>
-<h1 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h1><ul>
-<li>适合：<ul>
-<li>复杂系统：维护老项目时提供帮助</li>
-<li>容易剥离开业务和技术</li>
-</ul>
-</li>
-<li>不适合<ul>
-<li>不容易剥离开业务和技术：如 底层技术平台：</li>
-<li>简单系统：如 新项目</li>
-</ul>
-</li>
-</ul>
-<p>ddd 可以指导拆分微服务<br>按限界上下文拆分微服务；上下文地图则为微服务之间的接口<br>单一职责原则</p>
-<p>聚合：<br>整体消失时，部分也消失<br>整体产生前，部分不能产生<br>部分的生命周期在整体的内部</p>
-<h1 id="领域模型到程序设计"><a href="#领域模型到程序设计" class="headerlink" title="领域模型到程序设计"></a>领域模型到程序设计</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/29/java%E5%9F%BA%E7%A1%80/%E6%B3%A8%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/29/java%E5%9F%BA%E7%A1%80/%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">注解</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-29 00:12:19" itemprop="dateCreated datePublished" datetime="2021-06-29T00:12:19+08:00">2021-06-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h1><ul>
-<li><p>@Retention（标识注解存在阶段）</p>
-<ul>
-<li>@Retention(RetentionPolicy.SOURCE)，注解仅存在于源码中，在 class 字节码文件中不包含</li>
-<li>@Retention(RetentionPolicy.CLASS)， 默认的保留策略，注解会在 class 字节码文件中存在，但运行时无法获得</li>
-<li>@Retention(RetentionPolicy.RUNTIME)， 注解会在 class 字节码文件中存在，在运行时可以通过反射获取到</li>
-</ul>
-</li>
-<li><p>@Target（注解作用的范围）</p>
-<ul>
-<li>@Target(ElementType.TYPE) 作用接口、类、枚举、注解</li>
-<li>@Target(ElementType.FIELD) 作用属性字段、枚举的常量</li>
-<li>@Target(ElementType.METHOD) 作用方法</li>
-<li>@Target(ElementType.PARAMETER) 作用方法参数</li>
-<li>@Target(ElementType.CONSTRUCTOR) 作用构造函数</li>
-<li>@Target(ElementType.LOCAL_VARIABLE)作用局部变量</li>
-<li>@Target(ElementType.ANNOTATION_TYPE)作用于注解（@Retention 注解中就使用该属性）</li>
-<li>@Target(ElementType.PACKAGE) 作用于包</li>
-<li>@Target(ElementType.TYPE_PARAMETER) 作用于类型泛型，即泛型方法、泛型类、泛型接口 （jdk1.8 加入）</li>
-<li>@Target(ElementType.TYPE_USE) 类型使用.可以用于标注任意类型除了 class （jdk1.8 加入）</li>
-</ul>
-</li>
-<li><p>@Inherited（继承，一个被@Inherited 注解了的注解修饰了一个父类，如果他的子类没有被其他注解修饰，则它的子类也继承了父类的注解。）</p>
-</li>
-<li><p>@Documented（它的作用是能够将注解中的元素包含到 Javadoc 中去。）</p>
-</li>
-<li><p>@Repeatable（可重复的。被这个元注解修饰的注解可以同时作用一个对象多次，但是每次作用注解又可以代表不同的含义）</p>
-</li>
-</ul>
-<h1 id="java-自带标准注解"><a href="#java-自带标准注解" class="headerlink" title="java 自带标准注解"></a>java 自带标准注解</h1><p>包括@Override、@Deprecated、@SuppressWarnings 等，使用这些注解后编译器就会进行检查。</p>
-<h1 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h1><p><strong>使用 @interface 定义注解时，意味着它实现了 java.lang.annotation.Annotation 接口，即该注解就是一个 Annotation。</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyTestAnnotation &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/28/java%E5%9F%BA%E7%A1%80/javax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/28/java%E5%9F%BA%E7%A1%80/javax/" class="post-title-link" itemprop="url">javax</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-28 23:43:32" itemprop="dateCreated datePublished" datetime="2021-06-28T23:43:32+08:00">2021-06-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="javax-validation"><a href="#javax-validation" class="headerlink" title="javax.validation"></a>javax.validation</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Null</span>  被注释的元素必须为<span class="literal">null</span></span><br><span class="line"><span class="meta">@NotNull</span>  被注释的元素不能为<span class="literal">null</span></span><br><span class="line"><span class="meta">@AssertTrue</span>  被注释的元素必须为<span class="literal">true</span></span><br><span class="line"><span class="meta">@AssertFalse</span>  被注释的元素必须为<span class="literal">false</span></span><br><span class="line"><span class="meta">@Min(value)</span>  被注释的元素必须是一个数字，其值必须大于等于指定的最小值</span><br><span class="line"><span class="meta">@Max(value)</span>  被注释的元素必须是一个数字，其值必须小于等于指定的最大值</span><br><span class="line"><span class="meta">@DecimalMin(value)</span>  被注释的元素必须是一个数字，其值必须大于等于指定的最小值</span><br><span class="line"><span class="meta">@DecimalMax(value)</span>  被注释的元素必须是一个数字，其值必须小于等于指定的最大值</span><br><span class="line"><span class="meta">@Size(max,min)</span>  被注释的元素的大小必须在指定的范围内。</span><br><span class="line"><span class="meta">@Digits(integer,fraction)</span>  被注释的元素必须是一个数字，其值必须在可接受的范围内</span><br><span class="line"><span class="meta">@Past</span>  被注释的元素必须是一个过去的日期</span><br><span class="line"><span class="meta">@Future</span>  被注释的元素必须是一个将来的日期</span><br><span class="line"><span class="meta">@Pattern(value)</span> 被注释的元素必须符合指定的正则表达式。</span><br><span class="line"><span class="meta">@Email</span> 被注释的元素必须是电子邮件地址</span><br><span class="line"><span class="meta">@Length</span> 被注释的字符串的大小必须在指定的范围内</span><br><span class="line"><span class="meta">@NotEmpty</span>  被注释的字符串必须非空</span><br><span class="line"><span class="meta">@Range</span>  被注释的元素必须在合适的范围内</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/21/%E5%88%86%E5%B8%83%E5%BC%8F/BASE%E7%90%86%E8%AE%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/21/%E5%88%86%E5%B8%83%E5%BC%8F/BASE%E7%90%86%E8%AE%BA/" class="post-title-link" itemprop="url">BASE理论</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-21 00:54:41" itemprop="dateCreated datePublished" datetime="2021-06-21T00:54:41+08:00">2021-06-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:19:46" itemprop="dateModified" datetime="2023-02-08T00:19:46+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>即使无法做到强一致性（Strong consistency），但每个应用都可以根据自身的业务特点，采用适当的方式来使系统达到最终一致性（Eventual consistency）。</p>
-</blockquote>
-<ul>
-<li>Basically Available（基本可用）</li>
-<li>Soft state（软状态）</li>
-<li>Eventually consistent（最终一致性）</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FlXkqNXDgYzbzpSMLxQ_rBQgpqBD.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/19/%E9%A1%B9%E7%9B%AE/%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%E6%96%B9%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/19/%E9%A1%B9%E7%9B%AE/%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">最大努力通知方案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-19 23:17:32" itemprop="dateCreated datePublished" datetime="2021-06-19T23:17:32+08:00">2021-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh2ACUoyQi6NAvQJEeculGKYefst.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/03/java%E5%9F%BA%E7%A1%80/Guava%20Cache/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/03/java%E5%9F%BA%E7%A1%80/Guava%20Cache/" class="post-title-link" itemprop="url">Guava Cache</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-03 11:41:41" itemprop="dateCreated datePublished" datetime="2021-06-03T11:41:41+08:00">2021-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hzw.fdc.web.rest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.common.base.Preconditions;</span><br><span class="line"><span class="keyword">import</span> com.google.common.cache.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestGuavaCache</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException &#123;</span><br><span class="line">        CacheLoader&lt;String, String&gt; loader = <span class="keyword">new</span> <span class="title class_">CacheLoader</span>&lt;String, String&gt; () &#123;</span><br><span class="line">            <span class="comment">// get 时先从缓存中找，找不到则通过load加载</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> String <span class="title function_">load</span><span class="params">(String key)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                <span class="keyword">if</span>(<span class="string">&quot;key&quot;</span>.equals(key)) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">                System.out.println(key + <span class="string">&quot; is loaded from a cacheLoader!&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span> key + <span class="string">&quot;&#x27;s value&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        RemovalListener&lt;String, String&gt; removalListener = <span class="keyword">new</span> <span class="title class_">RemovalListener</span>&lt;String, String&gt;() &#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onRemoval</span><span class="params">(RemovalNotification&lt;String, String&gt; removal)</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;[&quot;</span> + removal.getKey() + <span class="string">&quot;:&quot;</span> + removal.getValue() + <span class="string">&quot;] is evicted!&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// CacheBuilder缓存构建器。构建缓存的入口，指定缓存配置参数并初始化本地缓存。</span></span><br><span class="line">        LoadingCache&lt;String, String&gt; testCache = CacheBuilder.newBuilder()</span><br><span class="line">            .maximumSize(<span class="number">7</span>)</span><br><span class="line">            .expireAfterWrite(<span class="number">10</span>, TimeUnit.MINUTES)</span><br><span class="line">            .removalListener(removalListener)</span><br><span class="line">            .softValues() <span class="comment">// 使用软引用存储值</span></span><br><span class="line">            .recordStats() <span class="comment">// 开启后会对缓存的操作进行统计</span></span><br><span class="line">            .build(loader);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// get</span></span><br><span class="line">        <span class="comment">// 从本地缓存中找值，如果找不到返回null，找到就返回相应的值。</span></span><br><span class="line">        testCache.getIfPresent(<span class="string">&quot;myKey&quot;</span>);</span><br><span class="line">        <span class="comment">// get 时先从缓存中找，找不到则通过load加载</span></span><br><span class="line">        testCache.get(<span class="string">&quot;myKey&quot;</span>);</span><br><span class="line">        System.out.println(testCache.get(<span class="string">&quot;myKey&quot;</span>));</span><br><span class="line">        <span class="comment">// get时先从缓存中找，找不到则通过call加载</span></span><br><span class="line">        testCache.get(<span class="string">&quot;hehe&quot;</span>, ()-&gt;<span class="string">&quot;valueHehe&quot;</span>);</span><br><span class="line">        System.out.println(testCache.get(<span class="string">&quot;hehe&quot;</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(testCache.get(<span class="string">&quot;xixi&quot;</span>, ()-&gt;<span class="string">&quot;valueXixi&quot;</span>));</span><br><span class="line"></span><br><span class="line">        testCache.put(<span class="string">&quot;haha0&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        testCache.put(<span class="string">&quot;haha1&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(testCache.getIfPresent(<span class="string">&quot;haha0&quot;</span>));</span><br><span class="line">        System.out.println(testCache.getIfPresent(<span class="string">&quot;haha1&quot;</span>));</span><br><span class="line">        <span class="comment">// delete</span></span><br><span class="line"><span class="comment">//        testCache.invalidate(&quot;myKey&quot;);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// status</span></span><br><span class="line"><span class="comment">//        System.out.println(testCache.stats());</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/20/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/20/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F/" class="post-title-link" itemprop="url">唯一索引与唯一约束</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-05-20 16:36:22" itemprop="dateCreated datePublished" datetime="2021-05-20T16:36:22+08:00">2021-05-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-02-08 00:45:24" itemprop="dateModified" datetime="2023-02-08T00:45:24+08:00">2023-02-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>两者本质不同<ul>
-<li><strong>index</strong><ul>
-<li>Optional structure associated with tables and clusters. You can create indexes on one or more columns of a table to speed SQL statement execution on that table.</li>
-</ul>
-</li>
-<li><strong>integrity constraint</strong><ul>
-<li>Declarative method of defining a rule for a column of a table. Integrity constraints enforce the business rules associated with a database and prevent the entry of invalid information into tables.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>两者的关联<ul>
-<li>建立唯一约束时会自动建立唯一索引（若无唯一索引，要保证唯一约束只能全表扫描，这样不好）</li>
-<li>建立唯一索引不会有唯一约束</li>
-</ul>
-</li>
-<li>两者的不同<ul>
-<li>外键的建立必须有唯一约束，这是唯一索引做不到的</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
+</span>
 
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+        
+        
+      </div>
+    </article>
   </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         
-          <span class="site-state-item-count">110</span>
-          <span class="site-state-item-name">posts</span>
+        <a href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" target="_self">
+          Hbase物理结构
         </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/Hbase%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" target="_self">
+        <div>
+          1 Master 为 RegionServer 分配 Region 负责 RegionServer 的负载均衡 发现失效的 RegionServer 并重新分配其上的 Region  注：client 访问 HBase 上数据的过程并不需要 Master 参与，在没有 Region 分裂的情况，Master 宕机一段时间是可以忍受的  2 RegionServer RegionServer 维护
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-13 20:33" pubdate>
+              2021-09-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/hbase/" class="category-chain-item">hbase</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">categories</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/08/03/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/liquibase/" target="_self">
+          liquibase
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/08/03/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/liquibase/" target="_self">
+        <div>
+          12345678910111213141516171819202122232425262728293031323334353637383940--删除唯一约束&lt;dropNotNullConstraint tableName=&quot;FDC_MES_DATA&quot;                        columnName=&quot;LAYER_ID&quot;
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-08-03 21:28" pubdate>
+              2021-08-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/" class="category-chain-item">中间件与框架</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E6%A1%86%E6%9E%B6/liquibase/" class="category-chain-item">liquibase</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
       </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/07/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/DDD/" target="_self">
+          DDD
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/07/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/DDD/" target="_self">
+        <div>
+          一种设计思想，不解决技术问题，只解决复杂的业务问题  适用场景 适合： 复杂系统：维护老项目时提供帮助 容易剥离开业务和技术   不适合 不容易剥离开业务和技术：如 底层技术平台： 简单系统：如 新项目    ddd 可以指导拆分微服务按限界上下文拆分微服务；上下文地图则为微服务之间的接口单一职责原则 聚合：整体消失时，部分也消失整体产生前，部分不能产生部分的生命周期在整体的内部 领域模型到程序
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-28 00:21" pubdate>
+              2021-07-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="category-chain-item">设计模式</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/06/29/java%E5%9F%BA%E7%A1%80/%E6%B3%A8%E8%A7%A3/" target="_self">
+          注解
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/29/java%E5%9F%BA%E7%A1%80/%E6%B3%A8%E8%A7%A3/" target="_self">
+        <div>
+          元注解 @Retention（标识注解存在阶段）  @Retention(RetentionPolicy.SOURCE)，注解仅存在于源码中，在 class 字节码文件中不包含 @Retention(RetentionPolicy.CLASS)， 默认的保留策略，注解会在 class 字节码文件中存在，但运行时无法获得 @Retention(RetentionPolicy.RUNTIME)， 注解
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-29 00:12" pubdate>
+              2021-06-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/06/28/java%E5%9F%BA%E7%A1%80/javax/" target="_self">
+          javax
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/28/java%E5%9F%BA%E7%A1%80/javax/" target="_self">
+        <div>
+          javax.validation1234567891011121314151617@Null  被注释的元素必须为null@NotNull  被注释的元素不能为null@AssertTrue  被注释的元素必须为true@AssertFalse  被注释的元素必须为false@Min(value)  被注释的元素必须是一个数字，其值必须大于等于指定的最小值@Max(value)  被注释的元素必须
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-28 23:43" pubdate>
+              2021-06-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/06/21/%E5%88%86%E5%B8%83%E5%BC%8F/BASE%E7%90%86%E8%AE%BA/" target="_self">
+          BASE理论
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/21/%E5%88%86%E5%B8%83%E5%BC%8F/BASE%E7%90%86%E8%AE%BA/" target="_self">
+        <div>
+          即使无法做到强一致性（Strong consistency），但每个应用都可以根据自身的业务特点，采用适当的方式来使系统达到最终一致性（Eventual consistency）。   Basically Available（基本可用） Soft state（软状态） Eventually consistent（最终一致性）
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-21 00:54" pubdate>
+              2021-06-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" class="category-chain-item">分布式</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/06/19/%E9%A1%B9%E7%9B%AE/%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%E6%96%B9%E6%A1%88/" target="_self">
+          最大努力通知方案
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/19/%E9%A1%B9%E7%9B%AE/%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%E6%96%B9%E6%A1%88/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-19 23:17" pubdate>
+              2021-06-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/06/03/java%E5%9F%BA%E7%A1%80/Guava%20Cache/" target="_self">
+          Guava Cache
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/06/03/java%E5%9F%BA%E7%A1%80/Guava%20Cache/" target="_self">
+        <div>
+          1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465package com.hzw.fdc.web.rest;import com.google.common.base.Preconditions;import
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-06-03 11:41" pubdate>
+              2021-06-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="category-chain-item">java基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/05/20/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F/" target="_self">
+          唯一索引与唯一约束
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/05/20/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F/" target="_self">
+        <div>
+          两者本质不同 index Optional structure associated with tables and clusters. You can create indexes on one or more columns of a table to speed SQL statement execution on that table.   integrity constraint De
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-05-20 16:36" pubdate>
+              2021-05-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#board">11</a><a class="extend next" rel="next" href="/page/4/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
   </nav>
-</div>
 
 
 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  </div>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
-        
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
 
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
