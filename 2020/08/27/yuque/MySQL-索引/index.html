@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="- 由存储引擎负责实现索引，不同存储引擎的索引工作方式并不一样。 1.操作1.1 创建12345678--index_name可选ALTER TABLE table_name ADD INDEX index_name (column_names);ALTER TABLE table_name ADD UNIQUE (column_names);ALTER TABLE table_name ADD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL-索引">
+<meta property="og:url" content="http://example.com/2020/08/27/yuque/MySQL-%E7%B4%A2%E5%BC%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="- 由存储引擎负责实现索引，不同存储引擎的索引工作方式并不一样。 1.操作1.1 创建12345678--index_name可选ALTER TABLE table_name ADD INDEX index_name (column_names);ALTER TABLE table_name ADD UNIQUE (column_names);ALTER TABLE table_name ADD">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FisYeEfWKeHAVtpasfiBRu2sekhi.jpeg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkB1WS-bxkgpnhG9KggQVrCwthUU.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fo0kfhSBLR45fVcXdA9xU_CDAIvD.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvzncHHxHD3gxljXyR26CXpXx25P.png">
+<meta property="article:published_time" content="2020-08-27T09:34:41.000Z">
+<meta property="article:modified_time" content="2023-02-07T13:32:59.071Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FisYeEfWKeHAVtpasfiBRu2sekhi.jpeg">
+
+<link rel="canonical" href="http://example.com/2020/08/27/yuque/MySQL-%E7%B4%A2%E5%BC%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>MySQL-索引 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/yuque/MySQL-%E7%B4%A2%E5%BC%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MySQL-索引
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-27 17:34:41" itemprop="dateCreated datePublished" datetime="2020-08-27T17:34:41+08:00">2020-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-07 21:32:59" itemprop="dateModified" datetime="2023-02-07T21:32:59+08:00">2023-02-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FisYeEfWKeHAVtpasfiBRu2sekhi.jpeg">- 由存储引擎负责实现索引，不同存储引擎的索引工作方式并不一样。</p>
+<h1 id="1-操作"><a href="#1-操作" class="headerlink" title="1.操作"></a>1.操作</h1><h2 id="1-1-创建"><a href="#1-1-创建" class="headerlink" title="1.1 创建"></a>1.1 创建</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">--index_name可选</span><br><span class="line">ALTER TABLE table_name ADD INDEX index_name (column_names);</span><br><span class="line">ALTER TABLE table_name ADD UNIQUE (column_names);</span><br><span class="line">ALTER TABLE table_name ADD PRIMARY KEY (column_names);</span><br><span class="line"></span><br><span class="line">--不能用CREATE INDEX语句创建PRIMARY KEY索引</span><br><span class="line">CREATE INDEX index_name ON table_name (column_list);</span><br><span class="line">CREATE UNIQUE INDEX index_name ON table_name (column_list);</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-删除"><a href="#1-2-删除" class="headerlink" title="1.2 删除"></a>1.2 删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name DROP INDEX index_name;</span><br><span class="line">ALTER TABLE table_name DROP PRIMARY KEY;</span><br><span class="line"></span><br><span class="line">--只在删除PRIMARY KEY索引时使用</span><br><span class="line">DROP INDEX index_name ON talbe_name;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有创建 PRIMARY KEY 索引，但表具有一个或多个 UNIQUE 索引，则 MySQL 将删除第一个 UNIQUE 索引。<br>对于多列组合的索引，如果删除其中的某列，则该列也会从索引中删除。如果删除组成索引的所有列，则整个索引将被删除。</p>
+<h2 id="1-3-查看"><a href="#1-3-查看" class="headerlink" title="1.3 查看"></a>1.3 查看</h2><h3 id="1-3-1-查看索引"><a href="#1-3-1-查看索引" class="headerlink" title="1.3.1 查看索引"></a>1.3.1 查看索引</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SHOW INDEX FROM table_name;</span><br><span class="line">SHOW KEYS FROM table_name;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Table                  表的名称</li>
+<li>Non_unique      如果索引不能包括重复词，则为 0。如果可以，则为 1。</li>
+<li>Key_name         索引的名称。</li>
+<li>Seq_in_index     索引中的列序列号，从 1 开始。</li>
+<li>Column_name    列名称。</li>
+<li>Collation             列以什么方式存储在索引中。在 MySQL 中，有值‘A’（升序）或 NULL（无分类）。</li>
+<li>Cardinality         索引中唯一值的数目的估计值。通过运行 ANALYZE TABLE 或 myisamchk -a 可以更新。基数根                              据被存储为整数的统计数据来计数，所以即使对于小型表，该值也没有必要是精确的。基数                              越大，当进行联合时，MySQL 使用该索引的机会就越大。</li>
+<li>Sub_part 　　      如果列只是被部分地编入索引，则为被编入索引的字符的数目。如果整列被编入索引，则为                             NULL。</li>
+<li>Packed                 指示关键字如何被压缩。如果没有被压缩，则为 NULL。</li>
+<li>Null     　　          如果列含有 NULL，则含有 YES。如果没有，则该列含有 NO。</li>
+<li>Index_type     　用过的索引方法（BTREE, FULLTEXT, HASH, RTREE）。</li>
+</ul>
+<h3 id="1-3-2-查看执行计划"><a href="#1-3-2-查看执行计划" class="headerlink" title="1.3.2 查看执行计划"></a>1.3.2 查看执行计划</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">explain select column_names from table_name;</span><br><span class="line"></span><br><span class="line">explain select * from book where author_name_id = (select id from author where author_name = &#x27;District panel&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkB1WS-bxkgpnhG9KggQVrCwthUU.png"></p>
+<ul>
+<li><p><strong>id</strong></p>
+<blockquote>
+<p>表示查询中执行 SELECT 子句或操作表的顺序,SQL 按 id 从大到小执行。</p>
+</blockquote>
+</li>
+<li><p><strong>select_type</strong></p>
+<blockquote>
+<p>表示 select 查询的类型</p>
+</blockquote>
+<ul>
+<li><strong>SIMPLLE</strong>：简单查询，该查询不包含 UNION 或子查询</li>
+<li><strong>PRIMARY</strong>：如果查询包含 UNION 或子查询，则最外层的查询被标识为 PRIMARY</li>
+<li>UNION：表示此查询是 UNION 中的第二个或者随后的查询</li>
+<li>DEPENDENT：UNION 满足 UNION 中的第二个或者随后的查询，其次取决于外面的查询</li>
+<li>UNION RESULT：UNION 的结果 SUBQUERY：子查询中的第一个 select 语句(该子查询不在 from 子句中)</li>
+<li><strong>SUBQUERY</strong>：子查询中的第一个 select 语句(该子查询不在 from 子句中)</li>
+<li>DEPENDENT SUBQUERY：子查询中的 第一个 select，同时取决于外面的查询</li>
+<li><strong>DERIVED</strong>：包含在 from 子句中子查询(也称为派生表)</li>
+<li>UNCACHEABLE SUBQUERY：满足是子查询中的第一个 select 语句，同时意味着 select 中的某些特性阻止结果被缓存于一个 Item_cache 中</li>
+<li>UNCACHEABLE UNION：满足此查询是 UNION 中的第二个或者随后的查询，同时意味着 select 中的某些特性阻止结果被缓存于一个 Item_cache 中</li>
+</ul>
+</li>
+<li><p><strong>table</strong></p>
+<blockquote>
+<p>该列显示了对应行正在访问哪个表(有别名就显示别名)。当 from 子句中有子查询时，table 列是 <derivenN>格式，表示当前查询依赖 id=N 的查询，于是先执行 id=N 的查询）</p>
+</blockquote>
+</li>
+<li><p><strong>partitions</strong></p>
+</li>
+<li><p>**type</p>
+<blockquote>
+<p>称为<strong>关联类型</strong>或者<strong>访问类型</strong>，它指明了 MySQL 决定如何查找表中符合条件的行，同时<strong>是我们判断查询是否高效的重要依据</strong>。</p>
+</blockquote>
+<ul>
+<li>ALL：全表扫描</li>
+<li>index：全索引扫描。index 与 ALL 区别为 index 类型只遍历索引树</li>
+<li>range：范围扫描</li>
+<li>ref：一种索引访问，也称索引查找，它返回所有匹配某个单个值的行。针对于非唯一或非主键索引</li>
+<li>eq_ref：唯一性索引或主键查找时会出现该值，非常高效。</li>
+<li>const、system：该表至多有一个匹配行，在查询开始时读取，或者该表是系统表，只有一行匹配。其中 const 用于在和 primary key 或 unique 索引中有固定值比较的情形。</li>
+<li>NULL：在执行阶段不需要访问表。</li>
+</ul>
+</li>
+</ul>
+<p><em>从上至下，性能越来越好。</em></p>
+<ul>
+<li><p><strong>possible_keys</strong><br>这一列显示查询可能使用哪些索引来查找</p>
+</li>
+<li><p><strong>key</strong></p>
+<blockquote>
+<p>显示 MySQL 在查询中实际使用的索引，若没有使用索引，显示为 NULL</p>
+</blockquote>
+</li>
+<li><p><strong>key_len</strong></p>
+</li>
+<li><p><strong>ref</strong></p>
+</li>
+<li><p><strong>rows</strong></p>
+<blockquote>
+<p>这一列显示了<strong>估计</strong>要找到所需的行而要读取的行数，这个值是个估计值，原则上值越小越好。</p>
+</blockquote>
+</li>
+<li><p><strong>filtered</strong></p>
+<blockquote>
+<p>表示返回结果的行数占需要读取行数的百分比，值越大越好，filtered 列的值依赖统计信息，并不十分准确</p>
+</blockquote>
+</li>
+<li><p><strong>Extra</strong></p>
+<blockquote>
+<p>包含不适合在其他列中显示但十分重要的额外信息</p>
+</blockquote>
+<ul>
+<li>Using index：使用覆盖索引，表示查询索引就可查到所需数据，不用扫描表数据文件，往往说明性能不错。</li>
+<li>Using Where：在存储引擎检索行后再进行过滤，使用了 where 从句来限制哪些行将与下一张表匹配或者是返回给用户。</li>
+<li>Using temporary：在查询结果排序时会使用一个临时表，一般出现于排序、分组和多表 join 的情况，查询效率不高，建议优化。</li>
+<li>Using filesort：对结果使用一个外部索引排序，而不是按索引次序从表里读取行，一般有出现该值，都建议优化去掉，因为这样的查询 CPU 资源消耗大。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="2-索引数据结构"><a href="#2-索引数据结构" class="headerlink" title="2.索引数据结构"></a>2.索引数据结构</h1><h2 id="2-1B-Tree"><a href="#2-1B-Tree" class="headerlink" title="2.1B+ Tree"></a>2.1B+ Tree</h2><h2 id="2-2Hash"><a href="#2-2Hash" class="headerlink" title="2.2Hash"></a>2.2Hash</h2><ul>
+<li>优势<ul>
+<li>hash 索引只包含<strong>hash 值</strong>和<strong>行指针</strong>，使索引结构紧凑，查询快。</li>
+</ul>
+</li>
+<li>劣势<ul>
+<li>hash 索引数据未按索引值顺序存储，无法用于排序</li>
+<li>不支持部分索引列匹配查找，{A,B}上建索引，查询 A 时无法使用该索引</li>
+<li>只支持等值查找，不支持范围查找</li>
+<li>hash 冲突导致查询慢，维护代价高</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="3-索引的存储方式"><a href="#3-索引的存储方式" class="headerlink" title="3.索引的存储方式"></a>3.索引的存储方式</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fo0kfhSBLR45fVcXdA9xU_CDAIvD.png"></p>
+<ul>
+<li>InnoDB<ul>
+<li>二级索引<ul>
+<li>非叶子节点<ul>
+<li>保存<strong>索引</strong>信息</li>
+</ul>
+</li>
+<li>叶子节点<ul>
+<li>保存数据的<strong>主键值</strong>（若非聚集索引，需要回表查询）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>聚集索引（实际数据存储在此）<ul>
+<li>非叶子节点<ul>
+<li>保存<strong>索引</strong>信息</li>
+</ul>
+</li>
+<li>叶子节点<ul>
+<li>保存<strong>实际数据</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MyISAM<ul>
+<li>二级索引<ul>
+<li>非叶子节点<ul>
+<li>保存<strong>索引</strong>信息</li>
+</ul>
+</li>
+<li>叶子节点<ul>
+<li>保存数据的<strong>物理地址</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实际数据按插入顺序存储在磁盘上（非树形结构）</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-1-聚簇索引"><a href="#3-1-聚簇索引" class="headerlink" title="3.1 聚簇索引"></a>3.1 聚簇索引</h2><blockquote>
+<p>索引的叶子节点就是对应的数据节点（MySQL 的 MyISAM 除外）</p>
+</blockquote>
+<p>InnoDB 将通过<strong>主键</strong>聚集数据，若未定义主键，InnoDB 会选择一个<strong>唯一的非空索引</strong>代替，若无唯一的非空索引，InnoDB 会<strong>隐式定义一个主键</strong>来作为聚簇索引。</p>
+<ul>
+<li>优势<ul>
+<li>可以把相关数据保存在一起，只需要从磁盘读取少量的数据页就能获取全部信息，减少磁盘 I/O。</li>
+<li>数据访问更快。聚簇索引把索引和数据保存在同一个树中，因此从聚簇索引中获取数据通常比非聚簇索引要快</li>
+</ul>
+</li>
+<li>劣势<ul>
+<li>更新索引代价高。<ul>
+<li>InnoDB 会将每个被更新的行移动到新的位置</li>
+<li>页分裂。当行的主键值要求必须将这一行数据插入到某个已满的页中时，存储引擎会将该页分裂成两个页面来容纳改行，这就是一次页分裂操作。页分裂会导致表占用更多的磁盘空间。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-2-二级索引（非聚集索引）"><a href="#3-2-二级索引（非聚集索引）" class="headerlink" title="3.2 二级索引（非聚集索引）"></a>3.2 二级索引（非聚集索引）</h2><blockquote>
+<p>InnoDB 中二级索引的叶子节点包含了引用行的主键值（不是行指针，没有指向行的物理地址）。<br>若保存的是行指针，那么更新聚集索引后，会更新数据到新的位置，那么也要维护二级索引的叶子节点。若保存的是主键，则可以减少对二级索引的影响</p>
+</blockquote>
+<ul>
+<li>优势<ul>
+<li>当聚簇索引中出现行移动或页分列时，减少二级索引的维护工作</li>
+</ul>
+</li>
+<li>劣势<ul>
+<li>二级索引（非聚集索引）可能比想象的要大，因为在叶子节点包含了引用行的主键值。</li>
+<li>若非覆盖索引，需进行回表查询。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-3-覆盖索引"><a href="#3-3-覆盖索引" class="headerlink" title="3.3 覆盖索引"></a>3.3 覆盖索引</h2><blockquote>
+<p>一个索引覆盖所有需要查询的字段值,我们称之为“覆盖索引”。</p>
+</blockquote>
+<p>可以直接使用索引来获取列数据，而无需回表查询。</p>
+<p>当发起一个索引覆盖查询时，在 Extra 列可以看到“Using index”。<br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvzncHHxHD3gxljXyR26CXpXx25P.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/27/yuque/MySQL-%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84/" rel="prev" title="MySQL-基本架构">
+      <i class="fa fa-chevron-left"></i> MySQL-基本架构
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/28/yuque/MySQL-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" rel="next" title="MySQL-存储引擎">
+      MySQL-存储引擎 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">1.操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%88%9B%E5%BB%BA"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%88%A0%E9%99%A4"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%9F%A5%E7%9C%8B"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 查看</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-%E6%9F%A5%E7%9C%8B%E7%B4%A2%E5%BC%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 查看索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E6%9F%A5%E7%9C%8B%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 查看执行计划</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">2.索引数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1B-Tree"><span class="nav-number">2.1.</span> <span class="nav-text">2.1B+ Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2Hash"><span class="nav-number">2.2.</span> <span class="nav-text">2.2Hash</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E7%B4%A2%E5%BC%95%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">3.索引的存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 聚簇索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E4%BA%8C%E7%BA%A7%E7%B4%A2%E5%BC%95%EF%BC%88%E9%9D%9E%E8%81%9A%E9%9B%86%E7%B4%A2%E5%BC%95%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 二级索引（非聚集索引）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 覆盖索引</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

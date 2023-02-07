@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1 Polling（短轮询） 客户端拉方式    交互方式 client 每隔一段时间都会向 server 发送 http 请求，服务器收到请求后，将最新的数据发回给 client。   缺点 浪费网络带宽：比如在某个时间段 server 没有更新数据，但 client 仍然每隔一段时间发送请求来询问，所以这段时间内的询问都是无效的，这样浪费了网络带宽。 实时性不好    2 Comet 基于 H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Client与Server交互方式">
+<meta property="og:url" content="http://example.com/2021/03/31/yuque/Client%E4%B8%8EServer%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 Polling（短轮询） 客户端拉方式    交互方式 client 每隔一段时间都会向 server 发送 http 请求，服务器收到请求后，将最新的数据发回给 client。   缺点 浪费网络带宽：比如在某个时间段 server 没有更新数据，但 client 仍然每隔一段时间发送请求来询问，所以这段时间内的询问都是无效的，这样浪费了网络带宽。 实时性不好    2 Comet 基于 H">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fr9kc8LJ2kEl8Ls1ZNRBhuwSFqOP.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fhk_UDAmzIhTa5hSMVZdjW9UnnRm.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Flu3bGTukP039HYhDFm6nNB4ZJ94.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fsulbs8daUM-utN5sr-eOZj7bc8G.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsyZy3EcaRR-yKsrWcpEHMmzTJpI.png">
+<meta property="article:published_time" content="2021-03-31T06:00:12.000Z">
+<meta property="article:modified_time" content="2023-02-07T13:29:10.120Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fr9kc8LJ2kEl8Ls1ZNRBhuwSFqOP.png">
+
+<link rel="canonical" href="http://example.com/2021/03/31/yuque/Client%E4%B8%8EServer%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Client与Server交互方式 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/31/yuque/Client%E4%B8%8EServer%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Client与Server交互方式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-03-31 14:00:12" itemprop="dateCreated datePublished" datetime="2021-03-31T14:00:12+08:00">2021-03-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-07 21:29:10" itemprop="dateModified" datetime="2023-02-07T21:29:10+08:00">2023-02-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-Polling（短轮询）"><a href="#1-Polling（短轮询）" class="headerlink" title="1 Polling（短轮询）"></a>1 Polling（短轮询）</h1><blockquote>
+<p>客户端拉方式</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fr9kc8LJ2kEl8Ls1ZNRBhuwSFqOP.png"></p>
+<ul>
+<li><strong>交互方式</strong><ul>
+<li>client 每隔一段时间都会向 server 发送 http 请求，服务器收到请求后，将最新的数据发回给 client。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li><strong>浪费网络带宽</strong>：比如在某个时间段 server 没有更新数据，但 client 仍然每隔一段时间发送请求来询问，所以这段时间内的询问都是无效的，这样浪费了网络带宽。</li>
+<li><strong>实时性不好</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="2-Comet"><a href="#2-Comet" class="headerlink" title="2 Comet"></a>2 Comet</h1><blockquote>
+<p>基于 HTTP 长连接的 “服务器推”  方式</p>
+</blockquote>
+<p>具体可以细分为两种实现方式，一种是长轮询机制，一种是流技术。</p>
+<h2 id="2-1-长轮询（Long-polling）"><a href="#2-1-长轮询（Long-polling）" class="headerlink" title="2.1 长轮询（Long-polling）"></a>2.1 长轮询（Long-polling）</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fhk_UDAmzIhTa5hSMVZdjW9UnnRm.png"></p>
+<ul>
+<li><strong>交互方式</strong><ul>
+<li>client 向 server 发出请求，server 接收到请求后，server 并不一定立即发送回应给 client，而是看数据是否更新，如果数据已经更新了的话，那就立即将数据返回给 client；但如果数据没有更新，那就把这个请求保持住（阻塞），等待有新的数据到来时，才将数据返回给 client</li>
+</ul>
+</li>
+<li><strong>缺点</strong><ul>
+<li>本质上还是一种轮询方式，实时性较差</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-流技术（Http-Streaming）"><a href="#2-2-流技术（Http-Streaming）" class="headerlink" title="2.2 流技术（Http Streaming）"></a>2.2 流技术（Http Streaming）</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Flu3bGTukP039HYhDFm6nNB4ZJ94.png"></p>
+<ul>
+<li>交互方式<ul>
+<li>一直保持连接，不需要 client 请求，当数据发生改变时，server 自动的将数据发送给 client。</li>
+<li>（疑问：HTTP 一个 request 只会对应一个 response，为什么可以有多个 response？）</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>网页会一直显示未加载完成的状态</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-WebSocket"><a href="#3-WebSocket" class="headerlink" title="3 WebSocket"></a>3 WebSocket</h1><blockquote>
+<p>是一种基于 TCP 的<strong>应用层协议</strong></p>
+</blockquote>
+<p><strong><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fsulbs8daUM-utN5sr-eOZj7bc8G.png"></strong></p>
+<ul>
+<li><strong>交互流程</strong><ul>
+<li><strong>借助 HTTP 建立连接</strong></li>
+<li><strong>双向通信（与 HTTP 无关）</strong></li>
+<li>client 或者 server 中有一端主动断开连接</li>
+</ul>
+</li>
+<li><strong>缺点</strong><ul>
+<li><strong>兼容性</strong>：非现代浏览器 IE7 IE8 IE9 不支持 websocket</li>
+<li><strong>浪费流量和电：</strong>Websocket 的 ping/pong 包比较频繁，所以可能在长时间没信息的情况下<strong>浪费流量和电</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-1-WebSocket-与-socket"><a href="#3-1-WebSocket-与-socket" class="headerlink" title="3.1 WebSocket 与 socket"></a>3.1 WebSocket 与 socket</h2><ul>
+<li>WebSocekt 是 HTML5 规范中的一部分，其借鉴了 socket 的思想，为 client 和 server 之间提供了类似的双向通信机制</li>
+<li>socket 并不是一个协议，而是一组接口，其主要方便大家直接使用更底层的协议（比如 TCP 或 UDP）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FsyZy3EcaRR-yKsrWcpEHMmzTJpI.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/25/yuque/Docker/" rel="prev" title="Docker">
+      <i class="fa fa-chevron-left"></i> Docker
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/31/yuque/VNC/" rel="next" title="VNC">
+      VNC <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Polling%EF%BC%88%E7%9F%AD%E8%BD%AE%E8%AF%A2%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">1 Polling（短轮询）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Comet"><span class="nav-number">2.</span> <span class="nav-text">2 Comet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E9%95%BF%E8%BD%AE%E8%AF%A2%EF%BC%88Long-polling%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 长轮询（Long-polling）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%B5%81%E6%8A%80%E6%9C%AF%EF%BC%88Http-Streaming%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 流技术（Http Streaming）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-WebSocket"><span class="nav-number">3.</span> <span class="nav-text">3 WebSocket</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-WebSocket-%E4%B8%8E-socket"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 WebSocket 与 socket</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

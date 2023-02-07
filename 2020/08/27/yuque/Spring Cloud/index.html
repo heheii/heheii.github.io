@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1 Eureka1.0 Eureka 与 Zookeeper 对比 Eureka： 符合 AP 原则 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。 注：2018 年已官宣停止维护   Zookeeper： 符合 CP 原则 为了保证一致性，在所有节点同步完成之前是阻塞状态的。      蓝色的  Eureka Server  是  Eureka">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Cloud">
+<meta property="og:url" content="http://example.com/2020/08/27/yuque/Spring%20Cloud/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 Eureka1.0 Eureka 与 Zookeeper 对比 Eureka： 符合 AP 原则 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。 注：2018 年已官宣停止维护   Zookeeper： 符合 CP 原则 为了保证一致性，在所有节点同步完成之前是阻塞状态的。      蓝色的  Eureka Server  是  Eureka">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqQYn20mWNJl66-qEf1EmkHdQ6Ru.jpeg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FghKc7yychyX0uiccQDuHg9JFAAe.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkpWfwdQO6tlALG4GgkHggnlU6Jd.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvCry-jadnLgyDS_2NucFa1x3xJe.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgKizsKTdZ4362lf35lTMUVoJoun.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FrlmTV4jNB1jtLFsJ9od3113WK4L.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgmfJFw7JJDlFtwRUrlvv0LF44Qm.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh7k7es_KunqJjc3EDcS3N3vBVPH.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FjlBcKTpPPPyZ_9sVvgmfCrukYVn.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvZKVa8yiBxYkFNM8A3XhXcOvF5h.png">
+<meta property="article:published_time" content="2020-08-27T08:00:20.000Z">
+<meta property="article:modified_time" content="2023-02-07T13:34:01.048Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqQYn20mWNJl66-qEf1EmkHdQ6Ru.jpeg">
+
+<link rel="canonical" href="http://example.com/2020/08/27/yuque/Spring%20Cloud/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Spring Cloud | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/yuque/Spring%20Cloud/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spring Cloud
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-27 16:00:20" itemprop="dateCreated datePublished" datetime="2020-08-27T16:00:20+08:00">2020-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-07 21:34:01" itemprop="dateModified" datetime="2023-02-07T21:34:01+08:00">2023-02-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqQYn20mWNJl66-qEf1EmkHdQ6Ru.jpeg"></p>
+<h1 id="1-Eureka"><a href="#1-Eureka" class="headerlink" title="1 Eureka"></a>1 Eureka</h1><h2 id="1-0-Eureka-与-Zookeeper-对比"><a href="#1-0-Eureka-与-Zookeeper-对比" class="headerlink" title="1.0 Eureka 与 Zookeeper 对比"></a>1.0 Eureka 与 Zookeeper 对比</h2><ul>
+<li>Eureka： <strong>符合 AP 原则</strong> 为了保证了可用性，Eureka 不会等待集群所有节点都已同步信息完成，它会无时无刻提供服务。<ul>
+<li>注：2018 年已官宣停止维护</li>
+</ul>
+</li>
+<li>Zookeeper： <strong>符合 CP 原则</strong> 为了保证一致性，在所有节点同步完成之前是阻塞状态的。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FghKc7yychyX0uiccQDuHg9JFAAe.png"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FkpWfwdQO6tlALG4GgkHggnlU6Jd.png"></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvCry-jadnLgyDS_2NucFa1x3xJe.webp"></p>
+<ul>
+<li>蓝色的  Eureka Server  是  Eureka  服务器。<ul>
+<li>这三个代表的是集群，而且他们是<strong>去中心化</strong>的。</li>
+</ul>
+</li>
+<li>绿色的  Application Client  是  Eureka  客户端。<ul>
+<li>其中可以是消费者和提供者，最左边的就是典型的提供者，它需要向  Eureka  服务器注册自己和发送心跳包进行续约，而其他消费者则通过  Eureka  服务器来获取提供者的信息以调用他们</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-1-服务提供者"><a href="#1-1-服务提供者" class="headerlink" title="1.1 服务提供者"></a>1.1 服务提供者</h2><ul>
+<li><strong>服务注册：</strong></li>
+</ul>
+<p>启动的时候会通过发送 REST 请求的方式将自己注册到 Eureka Server 上，同时带上了自身服务的一些元数据。</p>
+<ul>
+<li><strong>服务续约：</strong></li>
+</ul>
+<p>xx 在注册完服务之后，服务提供者会维护一个心跳（默认每隔 30s 发送一次）用来持续告诉 Eureka Server: “我还活着 ” 、</p>
+<ul>
+<li><strong>服务下线：</strong></li>
+</ul>
+<p>当服务实例进行正常的关闭操作时，它会触发一个服务下线的 REST 请求给 Eureka Server, 告诉服务注册中心：“我要下线了 ”。</p>
+<h2 id="1-2-服务消费者"><a href="#1-2-服务消费者" class="headerlink" title="1.2 服务消费者"></a>1.2 服务消费者</h2><ul>
+<li><strong>获取服务：</strong></li>
+</ul>
+<p>当我们启动服务消费者的时候，它会发送一个 REST 请求给服务注册中心，来获取上面注册的服务列表信息（该注册列表信息定期 30s 更新一次）</p>
+<ul>
+<li><strong>服务调用：</strong></li>
+</ul>
+<p>服务消费者在获取服务清单后，通过服务名可以获得具体提供服务的实例名和该实例的元数据信息。在进行服务调用的时候，优先访问同处一个 Zone 中的服务提供方。</p>
+<h2 id="1-3-Eureka-Server-服务注册中心"><a href="#1-3-Eureka-Server-服务注册中心" class="headerlink" title="1.3 Eureka Server(服务注册中心)"></a>1.3 Eureka Server(服务注册中心)</h2><ul>
+<li><strong>失效剔除：</strong></li>
+</ul>
+<p>默认每隔一段时间（默认为 60 秒） 将当前清单中超时（默认为 90 秒，3 个续约周期）没有续约的服务从注册表中删除。</p>
+<ul>
+<li><strong>自我保护：</strong></li>
+</ul>
+<p>EurekaServer 在运行期间，会统计心跳失败的比例在 15 分钟之内是否低于 85%(通常由于网络不稳定导致)。 Eureka Server 会将当前的实例注册信息保护起来， 让这些实例不会过期，尽可能保护这些注册信息。</p>
+<hr>
+<h1 id="2-Ribbon"><a href="#2-Ribbon" class="headerlink" title="2 Ribbon"></a>2 Ribbon</h1><ul>
+<li>让服务<strong>调用端</strong>具备<strong>负载均衡</strong>能力，不用在服务集群内再架设负载均衡服务，很大程度简化了服务集群内的架构。<ul>
+<li>RestTemplate 内部调用负载均衡拦截器，拦截器内最终是调用了负载均衡器来选择服务实例。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-Nginx-和-Ribbon-的对比"><a href="#2-1-Nginx-和-Ribbon-的对比" class="headerlink" title="2.1 Nginx 和 Ribbon 的对比"></a>2.1 Nginx 和 Ribbon 的对比</h2><ul>
+<li>Nginx<ul>
+<li><strong>集中式</strong>的负载均衡器，接收了所有的请求后进行负载均衡</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgKizsKTdZ4362lf35lTMUVoJoun.webp"></p>
+<ul>
+<li>Ribbon<ul>
+<li>先在客户端进行负载均衡才进行请求的</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FrlmTV4jNB1jtLFsJ9od3113WK4L.webp"></p>
+<h2 id="2-2-Ribbon-中的负载均衡算法"><a href="#2-2-Ribbon-中的负载均衡算法" class="headerlink" title="2.2 Ribbon 中的负载均衡算法"></a>2.2 Ribbon 中的负载均衡算法</h2><ul>
+<li><strong>RoundRobinRule</strong>：轮询策略（Ribbon 默认采用的策略）。若经过一轮轮询没有找到可用的<code>provider</code>，其最多轮询 10 轮。若最终还没有找到，则返回 null。</li>
+<li><strong>RandomRule</strong>: 随机策略，从所有可用的 provider 中随机选择一个。</li>
+<li><strong>RetryRule</strong>: 重试策略。先按照 RoundRobinRule 策略获取 provider，若获取失败，则在指定的时限内重试。默认的时限为 500 毫秒。</li>
+<li>等等。。。</li>
+<li><strong>自定义负载均衡算法。</strong><ul>
+<li>只需要实现<code>com.netflix.loadbalancer.IRule</code>接口，然后修改配置文件或者自定义<code>Java Config</code>类。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更换负载均衡算法</span></span><br><span class="line"><span class="attr">providerName:</span></span><br><span class="line">  <span class="attr">ribbon:</span></span><br><span class="line">    <span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.netflix.loadbalancer.RandomRule</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="3-Hystrix"><a href="#3-Hystrix" class="headerlink" title="3 Hystrix"></a>3 Hystrix</h1><h2 id="3-1-Fallback-失败快速返回-："><a href="#3-1-Fallback-失败快速返回-：" class="headerlink" title="3.1 Fallback(失败快速返回)："></a>3.1 Fallback(失败快速返回)：</h2><pre><code>当某个服务单元发生故障（类似用电器发生短路）之后，通过断路器的故障监控（类似熔断保险丝）， 向调用方返回一个错误响应， 而不是长时间的等待。这样就不会使得线程因调用故障服务被长时间占用不释放，避免了故障在分布式系统中的蔓延。
+</code></pre>
+<h2 id="3-2-资源-依赖隔离-线程池隔离-："><a href="#3-2-资源-依赖隔离-线程池隔离-：" class="headerlink" title="3.2 资源/依赖隔离(线程池隔离)："></a>3.2 资源/依赖隔离(线程池隔离)：</h2><pre><code>它会为每一个依赖服务创建一个独立的线程池，这样就算某个依赖服务出现延迟过高的情况，也只是对该依赖服务的调用产生影响， 而不会拖慢其他的依赖服务。
+</code></pre>
+<ul>
+<li>参数：<ul>
+<li>滑动窗口大小（20）、</li>
+<li>熔断器开关间隔（重新检测该触发条件，判断是否把熔断器关闭，或者继续打开的时间间隔）</li>
+<li>错误率（超过错误率时，会打开熔断器，此时再调用此服务，将会直接返回失败，不再调远程服务）</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-3-Hystrix-仪表盘："><a href="#3-3-Hystrix-仪表盘：" class="headerlink" title="3.3 Hystrix 仪表盘："></a>3.3 Hystrix 仪表盘：</h2><pre><code>它主要用来实时监控Hystrix的各项指标信息。通过Hystrix Dashboard反馈的实时信息，可以帮助我们快速发现系统中存在的问题，从而及时地采取应对措施。
+</code></pre>
+<hr>
+<h1 id="4-Feign-与-OpenFeign"><a href="#4-Feign-与-OpenFeign" class="headerlink" title="4 Feign 与 OpenFeign"></a>4 Feign 与 OpenFeign</h1><ul>
+<li>OpenFeign 在 Feign 的基础上支持了 Spring MVC 的注解</li>
+<li>Ribbon 和 Hystrix 这两个框架的使用几乎是同时出现的–&gt;Feign 整合了 Spring Cloud Ribbon 与 Spring Cloud Hystrix,还提供了声明式的服务调用(不再通过 RestTemplate)</li>
+</ul>
+<h2 id="4-1-原理"><a href="#4-1-原理" class="headerlink" title="4.1 原理"></a>4.1 原理</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FgmfJFw7JJDlFtwRUrlvv0LF44Qm.png"></p>
+<ol>
+<li>通过 Spring IOC 容器实例，<strong>装配代理实例</strong>，然后进行远程调用。</li>
+<li>执行 **InvokeHandler **调用处理器的 invoke(…)方法<ol>
+<li>调用到默认的 FeignInvocationHandler 调用处理器实例的 invoke(…)方法</li>
+<li>默认的调用处理器 FeignInvocationHandle，内部保持了一个远程调用方法实例和方法处理器的一个 Key-Value 键值对 Map 映射。FeignInvocationHandle 在其 invoke(…)方法中，会根据 Java 反射的方法实例，在 dispatch 映射对象中，找到对应的 MethodHandler 方法处理器，然后由后者完成实际的 HTTP 请求和结果的处理。</li>
+</ol>
+</li>
+<li>执行 **MethodHandler **方法处理器的 invoke(…)方法<ol>
+<li>feign 默认的方法处理器为 SynchronousMethodHandler，其 invoke(…)方法主要是通过内部成员 feign 客户端成员 client，完成远程 URL 请求执行和获取远程结果。</li>
+</ol>
+</li>
+<li>通过** feign.Client** 客户端成员，完成远程 URL 请求执行和获取远程结果</li>
+</ol>
+<hr>
+<h1 id="5-SpringCloud-gateway"><a href="#5-SpringCloud-gateway" class="headerlink" title="5 SpringCloud gateway"></a>5 SpringCloud gateway</h1><h2 id="5-1-简介"><a href="#5-1-简介" class="headerlink" title="5.1 简介"></a>5.1 简介</h2><ul>
+<li><p>外层调用都必须通过 API 网关，使得将维护服务实例的工作交给了服务治理框架自动完成。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>zuul</th>
+<th>zuul2</th>
+<th>Gateway</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>所属公司</td>
+<td>Netflix</td>
+<td>Netflix</td>
+<td>springcloud</td>
+</tr>
+<tr>
+<td>springboot 版本</td>
+<td>springcloud 1.x</td>
+<td>Springcloud 2.x</td>
+<td>Springcloud 2.x</td>
+</tr>
+<tr>
+<td>架构</td>
+<td>基于 Servlet 2.5,使用阻塞架构，不支持任何长连接</td>
+<td>基于 Netty 非阻塞</td>
+<td>基于 webFlux 非阻塞</td>
+</tr>
+<tr>
+<td>长连接</td>
+<td>不支持任何长连接</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>性能</td>
+<td>已过时</td>
+<td>较好</td>
+<td>较好</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>工作原理</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fh7k7es_KunqJjc3EDcS3N3vBVPH.webp"></p>
+<h2 id="5-2-配置"><a href="#5-2-配置" class="headerlink" title="5.2 配置"></a>5.2 配置</h2><hr>
+<h1 id="6-Spring-Cloud-Config"><a href="#6-Spring-Cloud-Config" class="headerlink" title="6 Spring Cloud Config"></a>6 Spring Cloud Config</h1><ul>
+<li>Spring Cloud Config 项目是一个解决分布式系统的<strong>配置管理</strong>方案。</li>
+<li>它包含了 Client 和 Server 两个部分<ul>
+<li>server 提供配置文件的存储、以接口的形式将配置文件的内容提供出去</li>
+<li>client 通过接口获取数据、并依据此数据初始化自己的应用。</li>
+</ul>
+</li>
+</ul>
+<p>简单来说，使用 Spring Cloud Config 就是将配置文件放到统一的位置管理(比如 GitHub)，客户端通过接口去获取这些配置文件。在 GitHub 上修改了某个配置文件，应用加载的就是修改后的配置文件。</p>
+<hr>
+<h1 id="7-UAA"><a href="#7-UAA" class="headerlink" title="7 UAA"></a>7 UAA</h1><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FjlBcKTpPPPyZ_9sVvgmfCrukYVn.png"><br><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FvZKVa8yiBxYkFNM8A3XhXcOvF5h.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/27/yuque/Spring%20Boot/" rel="prev" title="Spring Boot">
+      <i class="fa fa-chevron-left"></i> Spring Boot
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/27/yuque/GC/" rel="next" title="GC">
+      GC <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Eureka"><span class="nav-number">1.</span> <span class="nav-text">1 Eureka</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-0-Eureka-%E4%B8%8E-Zookeeper-%E5%AF%B9%E6%AF%94"><span class="nav-number">1.1.</span> <span class="nav-text">1.0 Eureka 与 Zookeeper 对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85"><span class="nav-number">1.2.</span> <span class="nav-text">1.1 服务提供者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85"><span class="nav-number">1.3.</span> <span class="nav-text">1.2 服务消费者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Eureka-Server-%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83"><span class="nav-number">1.4.</span> <span class="nav-text">1.3 Eureka Server(服务注册中心)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Ribbon"><span class="nav-number">2.</span> <span class="nav-text">2 Ribbon</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Nginx-%E5%92%8C-Ribbon-%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Nginx 和 Ribbon 的对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Ribbon-%E4%B8%AD%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Ribbon 中的负载均衡算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Hystrix"><span class="nav-number">3.</span> <span class="nav-text">3 Hystrix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Fallback-%E5%A4%B1%E8%B4%A5%E5%BF%AB%E9%80%9F%E8%BF%94%E5%9B%9E-%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 Fallback(失败快速返回)：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E8%B5%84%E6%BA%90-%E4%BE%9D%E8%B5%96%E9%9A%94%E7%A6%BB-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E9%9A%94%E7%A6%BB-%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 资源&#x2F;依赖隔离(线程池隔离)：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Hystrix-%E4%BB%AA%E8%A1%A8%E7%9B%98%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 Hystrix 仪表盘：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Feign-%E4%B8%8E-OpenFeign"><span class="nav-number">4.</span> <span class="nav-text">4 Feign 与 OpenFeign</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E5%8E%9F%E7%90%86"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-SpringCloud-gateway"><span class="nav-number">5.</span> <span class="nav-text">5 SpringCloud gateway</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E7%AE%80%E4%BB%8B"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E9%85%8D%E7%BD%AE"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Spring-Cloud-Config"><span class="nav-number">6.</span> <span class="nav-text">6 Spring Cloud Config</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-UAA"><span class="nav-number">7.</span> <span class="nav-text">7 UAA</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

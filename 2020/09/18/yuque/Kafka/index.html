@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1 构成 Broker：一台 Kafka 服务器 topic：即队列 Partition：topic 的分区，一个 topic 会分为多个 Partition，每个 Partition 负责存储这个 Topic 一部分的数据。 主分区：若某个 Broker 挂了，会选举出其他 Broker 的备份分区做主分区。实现高可用 备份分区：只做备份，不做读写。   集群的 metadata（kafka 集">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kafka">
+<meta property="og:url" content="http://example.com/2020/09/18/yuque/Kafka/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 构成 Broker：一台 Kafka 服务器 topic：即队列 Partition：topic 的分区，一个 topic 会分为多个 Partition，每个 Partition 负责存储这个 Topic 一部分的数据。 主分区：若某个 Broker 挂了，会选举出其他 Broker 的备份分区做主分区。实现高可用 备份分区：只做备份，不做读写。   集群的 metadata（kafka 集">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Foc4FYlkhlLJH6kqQDn8lQj0inP0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqVtxs0MQ6Ax9ChbsghT3fsto2te.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjfc3k3xel-XF-jcQ0yChvS2n9mg.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Flt0YB2XiXWqud9exw0mxrljs3Tj.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiKrXCEUWgm1s5ZNS8W_PtFVqgKj.png">
+<meta property="article:published_time" content="2020-09-18T08:22:46.000Z">
+<meta property="article:modified_time" content="2023-02-07T13:32:17.405Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Foc4FYlkhlLJH6kqQDn8lQj0inP0.png">
+
+<link rel="canonical" href="http://example.com/2020/09/18/yuque/Kafka/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Kafka | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/18/yuque/Kafka/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Kafka
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-18 16:22:46" itemprop="dateCreated datePublished" datetime="2020-09-18T16:22:46+08:00">2020-09-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-07 21:32:17" itemprop="dateModified" datetime="2023-02-07T21:32:17+08:00">2023-02-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-构成"><a href="#1-构成" class="headerlink" title="1 构成"></a>1 构成</h1><ul>
+<li>Broker：一台 Kafka 服务器</li>
+<li>topic：即队列</li>
+<li>Partition：topic 的分区，一个 topic 会分为多个 Partition，每个 Partition 负责存储这个 Topic 一部分的数据。<ul>
+<li>主分区：若某个 Broker 挂了，会选举出其他 Broker 的备份分区做主分区。实现<strong>高可用</strong></li>
+<li>备份分区：只做备份，不做读写。</li>
+</ul>
+</li>
+<li>集群的 metadata（kafka 集群的每一台 broker 都缓存了整个集群的 metadata, 当 broker 或某一个 topic 的 metadata 信息发生变化时, 集群的<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a9f559ee6035">Controller</a>                              都会感知到作相应的状态转换, 同时把发生变化的新的 metadata 信息广播到所有的 broker;）<ul>
+<li>所有 broker 信息（包括 ip，port）</li>
+<li>所有 topic 的信息: topic name, partition 数量, 每个 partition 的 leader, isr, replica 集合等</li>
+</ul>
+</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Foc4FYlkhlLJH6kqQDn8lQj0inP0.png"></h1><hr>
+<ul>
+<li>offset<ul>
+<li>0.9 版本之前保存在 zookeeper<ul>
+<li>消费者需频繁从 zookeeper 拉取 offset</li>
+</ul>
+</li>
+<li>0.9 版本之后保存在 kafka 本地的某一个 topic</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-特点"><a href="#2-特点" class="headerlink" title="2 特点"></a>2 特点</h1><h2 id="2-1-At-least-once"><a href="#2-1-At-least-once" class="headerlink" title="2.1 At least once"></a>2.1 At least once</h2><p>Kafka 采用的是至少一次（At least once）</p>
+<ul>
+<li><strong>消息不会丢</strong></li>
+<li><strong>但是可能会重复消费</strong><ul>
+<li>生产者角度：<ul>
+<li>消息发到 broker，broker 写入消息，broker 返回响应。若返回的响应（可能因为网络原因）生产者没有收到，然后生产者又重发了一次</li>
+</ul>
+</li>
+<li>消费者角度：<ul>
+<li>消费者拿到消息消费完成，更新 consumer offset。若更新 offset 前消费者额挂了，其他消费者又消费了这条消息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>幂等处理重复消费</li>
+</ul>
+<h2 id="2-2-acks-机制：确保消息写入成功"><a href="#2-2-acks-机制：确保消息写入成功" class="headerlink" title="2.2 acks 机制：确保消息写入成功"></a>2.2 acks 机制：确保消息写入成功</h2><p>生产者中设置：</p>
+<ul>
+<li>**acks=0   **<ul>
+<li>消息发出后就不管了</li>
+</ul>
+</li>
+<li>**acks=1（默认） **<ul>
+<li>只要 Partition Leader 接收到消息而且写入本地磁盘了，就认为成功了</li>
+</ul>
+</li>
+<li>**acks=all  **<ul>
+<li>Partition Leader 接收到消息之后，还必须要求 ISR 列表里跟 Leader 保持同步的那些 Follower 都要把消息同步过去，才能认为这条消息是写入成功了</li>
+<li>当 partition 中只有一个 leader 时，acks=all 也会丢失消息</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-多副本冗余的机制"><a href="#2-3-多副本冗余的机制" class="headerlink" title="2.3 多副本冗余的机制"></a>2.3 多副本冗余的机制</h2><pre><code>我们数据存在不同的partition上，那kafka就把这些partition做备份。比如，现在我们有三个partition，分别存在三台broker上。每个partition都会备份，这些备份散落在不同的broker上。
+</code></pre>
+<h2 id="2-4-多副本数据同步"><a href="#2-4-多副本数据同步" class="headerlink" title="2.4 多副本数据同步"></a>2.4 多副本数据同步</h2><p>只有 Partition Leader 是对外提供读写服务的,也就是说，如果有一个客户端往一个 Partition 写入数据，此时一般就是写入这个 Partition 的 Leader 副本。<br>然后 Leader 副本接收到数据之后，Follower 副本会不停的给他发送请求尝试去拉取最新的数据，拉取到自己本地后，写入磁盘中。</p>
+<h2 id="2-5-快"><a href="#2-5-快" class="headerlink" title="2.5 快"></a>2.5 快</h2><ul>
+<li><strong>顺序读写：</strong>Kafka 采取顺序写入磁盘的方式，避免了随机磁盘寻址的浪费</li>
+<li><strong>零拷贝：</strong>减少内核之间的切换<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FqVtxs0MQ6Ax9ChbsghT3fsto2te.png"></li>
+</ul>
+</li>
+<li><strong>消息压缩</strong></li>
+<li><strong>分批发送：</strong>Kafka 可以将数据记录分批发送，从生产者到文件系统（Kafka 主题日志）到消费者，可以端到端的查看这些批次的数据。</li>
+</ul>
+<h2 id="2-6-持久化"><a href="#2-6-持久化" class="headerlink" title="2.6 持久化"></a>2.6 持久化</h2><ul>
+<li>Kafka 是将 partition 的数据写在<strong>磁盘的消息日志</strong>，不是 partition 一有数据就立马将数据写到磁盘上，它会先缓存一部分，等到足够多数据量或等待一定的时间再批量写入(<strong>flush</strong>)</li>
+<li>Kafka 只允许<strong>追加写入</strong>(顺序访问)，避免缓慢的随机 I/O 操作。</li>
+</ul>
+<h2 id="2-7-全局有序（特定条件）-分区有序"><a href="#2-7-全局有序（特定条件）-分区有序" class="headerlink" title="2.7 全局有序（特定条件）/分区有序"></a>2.7 全局有序（特定条件）/分区有序</h2><ul>
+<li>全局有序(需特定条件)<ul>
+<li>特定条件：topic 中只有一个 partition（队列）</li>
+</ul>
+</li>
+<li>分区有序<ul>
+<li>在 topic 中有多个 partition 的时候，只能保证 partition 有序</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="3-消息堆积问题"><a href="#3-消息堆积问题" class="headerlink" title="3 消息堆积问题"></a>3 消息堆积问题</h1><ul>
+<li>原因<ul>
+<li><strong>生产者的生产速度与消费者的消费速度不匹配</strong></li>
+</ul>
+</li>
+<li>解决方案<ul>
+<li>优化代码逻辑<ul>
+<li>一条一条消费改为批量消费（如：数据库插入操作）</li>
+</ul>
+</li>
+<li>水平扩容<ul>
+<li>同时增加 Topic 的 partitions 和 consumer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="4-场景"><a href="#4-场景" class="headerlink" title="4 场景"></a>4 场景</h1><ul>
+<li>追求<strong>高吞吐量</strong></li>
+<li>对消息的重复没有严格要求</li>
+<li>适合产生<strong>大量数据</strong>的互联网服务的数据收集业务（如日志采集）</li>
+</ul>
+<hr>
+<h1 id="5-配置"><a href="#5-配置" class="headerlink" title="5 配置"></a>5 配置</h1><h2 id="5-1-kafka-服务端配置"><a href="#5-1-kafka-服务端配置" class="headerlink" title="5.1 kafka 服务端配置"></a>5.1 kafka 服务端配置</h2><ul>
+<li>server.properties：</li>
+</ul>
+<p>#The id of the broker. This must be set to a unique integer for each broker.</p>
+<ul>
+<li>broker.id=0</li>
+</ul>
+<h1 id="A-comma-separated-list-of-directories-under-which-to-store-log-files（运行数据-日志存放路径）"><a href="#A-comma-separated-list-of-directories-under-which-to-store-log-files（运行数据-日志存放路径）" class="headerlink" title="A comma separated list of directories under which to store log files（运行数据/日志存放路径）"></a>A comma separated list of directories under which to store log files（运行数据/日志存放路径）</h1><ul>
+<li>log.dirs=/usr/local/var/lib/kafka-logs</li>
+</ul>
+<h1 id="The-minimum-age-of-a-log-file-to-be-eligible-for-deletion-due-to-age"><a href="#The-minimum-age-of-a-log-file-to-be-eligible-for-deletion-due-to-age" class="headerlink" title="The minimum age of a log file to be eligible for deletion due to age"></a>The minimum age of a log file to be eligible for deletion due to age</h1><ul>
+<li>log.retention.hours=168</li>
+</ul>
+<h2 id="5-2-kafka-客户端配置"><a href="#5-2-kafka-客户端配置" class="headerlink" title="5.2 kafka 客户端配置"></a>5.2 kafka 客户端配置</h2><ul>
+<li>拉取时设置的 timeout<ul>
+<li><strong>_@param _</strong><em>timeout The maximum time to block</em></li>
+<li><em>拉取消息时等待的最长时间，若到最长时间还没有消息，就直接返回 空</em></li>
+<li>public ConsumerRecords&lt;K, V&gt; poll(final Duration timeout)</li>
+</ul>
+</li>
+<li>max.poll.interval.ms: 600000<ul>
+<li>最大拉取间隔时间，若超过，则客户端会主动离开 group</li>
+<li>避免“活锁”的情况：客户端持续的发送心跳，但是没有拉取消息处理。为了预防消费者在这种情况下一直持有分 区，我们使用 max.poll.interval.ms 活跃检测机制。</li>
+</ul>
+</li>
+<li>heartbeat.interval.ms<ul>
+<li>间隔多久发送一次心跳</li>
+<li>默认 3s</li>
+</ul>
+</li>
+<li>session.timeout.ms<ul>
+<li>group coordinator 多久没收到心跳 就 rebalance</li>
+<li>默认 10s</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<hr>
+<h1 id="6-Java-API"><a href="#6-Java-API" class="headerlink" title="6 Java API"></a>6 Java API</h1><h2 id="6-1-Producer-端消息发送的基本流程"><a href="#6-1-Producer-端消息发送的基本流程" class="headerlink" title="6.1 Producer 端消息发送的基本流程"></a>6.1 Producer 端消息发送的基本流程</h2><p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Fjfc3k3xel-XF-jcQ0yChvS2n9mg.png"></p>
+<h3 id="6-1-1-序列化器"><a href="#6-1-1-序列化器" class="headerlink" title="6.1.1 序列化器"></a>6.1.1 序列化器</h3><h3 id="6-1-2-分区器"><a href="#6-1-2-分区器" class="headerlink" title="6.1.2 分区器"></a>6.1.2 分区器</h3><hr>
+<h2 id="6-2-kafkaConsumer–assign-与-subscribe"><a href="#6-2-kafkaConsumer–assign-与-subscribe" class="headerlink" title="6.2 kafkaConsumer–assign 与 subscribe"></a>6.2 kafkaConsumer–assign 与 subscribe</h2><blockquote>
+<p>一般场景建议使用 subscribe（） 函数来实现 partition 的分配。</p>
+</blockquote>
+<ul>
+<li>assign(Collection partitions)<ul>
+<li>为 consumer 手动、显示的指定需要消费的 topic-partitions，不受 group.id 限制，相当与指定的 group 无效（this method does not use the consumer’s group management）</li>
+</ul>
+</li>
+<li>subscribe(Collection<String> topics)<ul>
+<li>为 consumer 自动分配 partition，有内部算法保证 topic-partition 以最优的方式均匀分配给同 group 下的不同 consumer。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="6-3-Kafka-Producer-send-阻塞"><a href="#6-3-Kafka-Producer-send-阻塞" class="headerlink" title="6.3 Kafka Producer send 阻塞"></a>6.3 Kafka Producer send 阻塞</h2><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/objcoding/articles/13662337.html">https://www.cnblogs.com/objcoding/articles/13662337.html</a></p>
+<h3 id="6-3-1-场景-1–Producer-获取不到-metadata-信息："><a href="#6-3-1-场景-1–Producer-获取不到-metadata-信息：" class="headerlink" title="6.3.1 场景 1–Producer 获取不到 metadata 信息："></a>6.3.1 场景 1–Producer 获取不到 metadata 信息：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2021-06-15 00:00:01,141 WARN  [kafka-producer-network-thread | producer-1] NetworkClient: [Producer clientId=producer-1] Error while fetching metadata with correlation id 48587 : &#123;mainfab_offline_indicator_config_topic=UNKNOWN_TOPIC_OR_PARTITION&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/Flt0YB2XiXWqud9exw0mxrljs3Tj.png"></p>
+<h3 id="6-3-2-场景-2–缓冲池内存用完"><a href="#6-3-2-场景-2–缓冲池内存用完" class="headerlink" title="6.3.2 场景 2–缓冲池内存用完"></a>6.3.2 场景 2–缓冲池内存用完</h3><blockquote>
+<p>RecordAccumulator（Kafka Producer 缓冲池核心类）中注释：<br>The accumulator uses a bounded amount of memory and append calls will block when that memory is exhausted, unless this behavior is explicitly disabled.<br>当缓冲池的内存块用完后，消息追加调用将会被阻塞，直到有空闲的内存块。</p>
+</blockquote>
+<ul>
+<li>在新版的 Kafka Producer 中，设计了一个消息缓冲池，客户端发送的消息都会被存储到缓冲池中，同时 Producer 启动后还会开启一个 Sender 线程，不断地从缓冲池获取消息并将其发送到 Broker</li>
+<li>缓冲池大小设置：buffer.memory</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/heheii/blog-imag/blog-images/FiKrXCEUWgm1s5ZNS8W_PtFVqgKj.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/16/yuque/JPA/" rel="prev" title="JPA">
+      <i class="fa fa-chevron-left"></i> JPA
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/19/yuque/JWT/" rel="next" title="JWT">
+      JWT <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%9E%84%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">1 构成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%89%B9%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">2 特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-At-least-once"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 At least once</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-acks-%E6%9C%BA%E5%88%B6%EF%BC%9A%E7%A1%AE%E4%BF%9D%E6%B6%88%E6%81%AF%E5%86%99%E5%85%A5%E6%88%90%E5%8A%9F"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 acks 机制：确保消息写入成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E5%A4%9A%E5%89%AF%E6%9C%AC%E5%86%97%E4%BD%99%E7%9A%84%E6%9C%BA%E5%88%B6"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 多副本冗余的机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E5%A4%9A%E5%89%AF%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 多副本数据同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E5%BF%AB"><span class="nav-number">3.5.</span> <span class="nav-text">2.5 快</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-%E6%8C%81%E4%B9%85%E5%8C%96"><span class="nav-number">3.6.</span> <span class="nav-text">2.6 持久化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-%E5%85%A8%E5%B1%80%E6%9C%89%E5%BA%8F%EF%BC%88%E7%89%B9%E5%AE%9A%E6%9D%A1%E4%BB%B6%EF%BC%89-%E5%88%86%E5%8C%BA%E6%9C%89%E5%BA%8F"><span class="nav-number">3.7.</span> <span class="nav-text">2.7 全局有序（特定条件）&#x2F;分区有序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%B6%88%E6%81%AF%E5%A0%86%E7%A7%AF%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">3 消息堆积问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%9C%BA%E6%99%AF"><span class="nav-number">5.</span> <span class="nav-text">4 场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">5 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-kafka-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 kafka 服务端配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-comma-separated-list-of-directories-under-which-to-store-log-files%EF%BC%88%E8%BF%90%E8%A1%8C%E6%95%B0%E6%8D%AE-%E6%97%A5%E5%BF%97%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">A comma separated list of directories under which to store log files（运行数据&#x2F;日志存放路径）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-minimum-age-of-a-log-file-to-be-eligible-for-deletion-due-to-age"><span class="nav-number">8.</span> <span class="nav-text">The minimum age of a log file to be eligible for deletion due to age</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-kafka-%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">8.1.</span> <span class="nav-text">5.2 kafka 客户端配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Java-API"><span class="nav-number">9.</span> <span class="nav-text">6 Java API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-Producer-%E7%AB%AF%E6%B6%88%E6%81%AF%E5%8F%91%E9%80%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="nav-number">9.1.</span> <span class="nav-text">6.1 Producer 端消息发送的基本流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-1-%E5%BA%8F%E5%88%97%E5%8C%96%E5%99%A8"><span class="nav-number">9.1.1.</span> <span class="nav-text">6.1.1 序列化器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-2-%E5%88%86%E5%8C%BA%E5%99%A8"><span class="nav-number">9.1.2.</span> <span class="nav-text">6.1.2 分区器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-kafkaConsumer%E2%80%93assign-%E4%B8%8E-subscribe"><span class="nav-number">9.2.</span> <span class="nav-text">6.2 kafkaConsumer–assign 与 subscribe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-Kafka-Producer-send-%E9%98%BB%E5%A1%9E"><span class="nav-number">9.3.</span> <span class="nav-text">6.3 Kafka Producer send 阻塞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-1-%E5%9C%BA%E6%99%AF-1%E2%80%93Producer-%E8%8E%B7%E5%8F%96%E4%B8%8D%E5%88%B0-metadata-%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="nav-number">9.3.1.</span> <span class="nav-text">6.3.1 场景 1–Producer 获取不到 metadata 信息：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-2-%E5%9C%BA%E6%99%AF-2%E2%80%93%E7%BC%93%E5%86%B2%E6%B1%A0%E5%86%85%E5%AD%98%E7%94%A8%E5%AE%8C"><span class="nav-number">9.3.2.</span> <span class="nav-text">6.3.2 场景 2–缓冲池内存用完</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
